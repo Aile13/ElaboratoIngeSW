@@ -12,6 +12,6 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
     private static final String PATH = "Gerarchie";
 
     GestoreGerarchie(List<GerarchiaDiCategorie> listaGerarchie) {
-        super(listaGerarchie, PATH);
+        super(PATH);
     }
 }

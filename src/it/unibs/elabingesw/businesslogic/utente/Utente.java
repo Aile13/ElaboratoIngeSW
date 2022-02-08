@@ -13,4 +13,17 @@ public abstract class Utente implements Manageable {
         this.username = username;
         this.password = password;
     }
+
+    @Override
+    public String getNome() {
+        return username;
+    }
+
+    public boolean passwordCorretta(String pwd) {
+        return this.password.equals(pwd);
+    }
+
+    public String getUsername() {
+        return username;
+    }
 }
