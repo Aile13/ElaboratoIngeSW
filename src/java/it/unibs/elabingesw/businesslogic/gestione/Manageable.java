@@ -4,5 +4,5 @@ package it.unibs.elabingesw.businesslogic.gestione;
  * @author Elia
  */
 public interface Manageable {
-    String getNome();
+    boolean isStessoNome(String nome);
 }
