@@ -5,7 +5,6 @@ import it.unibs.elabingesw.businesslogic.utente.Configuratore;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * @author Elia
@@ -15,7 +14,8 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
     private static final String PATH = "./Utenti.json";
 
     public GestoreUtenti() {
-        super(PATH, new TypeToken<Collection<Configuratore>>() {}.getType());
+        super(PATH, new TypeToken<Collection<Configuratore>>() {
+        }.getType());
 
         inserisciDefaultConfiguratore();
     }

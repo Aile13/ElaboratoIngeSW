@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author Elia
  */
-final class Tree<T> {
+public final class Tree<T> {
     private T dato;
     //private Tree<T> padre;
     private final List<Tree<T>> listaFigli;
@@ -16,9 +16,22 @@ final class Tree<T> {
         this.listaFigli = new ArrayList<>();
     }
 
-//    public boolean isRoot() {
+    public T getDato() {
+        return dato;
+    }
+
+    //    public boolean isRoot() {
 //        return this.padre == null;
 //    }
+
+
+    @Override
+    public String toString() {
+        return "Tree{" +
+                "dato=" + dato +
+                ", listaFigli=" + listaFigli +
+                '}';
+    }
 
     public boolean isFoglia() {
         return this.listaFigli.size() == 0;

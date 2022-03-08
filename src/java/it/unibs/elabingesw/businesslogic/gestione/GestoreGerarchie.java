@@ -2,7 +2,6 @@ package it.unibs.elabingesw.businesslogic.gestione;
 
 import com.google.gson.reflect.TypeToken;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
-import it.unibs.elabingesw.businesslogic.utente.Configuratore;
 
 import java.util.Collection;
 import java.util.List;
@@ -12,9 +11,22 @@ import java.util.List;
  */
 public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie> {
 
-    private static final String PATH = "Gerarchie";
+    private static final String PATH = "Gerarchie.json";
 
-    GestoreGerarchie(List<GerarchiaDiCategorie> listaGerarchie) {
-        super(PATH, new TypeToken<Collection<GerarchiaDiCategorie>>() {}.getType());
+    public GestoreGerarchie() {
+        super(PATH, new TypeToken<Collection<GerarchiaDiCategorie>>() {
+        }.getType());
+    }
+
+    public List<GerarchiaDiCategorie> getListaGerarchie() {
+        return this.getListaElementi();
+    }
+
+    public void salvaGerarchie() {
+        salvaDati();
+    }
+
+    public void inserisciNuovaGerarchia(GerarchiaDiCategorie gerarchiaDiCategorie) {
+        this.inserisciElemento(gerarchiaDiCategorie);
     }
 }

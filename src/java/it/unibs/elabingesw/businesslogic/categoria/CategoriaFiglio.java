@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * @author Elia
  */
-final class CategoriaFiglio extends Categoria {
+public final class CategoriaFiglio extends Categoria {
     public CategoriaFiglio(String nome, String descrizione, List<Campo> campiNativi) {
         super(nome, descrizione, campiNativi);
     }

@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * @author Elia
  */
-abstract class Categoria {
+public class Categoria {
     private final String nome;
     private final String descrizione;
     private final List<Campo> campiNativi;
@@ -14,5 +14,22 @@ abstract class Categoria {
         this.nome = nome;
         this.descrizione = descrizione;
         this.campiNativi = campiNativi;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void inserisciCampiNativi(List<Campo> campi) {
+        this.campiNativi.addAll(campi);
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "nome='" + nome + '\'' +
+                ", descrizione='" + descrizione + '\'' +
+                ", campiNativi=" + campiNativi +
+                '}';
     }
 }

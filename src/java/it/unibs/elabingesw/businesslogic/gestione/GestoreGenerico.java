@@ -3,6 +3,7 @@ package it.unibs.elabingesw.businesslogic.gestione;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -40,15 +41,18 @@ abstract class GestoreGenerico<T extends Manageable> {
     }
 
     private void caricaElementi() {
-        try (FileReader reader = new FileReader(pathRepository)) {
-            List<T> listElmFromJson = gson.fromJson(reader, subClassCollType);
-            if (listElmFromJson != null) {
-                this.listaElementi.addAll(listElmFromJson);
+        File jsonFile = new File(pathRepository);
+        if (jsonFile.exists()) {
+
+            try (FileReader reader = new FileReader(pathRepository)) {
+                List<T> listElmFromJson = gson.fromJson(reader, subClassCollType);
+                if (listElmFromJson != null) {
+                    this.listaElementi.addAll(listElmFromJson);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-//            System.out.println(listaElementi.get(0).getClass().getName());
-//            System.out.println(listaElementi);
-        } catch (IOException e) {
-            e.printStackTrace();
+
         }
     }
 

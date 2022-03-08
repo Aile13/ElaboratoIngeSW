@@ -1,9 +1,11 @@
 package it.unibs.elabingesw;
 
+import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
 import it.unibs.elabingesw.service.Benvenuto;
 import it.unibs.elabingesw.service.Login;
-import it.unibs.elabingesw.service.Menu;
+import it.unibs.elabingesw.service.MacroService;
+import it.unibs.elabingesw.service.MainMenu;
 
 /**
  * @author Elia
@@ -15,9 +17,11 @@ public class App {
 
     public static void main(String[] args) {
         GestoreUtenti gestoreUtenti = new GestoreUtenti();
+        GestoreGerarchie gestoreGerarchie = new GestoreGerarchie();
 
         Login login = new Login(gestoreUtenti);
-        Menu menu = new Menu(gestoreUtenti);
+        MacroService macroService = new MacroService(gestoreUtenti, gestoreGerarchie);
+        MainMenu menu = new MainMenu(macroService);
 
         Benvenuto.saluta();
         login.eseguiLogin();
