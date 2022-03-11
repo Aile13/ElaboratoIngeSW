@@ -3,7 +3,7 @@ package it.unibs.elabingesw.businesslogic.categoria;
 import java.util.List;
 
 /**
- * @author Elia
+ * @author Elia Pitozzi
  */
 public class Categoria {
     private final String nome;
