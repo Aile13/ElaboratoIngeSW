@@ -31,6 +31,8 @@ public class MacroService {
     
     /**
      * Metodo che salva utenti e gerarchie su file JSON.
+     * @see GestoreUtenti
+     * @see GestoreGerarchie
      */
     private void eseguiSalvataggio() {
         gestoreUtenti.salvaUtenti();
