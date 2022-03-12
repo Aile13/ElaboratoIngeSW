@@ -7,12 +7,23 @@ import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
- * @author Elia
+ * Classe GerarchiaService che gestisce le varie operazioni
+ * che si effettuano su una gerarchia e sulle eventuali
+ * categorie radice e categorie figlie.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class GerarchiaService {
 
     private final GestoreGerarchie gestoreGerarchie;
-
+    
+    /**
+     * Costruttore di classe, accetta come parametro un oggetto
+     * GestoreGerarchie.
+     * @param gestoreGerarchie 
+     * @see GestoreGerarchie
+     */
     public GerarchiaService(GestoreGerarchie gestoreGerarchie) {
 
         this.gestoreGerarchie = gestoreGerarchie;
