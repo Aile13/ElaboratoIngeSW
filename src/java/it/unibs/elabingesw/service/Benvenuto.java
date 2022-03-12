@@ -9,7 +9,7 @@ package it.unibs.elabingesw.service;
 public class Benvenuto {
     
     /**
-     * Metodo statico saluta() che verrà utilizzato per salutare
+     * Metodo statico che verrà utilizzato per salutare
      * un utente ogni qualvolta accede all'applicativo.
      */
     public static void saluta() {
