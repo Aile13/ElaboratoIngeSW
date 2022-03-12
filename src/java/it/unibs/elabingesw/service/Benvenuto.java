@@ -1,9 +1,17 @@
 package it.unibs.elabingesw.service;
 
 /**
- * @author Elia
+ * Classe Benvenuto con al suo interno un metodo statico saluta()
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class Benvenuto {
+    
+    /**
+     * Metodo statico saluta() che verrà utilizzato per salutare
+     * un utente ogni qualvolta accede all'applicativo.
+     */
     public static void saluta() {
         System.out.println("Benvenuto nell'app.");
     }
