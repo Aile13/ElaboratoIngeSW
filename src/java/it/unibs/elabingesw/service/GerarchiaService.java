@@ -82,11 +82,11 @@ public class GerarchiaService {
      */
     private CategoriaRadice chiediCategoriaRadice() {
         var nomeCatRad = InputDati.leggiStringaNonVuota("Inserisci nome della categoria radice: ");
-        var descriozione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria radice: ");
+        var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria radice: ");
 
         var listaCampi = CampoService.chiediListaDiCampi();
 
-        return new CategoriaRadice(nomeCatRad, descriozione, listaCampi);
+        return new CategoriaRadice(nomeCatRad, descrizione, listaCampi);
     }
     
     /**

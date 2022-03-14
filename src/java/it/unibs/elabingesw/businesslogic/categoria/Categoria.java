@@ -1,12 +1,13 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Classe Categoria che rappresenta una categoria generica
  * @author Elia Pitozzi
  */
-public class Categoria {
+public class Categoria implements Serializable {
     private final String nome;
     private final String descrizione;
     private final List<Campo> campiNativi;

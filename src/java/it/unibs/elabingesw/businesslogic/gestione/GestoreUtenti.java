@@ -1,22 +1,17 @@
 package it.unibs.elabingesw.businesslogic.gestione;
 
-import com.google.gson.reflect.TypeToken;
 import it.unibs.elabingesw.businesslogic.utente.Configuratore;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
-
-import java.util.Collection;
 
 /**
  * @author Elia
  */
 public final class GestoreUtenti extends GestoreGenerico<Utente> {
 
-    private static final String PATH = "./Utenti.json";
+    private static final String PATH = "Utenti";
 
     public GestoreUtenti() {
-        super(PATH, new TypeToken<Collection<Configuratore>>() {
-        }.getType());
-
+        super(PATH);
         inserisciDefaultConfiguratore();
     }
 
@@ -31,9 +26,9 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
     }
 
     public boolean isUtenteValido(String username, String password) {
-        if (this.isElementoInListaByNome(username))
+        if (this.isElementoInListaByNome(username)) {
             return this.trovaElementoConNome(username).get().isPasswordCorretta(password);
-        else return false;
+        } else return false;
     }
 
     public boolean isUtenteRegistrato(String username) {

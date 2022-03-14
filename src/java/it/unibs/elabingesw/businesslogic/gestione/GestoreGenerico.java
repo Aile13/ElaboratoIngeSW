@@ -1,14 +1,8 @@
 package it.unibs.elabingesw.businesslogic.gestione;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.Type;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,43 +10,33 @@ import java.util.Optional;
  * @author Elia
  */
 abstract class GestoreGenerico<T extends Manageable> {
+    private final String pathRepositoryName;
     private final List<T> listaElementi;
-    private final String pathRepository;
-    private final Type subClassCollType;
-    private final Gson gson;
 
-    GestoreGenerico(String pathRepository, Type subClassCollType) {
-        this.pathRepository = pathRepository;
-        this.subClassCollType = subClassCollType;
-        this.gson = new GsonBuilder()
-                .setPrettyPrinting()
-                .create();
-
+    GestoreGenerico(String pathRepository) {
+        this.pathRepositoryName = pathRepository + ".dat"; // aggiungo estensione
         this.listaElementi = new ArrayList<>();
         caricaElementi();
     }
 
     void salvaDati() {
-        try (FileWriter writer = new FileWriter(pathRepository)) {
-            gson.toJson(listaElementi, subClassCollType, writer);
+        try (ObjectOutputStream output =
+                     new ObjectOutputStream(new FileOutputStream(pathRepositoryName))) {
+            output.writeObject(this.listaElementi);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void caricaElementi() {
-        File jsonFile = new File(pathRepository);
-        if (jsonFile.exists()) {
-
-            try (FileReader reader = new FileReader(pathRepository)) {
-                List<T> listElmFromJson = gson.fromJson(reader, subClassCollType);
-                if (listElmFromJson != null) {
-                    this.listaElementi.addAll(listElmFromJson);
+        if (new File(pathRepositoryName).exists()) {
+            try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(pathRepositoryName))) {
+                if (input.readObject() != null) {
+                    this.listaElementi.addAll((List<T>) input.readObject());
                 }
-            } catch (IOException e) {
+            } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
-
         }
     }
 

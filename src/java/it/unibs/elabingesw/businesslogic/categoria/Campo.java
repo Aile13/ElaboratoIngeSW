@@ -1,11 +1,12 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * @author Elia
  */
-public final class Campo {
+public final class Campo implements Serializable {
     private String nome;
     private boolean obbligatorio;
 

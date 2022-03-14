@@ -2,10 +2,12 @@ package it.unibs.elabingesw.businesslogic.categoria;
 
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
+import java.io.Serializable;
+
 /**
  * @author Elia
  */
-public class GerarchiaDiCategorie implements Manageable {
+public class GerarchiaDiCategorie implements Manageable, Serializable {
     private final Tree<Categoria> gerarchia;
 
     private GerarchiaDiCategorie(Tree<Categoria> gerarchia) {

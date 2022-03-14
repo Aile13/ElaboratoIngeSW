@@ -8,6 +8,7 @@ import it.unibs.elabingesw.service.MacroService;
 import it.unibs.elabingesw.service.MainMenu;
 
 /**
+ *
  * @author Elia
  */
 public class App {

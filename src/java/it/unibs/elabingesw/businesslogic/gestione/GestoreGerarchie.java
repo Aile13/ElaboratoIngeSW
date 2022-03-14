@@ -11,11 +11,10 @@ import java.util.List;
  */
 public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie> {
 
-    private static final String PATH = "Gerarchie.json";
+    private static final String PATH = "Gerarchie";
 
     public GestoreGerarchie() {
-        super(PATH, new TypeToken<Collection<GerarchiaDiCategorie>>() {
-        }.getType());
+        super(PATH);
     }
 
     public List<GerarchiaDiCategorie> getListaGerarchie() {

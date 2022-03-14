@@ -1,12 +1,13 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Elia
  */
-public final class Tree<T> {
+public final class Tree<T> implements Serializable {
     private T dato;
     //private Tree<T> padre;
     private final List<Tree<T>> listaFigli;

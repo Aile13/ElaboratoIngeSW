@@ -2,12 +2,13 @@ package it.unibs.elabingesw.businesslogic.utente;
 
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * @author Elia
  */
-public abstract class Utente implements Manageable {
+public abstract class Utente implements Manageable, Serializable {
     private final String username;
     private final String password;
 

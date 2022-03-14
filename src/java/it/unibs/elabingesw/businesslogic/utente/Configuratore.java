@@ -1,5 +1,7 @@
 package it.unibs.elabingesw.businesslogic.utente;
 
+import java.io.Serializable;
+
 /**
  * @author Elia
  */
