@@ -13,7 +13,7 @@ import java.util.List;
 public final class Tree<T> {
     private T dato;
     //private Tree<T> padre;
-    private final List<Tree<T>> listaFigli;
+    private final List<Tree<T>> listaFigli;  //perch questo è final?
     
     /**
      * Costruttore di classe che accetta come parametro un generico
