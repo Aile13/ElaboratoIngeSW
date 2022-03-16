@@ -8,15 +8,11 @@ import it.unibs.elabingesw.service.MacroService;
 import it.unibs.elabingesw.service.MainMenu;
 
 /**
- *
  * @author Elia
  */
 public class App {
-    private void inizializza() {
 
-    }
-
-    public static void main(String[] args) {
+    public void run() {
         GestoreUtenti gestoreUtenti = new GestoreUtenti();
         GestoreGerarchie gestoreGerarchie = new GestoreGerarchie();
 

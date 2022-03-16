@@ -8,10 +8,10 @@ import it.unibs.elabingesw.businesslogic.utente.Utente;
  */
 public final class GestoreUtenti extends GestoreGenerico<Utente> {
 
-    private static final String PATH = "Utenti";
+    private static final String FILE_NAME = "Utenti";
 
     public GestoreUtenti() {
-        super(PATH);
+        super(FILE_NAME);
         inserisciDefaultConfiguratore();
     }
 

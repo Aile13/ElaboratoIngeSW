@@ -17,11 +17,12 @@ import it.unibs.eliapitozzi.mylib.InputDati;
 public class GerarchiaService {
 
     private final GestoreGerarchie gestoreGerarchie;
-    
+
     /**
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreGerarchie.
-     * @param gestoreGerarchie 
+     *
+     * @param gestoreGerarchie
      * @see GestoreGerarchie
      */
     public GerarchiaService(GestoreGerarchie gestoreGerarchie) {
@@ -29,7 +30,7 @@ public class GerarchiaService {
         this.gestoreGerarchie = gestoreGerarchie;
 
     }
-    
+
     /**
      * Metodo che crea una nuova gerarchia: una volta confermata la
      * sua creazione, questa viene aggiunta all'applicativo.
@@ -44,12 +45,12 @@ public class GerarchiaService {
             gestoreGerarchie.inserisciNuovaGerarchia(gerarchia);
         }
     }
-    
+
     /**
      * Metodo che aggiunge eventuali sottocategorie (ricorsivamente)
      * a una specifica gerarchia che viene passata come parametro.
-     * 
-     * @param gerarchia la gerarchia alla quale si vogliono aggiungere 
+     *
+     * @param gerarchia la gerarchia alla quale si vogliono aggiungere
      *                  sottocategorie
      * @return gerarchia oggetto della classe GerarchiaDiCategorie
      * @see GerarchiaDiCategorie
@@ -72,7 +73,7 @@ public class GerarchiaService {
         }
         return gerarchia;
     }
-    
+
     /**
      * Metodo che chiede all'utente di inserire una categoria radice
      * con i suoi vari campi.
@@ -88,7 +89,7 @@ public class GerarchiaService {
 
         return new CategoriaRadice(nomeCatRad, descrizione, listaCampi);
     }
-    
+
     /**
      * Metodo che chiede all'utente di inserire una categoria figlio
      * con i suoi vari campi.
@@ -104,25 +105,29 @@ public class GerarchiaService {
 
         return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
     }
-    
+
     /**
      * Metodo per chiedere all'utente la conferma di inserimento
      * di una nuova gerarchia.
      *
      * @return TRUE se si conferma l'inserimento
-     *         FALSE se non si conferma l'inserimento
+     * FALSE se non si conferma l'inserimento
      */
     private boolean chiediConfermaInserimentoGerarchia() {
         return InputDati.yesOrNo("Vuoi inserire la nuova gerarchia?");
     }
-    
+
     /**
      * Metodo che visualizza le gerarchie che sono state caricate
      * nell'applicativo.
      */
     public void visualizzaGerarchie() {
         System.out.println("Elenco delle gerarchie caricate:");
-        this.gestoreGerarchie.getListaGerarchie()
-                .forEach(System.out::println);
+        if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
+            System.out.println("\tNessuna gerarchia presente.");
+        } else {
+            this.gestoreGerarchie.getListaGerarchie()
+                    .forEach(System.out::println);
+        }
     }
 }

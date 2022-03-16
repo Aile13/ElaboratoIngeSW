@@ -1,9 +1,7 @@
 package it.unibs.elabingesw.businesslogic.gestione;
 
-import com.google.gson.reflect.TypeToken;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -11,10 +9,10 @@ import java.util.List;
  */
 public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie> {
 
-    private static final String PATH = "Gerarchie";
+    private static final String FILE_NAME = "Gerarchie";
 
     public GestoreGerarchie() {
-        super(PATH);
+        super(FILE_NAME);
     }
 
     public List<GerarchiaDiCategorie> getListaGerarchie() {
