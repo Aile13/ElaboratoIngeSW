@@ -1,5 +1,7 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import it.unibs.elabingesw.businesslogic.gestione.Manageable;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -9,7 +11,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class Categoria implements Serializable {
+public class Categoria implements Manageable, Serializable {
     private final String nome;
     private final String descrizione;
     private final List<Campo> campiNativi;
@@ -55,10 +57,28 @@ public class Categoria implements Serializable {
      */
     @Override
     public String toString() {
-        return "Categoria{" +
-                "nome='" + nome + '\'' +
+        return  "nome='" + nome + '\'' +
                 ", descrizione='" + descrizione + '\'' +
-                ", campiNativi=" + campiNativi +
-                '}';
+                ", campiNativi=" + campiNativi;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Categoria categoria = (Categoria) o;
+
+        return getNome().equals(categoria.getNome());
+    }
+
+    @Override
+    public int hashCode() {
+        return getNome().hashCode();
+    }
+
+    @Override
+    public boolean isStessoNome(String nome) {
+        return this.getNome().equals(nome);
     }
 }

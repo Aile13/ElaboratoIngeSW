@@ -22,4 +22,9 @@ public final class CategoriaFiglio extends Categoria {
     public CategoriaFiglio(String nome, String descrizione, List<Campo> campiNativi) {
         super(nome, descrizione, campiNativi);
     }
+
+    @Override
+    public String toString() {
+        return "CategoriaFiglio{ " + super.toString() + " }";
+    }
 }

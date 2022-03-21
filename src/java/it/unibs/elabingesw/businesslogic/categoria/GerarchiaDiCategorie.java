@@ -7,40 +7,40 @@ import java.io.Serializable;
 /**
  * Classe GerarchiaDiCategorie che implementa l'interfaccia Manageable
  * e che gestisce una gerarchia di categorie.
- * 
+ *
  * @author Elia Pitozzi
  * @auhor Ali Laaraj
  */
 public class GerarchiaDiCategorie implements Manageable, Serializable {
-    private final Tree<Categoria> gerarchia;
-    
+    private final TreeNode<Categoria> gerarchia;
+
     /**
      * Costruttore privato di classe che accetta come parametro una
      * gerarchia (oggetto Tree<Categoria>).
-     * 
+     *
      * @param gerarchia
-     */ 
-    private GerarchiaDiCategorie(Tree<Categoria> gerarchia) {
+     */
+    private GerarchiaDiCategorie(TreeNode<Categoria> gerarchia) {
         this.gerarchia = gerarchia;
     }
-    
+
     /**
      * Costruttore di classe che accetta come parametro una categoria
      * radice.
-     * 
+     *
      * @param categoriaRadice
-     * @see Tree
+     * @see TreeNode
      */
     public GerarchiaDiCategorie(Categoria categoriaRadice) {
-        this(new Tree<>(categoriaRadice));
+        this(new TreeNode<>(categoriaRadice));
     }
-    
+
     /**
      * Metodo che permette di confrontare due oggetti.
      *
      * @param o un oggetto generico
      * @return TRUE se i due oggetti sono uguali
-     *         FALSE se i due oggetti sono diversi
+     * FALSE se i due oggetti sono diversi
      */
     @Override
     public boolean equals(Object o) {
@@ -51,7 +51,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
 
         return gerarchia.equals(that.gerarchia);
     }
-    
+
     /**
      * Metodo che fornisce il codice hash dell'oggetto.
      *
@@ -61,30 +61,30 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
     public int hashCode() {
         return gerarchia.hashCode();
     }
-    
+
     /**
      * Metodo implementato dall'interfaccia Manageable
      * che verifica se due gerarchie hanno lo stesso no-
      * me o meno.
-     * 
+     *
      * @param nome il nome della gerarchia
      * @return TRUE se i nomi sono uguali
-     *         FALSE se i nomi sono diversi
+     * FALSE se i nomi sono diversi
      */
     @Override
     public boolean isStessoNome(String nome) {
         return getNome().equals(nome);
     }
-    
+
     /**
      * Metodo getter.
-     * 
+     *
      * @return il nome della gerarchia
      */
     public String getNome() {
         return this.gerarchia.getDato().getNome();
     }
-    
+
     /**
      * Metodo per la formattazione che converte un oggetto nella re-
      * lativa rappresentazione di stringa.
@@ -93,21 +93,24 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "GerarchiaDiCategorie{" +
-                "nome='" + this.gerarchia.getDato().getNome() + '\'' +
-                ", gerarchia=" + gerarchia +
-                '}';
+        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" +
+                gerarchia.toStringAlbero()
+                + "}";
     }
-    
+
     /**
      * Metodo che aggiunge una categoria figlio passata come parametro
      * a una gerarchia di categorie.
-     * 
+     *
      * @param categoriaFiglio una categoria figlio
      * @return una gerarchia di categorie con all'interno la categoria figlio
      */
     public GerarchiaDiCategorie inserisciSottoCategoria(CategoriaFiglio categoriaFiglio) {
-        this.gerarchia.aggiungiFiglio(categoriaFiglio);
-        return new GerarchiaDiCategorie(categoriaFiglio);
+        TreeNode<Categoria> categoriaFiglioTreeNode = this.gerarchia.aggiungiFiglio(categoriaFiglio);
+        return new GerarchiaDiCategorie(categoriaFiglioTreeNode);
+    }
+
+    public boolean isNomeCategoriaUsato(String nomeCategoria) {
+        return gerarchia.isPresentTreeNodeByNome(nomeCategoria);
     }
 }

@@ -26,9 +26,7 @@ public class GerarchiaService {
      * @see GestoreGerarchie
      */
     public GerarchiaService(GestoreGerarchie gestoreGerarchie) {
-
         this.gestoreGerarchie = gestoreGerarchie;
-
     }
 
     /**
@@ -39,7 +37,7 @@ public class GerarchiaService {
         var categoriaRadice = chiediCategoriaRadice();
         var gerarchia = new GerarchiaDiCategorie(categoriaRadice);
 
-        gerarchia = aggiungiSottoCategorie(gerarchia);
+        aggiungiSottoCategorie(gerarchia);
 
         if (chiediConfermaInserimentoGerarchia()) {
             gestoreGerarchie.inserisciNuovaGerarchia(gerarchia);
@@ -55,23 +53,19 @@ public class GerarchiaService {
      * @return gerarchia oggetto della classe GerarchiaDiCategorie
      * @see GerarchiaDiCategorie
      */
-    private GerarchiaDiCategorie aggiungiSottoCategorie(GerarchiaDiCategorie gerarchia) {
+    private void aggiungiSottoCategorie(GerarchiaDiCategorie gerarchia) {
         if (InputDati.yesOrNo("Vuoi aggiungere una sotto-categoria per " + gerarchia.getNome() + "?")) {
-            CategoriaFiglio figlio = chiediCategoriaFiglio();
-            var gerarchiaFiglio = gerarchia.inserisciSottoCategoria(figlio);
+            var categoriaFiglio = chiediCategoriaFiglio(gerarchia);
+            var gerarchiaFiglio = gerarchia.inserisciSottoCategoria(categoriaFiglio);
 
-            if (InputDati.yesOrNo("Vuoi aggiungervi una sotto-categoria alla gerarchia figlia?")) {
-                var gerarchiaDiCategorie = aggiungiSottoCategorie(gerarchiaFiglio);
-                while (InputDati.yesOrNo("Vuoi aggiungervi un'altra sotto-categoria?")) {
-                    aggiungiSottoCategorie(gerarchiaDiCategorie);
-                }
-            }
+            aggiungiSottoCategorie(gerarchiaFiglio);
 
-            while (InputDati.yesOrNo("Vuoi aggiungere un'altra sotto categoria per " + gerarchia.getNome() + "?")) {
-                gerarchia.inserisciSottoCategoria(chiediCategoriaFiglio());
+            while (InputDati.yesOrNo("Vuoi aggiungere un'altra sotto-categoria per " + gerarchia.getNome() + "?")) {
+                var altraCategoriaFiglio = chiediCategoriaFiglio(gerarchia);
+                var altraGerarchiaFiglio = gerarchia.inserisciSottoCategoria(altraCategoriaFiglio);
+                aggiungiSottoCategorie(altraGerarchiaFiglio);
             }
         }
-        return gerarchia;
     }
 
     /**
@@ -82,12 +76,17 @@ public class GerarchiaService {
      * @see @CampoService
      */
     private CategoriaRadice chiediCategoriaRadice() {
-        var nomeCatRad = InputDati.leggiStringaNonVuota("Inserisci nome della categoria radice: ");
+        var nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Inserisci nome della categoria radice: ");
+        // check se nome già usato o meno tra le altre gerarchia
+        while (gestoreGerarchie.isElementoInListaByNome(nomeCategoriaRadice)) {
+            System.out.println("Errore nome categoria radice già usato: riprovare.");
+            nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Reinserisci nome della categoria radice: ");
+        }
         var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria radice: ");
 
         var listaCampi = CampoService.chiediListaDiCampi();
 
-        return new CategoriaRadice(nomeCatRad, descrizione, listaCampi);
+        return new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi);
     }
 
     /**
@@ -96,11 +95,15 @@ public class GerarchiaService {
      *
      * @return una categoria figlio
      * @see @CampoService
+     * @param gerarchia
      */
-    private CategoriaFiglio chiediCategoriaFiglio() {
+    private CategoriaFiglio chiediCategoriaFiglio(GerarchiaDiCategorie gerarchia) {
         var nomeCatFigl = InputDati.leggiStringaNonVuota("Inserisci nome della categoria figlio: ");
-        var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria radice: ");
-
+        while (gerarchia.isNomeCategoriaUsato(nomeCatFigl)) {
+            System.out.println("Errore nome categoria figlio già usato: riprovare.");
+            nomeCatFigl = InputDati.leggiStringaNonVuota("Reinserisci nome della categoria radice: ");
+        }
+        var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria figlio: ");
         var listaCampi = CampoService.chiediListaDiCampi();
 
         return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
@@ -126,8 +129,7 @@ public class GerarchiaService {
         if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
             System.out.println("\tNessuna gerarchia presente.");
         } else {
-            this.gestoreGerarchie.getListaGerarchie()
-                    .forEach(System.out::println);
+            this.gestoreGerarchie.getListaGerarchie().forEach(System.out::println);
         }
     }
 }

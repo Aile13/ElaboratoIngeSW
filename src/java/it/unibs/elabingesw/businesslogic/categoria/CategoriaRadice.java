@@ -23,4 +23,9 @@ public final class CategoriaRadice extends Categoria {
         super(nome, descrizione, campiNativi);
         this.inserisciCampiNativi(Campo.getCampiDiDefault());
     }
+
+    @Override
+    public String toString() {
+        return "CategoriaRadice{ " + super.toString() + " }";
+    }
 }
