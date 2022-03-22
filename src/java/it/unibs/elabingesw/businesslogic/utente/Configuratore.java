@@ -34,11 +34,12 @@ final public class Configuratore extends Utente {
     }
     
     /**
-     * Metodo ....
+     * Metodo che controlla se il configuratore con lo username
+     * passato per parametro è di default o meno.
      *
      * @param username lo username del configuratore
-     * @return TRUE
-     *         FALSE
+     * @return TRUE se il configuratore è di default
+     *         FALSE se il configuratore non è di default
      */
     public static boolean isDefaultConfiguratoreByUsername(String username) {
         return getDefaultConfiguratore().isStessoNome(username);
