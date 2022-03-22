@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
- * Classe Tree che serve per rappresentare una generica struttura
+ * Classe TreeNode che serve per rappresentare una generica struttura
  * ad albero.
  *
  * @author Elia Pitozzi
@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public final class TreeNode<T extends Manageable> implements Serializable {
     private final T dato;
     private final TreeNode<T> parent;
-    private final List<TreeNode<T>> listaFigli;  //perch questo è final? perchè final è bello!
+    private final List<TreeNode<T>> listaFigli;  
 
     /**
      * Costruttore di classe che accetta come parametro un generico
@@ -45,7 +45,12 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     public T getDato() {
         return dato;
     }
-
+    
+    /**
+     * Metodo che restituisce la radice di un albero.
+     *
+     * @return la radice dell'albero
+     */
     private TreeNode<T> getRoot() {
         if (this.parent == null) {
             return this;
@@ -53,12 +58,19 @@ public final class TreeNode<T extends Manageable> implements Serializable {
             return this.parent.getRoot();
         }
     }
-
+    
+    /**
+     * Metodo che permette di cercare un nodo dato il suo
+     * nome passato come parametro.
+     *
+     * @param nome il nome del nodo
+     * @return il nodo cercato
+     */
     private Optional<TreeNode<T>> trovaTreeNodeByNomeFromThis(String nome) {
         if (this.dato.isStessoNome(nome)) {
             return Optional.of(this);
         }
-        //listaFigli.stream().filter(tTreeNode -> tTreeNode.dato.equals(dato)).findFirst().ifPresent(tTreeNode -> re);
+        
         for (TreeNode<T> figlio : listaFigli) {
             if (figlio.trovaTreeNodeByNomeFromThis(nome).isPresent()) {
                 return figlio.trovaTreeNodeByNomeFromThis(nome);
@@ -67,13 +79,28 @@ public final class TreeNode<T extends Manageable> implements Serializable {
 
         return Optional.empty();
     }
-
+    
+    /**
+     * Metodo che permette di cercare un nodo dato il suo
+     * nome partendo dalla radice dell'albero.
+     *
+     * @param nome il nome del nodo
+     * @return il nodo cercato
+     */
     private Optional<TreeNode<T>> trovaTreeNodeByNomeFromRoot(String nome) {
         // inizia a cercare da root
         var root = this.getRoot();
         return root.trovaTreeNodeByNomeFromThis(nome);
     }
-
+    
+    /**
+     * Metodo che controlla se un nodo con nome passato come 
+     * parametro sia presente o meno nell'albero.
+     *
+     * @param nome il nome del nodo
+     * @return TRUE se il nodo cercato è presente nell'albero
+     *         FALSE se il nodo cercato non è presente nell'albero
+     */
     public boolean isPresentTreeNodeByNome(String nome) {
         return this.trovaTreeNodeByNomeFromRoot(nome).isPresent();
     }
@@ -90,12 +117,10 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     }
 
     /**
-     * Metodo che controlla se una categoria è foglia.
+     * Metodo che converte un albero in stringa.
      *
-     * @return TRUE se la categoria è foglia
-     * FALSE se la categoria non è foglia
+     * @return stringa dell'albero convertito
      */
-
     public String toStringAlbero() {
         StringBuilder builder = new StringBuilder("\t");
         builder.append(dato).append("\n");
@@ -107,7 +132,13 @@ public final class TreeNode<T extends Manageable> implements Serializable {
                         .append("\n"));
         return builder.toString();
     }
-
+    
+    /**
+     * Metodo che indenta di uno una stringa passata come
+     * parametro.
+     *
+     * @return la stringa indentata
+     */
     private String indentaDiUno(String singleLine) {
         return "\t" + singleLine;
     }
