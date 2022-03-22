@@ -23,7 +23,13 @@ public final class CategoriaRadice extends Categoria {
         super(nome, descrizione, campiNativi);
         this.inserisciCampiNativi(Campo.getCampiDiDefault());
     }
-
+    
+    /**
+     * Metodo per la formattazione che converte un oggetto nella re-
+     * lativa rappresentazione di stringa.
+     *
+     * @return stringa dell'oggetto convertito
+     */
     @Override
     public String toString() {
         return "CategoriaRadice{ " + super.toString() + " }";
