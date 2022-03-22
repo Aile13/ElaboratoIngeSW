@@ -114,7 +114,7 @@ public class GerarchiaService {
      * di una nuova gerarchia.
      *
      * @return TRUE se si conferma l'inserimento
-     * FALSE se non si conferma l'inserimento
+     *         FALSE se non si conferma l'inserimento
      */
     private boolean chiediConfermaInserimentoGerarchia() {
         return InputDati.yesOrNo("Vuoi inserire la nuova gerarchia?");
