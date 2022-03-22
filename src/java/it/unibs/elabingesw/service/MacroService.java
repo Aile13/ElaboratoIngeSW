@@ -30,7 +30,7 @@ public class MacroService {
     }
     
     /**
-     * Metodo che salva utenti e gerarchie su file JSON.
+     * Metodo che salva utenti e gerarchie su file.
      * @see GestoreUtenti
      * @see GestoreGerarchie
      */
