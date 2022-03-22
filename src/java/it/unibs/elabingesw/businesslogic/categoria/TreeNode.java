@@ -24,13 +24,21 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     /**
      * Costruttore di classe che accetta come parametro un generico
      * dato (nel nostro caso sarà una categoria).
+     *
+     * @param dato
      */
     public TreeNode(T dato) {
         this.dato = dato;
         this.parent = null;
         this.listaFigli = new ArrayList<>();
     }
-
+    
+    /**
+     * Costruttore privato di classe.
+     *
+     * @param dato
+     * @param albero
+     */
     private TreeNode(T dato, TreeNode<T> parent) {
         this.dato = dato;
         this.parent = parent;
