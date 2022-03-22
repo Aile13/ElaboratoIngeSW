@@ -109,7 +109,14 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
         TreeNode<Categoria> categoriaFiglioTreeNode = this.gerarchia.aggiungiFiglio(categoriaFiglio);
         return new GerarchiaDiCategorie(categoriaFiglioTreeNode);
     }
-
+    
+    /**
+     * Metodo che controlla se il nome di una categoria passato
+     * come parametro sia già stato utilizzato o meno.
+     *
+     * @return TRUE se il nome della categoria è già utilizzato
+     *         FALSE se il nome della categoria non è già utilizzato
+     */
     public boolean isNomeCategoriaUsato(String nomeCategoria) {
         return gerarchia.isPresentTreeNodeByNome(nomeCategoria);
     }
