@@ -1,7 +1,10 @@
 package it.unibs.elabingesw;
 
 /**
- * @author Elia
+ * Classe Main.
+ * 
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class Main {
 
