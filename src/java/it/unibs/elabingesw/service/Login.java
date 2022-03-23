@@ -60,7 +60,6 @@ public class Login {
             }
 
         } while (ricontrolla);
-
     }
     
     /**
