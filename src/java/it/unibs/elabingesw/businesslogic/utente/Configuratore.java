@@ -22,7 +22,12 @@ final public class Configuratore extends Utente {
     public Configuratore(String username, String password) {
         super(username, password);
     }
-    
+
+    @Override
+    public UserType getUserType() {
+        return UserType.CONFIGURATORE;
+    }
+
     /**
      * Metodo che restituisce un configuratore di default con username
      * "nuovoConfiguratore" e password "default".

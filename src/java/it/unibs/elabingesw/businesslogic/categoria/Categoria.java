@@ -81,4 +81,9 @@ public class Categoria implements Manageable, Serializable {
     public boolean isStessoNome(String nome) {
         return this.getNome().equals(nome);
     }
+
+    public String toStringRidotto() {
+        return "nome='" + nome + '\'' +
+                ", descrizione='" + descrizione + '\'';
+    }
 }

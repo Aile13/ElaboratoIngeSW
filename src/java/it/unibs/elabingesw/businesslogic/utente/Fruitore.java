@@ -15,4 +15,9 @@ final public class Fruitore extends Utente {
     public Fruitore(String username, String password) {
         super(username, password);
     }
+
+    @Override
+    public UserType getUserType() {
+        return UserType.FRUITORE;
+    }
 }

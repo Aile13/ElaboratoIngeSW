@@ -4,7 +4,7 @@ import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
 import it.unibs.elabingesw.service.Benvenuto;
 import it.unibs.elabingesw.service.Login;
-import it.unibs.elabingesw.service.MacroService;
+import it.unibs.elabingesw.service.MacroServices;
 import it.unibs.elabingesw.service.MainMenu;
 
 /**
@@ -13,15 +13,15 @@ import it.unibs.elabingesw.service.MainMenu;
 public class App {
 
     public void run() {
-        GestoreUtenti gestoreUtenti = new GestoreUtenti();
-        GestoreGerarchie gestoreGerarchie = new GestoreGerarchie();
+        final var gestoreUtenti = new GestoreUtenti();
+        final var gestoreGerarchie = new GestoreGerarchie();
 
-        Login login = new Login(gestoreUtenti);
-        MacroService macroService = new MacroService(gestoreUtenti, gestoreGerarchie);
-        MainMenu menu = new MainMenu(macroService);
+        final var login = new Login(gestoreUtenti);
+        final var macroServices = new MacroServices(gestoreUtenti, gestoreGerarchie);
+        final var menu = new MainMenu(macroServices);
 
         Benvenuto.saluta();
         login.eseguiLogin();
-        menu.eseguiMenu();
+        menu.eseguiMenuByUserType(login.getUserType());
     }
 }

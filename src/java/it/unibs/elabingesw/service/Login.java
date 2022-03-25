@@ -1,6 +1,7 @@
 package it.unibs.elabingesw.service;
 
 import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
+import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
@@ -12,14 +13,15 @@ import it.unibs.eliapitozzi.mylib.InputDati;
  */
 public class Login {
     private final GestoreUtenti gestoreUtenti;
-    
+    private UserType userType;
+
     /**
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreUtenti.
-     * 
+     *
      * @param gestoreUtenti
      * @see GestoreUtenti
-     */ 
+     */
     public Login(GestoreUtenti gestoreUtenti) {
         this.gestoreUtenti = gestoreUtenti;
     }
@@ -37,31 +39,40 @@ public class Login {
     public void eseguiLogin() {
         boolean ricontrolla;
         do {
-            ricontrolla = false;
-            String username = InputDati.leggiStringaNonVuota("Inserisci username: ");
+            ricontrolla = true;
+            var username = InputDati.leggiStringaNonVuota("Inserisci username: ");
 
             if (gestoreUtenti.isUtenteRegistrato(username)) {
-                String password = InputDati.leggiStringaNonVuota("Inserisci password: ");
-
+                var password = InputDati.leggiStringaNonVuota("Inserisci password: ");
                 if (gestoreUtenti.isUtenteValido(username, password)) {
                     System.out.println("Accesso corretto.");
-
                     if (gestoreUtenti.isDefaultConfiguratore(username)) {
                         creaNuovoConfiguratore();
-                        ricontrolla = true;
+                    } else {
+                        this.userType = gestoreUtenti.getUserTypeByNome(username);
+                        ricontrolla = false;
                     }
-                } else {
+                } else
                     System.out.println("Errore: password inserita non valida. Riprovare.");
-                    ricontrolla = true;
-                }
             } else {
-                System.out.println("Errore: utente inserito non presente. Riprovare.");
-                ricontrolla = true;
+                System.out.println("Errore: utente inserito non presente.");
+                if (chiediSeCreareNuovoFruitore())
+                    creaNuovoFruitore(username);
             }
-
         } while (ricontrolla);
     }
-    
+
+    private void creaNuovoFruitore(String username) {
+        System.out.println("Procedura di creazione nuovo fruitore avviata.");
+        var password = InputDati.leggiStringaNonVuota("Imposta password per " + username + ": ");
+        gestoreUtenti.inserisciNuovoFruitore(username, password);
+        System.out.println("Nuovo fruitore aggiunto, ora accedi.");
+    }
+
+    private boolean chiediSeCreareNuovoFruitore() {
+        return InputDati.yesOrNo("Si desidera registrarsi come nuovo fruitore? ");
+    }
+
     /**
      * Metodo che permette di creare un nuovo configuratore: devo-
      * no essere inseriti uno username adatto (non già utilizzato
@@ -85,5 +96,9 @@ public class Login {
                 System.out.println("Nuovo configuratore aggiunto, ora accedi.");
             }
         } while (ricontrolla);
+    }
+
+    public UserType getUserType() {
+        return userType;
     }
 }

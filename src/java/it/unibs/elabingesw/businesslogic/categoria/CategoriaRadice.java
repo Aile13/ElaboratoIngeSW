@@ -28,4 +28,9 @@ public final class CategoriaRadice extends Categoria {
     public String toString() {
         return "CategoriaRadice{ " + super.toString() + " }";
     }
+
+    @Override
+    public String toStringRidotto() {
+        return "CategoriaRadice{ " + super.toStringRidotto() + " }";
+    }
 }

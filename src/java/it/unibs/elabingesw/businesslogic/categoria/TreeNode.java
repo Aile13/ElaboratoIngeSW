@@ -97,18 +97,18 @@ public final class TreeNode<T extends Manageable> implements Serializable {
      */
 
     public String toStringAlbero() {
-        StringBuilder builder = new StringBuilder("\t");
+        var builder = new StringBuilder("\t");
         builder.append(dato).append("\n");
         listaFigli.forEach(tTreeNode ->
                 builder.append(
                                 Arrays.stream(
                                         tTreeNode.toStringAlbero().split("\n")
-                                ).map(this::indentaDiUno).collect(Collectors.joining("\n")))
+                                ).map(this::indentaLineaDiUnTab).collect(Collectors.joining("\n")))
                         .append("\n"));
         return builder.toString();
     }
 
-    private String indentaDiUno(String singleLine) {
+    private String indentaLineaDiUnTab(String singleLine) {
         return "\t" + singleLine;
     }
 

@@ -124,12 +124,23 @@ public class GerarchiaService {
      * Metodo che visualizza le gerarchie che sono state caricate
      * nell'applicativo.
      */
-    public void visualizzaGerarchie() {
+    public void visualizzaGerarchieInFormaEstesa() {
         System.out.println("Elenco delle gerarchie caricate:");
         if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
             System.out.println("\tNessuna gerarchia presente.");
         } else {
             this.gestoreGerarchie.getListaGerarchie().forEach(System.out::println);
+        }
+    }
+
+    public void visualizzaGerarchieInFormaRidotta() {
+        System.out.println("Elenco delle gerarchie caricate:");
+        if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
+            System.out.println("\tNessuna gerarchia presente.");
+        } else {
+            this.gestoreGerarchie.getListaGerarchie().forEach(
+                    gerarchiaDiCategorie -> System.out.println(gerarchiaDiCategorie.toStringRidotto())
+            );
         }
     }
 }

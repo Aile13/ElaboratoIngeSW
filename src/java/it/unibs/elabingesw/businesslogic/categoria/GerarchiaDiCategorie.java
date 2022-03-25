@@ -113,4 +113,10 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
     public boolean isNomeCategoriaUsato(String nomeCategoria) {
         return gerarchia.isPresentTreeNodeByNome(nomeCategoria);
     }
+
+    public String toStringRidotto() {
+        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" +
+                '\t' + this.gerarchia.getDato().toStringRidotto() + '\n'
+                + "}";
+    }
 }

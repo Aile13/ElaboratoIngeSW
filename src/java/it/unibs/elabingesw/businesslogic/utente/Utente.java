@@ -100,4 +100,7 @@ public abstract class Utente implements Manageable, Serializable {
     public int hashCode() {
         return Objects.hash(getUsername());
     }
+
+    public abstract UserType getUserType();
+
 }

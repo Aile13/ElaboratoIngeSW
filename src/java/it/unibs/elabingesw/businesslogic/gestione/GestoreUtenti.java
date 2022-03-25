@@ -1,6 +1,8 @@
 package it.unibs.elabingesw.businesslogic.gestione;
 
 import it.unibs.elabingesw.businesslogic.utente.Configuratore;
+import it.unibs.elabingesw.businesslogic.utente.Fruitore;
+import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 
 /**
@@ -26,7 +28,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
     }
 
     public boolean isUtenteValido(String username, String password) {
-        if (this.isElementoInListaByNome(username)) {
+        if (this.trovaElementoConNome(username).isPresent()) {
             return this.trovaElementoConNome(username).get().isPasswordCorretta(password);
         } else return false;
     }
@@ -43,4 +45,14 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
         salvaDati();
     }
 
+    public void inserisciNuovoFruitore(String username, String password) {
+        inserisciElemento(new Fruitore(username, password));
+    }
+
+    public UserType getUserTypeByNome(String username) {
+        if (trovaElementoConNome(username).isPresent()) {
+            return trovaElementoConNome(username).get().getUserType();
+        }
+        else return null;
+    }
 }

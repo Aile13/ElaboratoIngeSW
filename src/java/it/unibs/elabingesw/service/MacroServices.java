@@ -9,7 +9,7 @@ import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class MacroService {
+public class MacroServices {
     private final GestoreUtenti gestoreUtenti;
     private final GestoreGerarchie gestoreGerarchie;
     private final GerarchiaService gerarchiaService;
@@ -23,7 +23,7 @@ public class MacroService {
      * @see GestoreUtenti
      * @see GestoreGerarchie
      */
-    public MacroService(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie) {
+    public MacroServices(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie) {
         this.gestoreUtenti = gestoreUtenti;
         this.gestoreGerarchie = gestoreGerarchie;
         this.gerarchiaService = new GerarchiaService(this.gestoreGerarchie);
@@ -63,8 +63,12 @@ public class MacroService {
      *
      * @see GerarchiaService
      */
-    public void visualizzaGerarchie() {
-       this.gerarchiaService.visualizzaGerarchie();
+    public void visualizzaGerarchieFormaEstesa() {
+       this.gerarchiaService.visualizzaGerarchieInFormaEstesa();
 
+    }
+
+    public void visualizzaGerarchieFormaRidotta() {
+     this.gerarchiaService.visualizzaGerarchieInFormaRidotta();
     }
 }
