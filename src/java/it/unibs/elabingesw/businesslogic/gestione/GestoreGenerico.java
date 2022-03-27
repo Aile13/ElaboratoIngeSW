@@ -10,7 +10,7 @@ import java.util.Optional;
 /**
  * @author Elia
  */
-abstract class GestoreGenerico<T extends Manageable> {
+abstract class GestoreGenerico<T extends Manageable & Serializable> {
     private final String pathRepository;
     private final String dataDir = "./Dati/";
     private final List<T> listaElementi;
