@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.service;
+package it.unibs.elabingesw.mainservice;
 
 import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.eliapitozzi.mylib.MyFunctionalMenu;
@@ -43,14 +43,15 @@ public class MainMenu {
                     new VoceEComando[]{
                             new VoceEComando("Esci", service::eseguiProceduraDiUscita),
                             new VoceEComando("Crea nuova gerarchia", service::creaNuovaGerarchia),
-                            new VoceEComando("Visualizza gerarchie", service::visualizzaGerarchieFormaEstesa)
+                            new VoceEComando("Visualizza gerarchie", service::visualizzaGerarchieFormaEstesa),
+                            new VoceEComando("Imposta info di scambio", service::impostaInfoDiScambio)
                     });
         } else {
             functionalMenu = new MyFunctionalMenu("Menu per Fruitore",
                     new VoceEComando[]{
                             new VoceEComando("Esci", service::eseguiProceduraDiUscita),
                             new VoceEComando("Visualizza gerarchie", service::visualizzaGerarchieFormaRidotta),
-                            new VoceEComando("Visualizza info scambi", service::visualizzaGerarchieFormaEstesa)
+                            new VoceEComando("Visualizza info di scambio", service::visualizzaInfoDiScambio)
                     });
         }
         functionalMenu.eseguiMenu();

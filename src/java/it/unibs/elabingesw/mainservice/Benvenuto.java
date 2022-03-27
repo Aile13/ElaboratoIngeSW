@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.service;
+package it.unibs.elabingesw.mainservice;
 
 /**
  * Classe Benvenuto con al suo interno un metodo statico saluta()

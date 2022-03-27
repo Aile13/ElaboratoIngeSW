@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.service;
+package it.unibs.elabingesw.subservice;
 
 import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.eliapitozzi.mylib.InputDati;
@@ -21,7 +21,6 @@ public class CampoService {
      * l'utente inserisce nell'applicativo.
      *
      * @return la lista dei campi inseriti dall'utente
-     * @see campo
      */
     public static List<Campo> chiediListaDiCampi() {
         List<Campo> campi = new ArrayList<>();

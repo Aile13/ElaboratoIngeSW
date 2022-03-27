@@ -1,12 +1,15 @@
 package it.unibs.elabingesw.businesslogic.scambio;
 
+import it.unibs.elabingesw.businesslogic.gestione.Manageable;
+
+import java.io.Serializable;
 import java.time.DayOfWeek;
 import java.util.List;
 
 /**
  * @author Elia
  */
-public class Scambio {
+public class Scambio implements Manageable, Serializable {
     private final String piazza;
     private final List<String> luoghi;
     private final List<DayOfWeek> giorni;
@@ -17,5 +20,10 @@ public class Scambio {
         this.luoghi = luoghi;
         this.giorni = giorni;
         this.intervalliOrari = intervalliOrari;
+    }
+
+    @Override
+    public boolean isStessoNome(String piazza) {
+        return this.piazza.equals(piazza);
     }
 }

@@ -1,9 +1,10 @@
-package it.unibs.elabingesw.service;
+package it.unibs.elabingesw.subservice;
 
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
+import it.unibs.elabingesw.subservice.CampoService;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**

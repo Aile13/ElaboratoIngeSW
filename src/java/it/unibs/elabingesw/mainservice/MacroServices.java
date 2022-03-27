@@ -1,7 +1,10 @@
-package it.unibs.elabingesw.service;
+package it.unibs.elabingesw.mainservice;
 
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
+import it.unibs.elabingesw.subservice.GerarchiaService;
+import it.unibs.elabingesw.subservice.ScambioService;
 
 /**
  * Classe MacroService di gestione generale.
@@ -12,7 +15,9 @@ import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
 public class MacroServices {
     private final GestoreUtenti gestoreUtenti;
     private final GestoreGerarchie gestoreGerarchie;
+    private final GestoreScambio gestoreScambio;
     private final GerarchiaService gerarchiaService;
+    private final ScambioService scambioService;
     
     /**
      * Costruttore di classe, accetta come parametri un oggetto di
@@ -20,13 +25,16 @@ public class MacroServices {
      *
      * @param gestoreUtenti
      * @param gestoreGerarchie
+     * @param gestoreScambio
      * @see GestoreUtenti
      * @see GestoreGerarchie
      */
-    public MacroServices(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie) {
+    public MacroServices(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
         this.gestoreUtenti = gestoreUtenti;
         this.gestoreGerarchie = gestoreGerarchie;
+        this.gestoreScambio = gestoreScambio;
         this.gerarchiaService = new GerarchiaService(this.gestoreGerarchie);
+        this.scambioService = new ScambioService(this.gestoreScambio);
     }
     
     /**
@@ -37,6 +45,7 @@ public class MacroServices {
     private void eseguiSalvataggio() {
         gestoreUtenti.salvaUtenti();
         gestoreGerarchie.salvaGerarchie();
+        gestoreScambio.salvaInfoScambio();
     }
     
     /**
@@ -70,5 +79,13 @@ public class MacroServices {
 
     public void visualizzaGerarchieFormaRidotta() {
      this.gerarchiaService.visualizzaGerarchieInFormaRidotta();
+    }
+
+    public void visualizzaInfoDiScambio() {
+
+    }
+
+    public void impostaInfoDiScambio() {
+
     }
 }

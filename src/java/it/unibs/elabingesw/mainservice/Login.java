@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.service;
+package it.unibs.elabingesw.mainservice;
 
 import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
 import it.unibs.elabingesw.businesslogic.utente.UserType;
