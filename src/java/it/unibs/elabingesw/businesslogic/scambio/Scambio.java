@@ -11,19 +11,41 @@ import java.util.List;
  */
 public class Scambio implements Manageable, Serializable {
     private final String piazza;
-    private final List<String> luoghi;
+    private final List<String> listaLuoghi;
     private final List<DayOfWeek> giorni;
     private final List<IntervalloOrario> intervalliOrari;
+    private final int Scadenza;
 
-    public Scambio(String piazza, List<String> luoghi, List<DayOfWeek> giorni, List<IntervalloOrario> intervalliOrari) {
+    public Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> giorni, List<IntervalloOrario> intervalliOrari, int scadenza) {
         this.piazza = piazza;
-        this.luoghi = luoghi;
+        this.listaLuoghi = listaLuoghi;
         this.giorni = giorni;
         this.intervalliOrari = intervalliOrari;
+        Scadenza = scadenza;
     }
 
     @Override
     public boolean isStessoNome(String piazza) {
         return this.piazza.equals(piazza);
+    }
+
+    @Override
+    public String toString() {
+        return "Scambio{" + "\n" +
+                "\tpiazza='" + piazza + "',\n" +
+                "\tlistaLuoghi=" + listaLuoghi + ",\n" +
+                "\tgiorni=" + giorni + "\n" +
+                "\tintervalliOrari=" + intervalliOrari + ",\n" +
+                "\tScadenza=" + Scadenza + "\n" +
+                '}';
+    }
+
+    public String toStringFormaRidotta() {
+        return "Scambio{" + "\n" +
+                "\tpiazza='" + piazza + "',\n" +
+                "\tlistaLuoghi=" + listaLuoghi + ",\n" +
+                "\tgiorni=" + giorni + ",\n" +
+                "\tintervalliOrari=" + intervalliOrari + "\n" +
+                '}';
     }
 }

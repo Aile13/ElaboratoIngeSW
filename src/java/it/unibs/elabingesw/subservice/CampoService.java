@@ -14,7 +14,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class CampoService {
+class CampoService {
     
     /**
      * Metodo statico che ritorna la lista dei campi che

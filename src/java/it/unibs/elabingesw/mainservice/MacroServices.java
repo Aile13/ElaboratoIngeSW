@@ -74,18 +74,21 @@ public class MacroServices {
      */
     public void visualizzaGerarchieFormaEstesa() {
        this.gerarchiaService.visualizzaGerarchieInFormaEstesa();
-
     }
 
     public void visualizzaGerarchieFormaRidotta() {
      this.gerarchiaService.visualizzaGerarchieInFormaRidotta();
     }
 
-    public void visualizzaInfoDiScambio() {
+    public void visualizzaInfoDiScambioFormaEstesa() {
+        this.scambioService.visualizzaInfoDiScambioFormaEstesa();
+    }
 
+    public void visualizzaInfoDiScambioFormaRidotta() {
+        this.scambioService.visualizzaInfoDiScambioFormaRidotta();
     }
 
     public void impostaInfoDiScambio() {
-
+        this.scambioService.impostaInfoScambio();
     }
 }
