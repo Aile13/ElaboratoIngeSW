@@ -61,7 +61,14 @@ public class Categoria implements Manageable, Serializable {
                 ", descrizione='" + descrizione + '\'' +
                 ", campiNativi=" + campiNativi;
     }
-
+    
+    /**
+     * Metodo che permette di confrontare due oggetti.
+     *
+     * @param o un oggetto generico
+     * @return TRUE se i due oggetti sono uguali
+     *         FALSE se i due oggetti sono diversi
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -71,17 +78,37 @@ public class Categoria implements Manageable, Serializable {
 
         return getNome().equals(categoria.getNome());
     }
-
+    
+    /**
+     * Metodo che fornisce il codice hash dell'oggetto.
+     *
+     * @return l'hashcode dell'oggetto gerarchia
+     */
     @Override
     public int hashCode() {
         return getNome().hashCode();
     }
-
+    
+    /**
+     * Metodo implementato dall'interfaccia Manageable
+     * che verifica se due gerarchie hanno lo stesso no-
+     * me o meno.
+     *
+     * @param nome il nome della gerarchia
+     * @return TRUE se i nomi sono uguali
+     *         FALSE se i nomi sono diversi
+     */
     @Override
     public boolean isStessoNome(String nome) {
         return this.getNome().equals(nome);
     }
-
+    
+    /**
+     * Metodo toString ridotto in cui mostro a video
+     * solo il nome e la descrizione della categoria.
+     *
+     * @return stringa dell'oggetto convertito
+     */
     public String toStringRidotto() {
         return "nome='" + nome + '\'' +
                 ", descrizione='" + descrizione + '\'';
