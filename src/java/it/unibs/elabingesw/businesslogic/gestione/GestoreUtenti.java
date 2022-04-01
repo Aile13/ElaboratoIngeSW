@@ -55,4 +55,11 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
         }
         else return null;
     }
+
+    public Utente getUserByNome(String username) {
+        if (trovaElementoConNome(username).isPresent()) {
+            return trovaElementoConNome(username).get();
+        }
+        else return null;
+    }
 }

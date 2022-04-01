@@ -3,10 +3,7 @@ package it.unibs.elabingesw.businesslogic.categoria;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -46,6 +43,10 @@ public final class TreeNode<T extends Manageable> implements Serializable {
         return dato;
     }
 
+    private TreeNode<T> getParent() {
+        return parent;
+    }
+
     private TreeNode<T> getRoot() {
         if (this.parent == null) {
             return this;
@@ -54,11 +55,28 @@ public final class TreeNode<T extends Manageable> implements Serializable {
         }
     }
 
+    private List<T> getListOfDataInTreeNodeFogliaFromThis() {
+        if (this.listaFigli.isEmpty()) {
+            return List.of(this.dato);
+        } else {
+            List<T> listaDatiFoglia = new LinkedList<>();
+            for (TreeNode<T> figlio : listaFigli) {
+                listaDatiFoglia.addAll(figlio.getListOfDataInTreeNodeFogliaFromThis());
+            }
+            return listaDatiFoglia;
+        }
+    }
+
+    public List<T> getListOfDataInTreeNodeFogliaFromRoot() {
+        var root = this.getRoot();
+        return root.getListOfDataInTreeNodeFogliaFromThis();
+    }
+
     private Optional<TreeNode<T>> trovaTreeNodeByNomeFromThis(String nome) {
         if (this.dato.isStessoNome(nome)) {
             return Optional.of(this);
         }
-        //listaFigli.stream().filter(tTreeNode -> tTreeNode.dato.equals(dato)).findFirst().ifPresent(tTreeNode -> re);
+
         for (TreeNode<T> figlio : listaFigli) {
             if (figlio.trovaTreeNodeByNomeFromThis(nome).isPresent()) {
                 return figlio.trovaTreeNodeByNomeFromThis(nome);
@@ -123,5 +141,25 @@ public final class TreeNode<T extends Manageable> implements Serializable {
         this.listaFigli.add(figlioTreeNode);
 
         return figlioTreeNode;
+    }
+
+    public List<T> getListOfDataInTreeNodePadriByNome(String nome) {
+        var opTreeNode = trovaTreeNodeByNomeFromRoot(nome);
+        if (opTreeNode.isPresent()) {
+            return getListOfDataInTreeNodePadriByTreeNode(opTreeNode.get());
+        } else return List.of();
+    }
+
+    private List<T> getListOfDataInTreeNodePadriByTreeNode(TreeNode<T> treeNode) {
+        List<T> listaDiData = new LinkedList<>();
+        if (!treeNode.isRoot()) {
+            listaDiData.add(treeNode.getParent().getDato());
+            listaDiData.addAll(getListOfDataInTreeNodePadriByTreeNode(treeNode.getParent()));
+        }
+        return listaDiData;
+    }
+
+    private boolean isRoot() {
+        return this.parent == null;
     }
 }

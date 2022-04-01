@@ -72,7 +72,6 @@ public abstract class Utente implements Manageable, Serializable {
     public String toString() {
         return "Utente{" +
                 "username='" + username + '\'' +
-                ", password='" + password + '\'' +
                 '}';
     }
     

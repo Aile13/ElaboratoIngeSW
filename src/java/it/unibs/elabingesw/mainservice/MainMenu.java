@@ -45,14 +45,21 @@ public class MainMenu {
                             new VoceEComando("Crea nuova gerarchia", service::creaNuovaGerarchia),
                             new VoceEComando("Visualizza gerarchie", service::visualizzaGerarchieFormaEstesa),
                             new VoceEComando("Imposta info di scambio", service::impostaInfoDiScambio),
-                            new VoceEComando("Visualizza info di scambio", service::visualizzaInfoDiScambioFormaEstesa)
+                            new VoceEComando("Visualizza info di scambio", service::visualizzaInfoDiScambioFormaEstesa),
+                            new VoceEComando("Visualzza offerte aperte di categoria foglia",
+                                    service::visualizzaOfferteAperteConSelezioneFoglia)
                     });
         } else {
             functionalMenu = new MyFunctionalMenu("Menu per Fruitore",
                     new VoceEComando[]{
                             new VoceEComando("Esci", service::eseguiProceduraDiUscita),
                             new VoceEComando("Visualizza gerarchie", service::visualizzaGerarchieFormaRidotta),
-                            new VoceEComando("Visualizza info di scambio", service::visualizzaInfoDiScambioFormaRidotta)
+                            new VoceEComando("Visualizza info di scambio", service::visualizzaInfoDiScambioFormaRidotta),
+                            new VoceEComando("Crea nuova offerta", service::creaNuovaOfferta),
+                            new VoceEComando("Ritira una o più offerte", service::ritiraOfferte),
+                            new VoceEComando("Visualzza tutte le tue offerte", service::visualizzaOfferteUtente),
+                            new VoceEComando("Visualzza offerte aperte di categoria foglia",
+                                    service::visualizzaOfferteAperteConSelezioneFoglia)
                     });
         }
         functionalMenu.eseguiMenu();

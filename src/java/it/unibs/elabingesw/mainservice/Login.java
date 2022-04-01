@@ -2,6 +2,7 @@ package it.unibs.elabingesw.mainservice;
 
 import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
 import it.unibs.elabingesw.businesslogic.utente.UserType;
+import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
@@ -14,6 +15,7 @@ import it.unibs.eliapitozzi.mylib.InputDati;
 public class Login {
     private final GestoreUtenti gestoreUtenti;
     private UserType userType;
+    private Utente utente;
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
@@ -50,6 +52,7 @@ public class Login {
                         creaNuovoConfiguratore();
                     } else {
                         this.userType = gestoreUtenti.getUserTypeByNome(username);
+                        this.utente = gestoreUtenti.getUserByNome(username);
                         ricontrolla = false;
                     }
                 } else
@@ -100,5 +103,9 @@ public class Login {
 
     public UserType getUserType() {
         return userType;
+    }
+
+    public Utente getUserLogged() {
+        return this.utente;
     }
 }

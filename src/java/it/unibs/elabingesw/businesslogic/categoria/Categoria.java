@@ -29,7 +29,11 @@ public class Categoria implements Manageable, Serializable {
         this.descrizione = descrizione;
         this.campiNativi = campiNativi;
     }
-    
+
+    public List<Campo> getCampiNativi() {
+        return campiNativi;
+    }
+
     /**
      * Metodo getter.
      *

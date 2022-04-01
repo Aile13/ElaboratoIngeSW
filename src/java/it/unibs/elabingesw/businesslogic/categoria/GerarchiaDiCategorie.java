@@ -3,6 +3,7 @@ package it.unibs.elabingesw.businesslogic.categoria;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Classe GerarchiaDiCategorie che implementa l'interfaccia Manageable
@@ -23,6 +24,11 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
     private GerarchiaDiCategorie(TreeNode<Categoria> gerarchia) {
         this.gerarchia = gerarchia;
     }
+
+    public List<Categoria> getListaDiCategoriaFoglia() {
+        return this.gerarchia.getListOfDataInTreeNodeFogliaFromRoot();
+    }
+
 
     /**
      * Costruttore di classe che accetta come parametro una categoria
@@ -118,5 +124,9 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
         return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" +
                 '\t' + this.gerarchia.getDato().toStringRidotto() + '\n'
                 + "}";
+    }
+
+    public List<Categoria> getListaDiCategoriePadriByCategoria(Categoria categoria) {
+        return gerarchia.getListOfDataInTreeNodePadriByNome(categoria.getNome());
     }
 }

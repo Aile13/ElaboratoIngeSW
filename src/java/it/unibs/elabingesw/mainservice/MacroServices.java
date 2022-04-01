@@ -1,9 +1,12 @@
 package it.unibs.elabingesw.mainservice;
 
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreOfferte;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
+import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.elabingesw.subservice.GerarchiaService;
+import it.unibs.elabingesw.subservice.OfferteService;
 import it.unibs.elabingesw.subservice.ScambioService;
 
 /**
@@ -16,8 +19,13 @@ public class MacroServices {
     private final GestoreUtenti gestoreUtenti;
     private final GestoreGerarchie gestoreGerarchie;
     private final GestoreScambio gestoreScambio;
+    private final GestoreOfferte gestoreOfferte;
+
     private final GerarchiaService gerarchiaService;
     private final ScambioService scambioService;
+    private final OfferteService offerteService;
+
+    private Utente utente;
     
     /**
      * Costruttore di classe, accetta come parametri un oggetto di
@@ -26,15 +34,19 @@ public class MacroServices {
      * @param gestoreUtenti
      * @param gestoreGerarchie
      * @param gestoreScambio
+     * @param gestoreOfferte
      * @see GestoreUtenti
      * @see GestoreGerarchie
      */
-    public MacroServices(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
+    public MacroServices(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio, GestoreOfferte gestoreOfferte) {
         this.gestoreUtenti = gestoreUtenti;
         this.gestoreGerarchie = gestoreGerarchie;
         this.gestoreScambio = gestoreScambio;
+        this.gestoreOfferte = gestoreOfferte;
+
         this.gerarchiaService = new GerarchiaService(this.gestoreGerarchie);
         this.scambioService = new ScambioService(this.gestoreScambio);
+        this.offerteService = new OfferteService(this.gestoreOfferte, this.gestoreGerarchie);
     }
     
     /**
@@ -46,6 +58,7 @@ public class MacroServices {
         gestoreUtenti.salvaUtenti();
         gestoreGerarchie.salvaGerarchie();
         gestoreScambio.salvaInfoScambio();
+        gestoreOfferte.salvaOfferte();
     }
     
     /**
@@ -90,5 +103,25 @@ public class MacroServices {
 
     public void impostaInfoDiScambio() {
         this.scambioService.impostaInfoScambio();
+    }
+
+    public void setUser(Utente userLogged) {
+        this.offerteService.setUser(userLogged);
+    }
+
+    public void visualizzaOfferteUtente() {
+        this.offerteService.visualizzaOfferteUtente();
+    }
+
+    public void creaNuovaOfferta() {
+        this.offerteService.creaNuovaOfferta();
+    }
+
+    public void ritiraOfferte() {
+        this.offerteService.ritiraOfferte();
+    }
+
+    public void visualizzaOfferteAperteConSelezioneFoglia() {
+        this.offerteService.visualizzaOfferteAperteConSelezioneFoglia();
     }
 }

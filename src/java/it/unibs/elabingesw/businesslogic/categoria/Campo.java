@@ -52,4 +52,12 @@ public final class Campo implements Serializable {
                 ", obbligatorio=" + obbligatorio +
                 '}';
     }
+
+    public boolean isObbligatorio() {
+        return this.obbligatorio;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
 }

@@ -26,4 +26,8 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
     public void inserisciNuovaGerarchia(GerarchiaDiCategorie gerarchiaDiCategorie) {
         this.inserisciElemento(gerarchiaDiCategorie);
     }
+
+    public boolean haGerarchie() {
+        return !super.getListaElementi().isEmpty();
+    }
 }
