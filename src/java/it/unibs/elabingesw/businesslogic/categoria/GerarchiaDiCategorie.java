@@ -40,7 +40,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      *
      * @param o un oggetto generico
      * @return TRUE se i due oggetti sono uguali
-     * FALSE se i due oggetti sono diversi
+     *         FALSE se i due oggetti sono diversi
      */
     @Override
     public boolean equals(Object o) {
@@ -69,7 +69,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      *
      * @param nome il nome della gerarchia
      * @return TRUE se i nomi sono uguali
-     * FALSE se i nomi sono diversi
+     *         FALSE se i nomi sono diversi
      */
     @Override
     public boolean isStessoNome(String nome) {
