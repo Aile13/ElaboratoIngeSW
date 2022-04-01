@@ -25,7 +25,7 @@ final public class Configuratore extends Utente {
     
     /**
      * Metodo che restituisce un configuratore di default con username
-     * "nuovoConfiguratore" e password "default".
+     * "nuovoconfiguratore" e password "default".
      * 
      * @return un configuratore di default
      */
