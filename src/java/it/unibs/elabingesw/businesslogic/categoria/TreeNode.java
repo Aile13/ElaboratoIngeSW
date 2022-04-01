@@ -45,7 +45,12 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     public T getDato() {
         return dato;
     }
-
+    
+    /**
+     * Metodo che restituisce la radice di un albero.
+     *
+     * @return la radice dell'albero
+     */
     private TreeNode<T> getRoot() {
         if (this.parent == null) {
             return this;
@@ -53,7 +58,14 @@ public final class TreeNode<T extends Manageable> implements Serializable {
             return this.parent.getRoot();
         }
     }
-
+    
+    /**
+     * Metodo che permette di cercare un nodo dato il suo
+     * nome passato come parametro.
+     *
+     * @param nome il nome del nodo
+     * @return il nodo cercato
+     */
     private Optional<TreeNode<T>> trovaTreeNodeByNomeFromThis(String nome) {
         if (this.dato.isStessoNome(nome)) {
             return Optional.of(this);
@@ -67,13 +79,28 @@ public final class TreeNode<T extends Manageable> implements Serializable {
 
         return Optional.empty();
     }
-
+    
+    /**
+     * Metodo che permette di cercare un nodo dato il suo
+     * nome partendo dalla radice dell'albero.
+     *
+     * @param nome il nome del nodo
+     * @return il nodo cercato
+     */
     private Optional<TreeNode<T>> trovaTreeNodeByNomeFromRoot(String nome) {
         // inizia a cercare da root
         var root = this.getRoot();
         return root.trovaTreeNodeByNomeFromThis(nome);
     }
-
+    
+    /**
+     * Metodo che controlla se un nodo con nome passato come 
+     * parametro sia presente o meno nell'albero.
+     *
+     * @param nome il nome del nodo
+     * @return TRUE se il nodo cercato è presente nell'albero
+     *         FALSE se il nodo cercato non è presente nell'albero
+     */
     public boolean isPresentTreeNodeByNome(String nome) {
         return this.trovaTreeNodeByNomeFromRoot(nome).isPresent();
     }
@@ -88,14 +115,12 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     public String toString() {
         return dato.toString();
     }
-
+    
     /**
-     * Metodo che controlla se una categoria è foglia.
+     * Metodo che converte un albero in stringa.
      *
-     * @return TRUE se la categoria è foglia
-     * FALSE se la categoria non è foglia
+     * @return stringa dell'albero convertito
      */
-
     public String toStringAlbero() {
         var builder = new StringBuilder("\t");
         builder.append(dato).append("\n");
@@ -107,7 +132,13 @@ public final class TreeNode<T extends Manageable> implements Serializable {
                         .append("\n"));
         return builder.toString();
     }
-
+    
+    /**
+     * Metodo che indenta di un tab una stringa passata come
+     * parametro.
+     *
+     * @return la stringa indentata
+     */
     private String indentaLineaDiUnTab(String singleLine) {
         return "\t" + singleLine;
     }
