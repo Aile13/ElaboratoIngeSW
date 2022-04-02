@@ -25,12 +25,24 @@ public final class CategoriaRadice extends Categoria {
         this.inserisciCampiNativi(Campo.getCampiDiDefault());
         this.inserisciCampiNativi(campiNativi);
     }
-
+    
+    /**
+     * Metodo per la formattazione che converte un oggetto nella re-
+     * lativa rappresentazione di stringa.
+     *
+     * @return stringa dell'oggetto convertito
+     */
     @Override
     public String toString() {
         return "CategoriaRadice{ " + super.toString() + " }";
     }
-
+    
+    /**
+     * Metodo toString ridotto in cui mostro a video
+     * solo il nome e la descrizione della categoria.
+     *
+     * @return stringa dell'oggetto convertito
+     */
     @Override
     public String toStringRidotto() {
         return "CategoriaRadice{ " + super.toStringRidotto() + " }";
