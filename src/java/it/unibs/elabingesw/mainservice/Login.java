@@ -61,14 +61,25 @@ public class Login {
             }
         } while (ricontrolla);
     }
-
+    
+    /**
+     * Metodo che permette di creare un nuovo fruitore pas-
+     * sando come parametro il suo username.
+     */
     private void creaNuovoFruitore(String username) {
         System.out.println("Procedura di creazione nuovo fruitore avviata.");
         var password = InputDati.leggiStringaNonVuota("Imposta password per " + username + ": ");
         gestoreUtenti.inserisciNuovoFruitore(username, password);
         System.out.println("Nuovo fruitore aggiunto, ora accedi.");
     }
-
+    
+    /**
+     * Metodo che chiede se ci si vuole registrare come
+     * nuovo fruitore.
+     *
+     * @return TRUE se ci si registra come nuovo fruitore
+     *         FALSE se non ci si registra come nuovo fruitore
+     */
     private boolean chiediSeCreareNuovoFruitore() {
         return InputDati.yesOrNo("Si desidera registrarsi come nuovo fruitore? ");
     }
@@ -97,7 +108,12 @@ public class Login {
             }
         } while (ricontrolla);
     }
-
+    
+    /**
+     * Metodo getter.
+     *
+     * @return userType il tipo di utente
+     */
     public UserType getUserType() {
         return userType;
     }
