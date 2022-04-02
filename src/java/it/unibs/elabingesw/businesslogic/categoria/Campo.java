@@ -52,11 +52,22 @@ public final class Campo implements Serializable {
                 ", obbligatorio=" + obbligatorio +
                 '}';
     }
-
+    
+    /**
+     * Metodo per controllare se un campo è obbligatorio o meno.
+     *
+     * @return TRUE se il campo è obbligatorio
+     *         FALSE se il campo è facoltativo
+     */
     public boolean isObbligatorio() {
         return this.obbligatorio;
     }
-
+    
+    /**
+     * Metodo getter.
+     *
+     * @return il nome del campo
+     */
     public String getNome() {
         return this.nome;
     }
