@@ -19,8 +19,8 @@ public class MainMenu {
      * Costruttore di classe che accetta come parametro un
      * oggetto di tipo MacroService.
      * <p>
-     * Al suo interno creo un istanza della classe MyFunctionalMenu
-     * e mostra a video tre operazioni che si possono effettuare.
+     * Al suo interno creo un'istanza della classe MyFunctionalMenu
+     * e mostra a video le operazioni che si possono effettuare.
      *
      * @param service
      * @see MacroServices
@@ -30,10 +30,10 @@ public class MainMenu {
     }
 
     /**
-     * Metodo che esegue il menu istanziato nel costruttore
-     * di classe.
+     * Metodo che esegue il menu a seconda del tipo di utente
+     * che si sta interfacciando con l'applicativo.
      *
-     * @param userType
+     * @param userType il tipo di utente
      */
     public void eseguiMenuByUserType(UserType userType) {
         final MyFunctionalMenu functionalMenu;
