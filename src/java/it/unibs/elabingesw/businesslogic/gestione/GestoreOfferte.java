@@ -16,6 +16,16 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
         super(FILE_NAME);
     }
 
+    @Override
+    protected void caricaElementi() {
+        super.caricaElementi();
+        aggiornaStatoDelleOfferte();
+    }
+
+    private void aggiornaStatoDelleOfferte() {
+        this.getListaElementi().forEach(Offerta::aggiornaStatoOfferta);
+    }
+
     public void salvaOfferte() {
         salvaDati();
     }
@@ -40,6 +50,13 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
         return getListaElementi().stream()
                 .filter(
                         offerta -> offerta.isOffertaAperta() && offerta.appartieneA(categoriaFoglia)
+                ).toList();
+    }
+
+    public List<Offerta> getOfferteAperteByCategoriaFogliaAndExcludeUser(Categoria categoriaFoglia, Utente utente) {
+        return getOfferteAperteByCategoriaFoglia(categoriaFoglia).stream()
+                .filter(
+                        offerta -> !offerta.isStessoAutore(utente)
                 ).toList();
     }
 }

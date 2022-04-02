@@ -39,7 +39,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
         }
     }
 
-    private void caricaElementi() {
+    protected void caricaElementi() {
         if (new File(pathRepository).exists()) {
             try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(pathRepository))) {
                 List<T> listFromFile = (List<T>) input.readObject();

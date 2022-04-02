@@ -59,7 +59,10 @@ public class MainMenu {
                             new VoceEComando("Ritira una o più offerte", service::ritiraOfferte),
                             new VoceEComando("Visualzza tutte le tue offerte", service::visualizzaOfferteUtente),
                             new VoceEComando("Visualzza offerte aperte di categoria foglia",
-                                    service::visualizzaOfferteAperteConSelezioneFoglia)
+                                    service::visualizzaOfferteAperteConSelezioneFoglia),
+                            new VoceEComando("Seleziona un'altra offerta aperta per barattare",
+                                    service::selezionaUnaOffertaApertaPerBaratto),
+                            new VoceEComando("Visualizza proposte di scambio", service::visualizzaProposteDiScambio)
                     });
         }
         functionalMenu.eseguiMenu();

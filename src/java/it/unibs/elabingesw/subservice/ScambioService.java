@@ -31,7 +31,7 @@ public class ScambioService {
             Scambio scambio = new Scambio(piazza, listaLuoghi, listaGiorni, intervalliOrari, scadenza);
 
             gestoreScambio.impostaInfoDiScambio(scambio);
-
+            System.out.println("Info di scambio impostate correttamente.");
         } else {
             System.out.println("\tAttenzione: info di scambio già impostate.");
         }

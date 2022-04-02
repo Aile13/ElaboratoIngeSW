@@ -46,7 +46,7 @@ public class MacroServices {
 
         this.gerarchiaService = new GerarchiaService(this.gestoreGerarchie);
         this.scambioService = new ScambioService(this.gestoreScambio);
-        this.offerteService = new OfferteService(this.gestoreOfferte, this.gestoreGerarchie);
+        this.offerteService = new OfferteService(this.gestoreOfferte, this.gestoreGerarchie, this.gestoreScambio);
     }
     
     /**
@@ -123,5 +123,13 @@ public class MacroServices {
 
     public void visualizzaOfferteAperteConSelezioneFoglia() {
         this.offerteService.visualizzaOfferteAperteConSelezioneFoglia();
+    }
+
+    public void selezionaUnaOffertaApertaPerBaratto() {
+        this.offerteService.selezionaUnaOffertaApertaPerBaratto();
+    }
+
+    public void visualizzaProposteDiScambio() {
+        this.offerteService.visualizzaProposteDiScambio();
     }
 }

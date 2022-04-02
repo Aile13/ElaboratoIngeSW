@@ -29,6 +29,10 @@ public class Scambio implements Manageable, Serializable {
         return this.piazza.equals(piazza);
     }
 
+    public int getScadenza() {
+        return Scadenza;
+    }
+
     @Override
     public String toString() {
         return "Scambio{" + "\n" +
