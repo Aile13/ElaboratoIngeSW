@@ -22,7 +22,13 @@ public final class CategoriaFiglio extends Categoria {
     public CategoriaFiglio(String nome, String descrizione, List<Campo> campiNativi) {
         super(nome, descrizione, campiNativi);
     }
-
+    
+    /**
+     * Metodo per la formattazione che converte un oggetto nella re-
+     * lativa rappresentazione di stringa.
+     *
+     * @return stringa dell'oggetto convertito
+     */
     @Override
     public String toString() {
         return "CategoriaFiglio{ " + super.toString() + " }";
