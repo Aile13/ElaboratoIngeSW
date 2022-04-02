@@ -10,7 +10,11 @@ import it.unibs.elabingesw.mainservice.MacroServices;
 import it.unibs.elabingesw.mainservice.MainMenu;
 
 /**
- * @author Elia
+ * Classe App in cui creo gli oggetti delle varie classi
+ * ed eseguo il Menu.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class App {
 
