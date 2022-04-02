@@ -74,7 +74,7 @@ public class GerarchiaService {
      * con i suoi vari campi.
      *
      * @return una categoria radice
-     * @see @CampoService
+     * @see CampoService
      */
     private CategoriaRadice chiediCategoriaRadice() {
         var nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Inserisci nome della categoria radice: ");
@@ -94,9 +94,9 @@ public class GerarchiaService {
      * Metodo che chiede all'utente di inserire una categoria figlio
      * con i suoi vari campi.
      *
+     * @param gerarchia una gerarchia di categorie
      * @return una categoria figlio
-     * @see @CampoService
-     * @param gerarchia
+     * @see CampoService
      */
     private CategoriaFiglio chiediCategoriaFiglio(GerarchiaDiCategorie gerarchia) {
         var nomeCatFigl = InputDati.leggiStringaNonVuota("Inserisci nome della categoria figlio: ");
@@ -110,12 +110,12 @@ public class GerarchiaService {
         return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
     }
 
-    /**eu
+    /**
      * Metodo per chiedere all'utente la conferma di inserimento
      * di una nuova gerarchia.
      *
      * @return TRUE se si conferma l'inserimento
-     * FALSE se non si conferma l'inserimento
+     *         FALSE se non si conferma l'inserimento
      */
     private boolean chiediConfermaInserimentoGerarchia() {
         return InputDati.yesOrNo("Vuoi inserire la nuova gerarchia?");
@@ -133,7 +133,11 @@ public class GerarchiaService {
             this.gestoreGerarchie.getListaGerarchie().forEach(System.out::println);
         }
     }
-
+    
+    /**
+     * Metodo che visualizza le gerarchie che sono state caricate
+     * nell'applicativo in forma ridotta.
+     */
     public void visualizzaGerarchieInFormaRidotta() {
         System.out.println("Elenco delle gerarchie caricate:");
         if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
