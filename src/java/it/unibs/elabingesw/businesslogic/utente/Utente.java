@@ -7,7 +7,7 @@ import java.util.Objects;
 
 /**
  * Classe Utente che rappresenta un generico utente. Questa classe
- * verrà estesa dalla classe Configuratore.
+ * verrà estesa dalle classi Configuratore e Utente.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
@@ -100,7 +100,13 @@ public abstract class Utente implements Manageable, Serializable {
     public int hashCode() {
         return Objects.hash(getUsername());
     }
-
+    
+    /**
+     * Metodo astratto che verrà implementato dalle sottoclassi
+     * di Utente che restituirà il tipo di utente.
+     *
+     * @return il tipo di utente
+     */
     public abstract UserType getUserType();
 
 }
