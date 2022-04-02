@@ -24,11 +24,15 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
     private GerarchiaDiCategorie(TreeNode<Categoria> gerarchia) {
         this.gerarchia = gerarchia;
     }
-
+    
+    /**
+     * Metodo getter.
+     *
+     * @return la lista delle categorie foglia
+     */
     public List<Categoria> getListaDiCategoriaFoglia() {
         return this.gerarchia.getListOfDataInTreeNodeFogliaFromRoot();
     }
-
 
     /**
      * Costruttore di classe che accetta come parametro una categoria
@@ -115,17 +119,39 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
         TreeNode<Categoria> categoriaFiglioTreeNode = this.gerarchia.aggiungiFiglio(categoriaFiglio);
         return new GerarchiaDiCategorie(categoriaFiglioTreeNode);
     }
-
+    
+    /**
+     * Metodo che controlla se il nome della categoria passato come
+     * parametro è già stato usato o meno.
+     *
+     * @param nome il nome della categoria
+     * @return TRUE se il nome è già stato usato
+     *         FALSE se il nome della categoria non è già stato usato
+     */
     public boolean isNomeCategoriaUsato(String nomeCategoria) {
         return gerarchia.isPresentTreeNodeByNome(nomeCategoria);
     }
-
+    
+    /**
+     * Metodo toString ridotto in cui mostro a video
+     * solo il nome e la descrizione delle categorie
+     * nella gerarchia.
+     *
+     * @return stringa dell'oggetto convertito
+     */
     public String toStringRidotto() {
         return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" +
                 '\t' + this.gerarchia.getDato().toStringRidotto() + '\n'
                 + "}";
     }
-
+    
+    /**
+     * Metodo che ritorna la lista delle categorie padre
+     * passata come parametro una determinata categoria.
+     *
+     * @param categoria l'oggetto Categoria
+     * @return la lista delle categorie padre
+     */
     public List<Categoria> getListaDiCategoriePadriByCategoria(Categoria categoria) {
         return gerarchia.getListOfDataInTreeNodePadriByNome(categoria.getNome());
     }
