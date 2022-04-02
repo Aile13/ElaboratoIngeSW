@@ -7,7 +7,7 @@ import it.unibs.elabingesw.subservice.GerarchiaService;
 import it.unibs.elabingesw.subservice.ScambioService;
 
 /**
- * Classe MacroService di gestione generale.
+ * Classe MacroServices di gestione generale.
  * 
  * @author Elia Pitozzi
  * @author Ali Laaraj
@@ -28,6 +28,7 @@ public class MacroServices {
      * @param gestoreScambio
      * @see GestoreUtenti
      * @see GestoreGerarchie
+     * @see GestoreScambio
      */
     public MacroServices(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
         this.gestoreUtenti = gestoreUtenti;
@@ -38,7 +39,9 @@ public class MacroServices {
     }
     
     /**
-     * Metodo che salva utenti e gerarchie su file JSON.
+     * Metodo che salva utenti, gerarchie e informazioni
+     * sugli scambi.
+     *
      * @see GestoreUtenti
      * @see GestoreGerarchie
      */
@@ -68,26 +71,52 @@ public class MacroServices {
     
     /**
      * Metodo che rimanda alla classe GerarchiaService per
-     * visualizzare le tutte gerarchie caricate.
+     * visualizzare tutte le gerarchie caricate.
      *
      * @see GerarchiaService
      */
     public void visualizzaGerarchieFormaEstesa() {
        this.gerarchiaService.visualizzaGerarchieInFormaEstesa();
     }
-
+    
+    /**
+     * Metodo che rimanda alla classe GerarchiaService per
+     * visualizzare tutte le gerarchie caricate in forma 
+     * ridotta.
+     *
+     * @see GerarchiaService
+     */
     public void visualizzaGerarchieFormaRidotta() {
      this.gerarchiaService.visualizzaGerarchieInFormaRidotta();
     }
-
+    
+    /**
+     * Metodo che rimanda alla classe ScambioService per
+     * visualizzare tutte le informazioni degli scambi.
+     *
+     * @see ScambioService
+     */
     public void visualizzaInfoDiScambioFormaEstesa() {
         this.scambioService.visualizzaInfoDiScambioFormaEstesa();
     }
-
+    
+    /**
+     * Metodo che rimanda alla classe ScambioService per
+     * visualizzaretutte le informazioni degli scambi in
+     * forma ridotta.
+     *
+     * @see ScambioService
+     */
     public void visualizzaInfoDiScambioFormaRidotta() {
         this.scambioService.visualizzaInfoDiScambioFormaRidotta();
     }
-
+    
+    /**
+     * Metodo che rimanda alla classe ScambioService per
+     * impostare le informazioni sugli scambi.
+     *
+     * @see ScambioService
+     */
     public void impostaInfoDiScambio() {
         this.scambioService.impostaInfoScambio();
     }
