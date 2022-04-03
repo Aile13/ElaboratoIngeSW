@@ -33,7 +33,7 @@ public class MainMenu {
      * Metodo che esegue il menu istanziato nel costruttore
      * di classe.
      *
-     * @param userType
+     * @param userType il tipo di utente
      */
     public void eseguiMenuByUserType(UserType userType) {
         final MyFunctionalMenu functionalMenu;
