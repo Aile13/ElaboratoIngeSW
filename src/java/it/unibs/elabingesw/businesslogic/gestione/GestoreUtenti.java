@@ -104,7 +104,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * passato come parametro il suo username.
      *
      * @param username lo username dell'utente
-     * @return 
+     * @return il tipo di utente
      */
     public UserType getUserTypeByNome(String username) {
         if (trovaElementoConNome(username).isPresent()) {
