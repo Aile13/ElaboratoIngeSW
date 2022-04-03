@@ -20,6 +20,14 @@ public class ListaCampiCompilati implements Serializable {
         estraiCampiDatiGerarchiaECategoriaFoglia(gerarchiaSelezionata, categoriaFogliaSelezionata);
     }
 
+    public ListaCampiCompilati() {
+        this.campiCompilati = new LinkedHashMap<>();
+    }
+
+    public void inserisci(Campo campo, String valore) {
+        this.campiCompilati.put(campo, valore);
+    }
+
     public LinkedHashMap<Campo, String> getCampiCompilati() {
         return campiCompilati;
     }

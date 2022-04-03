@@ -62,7 +62,10 @@ public class MainMenu {
                                     service::visualizzaOfferteAperteConSelezioneFoglia),
                             new VoceEComando("Seleziona un'altra offerta aperta per barattare",
                                     service::selezionaUnaOffertaApertaPerBaratto),
-                            new VoceEComando("Visualizza proposte di scambio", service::visualizzaProposteDiScambio)
+                            new VoceEComando("Visualizza proposte di scambio", service::visualizzaProposteDiScambio),
+                            new VoceEComando("Visualizza offerte in scambio", service::visualizzaOfferteInScambio),
+                            new VoceEComando("Visualizza ultime risposte per offerte in scambio",
+                                    service::visualizzaUltimeRispostePerOfferteInScambio)
                     });
         }
         functionalMenu.eseguiMenu();

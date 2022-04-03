@@ -32,13 +32,13 @@ public final class Campo implements Serializable {
      *
      * @return lista dei campi nativi necessari a una categoria
      */
-    public static List<Campo> getCampiDiDefault() {
+    public static List<Campo> getCampiDiDefaultPerCategoriaRadice() {
         return List.of(
                 new Campo("Stato di conservazione", true),
                 new Campo("Descrizione libera", false)
         );
     }
-    
+
     /**
      * Metodo per la formattazione che converte un oggetto nella re-
      * lativa rappresentazione di stringa.

@@ -4,6 +4,8 @@ import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
 import java.time.DayOfWeek;
+import java.time.LocalTime;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -22,6 +24,21 @@ public class Scambio implements Manageable, Serializable {
         this.giorni = giorni;
         this.intervalliOrari = intervalliOrari;
         Scadenza = scadenza;
+    }
+
+    public boolean isOrarioInIntervalliOrariValido(LocalTime orario) {
+        for (IntervalloOrario intervalloOrario : intervalliOrari) {
+            if (intervalloOrario.isOrarioValidoInIntervallo(orario)) return true;
+        }
+        return false;
+    }
+
+    public List<String> getListaLuoghi() {
+        return listaLuoghi;
+    }
+
+    public List<DayOfWeek> getGiorni() {
+        return giorni;
     }
 
     @Override
@@ -51,5 +68,13 @@ public class Scambio implements Manageable, Serializable {
                 "\tgiorni=" + giorni + ",\n" +
                 "\tintervalliOrari=" + intervalliOrari + "\n" +
                 '}';
+    }
+
+    public List<LocalTime> getListaOrari() {
+        List<LocalTime> listaOrari = new LinkedList<>();
+        for (IntervalloOrario intervalloOrario : intervalliOrari) {
+            listaOrari.addAll(intervalloOrario.getListaOrariValidi());
+        }
+        return listaOrari;
     }
 }

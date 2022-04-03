@@ -30,6 +30,10 @@ public class Offerta implements Manageable, Serializable {
         return categoriaDiAppartenenza;
     }
 
+    StatoOfferta getStatoOfferta() {
+        return statoOfferta;
+    }
+
     @Override
     public boolean isStessoNome(String nomeArticolo) {
         return this.nomeArticolo.equals(nomeArticolo);
@@ -71,12 +75,39 @@ public class Offerta implements Manageable, Serializable {
         offertaDaBarattareB.statoOfferta.setOffertaSelezionataCon(this);
     }
 
-
     public void aggiornaStatoOfferta() {
         this.statoOfferta.aggiornaStatoOfferta();
     }
 
     public void setInfoScambio(Optional<Scambio> infoDiScambio) {
         infoDiScambio.ifPresent(this.statoOfferta::setScambio);
+    }
+
+    public boolean isOffertaSelezionata() {
+        return statoOfferta.isSelezionata();
+    }
+
+    public Offerta getOffertaAccoppiata() {
+        return statoOfferta.getOffertaAccoppiata();
+    }
+
+    public void accettaPropostaDiScambioAssociata(ListaCampiCompilati listaCampiAppuntamento) {
+        this.statoOfferta.accettaPropostaDiScambioAssociata(listaCampiAppuntamento);
+    }
+
+    public boolean isOffertaInScambio() {
+        return statoOfferta.isInScambio();
+    }
+
+    public ListaCampiCompilati getListaCampiAppuntamento() {
+        return statoOfferta.getListaCampiAppuntamento();
+    }
+
+    public void accettaAppuntamento() {
+        this.statoOfferta.accettaAppuntamento();
+    }
+
+    public void proponiAltroAppuntamento(ListaCampiCompilati listaCampiAppuntamento) {
+        this.statoOfferta.proponiAltroAppuntamento(listaCampiAppuntamento);
     }
 }

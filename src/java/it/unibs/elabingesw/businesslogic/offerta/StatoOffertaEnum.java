@@ -7,5 +7,7 @@ public enum StatoOffertaEnum {
     APERTA,
     ACCOPPIATA,
     SELEZIONATA,
+    IN_SCAMBIO,
+    CHIUSA,
     RITIRATA;
 }

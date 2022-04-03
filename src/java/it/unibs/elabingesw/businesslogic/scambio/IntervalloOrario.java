@@ -2,6 +2,9 @@ package it.unibs.elabingesw.businesslogic.scambio;
 
 import java.io.Serializable;
 import java.time.LocalTime;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author Elia
@@ -34,10 +37,23 @@ public class IntervalloOrario implements Serializable {
                     !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale)) {
             return true;
         }
-        // il secondo contine il primo. se no non c'è intersezine
+        // il secondo contiene il primo. se no non c'è intersezine
         else return altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale) &&
                     altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
     }
 
+    public boolean isOrarioValidoInIntervallo(LocalTime orario) {
+        return false;
+    }
+
+    public List<LocalTime> getListaOrariValidi() {
+        List<LocalTime> listaOrariValidi = new LinkedList<>();
+        LocalTime nuovoOrario = this.orarioIniziale;
+        while (!nuovoOrario.isAfter(this.orarioFinale)) {
+            listaOrariValidi.add(nuovoOrario);
+            nuovoOrario = nuovoOrario.plusMinutes(30);
+        }
+        return listaOrariValidi;
+    }
 }
 

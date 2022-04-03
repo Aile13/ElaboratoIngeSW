@@ -22,7 +22,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
         aggiornaStatoDelleOfferte();
     }
 
-    private void aggiornaStatoDelleOfferte() {
+    public void aggiornaStatoDelleOfferte() {
         this.getListaElementi().forEach(Offerta::aggiornaStatoOfferta);
     }
 
@@ -58,5 +58,17 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
                 .filter(
                         offerta -> !offerta.isStessoAutore(utente)
                 ).toList();
+    }
+
+    public List<Offerta> getOfferteSelezionateByUser(Utente utente) {
+        return getOfferteByUser(utente).stream()
+                .filter(Offerta::isOffertaSelezionata)
+                .toList();
+    }
+
+    public List<Offerta> getOfferteInScambioByUser(Utente utente) {
+        return getOfferteByUser(utente).stream()
+                .filter(Offerta::isOffertaInScambio)
+                .toList();
     }
 }

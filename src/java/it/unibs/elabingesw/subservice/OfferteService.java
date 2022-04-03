@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.subservice;
 
+import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
@@ -10,7 +11,10 @@ import it.unibs.elabingesw.businesslogic.offerta.Offerta;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
+import java.time.DayOfWeek;
+import java.time.LocalTime;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Elia
@@ -36,7 +40,7 @@ public class OfferteService {
             var gerarchiaSelezionata = chiediGerarchia();
             var categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
             var listaCampiCompilati = new ListaCampiCompilati(gerarchiaSelezionata, categoriaFogliaSelezionata);
-            compilaListaCampiCompilati(listaCampiCompilati);
+            ListaCampiCompilatiService.compila(listaCampiCompilati);
 
             this.gestoreOfferte.inserisciNuovaOfferta(
                     new Offerta(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata)
@@ -46,20 +50,6 @@ public class OfferteService {
             System.out.println("Attenzione: non sono presenti gerarchie per inserire nessun articolo.");
             System.out.println("Impossibile inserire una nuova offerta.");
         }
-    }
-
-    private void compilaListaCampiCompilati(ListaCampiCompilati listaCampiCompilati) {
-        listaCampiCompilati.getCampiCompilati().forEach((campo, s) -> {
-            String compilazione = null;
-            if (campo.isObbligatorio()) {
-                compilazione = InputDati.leggiStringaNonVuota("Compila campo obbligatorio " + campo.getNome() + ": ");
-            } else {
-                if (InputDati.yesOrNo("Compilare campo non obbligatorio " + campo.getNome() + " ? ")) {
-                    compilazione = InputDati.leggiStringaNonVuota("Compila campo " + campo.getNome() + ": ");
-                }
-            }
-            listaCampiCompilati.getCampiCompilati().put(campo, compilazione);
-        });
     }
 
     private Categoria chiediCategoriaFogliaByGerarchia(GerarchiaDiCategorie gerarchiaSelezionata) {
@@ -183,6 +173,114 @@ public class OfferteService {
     }
 
     public void visualizzaProposteDiScambio() {
-        
+        gestoreOfferte.aggiornaStatoDelleOfferte();
+        var offerteSelezionate = this.gestoreOfferte.getOfferteSelezionateByUser(utente);
+        if (offerteSelezionate.isEmpty()) {
+            System.out.println("Non ci sono proposte di scambio.");
+        } else {
+            for (Offerta offertaSel : offerteSelezionate) {
+                if (InputDati.yesOrNo("Vuoi accettare la proposta di scambio per: " +
+                        offertaSel.getOffertaAccoppiata().getNomeArticolo() + "?")) {
+                    accettaPropostaDiScambio(offertaSel);
+                }
+            }
+        }
+    }
+
+    private void accettaPropostaDiScambio(Offerta offertaSel) {
+        System.out.println("Prostata di scambio accettata, ora compila gli estremi per proporre l'appuntamento.");
+        offertaSel.accettaPropostaDiScambioAssociata(chiediListaCampiAppuntamento());
+    }
+
+    private ListaCampiCompilati chiediListaCampiAppuntamento() {
+        var listaCampiAppuntamento = new ListaCampiCompilati();
+        listaCampiAppuntamento.inserisci(new Campo("Luogo di incontro", true), chiediLuogoDiIncontro());
+        listaCampiAppuntamento.inserisci(new Campo("Data di appuntamento", true), chiediDataDiIncontro());
+        listaCampiAppuntamento.inserisci(new Campo("Ora di appuntamento", true), chiediOraDiIncontro());
+        return listaCampiAppuntamento;
+    }
+
+    private String chiediOraDiIncontro() {
+        System.out.println("Selezionare un orario di incontro");
+        for (LocalTime orario : gestoreScambio.getInfoDiScambio().get().getListaOrari()) {
+            if (InputDati.yesOrNo("Vuoi selezionare l'orario: " + orario + "?")) {
+                return orario.toString();
+            }
+        }
+        System.out.println("Attenzione: selezionare un orario.");
+        return chiediOraDiIncontro();
+    }
+
+    private String chiediDataDiIncontro() {
+        System.out.println("Selezionare un giorno di incontro");
+        for (DayOfWeek giorno : gestoreScambio.getInfoDiScambio().get().getGiorni()) {
+            if (InputDati.yesOrNo("Vuoi selezionare il giorno: " + giorno + "?")) {
+                return giorno.name();
+            }
+        }
+        System.out.println("Attenzione: selezionare un giorno.");
+        return chiediDataDiIncontro();
+    }
+
+    private String chiediLuogoDiIncontro() {
+        System.out.println("Selezionare luogo di incontro");
+        for (String luogo : gestoreScambio.getInfoDiScambio().get().getListaLuoghi()) {
+            if (InputDati.yesOrNo("Vuoi selezionare luogo: " + luogo + "?")) {
+                return luogo;
+            }
+        }
+        System.out.println("Attenzione: selezionare un luogo.");
+        return chiediLuogoDiIncontro();
+    }
+
+    public void visualizzaOfferteInScambio() {
+        List<Offerta> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
+        if (offerte.isEmpty()) {
+            System.out.println("Non ci sono offerte in scambio.");
+        } else {
+            for (Offerta offertaInScambio : offerte) {
+                System.out.println("Prosposta di scambio per " +
+                        offertaInScambio.getOffertaAccoppiata().getNomeArticolo() +
+                        " con " + offertaInScambio.getNomeArticolo());
+                if (Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
+                    System.out.println("Estremi di appuntamento proposto dalla controparte: "
+                            + offertaInScambio.getListaCampiAppuntamento());
+                    if (InputDati.yesOrNo("Vuoi accettare l'appuntamento?")) {
+                        accettaAppuntamento(offertaInScambio);
+                    } else {
+                        proponiAltroAppuntamento(offertaInScambio);
+                    }
+                } else {
+                    System.out.println("In attesa di risposta dalla controparte. Per la tua proposta di appuntamento.");
+                }
+            }
+        }
+    }
+
+    private void proponiAltroAppuntamento(Offerta offertaInScambio) {
+        offertaInScambio.proponiAltroAppuntamento(chiediListaCampiAppuntamento());
+    }
+
+    private void accettaAppuntamento(Offerta offertaInScambio) {
+        offertaInScambio.accettaAppuntamento();
+    }
+
+    public void visualizzaUltimeRispostePerOfferteInScambio() {
+        List<Offerta> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
+        if (offerte.isEmpty()) {
+            System.out.println("Non ci sono offerte in scambio. Quindi neanche risposte.");
+        } else {
+            for (Offerta offertaInScambio : offerte) {
+                System.out.println("Prosposta di scambio per " +
+                        offertaInScambio.getOffertaAccoppiata().getNomeArticolo() +
+                        " con " + offertaInScambio.getNomeArticolo());
+                if (Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
+                    System.out.println("Ultima risposta di utente controparte: "
+                            + offertaInScambio.getListaCampiAppuntamento());
+                } else {
+                    System.out.println("L'utente controparte non ha ancora risposto.");
+                }
+            }
+        }
     }
 }

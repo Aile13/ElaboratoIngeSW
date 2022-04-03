@@ -132,4 +132,12 @@ public class MacroServices {
     public void visualizzaProposteDiScambio() {
         this.offerteService.visualizzaProposteDiScambio();
     }
+
+    public void visualizzaOfferteInScambio() {
+        this.offerteService.visualizzaOfferteInScambio();
+    }
+
+    public void visualizzaUltimeRispostePerOfferteInScambio() {
+        this.offerteService.visualizzaUltimeRispostePerOfferteInScambio();
+    }
 }
