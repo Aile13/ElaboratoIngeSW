@@ -50,9 +50,13 @@ public class MacroServices {
     }
     
     /**
-     * Metodo che salva utenti e gerarchie su file JSON.
+     * Metodo che salva utenti, gerarchie, informazioni
+     * sugli scambi e offerte.
+     *
      * @see GestoreUtenti
      * @see GestoreGerarchie
+     * @see GestoreScambio
+     * @see GestoreOfferte
      */
     private void eseguiSalvataggio() {
         gestoreUtenti.salvaUtenti();
@@ -89,18 +93,44 @@ public class MacroServices {
        this.gerarchiaService.visualizzaGerarchieInFormaEstesa();
     }
 
+    /**
+     * Metodo che rimanda alla classe GerarchiaService per
+     * visualizzare tutte le gerarchie caricate in forma 
+     * ridotta.
+     *
+     * @see GerarchiaService
+     */
     public void visualizzaGerarchieFormaRidotta() {
      this.gerarchiaService.visualizzaGerarchieInFormaRidotta();
     }
 
+    /**
+     * Metodo che rimanda alla classe ScambioService per
+     * visualizzare tutte le informazioni degli scambi.
+     *
+     * @see ScambioService
+     */
     public void visualizzaInfoDiScambioFormaEstesa() {
         this.scambioService.visualizzaInfoDiScambioFormaEstesa();
     }
 
+    /**
+     * Metodo che rimanda alla classe ScambioService per
+     * visualizzaretutte le informazioni degli scambi in
+     * forma ridotta.
+     *
+     * @see ScambioService
+     */
     public void visualizzaInfoDiScambioFormaRidotta() {
         this.scambioService.visualizzaInfoDiScambioFormaRidotta();
     }
 
+    /**
+     * Metodo che rimanda alla classe ScambioService per
+     * impostare le informazioni sugli scambi.
+     *
+     * @see ScambioService
+     */
     public void impostaInfoDiScambio() {
         this.scambioService.impostaInfoScambio();
     }
