@@ -135,22 +135,54 @@ public class MacroServices {
         this.scambioService.impostaInfoScambio();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * settare l'utente loggato.
+     *
+     * @param userLogged l'utente loggato
+     * @see OfferteService
+     */
     public void setUser(Utente userLogged) {
         this.offerteService.setUser(userLogged);
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * visualizzare le offerte di un utente.
+     *
+     * @see OfferteService
+     */
     public void visualizzaOfferteUtente() {
         this.offerteService.visualizzaOfferteUtente();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * creare una nuova offerta.
+     *
+     * @see OfferteService
+     */
     public void creaNuovaOfferta() {
         this.offerteService.creaNuovaOfferta();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * ritirare le offerte di un utente.
+     *
+     * @see offerteService
+     */
     public void ritiraOfferte() {
         this.offerteService.ritiraOfferte();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * visualizzare le offerte aperte con la selezione
+     * della categoria foglia.
+     *
+     * @see OfferteService
+     */
     public void visualizzaOfferteAperteConSelezioneFoglia() {
         this.offerteService.visualizzaOfferteAperteConSelezioneFoglia();
     }
