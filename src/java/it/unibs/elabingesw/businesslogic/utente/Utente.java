@@ -100,6 +100,12 @@ public abstract class Utente implements Manageable, Serializable {
         return Objects.hash(getUsername());
     }
 
+    /**
+     * Metodo astratto che verrà implementato dalle sottoclassi
+     * di Utente che restituirà il tipo di utente.
+     *
+     * @return il tipo di utente
+     */
     public abstract UserType getUserType();
 
 }
