@@ -65,6 +65,8 @@ public class Login {
     /**
      * Metodo che permette di creare un nuovo fruitore pas-
      * sando come parametro il suo username.
+     *
+     * @param username lo username del fruitore
      */
     private void creaNuovoFruitore(String username) {
         System.out.println("Procedura di creazione nuovo fruitore avviata.");
