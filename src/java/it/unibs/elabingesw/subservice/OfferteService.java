@@ -27,7 +27,7 @@ public class OfferteService {
      * GestoreOfferte e un oggetto GestoreGerarchie.
      *
      * @param gestoreOfferte
-     * @param @gestoreGerarchie
+     * @param gestoreGerarchie
      * @see GestoreOfferte
      * @see GestoreGerarchie
      */
@@ -83,6 +83,14 @@ public class OfferteService {
         });
     }
 
+    /**
+     * Metodo che chiede all'utente di inserire una categoria foglia
+     * passando per parametro la gerarchia selezionata.
+     *
+     * @param gerarchiaSelezionata una gerarchia di categorie
+     * @return una categoria foglia
+     * @see GerarchiaDiCategorie
+     */
     private Categoria chiediCategoriaFogliaByGerarchia(GerarchiaDiCategorie gerarchiaSelezionata) {
         System.out.println("Seleziona la categoria foglia di interesse: ");
         for (Categoria categoria : gerarchiaSelezionata.getListaDiCategoriaFoglia()) {
@@ -94,6 +102,13 @@ public class OfferteService {
         return chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
     }
 
+    /**
+     * Metodo che chiede all'utente la gerarchia contenente la categoria
+     * foglia di interesse.
+     *
+     * @return una gerarchia
+     * @see GerarchiaDiCategorie
+     */
     private GerarchiaDiCategorie chiediGerarchia() {
         System.out.println("Seleziona la gerarchia che contiene la categoria foglia di interesse: ");
         for (GerarchiaDiCategorie gerarchia : this.gestoreGerarchie.getListaGerarchie()) {
@@ -105,6 +120,13 @@ public class OfferteService {
         return chiediGerarchia();
     }
 
+    /**
+     * Metodo che chiede all'utente il nome dell'articolo da inserire, 
+     * controllando che il nom enon è già stato inserito.
+     *
+     * @return il nome dell'articolo
+     * @see GestoreOfferte
+     */
     private String chiediNomeArticolo() {
         var nomeArticolo = InputDati.leggiStringaNonVuota("Inserisci il titolo dell'articolo: ");
         while (this.gestoreOfferte.isOffertaGiaPresenteByNome(nomeArticolo)) {
@@ -114,6 +136,11 @@ public class OfferteService {
         return nomeArticolo;
     }
 
+    /**
+     * Metodo che visualizza le offerte di un utente.
+     *
+     * @see GestoreOfferte
+     */
     public void visualizzaOfferteUtente() {
         if (this.gestoreOfferte.getOfferteByUser(utente).isEmpty()) {
             System.out.println("\tAttenzione non ci sono offerte di " + utente.getUsername() + " da visualizzare.");
@@ -125,10 +152,21 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo setter.
+     *
+     * @param utente l'oggetto Utente
+     */
     public void setUser(Utente utente) {
         this.utente = utente;
     }
 
+    /**
+     * Metodo che permette all'utente di scegliere quale offerta
+     * ritirare tra quelle aperte.
+     *
+     * @see GestoreOfferte
+     */
     public void ritiraOfferte() {
         if (this.gestoreOfferte.getOfferteAperteByUser(this.utente).isEmpty()) {
             System.out.println("\tAttenzione: non ci sono offerte aperte da ritirare.");
@@ -142,6 +180,13 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che visualizza la lista delle offerte aperte (contenente
+     * almeno un'offerta aperta) per una determinata categoria foglia.
+     *
+     * @see GestoreOfferte
+     * @see GestoreGerarchie
+     */
     public void visualizzaOfferteAperteConSelezioneFoglia() {
         if (this.gestoreGerarchie.haGerarchie()) {
             GerarchiaDiCategorie gerarchia = chiediGerarchia();
