@@ -10,19 +10,37 @@ import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
- * @author Elia
+ * Classe OfferteService che gestisce le varie operazioni
+ * che si effettuano su un'offerta di un fruitore su un
+ * determinato articolo.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class OfferteService {
     private final GestoreOfferte gestoreOfferte;
     private final GestoreGerarchie gestoreGerarchie;
     private Utente utente;
 
+    /**
+     * Costruttore di classe, accetta come parametro un oggetto
+     * GestoreOfferte e un oggetto GestoreGerarchie.
+     *
+     * @param gestoreOfferte
+     * @param @gestoreGerarchie
+     * @see GestoreOfferte
+     * @see GestoreGerarchie
+     */
     public OfferteService(GestoreOfferte gestoreOfferte, GestoreGerarchie gestoreGerarchie) {
 
         this.gestoreOfferte = gestoreOfferte;
         this.gestoreGerarchie = gestoreGerarchie;
     }
 
+    /**
+     * Metodo che crea una nuova offerta: una volta confermata la
+     * sua creazione, questa viene aggiunta all'applicativo.
+     */
     public void creaNuovaOfferta() {
         System.out.println("Procedura di creazione nuovo articolo avviata");
         if (this.gestoreGerarchie.haGerarchie()) {
@@ -43,6 +61,14 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che permette di compilare la lista dei campi nativi
+     * ed ereditati relativi ad una determinata categoria foglia.
+     *
+     * @param listaCampiCompilati lista dei campi nativi ed ereditati
+                                  di un'offerta
+     * @see ListaCampiCompilati
+     */
     private void compilaListaCampiCompilati(ListaCampiCompilati listaCampiCompilati) {
         listaCampiCompilati.getCampiCompilati().forEach((campo, s) -> {
             String compilazione = null;
