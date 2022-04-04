@@ -49,4 +49,19 @@ public class ListaCampiCompilati implements Serializable {
                 "campiCompilati=" + campiCompilati +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ListaCampiCompilati that = (ListaCampiCompilati) o;
+
+        return getCampiCompilati() != null ? getCampiCompilati().equals(that.getCampiCompilati()) : that.getCampiCompilati() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getCampiCompilati() != null ? getCampiCompilati().hashCode() : 0;
+    }
 }

@@ -110,4 +110,8 @@ public class Offerta implements Manageable, Serializable {
     public void proponiAltroAppuntamento(ListaCampiCompilati listaCampiAppuntamento) {
         this.statoOfferta.proponiAltroAppuntamento(listaCampiAppuntamento);
     }
+
+    public boolean isOffertaChiusa() {
+        return this.statoOfferta.isChiusa();
+    }
 }

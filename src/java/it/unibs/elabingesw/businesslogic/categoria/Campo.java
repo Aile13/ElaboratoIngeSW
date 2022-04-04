@@ -71,4 +71,22 @@ public final class Campo implements Serializable {
     public String getNome() {
         return this.nome;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Campo campo = (Campo) o;
+
+        if (isObbligatorio() != campo.isObbligatorio()) return false;
+        return getNome() != null ? getNome().equals(campo.getNome()) : campo.getNome() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getNome() != null ? getNome().hashCode() : 0;
+        result = 31 * result + (isObbligatorio() ? 1 : 0);
+        return result;
+    }
 }

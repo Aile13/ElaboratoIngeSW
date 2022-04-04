@@ -47,7 +47,9 @@ public class MainMenu {
                             new VoceEComando("Imposta info di scambio", service::impostaInfoDiScambio),
                             new VoceEComando("Visualizza info di scambio", service::visualizzaInfoDiScambioFormaEstesa),
                             new VoceEComando("Visualzza offerte aperte di categoria foglia",
-                                    service::visualizzaOfferteAperteConSelezioneFoglia)
+                                    service::visualizzaOfferteAperteConSelezioneFoglia),
+                            new VoceEComando("Visualizza offerte in scambio e chiuse",
+                                    service::visualizzaOfferteInScambioEChiuseConSelezioneFoglia)
                     });
         } else {
             functionalMenu = new MyFunctionalMenu("Menu per Fruitore",
@@ -62,7 +64,8 @@ public class MainMenu {
                                     service::visualizzaOfferteAperteConSelezioneFoglia),
                             new VoceEComando("Seleziona un'altra offerta aperta per barattare",
                                     service::selezionaUnaOffertaApertaPerBaratto),
-                            new VoceEComando("Visualizza proposte di scambio", service::visualizzaProposteDiScambio),
+                            new VoceEComando("Visualizza proposte di scambio da altri utenti",
+                                    service::visualizzaProposteDiScambio),
                             new VoceEComando("Visualizza offerte in scambio", service::visualizzaOfferteInScambio),
                             new VoceEComando("Visualizza ultime risposte per offerte in scambio",
                                     service::visualizzaUltimeRispostePerOfferteInScambio)

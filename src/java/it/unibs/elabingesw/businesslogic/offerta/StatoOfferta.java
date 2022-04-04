@@ -4,7 +4,6 @@ import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Optional;
 
 /**
  * @author Elia
@@ -28,6 +27,10 @@ class StatoOfferta implements Serializable {
         return listaCampiAppuntamento;
     }
 
+    private void setListaCampiAppuntamento(ListaCampiCompilati listaCampiAppuntamento) {
+        this.listaCampiAppuntamento = listaCampiAppuntamento;
+    }
+
     public void setScambio(Scambio scambio) {
         this.scambio = scambio;
     }
@@ -38,6 +41,7 @@ class StatoOfferta implements Serializable {
 
     public void ritiraOfferta() {
         this.statoOffertaEnum = StatoOffertaEnum.RITIRATA;
+        impostaData();
     }
 
     public void setOffertaAccoppiataCon(Offerta offertaDaBarattareB) {
@@ -64,6 +68,7 @@ class StatoOfferta implements Serializable {
                 this.statoOffertaEnum = StatoOffertaEnum.APERTA;
                 this.altraOfferta = null;
                 this.listaCampiAppuntamento = null;
+                impostaData();
             }
         }
     }
@@ -94,10 +99,6 @@ class StatoOfferta implements Serializable {
         this.altraOfferta.getStatoOfferta().impostaData();
     }
 
-    private void setListaCampiAppuntamento(ListaCampiCompilati listaCampiAppuntamento) {
-        this.listaCampiAppuntamento = listaCampiAppuntamento;
-    }
-
     public boolean isInScambio() {
         return this.statoOffertaEnum == StatoOffertaEnum.IN_SCAMBIO;
     }
@@ -115,8 +116,13 @@ class StatoOfferta implements Serializable {
     public void proponiAltroAppuntamento(ListaCampiCompilati listaCampiAppuntamento) {
         this.altraOfferta
                 .getStatoOfferta().setListaCampiAppuntamento(listaCampiAppuntamento);
+        this.setListaCampiAppuntamento(null);
 
         this.impostaData();
         this.altraOfferta.getStatoOfferta().impostaData();
+    }
+
+    public boolean isChiusa() {
+        return this.statoOffertaEnum == StatoOffertaEnum.CHIUSA;
     }
 }

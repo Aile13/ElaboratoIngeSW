@@ -87,7 +87,7 @@ public class OfferteService {
         if (this.gestoreOfferte.getOfferteByUser(utente).isEmpty()) {
             System.out.println("\tAttenzione non ci sono offerte di " + utente.getUsername() + " da visualizzare.");
         } else {
-            System.out.println("Offerte aperte e ritirate di " + utente.getUsername() + ":");
+            System.out.println("Offerte di " + utente.getUsername() + ":");
             this.gestoreOfferte.getOfferteByUser(utente).forEach(
                     System.out::println
             );
@@ -128,8 +128,8 @@ public class OfferteService {
     }
 
     private Offerta chiediOffertaByList(List<Offerta> listaOfferte) {
-        System.out.println("Seleziona l'offerta aperta: ");
-        for (Offerta offerta : this.gestoreOfferte.getOfferteAperteByUser(utente)) {
+        System.out.println("Seleziona l'offerta aperta di interesse: ");
+        for (Offerta offerta : listaOfferte) {
             if (InputDati.yesOrNo("Vuoi selezionare " + offerta.getNomeArticolo() + "?")) {
                 return offerta;
             }
@@ -161,7 +161,8 @@ public class OfferteService {
                 } else {
                     var offertaDaBarattareB = chiediOffertaByList(listaOffAperteNonUtenteStessaCat);
                     System.out.println("Creazione legame tra le offerte selezionate.");
-                    System.out.println("Ora attendi eventuale risposta della controparte. Guarda in offerte in scambio.");
+                    System.out.println("Ora attendi eventuale risposta della controparte.");
+                    System.out.println("Guarda in offerte in scambio per visualizzare eventuale risposta.");
 
                     offertaDaBarattareA.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
                     offertaDaBarattareB.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
@@ -179,16 +180,18 @@ public class OfferteService {
             System.out.println("Non ci sono proposte di scambio.");
         } else {
             for (Offerta offertaSel : offerteSelezionate) {
-                if (InputDati.yesOrNo("Vuoi accettare la proposta di scambio per: " +
-                        offertaSel.getOffertaAccoppiata().getNomeArticolo() + "?")) {
+                if (InputDati.yesOrNo("Vuoi accettare la proposta di scambio per " +
+                        offertaSel.getOffertaAccoppiata().getNomeArticolo() + ", con " +
+                        offertaSel.getNomeArticolo() + "?")) {
                     accettaPropostaDiScambio(offertaSel);
+                    System.out.println("Proposta di appuntamento inviata alla controparte.");
                 }
             }
         }
     }
 
     private void accettaPropostaDiScambio(Offerta offertaSel) {
-        System.out.println("Prostata di scambio accettata, ora compila gli estremi per proporre l'appuntamento.");
+        System.out.println("Proposta di scambio accettata, ora compila gli estremi per proporre l'appuntamento.");
         offertaSel.accettaPropostaDiScambioAssociata(chiediListaCampiAppuntamento());
     }
 
@@ -239,26 +242,39 @@ public class OfferteService {
             System.out.println("Non ci sono offerte in scambio.");
         } else {
             for (Offerta offertaInScambio : offerte) {
-                System.out.println("Prosposta di scambio per " +
+                System.out.println("Proposta di scambio per " +
                         offertaInScambio.getOffertaAccoppiata().getNomeArticolo() +
-                        " con " + offertaInScambio.getNomeArticolo());
-                if (Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
-                    System.out.println("Estremi di appuntamento proposto dalla controparte: "
+                        " con " + offertaInScambio.getNomeArticolo() + ":");
+                System.out.println("\t" + offertaInScambio.getOffertaAccoppiata());
+                System.out.println("\t" + offertaInScambio);
+
+                if (!Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
+                    System.out.println("\tEstremi di appuntamento proposto dalla controparte: "
                             + offertaInScambio.getListaCampiAppuntamento());
                     if (InputDati.yesOrNo("Vuoi accettare l'appuntamento?")) {
                         accettaAppuntamento(offertaInScambio);
+                        System.out.println("Proposta di appuntamento accettata.");
+                        System.out.println("Adesso entrambe le offerte diventano chiuse.");
                     } else {
+                        System.out.println("Proponi altri estremi di appuntamento alla controparte:");
                         proponiAltroAppuntamento(offertaInScambio);
+                        System.out.println("Nuova proposta di appuntamento inivata alla controparte.");
                     }
                 } else {
-                    System.out.println("In attesa di risposta dalla controparte. Per la tua proposta di appuntamento.");
+                    System.out.println("\tIn attesa di risposta dalla controparte per la tua proposta di appuntamento.");
                 }
             }
         }
     }
 
     private void proponiAltroAppuntamento(Offerta offertaInScambio) {
-        offertaInScambio.proponiAltroAppuntamento(chiediListaCampiAppuntamento());
+        var nuoviEstremiAppuntamento = chiediListaCampiAppuntamento();
+        while (nuoviEstremiAppuntamento.equals(offertaInScambio.getListaCampiAppuntamento())) {
+            System.out.println("Attenzione estremi appuntamento coincidenti con l'appuntamento già proposto.");
+            System.out.println("Reinserire altri estremi nel nuovo appuntamento.");
+            nuoviEstremiAppuntamento = chiediListaCampiAppuntamento();
+        }
+        offertaInScambio.proponiAltroAppuntamento(nuoviEstremiAppuntamento);
     }
 
     private void accettaAppuntamento(Offerta offertaInScambio) {
@@ -271,16 +287,41 @@ public class OfferteService {
             System.out.println("Non ci sono offerte in scambio. Quindi neanche risposte.");
         } else {
             for (Offerta offertaInScambio : offerte) {
-                System.out.println("Prosposta di scambio per " +
+                System.out.println("Proposta di scambio per " +
                         offertaInScambio.getOffertaAccoppiata().getNomeArticolo() +
-                        " con " + offertaInScambio.getNomeArticolo());
-                if (Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
-                    System.out.println("Ultima risposta di utente controparte: "
+                        " con " + offertaInScambio.getNomeArticolo()+":");
+                if (!Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
+                    System.out.println("\tUltima risposta di utente controparte: "
                             + offertaInScambio.getListaCampiAppuntamento());
                 } else {
-                    System.out.println("L'utente controparte non ha ancora risposto.");
+                    System.out.println("\tL'utente controparte non ha ancora risposto.");
                 }
             }
+        }
+    }
+
+    public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
+        System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere " +
+                "relative offerte in scambio e chiuse");
+        var gerarchiaSelezionata = chiediGerarchia();
+        var categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
+
+        var offerteInScambio =
+                this.gestoreOfferte.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
+        var offerteChiuse = this.gestoreOfferte.getofferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
+
+        System.out.println("Per categoria: " + categoriaFogliaSelezionata.getNome());
+        System.out.println("Le offerte in scambio:");
+        if (offerteInScambio.isEmpty()) {
+            System.out.println("\tNon ci sono offerte in scambio per la categoria selezionata.");
+        } else {
+            offerteInScambio.forEach(System.out::println);
+        }
+        System.out.println("Le offerte chiuse:");
+        if (offerteChiuse.isEmpty()) {
+            System.out.println("\tNon ci sono offerte chiuse per la categoria selezionata.");
+        } else {
+            offerteChiuse.forEach(System.out::println);
         }
     }
 }

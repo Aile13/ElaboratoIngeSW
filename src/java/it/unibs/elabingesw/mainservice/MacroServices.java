@@ -140,4 +140,8 @@ public class MacroServices {
     public void visualizzaUltimeRispostePerOfferteInScambio() {
         this.offerteService.visualizzaUltimeRispostePerOfferteInScambio();
     }
+
+    public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
+        this.offerteService.visualizzaOfferteInScambioEChiuseConSelezioneFoglia();
+    }
 }
