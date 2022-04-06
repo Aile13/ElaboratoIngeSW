@@ -4,7 +4,6 @@ import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
-import it.unibs.elabingesw.subservice.CampoService;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
@@ -35,7 +34,7 @@ public class GerarchiaService {
      * sua creazione, questa viene aggiunta all'applicativo.
      */
     public void creaNuovaGerarchia() {
-        var categoriaRadice = chiediCategoriaRadice();
+        var categoriaRadice = chiediECreaCategoriaRadice();
         var gerarchia = new GerarchiaDiCategorie(categoriaRadice);
 
         aggiungiSottoCategorie(gerarchia);
@@ -56,13 +55,13 @@ public class GerarchiaService {
      */
     private void aggiungiSottoCategorie(GerarchiaDiCategorie gerarchia) {
         if (InputDati.yesOrNo("Vuoi aggiungere una sotto-categoria per " + gerarchia.getNome() + "?")) {
-            var categoriaFiglio = chiediCategoriaFiglio(gerarchia);
+            var categoriaFiglio = chiediECreaCategoriaFiglioIn(gerarchia);
             var gerarchiaFiglio = gerarchia.inserisciSottoCategoria(categoriaFiglio);
 
             aggiungiSottoCategorie(gerarchiaFiglio);
 
             while (InputDati.yesOrNo("Vuoi aggiungere un'altra sotto-categoria per " + gerarchia.getNome() + "?")) {
-                var altraCategoriaFiglio = chiediCategoriaFiglio(gerarchia);
+                var altraCategoriaFiglio = chiediECreaCategoriaFiglioIn(gerarchia);
                 var altraGerarchiaFiglio = gerarchia.inserisciSottoCategoria(altraCategoriaFiglio);
                 aggiungiSottoCategorie(altraGerarchiaFiglio);
             }
@@ -76,7 +75,7 @@ public class GerarchiaService {
      * @return una categoria radice
      * @see @CampoService
      */
-    private CategoriaRadice chiediCategoriaRadice() {
+    private CategoriaRadice chiediECreaCategoriaRadice() {
         var nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Inserisci nome della categoria radice: ");
         // check se nome già usato o meno tra le altre gerarchia
         while (gestoreGerarchie.isElementoInListaByNome(nomeCategoriaRadice)) {
@@ -85,7 +84,9 @@ public class GerarchiaService {
         }
         var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria radice: ");
 
-        var listaCampi = CampoService.chiediListaDiCampi();
+
+        var listaCampi = CampoService.chiediListaDiCampiPerCategoriaRadice();
+
 
         return new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi);
     }
@@ -98,14 +99,14 @@ public class GerarchiaService {
      * @see @CampoService
      * @param gerarchia
      */
-    private CategoriaFiglio chiediCategoriaFiglio(GerarchiaDiCategorie gerarchia) {
+    private CategoriaFiglio chiediECreaCategoriaFiglioIn(GerarchiaDiCategorie gerarchia) {
         var nomeCatFigl = InputDati.leggiStringaNonVuota("Inserisci nome della categoria figlio: ");
         while (gerarchia.isNomeCategoriaUsato(nomeCatFigl)) {
             System.out.println("Errore nome categoria figlio già usato: riprovare.");
             nomeCatFigl = InputDati.leggiStringaNonVuota("Reinserisci nome della categoria radice: ");
         }
         var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria figlio: ");
-        var listaCampi = CampoService.chiediListaDiCampi();
+        var listaCampi = CampoService.chiediListaDiCampiPerCategoriaFiglio(gerarchia);
 
         return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
     }
@@ -143,5 +144,11 @@ public class GerarchiaService {
                     gerarchiaDiCategorie -> System.out.println(gerarchiaDiCategorie.toStringRidotto())
             );
         }
+    }
+
+    public void caricaGerarchieDaFileUtente() {
+        var fileUtenteService = new GerarchieFileUtenteService(this.gestoreGerarchie);
+
+        fileUtenteService.avviaServizio();
     }
 }

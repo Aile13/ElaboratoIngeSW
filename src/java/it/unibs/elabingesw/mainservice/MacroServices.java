@@ -25,16 +25,11 @@ public class MacroServices {
     private final ScambioService scambioService;
     private final OfferteService offerteService;
 
-    private Utente utente;
-    
     /**
      * Costruttore di classe, accetta come parametri un oggetto di
      * tipo GestoreUtenti e un oggetto di tipo GestoreGerarchie.
      *
-     * @param gestoreUtenti
-     * @param gestoreGerarchie
-     * @param gestoreScambio
-     * @param gestoreOfferte
+     *
      * @see GestoreUtenti
      * @see GestoreGerarchie
      */
@@ -143,5 +138,9 @@ public class MacroServices {
 
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
         this.offerteService.visualizzaOfferteInScambioEChiuseConSelezioneFoglia();
+    }
+
+    public void caricaGerarchieDaFileUtente() {
+        this.gerarchiaService.caricaGerarchieDaFileUtente();
     }
 }

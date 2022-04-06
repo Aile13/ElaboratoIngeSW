@@ -1,0 +1,36 @@
+gerarchia {
+    categoriaRadice (
+        "automobile",
+        "mezzo ecologico",
+        [( "numero ruote", t ), ("sedili", f)],
+        [
+            categoriaFiglio(
+                "sportiva",
+                "bello davvero",
+                [],
+                []
+            ),
+            categoriaFiglio(
+                "utilitaria",
+                "meno bella",
+                [],
+                []
+            )
+        ]
+    )
+};
+gerarchia {
+    categoriaRadice(
+        "idrovolante",
+        "mezzo ecologico",
+        [("numero ruote", t), ("sedili", f)],
+        [
+            categoriaFiglio(
+                "sportiva",
+                "bello davvero",
+                [],
+                []
+            )
+        ]
+    )
+};

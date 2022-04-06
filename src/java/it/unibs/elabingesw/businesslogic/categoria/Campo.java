@@ -1,5 +1,7 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import it.unibs.elabingesw.businesslogic.gestione.Manageable;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -9,9 +11,9 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public final class Campo implements Serializable {
-    private String nome;
-    private boolean obbligatorio;
+public final class Campo implements Manageable, Serializable {
+    private final String nome;
+    private final boolean obbligatorio;
     
     /**
      * Costruttore di classe, accetta come parametri il nome del cam-
@@ -89,4 +91,18 @@ public final class Campo implements Serializable {
         result = 31 * result + (isObbligatorio() ? 1 : 0);
         return result;
     }
+
+    @Override
+    public boolean isStessoNome(String nome) {
+        return this.nome.equals(nome);
+    }
+
+    public boolean isCampoInListaByNome(List<Campo> listaCampi) {
+        return listaCampi.stream().anyMatch(campoInList -> this.isStessoNome(campoInList.getNome()));
+    }
+
+    public boolean isCampoDiDefault() {
+        return this.isCampoInListaByNome(Campo.getCampiDiDefaultPerCategoriaRadice());
+    }
+
 }

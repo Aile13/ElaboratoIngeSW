@@ -122,4 +122,8 @@ public class Categoria implements Manageable, Serializable {
         return "nome='" + nome + '\'' +
                 ", descrizione='" + descrizione + '\'';
     }
+
+    public boolean isCampoGiaPreso(Campo campo) {
+        return campo.isCampoInListaByNome(campiNativi);
+    }
 }

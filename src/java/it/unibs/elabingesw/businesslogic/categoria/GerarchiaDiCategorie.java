@@ -124,7 +124,6 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      * Metodo che controlla se il nome della categoria passato come
      * parametro è già stato usato o meno.
      *
-     * @param nome il nome della categoria
      * @return TRUE se il nome è già stato usato
      *         FALSE se il nome della categoria non è già stato usato
      */
@@ -154,5 +153,15 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      */
     public List<Categoria> getListaDiCategoriePadriByCategoria(Categoria categoria) {
         return gerarchia.getListOfDataInTreeNodePadriByNome(categoria.getNome());
+    }
+
+    public boolean isCampoGiaPreso(Campo campo) {
+        var listaCategoriePadri = this.getListaDiCategoriePadriByCategoria(this.gerarchia.getDato());
+        for (Categoria categoria : listaCategoriePadri) {
+            if (categoria.isCampoGiaPreso(campo)) {
+                return true;
+            }
+        }
+        return this.gerarchia.getDato().isCampoGiaPreso(campo);
     }
 }

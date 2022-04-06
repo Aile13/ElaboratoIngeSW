@@ -49,7 +49,8 @@ public class MainMenu {
                             new VoceEComando("Visualzza offerte aperte di categoria foglia",
                                     service::visualizzaOfferteAperteConSelezioneFoglia),
                             new VoceEComando("Visualizza offerte in scambio e chiuse",
-                                    service::visualizzaOfferteInScambioEChiuseConSelezioneFoglia)
+                                    service::visualizzaOfferteInScambioEChiuseConSelezioneFoglia),
+                            new VoceEComando("Carica gerarchia da file", service::caricaGerarchieDaFileUtente)
                     });
         } else {
             functionalMenu = new MyFunctionalMenu("Menu per Fruitore",
