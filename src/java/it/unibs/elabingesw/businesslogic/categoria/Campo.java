@@ -7,26 +7,11 @@ import java.util.List;
 
 /**
  * Classe Campo che definisce un campo di una determinata categoria.
- * 
+ *
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public final class Campo implements Manageable, Serializable {
-    private final String nome;
-    private final boolean obbligatorio;
-    
-    /**
-     * Costruttore di classe, accetta come parametri il nome del cam-
-     * po e se quest'ultimo è obbligatorio o meno.
-     * 
-     * @param nome
-     * @param obbligatorio
-     */
-    public Campo(String nome, boolean obbligatorio) {
-        this.nome = nome;
-        this.obbligatorio = obbligatorio;
-    }
-    
+public record Campo(String nome, boolean obbligatorio) implements Manageable, Serializable {
     /**
      * Metodo che ritorna la lista dei campi nativi che una catego-
      * ria deve avere che possono essere a compilazione obbligatoria
@@ -54,17 +39,17 @@ public final class Campo implements Manageable, Serializable {
                 ", obbligatorio=" + obbligatorio +
                 '}';
     }
-    
+
     /**
      * Metodo per controllare se un campo è obbligatorio o meno.
      *
      * @return TRUE se il campo è obbligatorio
-     *         FALSE se il campo è facoltativo
+     * FALSE se il campo è facoltativo
      */
     public boolean isObbligatorio() {
         return this.obbligatorio;
     }
-    
+
     /**
      * Metodo getter.
      *
