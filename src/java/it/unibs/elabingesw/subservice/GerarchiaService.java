@@ -74,7 +74,7 @@ public class GerarchiaService {
      * con i suoi vari campi.
      *
      * @return una categoria radice
-     * @see @CampoService
+     * @see CampoService
      */
     private CategoriaRadice chiediCategoriaRadice() {
         var nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Inserisci nome della categoria radice: ");
@@ -94,9 +94,9 @@ public class GerarchiaService {
      * Metodo che chiede all'utente di inserire una categoria figlio
      * con i suoi vari campi.
      *
-     * @return una categoria figlio
-     * @see @CampoService
      * @param gerarchia
+     * @return una categoria figlio
+     * @see CampoService
      */
     private CategoriaFiglio chiediCategoriaFiglio(GerarchiaDiCategorie gerarchia) {
         var nomeCatFigl = InputDati.leggiStringaNonVuota("Inserisci nome della categoria figlio: ");
@@ -110,12 +110,12 @@ public class GerarchiaService {
         return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
     }
 
-    /**eu
+    /**
      * Metodo per chiedere all'utente la conferma di inserimento
      * di una nuova gerarchia.
      *
      * @return TRUE se si conferma l'inserimento
-     * FALSE se non si conferma l'inserimento
+     *         FALSE se non si conferma l'inserimento
      */
     private boolean chiediConfermaInserimentoGerarchia() {
         return InputDati.yesOrNo("Vuoi inserire la nuova gerarchia?");
