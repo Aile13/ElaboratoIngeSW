@@ -22,7 +22,7 @@ public final class CategoriaRadice extends Categoria {
      */
     public CategoriaRadice(String nome, String descrizione, List<Campo> campiNativi) {
         super(nome, descrizione, new LinkedList<>());
-        this.inserisciCampiNativi(Campo.getCampiDiDefault());
+        this.inserisciCampiNativi(Campo.getCampiDiDefaultPerCategoriaRadice());
         this.inserisciCampiNativi(campiNativi);
     }
     

@@ -4,7 +4,6 @@ import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
-import it.unibs.elabingesw.subservice.CampoService;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
@@ -85,7 +84,7 @@ public class GerarchiaService {
         }
         var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria radice: ");
 
-        var listaCampi = CampoService.chiediListaDiCampi();
+        var listaCampi = CampoService.chiediListaDiCampiPerCategoriaRadice();
 
         return new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi);
     }
@@ -105,17 +104,18 @@ public class GerarchiaService {
             nomeCatFigl = InputDati.leggiStringaNonVuota("Reinserisci nome della categoria radice: ");
         }
         var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria figlio: ");
-        var listaCampi = CampoService.chiediListaDiCampi();
+        var listaCampi = CampoService.chiediListaDiCampiPerCategoriaFiglio(gerarchia);
 
         return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
     }
 
-    /**eu
+    /**
+     * eu
      * Metodo per chiedere all'utente la conferma di inserimento
      * di una nuova gerarchia.
      *
      * @return TRUE se si conferma l'inserimento
-     *         FALSE se non si conferma l'inserimento
+     * FALSE se non si conferma l'inserimento
      */
     private boolean chiediConfermaInserimentoGerarchia() {
         return InputDati.yesOrNo("Vuoi inserire la nuova gerarchia?");

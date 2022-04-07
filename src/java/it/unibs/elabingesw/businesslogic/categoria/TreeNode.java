@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public final class TreeNode<T extends Manageable> implements Serializable {
     private final T dato;
     private final TreeNode<T> parent;
-    private final List<TreeNode<T>> listaFigli;  
+    private final List<TreeNode<T>> listaFigli;
 
     /**
      * Costruttore di classe che accetta come parametro un generico
@@ -27,7 +27,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
         this.parent = null;
         this.listaFigli = new ArrayList<>();
     }
-    
+
     /**
      * Costruttore privato di classe.
      */
@@ -45,7 +45,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     public T getDato() {
         return dato;
     }
-    
+
     /**
      * Metodo getter.
      *
@@ -54,7 +54,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     private TreeNode<T> getParent() {
         return parent;
     }
-    
+
     /**
      * Metodo che restituisce la radice di un albero.
      *
@@ -67,7 +67,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
             return this.parent.getRoot();
         }
     }
-    
+
     /**
      * Metodo che restituisce la lista delle informazioni
      * nel nodo foglia.
@@ -85,7 +85,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
             return listaDatiFoglia;
         }
     }
-    
+
     /**
      * Metodo che restituisce la lista delle informazioni
      * nel nodo foglia partendo dal nodo radice.
@@ -96,7 +96,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
         var root = this.getRoot();
         return root.getListOfDataInTreeNodeFogliaFromThis();
     }
-    
+
     /**
      * Metodo che permette di cercare un nodo dato il suo
      * nome passato come parametro.
@@ -117,7 +117,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
 
         return Optional.empty();
     }
-    
+
     /**
      * Metodo che permette di cercare un nodo dato il suo
      * nome partendo dalla radice dell'albero.
@@ -130,14 +130,14 @@ public final class TreeNode<T extends Manageable> implements Serializable {
         var root = this.getRoot();
         return root.trovaTreeNodeByNomeFromThis(nome);
     }
-    
+
     /**
-     * Metodo che controlla se un nodo con nome passato come 
+     * Metodo che controlla se un nodo con nome passato come
      * parametro sia presente o meno nell'albero.
      *
      * @param nome il nome del nodo
      * @return TRUE se il nodo cercato è presente nell'albero
-     *         FALSE se il nodo cercato non è presente nell'albero
+     * FALSE se il nodo cercato non è presente nell'albero
      */
     public boolean isPresentTreeNodeByNome(String nome) {
         return this.trovaTreeNodeByNomeFromRoot(nome).isPresent();
@@ -170,7 +170,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
                         .append("\n"));
         return builder.toString();
     }
-    
+
     /**
      * Metodo che indenta di un tab una stringa passata come
      * parametro.
@@ -193,7 +193,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
 
         return figlioTreeNode;
     }
-    
+
     /**
      * Metodo che restituisce la lista delle informazioni
      * nell'albero padre, il quale nome è passato come pa-
@@ -208,7 +208,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
             return getListOfDataInTreeNodePadriByTreeNode(opTreeNode.get());
         } else return List.of();
     }
-    
+
     /**
      * Metodo che restituisce la lista delle informazioni
      * nel'albero padre, il quale oggetto corrispondente
@@ -225,12 +225,12 @@ public final class TreeNode<T extends Manageable> implements Serializable {
         }
         return listaDiData;
     }
-    
+
     /**
      * Metodo che controlla se un nodo è radice o meno.
      *
      * @return TRUE se il nodo è radice
-     *         FALSE se il nodo non è radice
+     * FALSE se il nodo non è radice
      */
     private boolean isRoot() {
         return this.parent == null;
