@@ -67,9 +67,8 @@ public class ScambioService {
     }
 
     /**
-     * Metodo che chiede la scadenza, ossia il numero massimo di
-     * giorni entro cui un fruitore può accettare una proposta di
-     * scambio.
+     * Metodo che chiede gli intervalli orari in cui è
+     * possibile effettuare gli scambi.
      *
      * @return la lista degli intervalli orari
      */
