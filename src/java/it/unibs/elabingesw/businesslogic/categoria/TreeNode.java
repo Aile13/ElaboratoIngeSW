@@ -69,35 +69,6 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     }
 
     /**
-     * Metodo che restituisce la lista delle informazioni
-     * nel nodo foglia.
-     *
-     * @return la lista delle informazioni
-     */
-    private List<T> getListOfDataInTreeNodeFogliaFromThis() {
-        if (this.listaFigli.isEmpty()) {
-            return List.of(this.dato);
-        } else {
-            List<T> listaDatiFoglia = new LinkedList<>();
-            for (TreeNode<T> figlio : listaFigli) {
-                listaDatiFoglia.addAll(figlio.getListOfDataInTreeNodeFogliaFromThis());
-            }
-            return listaDatiFoglia;
-        }
-    }
-
-    /**
-     * Metodo che restituisce la lista delle informazioni
-     * nel nodo foglia partendo dal nodo radice.
-     *
-     * @return la lista delle informazioni
-     */
-    public List<T> getListOfDataInTreeNodeFogliaFromRoot() {
-        var root = this.getRoot();
-        return root.getListOfDataInTreeNodeFogliaFromThis();
-    }
-
-    /**
      * Metodo che permette di cercare un nodo dato il suo
      * nome passato come parametro.
      *
@@ -137,7 +108,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
      *
      * @param nome il nome del nodo
      * @return TRUE se il nodo cercato è presente nell'albero
-     *         FALSE se il nodo cercato non è presente nell'albero
+     * FALSE se il nodo cercato non è presente nell'albero
      */
     public boolean isPresentTreeNodeByNome(String nome) {
         return this.trovaTreeNodeByNomeFromRoot(nome).isPresent();
@@ -230,7 +201,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
      * Metodo che controlla se un nodo è radice o meno.
      *
      * @return TRUE se il nodo è radice
-     *         FALSE se il nodo non è radice
+     * FALSE se il nodo non è radice
      */
     private boolean isRoot() {
         return this.parent == null;

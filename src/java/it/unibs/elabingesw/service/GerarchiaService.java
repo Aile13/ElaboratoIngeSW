@@ -93,9 +93,9 @@ public class GerarchiaService {
      * Metodo che chiede all'utente di inserire una categoria figlio
      * con i suoi vari campi.
      *
+     * @param gerarchia
      * @return una categoria figlio
      * @see @CampoService
-     * @param gerarchia
      */
     private CategoriaFiglio chiediCategoriaFiglio(GerarchiaDiCategorie gerarchia) {
         var nomeCatFigl = InputDati.leggiStringaNonVuota("Inserisci nome della categoria figlio: ");
@@ -114,7 +114,7 @@ public class GerarchiaService {
      * di una nuova gerarchia.
      *
      * @return TRUE se si conferma l'inserimento
-     *         FALSE se non si conferma l'inserimento
+     * FALSE se non si conferma l'inserimento
      */
     private boolean chiediConfermaInserimentoGerarchia() {
         return InputDati.yesOrNo("Vuoi inserire la nuova gerarchia?");
