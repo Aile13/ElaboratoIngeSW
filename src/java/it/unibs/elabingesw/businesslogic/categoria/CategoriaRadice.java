@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -20,8 +21,9 @@ public final class CategoriaRadice extends Categoria {
      * @param campiNativi
      */
     public CategoriaRadice(String nome, String descrizione, List<Campo> campiNativi) {
-        super(nome, descrizione, campiNativi);
-        this.inserisciCampiNativi(Campo.getCampiDiDefault());
+        super(nome, descrizione, new LinkedList<>());
+        this.inserisciCampiNativi(Campo.getCampiDiDefaultPerCategoriaRadice());
+        this.inserisciCampiNativi(campiNativi);
     }
     
     /**

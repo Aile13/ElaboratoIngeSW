@@ -3,6 +3,7 @@ package it.unibs.elabingesw.businesslogic.categoria;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Classe GerarchiaDiCategorie che implementa l'interfaccia Manageable
@@ -120,4 +121,26 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
     public boolean isNomeCategoriaUsato(String nomeCategoria) {
         return gerarchia.isPresentTreeNodeByNome(nomeCategoria);
     }
+
+    /**
+     * Metodo che ritorna la lista delle categorie padre
+     * passata come parametro una determinata categoria.
+     *
+     * @param categoria l'oggetto Categoria
+     * @return la lista delle categorie padre
+     */
+    public List<Categoria> getListaDiCategoriePadriByCategoria(Categoria categoria) {
+        return gerarchia.getListOfDataInTreeNodePadriByNome(categoria.getNome());
+    }
+
+    public boolean isCampoGiaPreso(Campo campo) {
+        var listaCategoriePadri = this.getListaDiCategoriePadriByCategoria(this.gerarchia.getDato());
+        for (Categoria categoria : listaCategoriePadri) {
+            if (categoria.isCampoGiaPreso(campo)) {
+                return true;
+            }
+        }
+        return this.gerarchia.getDato().isCampoGiaPreso(campo);
+    }
+
 }

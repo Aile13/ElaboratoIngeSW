@@ -84,7 +84,7 @@ public class GerarchiaService {
         }
         var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria radice: ");
 
-        var listaCampi = CampoService.chiediListaDiCampi();
+        var listaCampi = CampoService.chiediListaDiCampiPerCategoriaRadice();
 
         return new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi);
     }
@@ -104,7 +104,7 @@ public class GerarchiaService {
             nomeCatFigl = InputDati.leggiStringaNonVuota("Reinserisci nome della categoria radice: ");
         }
         var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria figlio: ");
-        var listaCampi = CampoService.chiediListaDiCampi();
+        var listaCampi = CampoService.chiediListaDiCampiPerCategoriaFiglio(gerarchia);
 
         return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
     }
