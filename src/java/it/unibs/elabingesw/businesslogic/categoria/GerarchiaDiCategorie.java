@@ -24,15 +24,6 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
     private GerarchiaDiCategorie(TreeNode<Categoria> gerarchia) {
         this.gerarchia = gerarchia;
     }
-    
-    /**
-     * Metodo getter.
-     *
-     * @return la lista delle categorie foglia
-     */
-    public List<Categoria> getListaDiCategoriaFoglia() {
-        return this.gerarchia.getListOfDataInTreeNodeFogliaFromRoot();
-    }
 
     /**
      * Costruttore di classe che accetta come parametro una categoria
@@ -43,6 +34,15 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      */
     public GerarchiaDiCategorie(Categoria categoriaRadice) {
         this(new TreeNode<>(categoriaRadice));
+    }
+
+    /**
+     * Metodo getter.
+     *
+     * @return la lista delle categorie foglia
+     */
+    public List<Categoria> getListaDiCategoriaFoglia() {
+        return this.gerarchia.getListOfDataInTreeNodeFogliaFromRoot();
     }
 
     /**
@@ -79,7 +79,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      *
      * @param nome il nome della gerarchia
      * @return TRUE se i nomi sono uguali
-     *         FALSE se i nomi sono diversi
+     * FALSE se i nomi sono diversi
      */
     @Override
     public boolean isStessoNome(String nome) {
@@ -119,19 +119,18 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
         TreeNode<Categoria> categoriaFiglioTreeNode = this.gerarchia.aggiungiFiglio(categoriaFiglio);
         return new GerarchiaDiCategorie(categoriaFiglioTreeNode);
     }
-    
+
     /**
      * Metodo che controlla se il nome della categoria passato come
      * parametro è già stato usato o meno.
      *
-     * @param nome il nome della categoria
      * @return TRUE se il nome è già stato usato
-     *         FALSE se il nome della categoria non è già stato usato
+     * FALSE se il nome della categoria non è già stato usato
      */
     public boolean isNomeCategoriaUsato(String nomeCategoria) {
         return gerarchia.isPresentTreeNodeByNome(nomeCategoria);
     }
-    
+
     /**
      * Metodo toString ridotto in cui mostro a video
      * solo il nome e la descrizione delle categorie
@@ -144,7 +143,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
                 '\t' + this.gerarchia.getDato().toStringRidotto() + '\n'
                 + "}";
     }
-    
+
     /**
      * Metodo che ritorna la lista delle categorie padre
      * passata come parametro una determinata categoria.
@@ -154,5 +153,15 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      */
     public List<Categoria> getListaDiCategoriePadriByCategoria(Categoria categoria) {
         return gerarchia.getListOfDataInTreeNodePadriByNome(categoria.getNome());
+    }
+
+    public boolean isCampoGiaPreso(Campo campo) {
+        var listaCategoriePadri = this.getListaDiCategoriePadriByCategoria(this.gerarchia.getDato());
+        for (Categoria categoria : listaCategoriePadri) {
+            if (categoria.isCampoGiaPreso(campo)) {
+                return true;
+            }
+        }
+        return this.gerarchia.getDato().isCampoGiaPreso(campo);
     }
 }

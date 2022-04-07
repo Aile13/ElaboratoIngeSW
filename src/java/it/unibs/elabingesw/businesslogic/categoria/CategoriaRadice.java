@@ -10,7 +10,7 @@ import java.util.List;
  * @author Ali Laaraj
  */
 public final class CategoriaRadice extends Categoria {
-    
+
     /**
      * Costruttore di classe, accetta come parametri il nome,
      * la descrizione e la lista di campi nativi della catego-
@@ -25,7 +25,7 @@ public final class CategoriaRadice extends Categoria {
         this.inserisciCampiNativi(Campo.getCampiDiDefaultPerCategoriaRadice());
         this.inserisciCampiNativi(campiNativi);
     }
-    
+
     /**
      * Metodo per la formattazione che converte un oggetto nella re-
      * lativa rappresentazione di stringa.
@@ -36,7 +36,7 @@ public final class CategoriaRadice extends Categoria {
     public String toString() {
         return "CategoriaRadice{ " + super.toString() + " }";
     }
-    
+
     /**
      * Metodo toString ridotto in cui mostro a video
      * solo il nome e la descrizione della categoria.

@@ -1,30 +1,17 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import it.unibs.elabingesw.businesslogic.gestione.Manageable;
+
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * Classe Campo che definisce un campo di una determinata categoria.
- * 
+ *
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public final class Campo implements Serializable {
-    private String nome;
-    private boolean obbligatorio;
-    
-    /**
-     * Costruttore di classe, accetta come parametri il nome del cam-
-     * po e se quest'ultimo è obbligatorio o meno.
-     * 
-     * @param nome
-     * @param obbligatorio
-     */
-    public Campo(String nome, boolean obbligatorio) {
-        this.nome = nome;
-        this.obbligatorio = obbligatorio;
-    }
-    
+public record Campo(String nome, boolean obbligatorio) implements Manageable, Serializable {
     /**
      * Metodo che ritorna la lista dei campi nativi che una catego-
      * ria deve avere che possono essere a compilazione obbligatoria
@@ -52,17 +39,17 @@ public final class Campo implements Serializable {
                 ", obbligatorio=" + obbligatorio +
                 '}';
     }
-    
+
     /**
      * Metodo per controllare se un campo è obbligatorio o meno.
      *
      * @return TRUE se il campo è obbligatorio
-     *         FALSE se il campo è facoltativo
+     * FALSE se il campo è facoltativo
      */
     public boolean isObbligatorio() {
         return this.obbligatorio;
     }
-    
+
     /**
      * Metodo getter.
      *
@@ -72,13 +59,6 @@ public final class Campo implements Serializable {
         return this.nome;
     }
 
-    /**
-     * Metodo che permette di confrontare due oggetti.
-     *
-     * @param o un oggetto generico
-     * @return TRUE se i due oggetti sono uguali
-     *         FALSE se i due oggetti sono diversi
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -90,15 +70,24 @@ public final class Campo implements Serializable {
         return getNome() != null ? getNome().equals(campo.getNome()) : campo.getNome() == null;
     }
 
-    /**
-     * Metodo che fornisce il codice hash dell'oggetto.
-     *
-     * @return l'hashcode dell'oggetto gerarchia
-     */
     @Override
     public int hashCode() {
         int result = getNome() != null ? getNome().hashCode() : 0;
         result = 31 * result + (isObbligatorio() ? 1 : 0);
         return result;
     }
+
+    @Override
+    public boolean isStessoNome(String nome) {
+        return this.nome.equals(nome);
+    }
+
+    public boolean isCampoInListaByNome(List<Campo> listaCampi) {
+        return listaCampi.stream().anyMatch(campoInList -> this.isStessoNome(campoInList.getNome()));
+    }
+
+    public boolean isCampoDiDefault() {
+        return this.isCampoInListaByNome(Campo.getCampiDiDefaultPerCategoriaRadice());
+    }
+
 }
