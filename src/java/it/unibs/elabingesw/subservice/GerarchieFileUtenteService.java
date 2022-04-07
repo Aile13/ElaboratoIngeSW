@@ -1,7 +1,9 @@
 package it.unibs.elabingesw.subservice;
 
 import it.unibs.elabingesw.businesslogic.categoria.Campo;
+import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
+import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
 
 import javax.swing.*;
@@ -45,21 +47,20 @@ public class GerarchieFileUtenteService {
         try {
             contenutoFile = Files.readString(selectedFile.toPath());
             rimuoviSpaziQuandoNonStringa();
-            System.out.println(contenutoFile);
-
             program();
+            System.out.println("Nuove gerarchie caricate in sistema.");
 
         } catch (IOException e) {
-            System.err.println("Attenzione: errore durante la lettura del file.");
-            System.err.println("Impossibile procedere con il caricamento di tutte le gerarchie.");
+            System.out.println("Attenzione: errore durante la lettura del file.");
+            System.out.println("Impossibile procedere con il caricamento delle gerarchie.");
         } catch (Exception e) {
-            System.err.println(e);
+            System.out.println(e.getMessage());
         }
     }
 
     private void rimuoviSpaziQuandoNonStringa() {
         StringBuilder builder = new StringBuilder();
-        contenutoFile.replaceAll("\n\t", "");
+        contenutoFile = contenutoFile.trim();
         boolean filtrare = true;
         while (!contenutoFile.isEmpty()) {
             if (contenutoFile.startsWith("\"")) {
@@ -70,41 +71,102 @@ public class GerarchieFileUtenteService {
             }
             consume(String.valueOf(contenutoFile.charAt(0)));
         }
-        contenutoFile = builder.toString();
+
+        contenutoFile = builder.toString()
+                .replaceAll(System.lineSeparator(), "");
     }
 
     private void program() throws Exception {
-        gerarchiaList();
+        List<GerarchiaDiCategorie> listaGerarchie = new LinkedList<>();
+        gerarchiaList(listaGerarchie);
+        listaGerarchie.forEach(gestoreGerarchie::inserisciNuovaGerarchia);
     }
 
-    private void gerarchiaList() throws Exception {
+    private void gerarchiaList(List<GerarchiaDiCategorie> gerarchie) throws Exception {
         if (!contenutoFile.isEmpty()) {
-            gerarchia();
+            var nuovaGerarchia = gerarchia();
+
+            if (gerarchie.stream()
+                    .anyMatch(gerarchiaDiCategorie ->
+                            gerarchiaDiCategorie.isStessoNome(nuovaGerarchia.getNome()))) {
+                errore();
+            } else {
+                gerarchie.add(nuovaGerarchia);
+            }
+
             if (contenutoFile.startsWith(";")) {
                 consume(";");
-                gerarchiaList();
+                gerarchiaList(gerarchie);
             } else errore();
         }
     }
 
-    private void gerarchia() throws Exception {
+    private GerarchiaDiCategorie gerarchia() throws Exception {
         ifStartsWithAndThenConsumeOrError("gerarchia{");
-        categoriaRadice();
+        var gerarchiaDiCategorie = categoriaRadice();
         ifStartsWithAndThenConsumeOrError("}");
+        return gerarchiaDiCategorie;
     }
 
-    private CategoriaRadice categoriaRadice() throws Exception {
+    private GerarchiaDiCategorie categoriaRadice() throws Exception {
         ifStartsWithAndThenConsumeOrError("categoriaRadice(");
         var nomeCategoriaRadice = matchStringa();
         ifStartsWithAndThenConsumeOrError(",");
         var descrizione = matchStringa();
         ifStartsWithAndThenConsumeOrError(",");
         List<Campo> listaCampi = campoListOp();
+        ifStartsWithAndThenConsumeOrError(",");
 
-        if (listaCampi.stream().anyMatch(Campo::isCampoDiDefault))
+        if (listaCampi.stream().anyMatch(Campo::isCampoDiDefault) ||
+                gestoreGerarchie.isElementoInListaByNome(nomeCategoriaRadice))
             errore();
 
-        return new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi);
+        GerarchiaDiCategorie gerarchiaDiCategorie = new GerarchiaDiCategorie(
+                new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi)
+        );
+
+        categoriaFiglioListOp(gerarchiaDiCategorie);
+
+        ifStartsWithAndThenConsumeOrError(")");
+        return gerarchiaDiCategorie;
+    }
+
+    private void categoriaFiglioListOp(GerarchiaDiCategorie gerarchia) throws Exception {
+        ifStartsWithAndThenConsumeOrError("[");
+        if (!contenutoFile.startsWith("]"))
+            categoriaFiglioList(gerarchia);
+        ifStartsWithAndThenConsumeOrError("]");
+    }
+
+    private void categoriaFiglioList(GerarchiaDiCategorie gerarchia) throws Exception {
+        if (!contenutoFile.isEmpty()) {
+            categoriaFiglio(gerarchia);
+
+            if (contenutoFile.startsWith(",")) {
+                consume(",");
+                categoriaFiglio(gerarchia);
+            }
+        }
+    }
+
+
+    private void categoriaFiglio(GerarchiaDiCategorie gerarchia) throws Exception {
+        ifStartsWithAndThenConsumeOrError("categoriaFiglio(");
+        var nomeCategoria = matchStringa();
+
+        if (gerarchia.isNomeCategoriaUsato(nomeCategoria))
+            errore();
+
+        ifStartsWithAndThenConsumeOrError(",");
+        var descrizione = matchStringa();
+        ifStartsWithAndThenConsumeOrError(",");
+        List<Campo> campi = campoListOp();
+        ifStartsWithAndThenConsumeOrError(",");
+        var nuovaCategoria = new CategoriaFiglio(nomeCategoria, descrizione, campi);
+        var nuovaGerarchia = gerarchia.inserisciSottoCategoria(nuovaCategoria);
+        categoriaFiglioListOp(nuovaGerarchia);
+
+        ifStartsWithAndThenConsumeOrError(")");
     }
 
     private List<Campo> campoListOp() throws Exception {
@@ -118,17 +180,19 @@ public class GerarchieFileUtenteService {
         return listaCampi;
     }
 
-    private List<Campo> campoList(List<Campo> listaCampi) throws Exception {
+    private void campoList(List<Campo> listaCampi) throws Exception {
         Campo campo = campo();
         if (campo.isCampoInListaByNome(listaCampi)) {
             errore();
+        } else {
+            listaCampi.add(campo);
         }
 
         if (contenutoFile.startsWith(",")) {
             consume(",");
             campoList(listaCampi);
         }
-        return listaCampi;
+
     }
 
     private Campo campo() throws Exception {
@@ -177,12 +241,12 @@ public class GerarchieFileUtenteService {
     }
 
     private void consume(String string) {
-        contenutoFile = contenutoFile.replaceFirst(string, "");
+        contenutoFile = contenutoFile.substring(string.length());
     }
 
     private void errore() throws Exception {
         throw new Exception("Attenzione: contenuto file non conforme a sintassi. " +
-                "Impossibile procedere al caricamento di tutte le gerarchie.");
+                "Impossibile procedere al caricamento delle gerarchie.");
     }
 
     public void avviaServizio() {

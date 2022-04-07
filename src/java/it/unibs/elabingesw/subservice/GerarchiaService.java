@@ -84,9 +84,7 @@ public class GerarchiaService {
         }
         var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria radice: ");
 
-
         var listaCampi = CampoService.chiediListaDiCampiPerCategoriaRadice();
-
 
         return new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi);
     }

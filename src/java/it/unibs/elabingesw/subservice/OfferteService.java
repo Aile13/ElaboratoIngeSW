@@ -289,7 +289,7 @@ public class OfferteService {
             for (Offerta offertaInScambio : offerte) {
                 System.out.println("Proposta di scambio per " +
                         offertaInScambio.getOffertaAccoppiata().getNomeArticolo() +
-                        " con " + offertaInScambio.getNomeArticolo()+":");
+                        " con " + offertaInScambio.getNomeArticolo() + ":");
                 if (!Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
                     System.out.println("\tUltima risposta di utente controparte: "
                             + offertaInScambio.getListaCampiAppuntamento());
@@ -301,27 +301,32 @@ public class OfferteService {
     }
 
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
-        System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere " +
-                "relative offerte in scambio e chiuse");
-        var gerarchiaSelezionata = chiediGerarchia();
-        var categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
+        if (gestoreGerarchie.haGerarchie()) {
+            System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere " +
+                    "relative offerte in scambio e chiuse");
+            var gerarchiaSelezionata = chiediGerarchia();
+            var categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
 
-        var offerteInScambio =
-                this.gestoreOfferte.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
-        var offerteChiuse = this.gestoreOfferte.getofferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
+            var offerteInScambio =
+                    this.gestoreOfferte.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
+            var offerteChiuse = this.gestoreOfferte.getofferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
 
-        System.out.println("Per categoria: " + categoriaFogliaSelezionata.getNome());
-        System.out.println("Le offerte in scambio:");
-        if (offerteInScambio.isEmpty()) {
-            System.out.println("\tNon ci sono offerte in scambio per la categoria selezionata.");
+            System.out.println("Per categoria: " + categoriaFogliaSelezionata.getNome());
+            System.out.println("Le offerte in scambio:");
+            if (offerteInScambio.isEmpty()) {
+                System.out.println("\tNon ci sono offerte in scambio per la categoria selezionata.");
+            } else {
+                offerteInScambio.forEach(System.out::println);
+            }
+            System.out.println("Le offerte chiuse:");
+            if (offerteChiuse.isEmpty()) {
+                System.out.println("\tNon ci sono offerte chiuse per la categoria selezionata.");
+            } else {
+                offerteChiuse.forEach(System.out::println);
+            }
         } else {
-            offerteInScambio.forEach(System.out::println);
-        }
-        System.out.println("Le offerte chiuse:");
-        if (offerteChiuse.isEmpty()) {
-            System.out.println("\tNon ci sono offerte chiuse per la categoria selezionata.");
-        } else {
-            offerteChiuse.forEach(System.out::println);
+            System.out.println("Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.");
+            System.out.println("Impossibile procedere per visualizzare offerte in scambio e chiuse.");
         }
     }
 }

@@ -1,8 +1,8 @@
 gerarchia {
     categoriaRadice (
         "automobile",
-        "mezzo ecologico",
-        [( "numero ruote", t ), ("sedili", f)],
+        "mezzo    ecologico",
+        [( "numero ruote": t ), ("sedili": f)],
         [
             categoriaFiglio(
                 "sportiva",
@@ -23,7 +23,7 @@ gerarchia {
     categoriaRadice(
         "idrovolante",
         "mezzo ecologico",
-        [("numero ruote", t), ("sedili", f)],
+        [("numero ruote": t), ("sedili": f)],
         [
             categoriaFiglio(
                 "sportiva",
