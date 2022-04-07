@@ -8,13 +8,23 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @author Elia
+ * Classe GestoreGenerico che verrà ereditata dalle classi
+ * GestoreUtenti e GestoreGerarchie.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 abstract class GestoreGenerico<T extends Manageable & Serializable> {
     private final String pathRepository;
     private final String dataDir = "./Dati/";
     private final List<T> listaElementi;
 
+    /**
+     * Costruttore di classe che accetta come parametro il
+     * nome di un file.
+     *
+     * @param fileName
+     */
     public GestoreGenerico(String fileName) {
         this.pathRepository = dataDir + fileName + ".dat";
         inizializzaDirDati();
@@ -22,6 +32,10 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
         caricaElementi();
     }
 
+    /**
+     * Metodo che crea una directory creando prima tutte le 
+     * directory padre inesistenti.
+     */
     private void inizializzaDirDati() {
         try {
             Files.createDirectories(Path.of(this.dataDir));
@@ -30,6 +44,9 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
         }
     }
 
+    /**
+     * Metodo che salva i dati su file.
+     */
     public void salvaDati() {
         try (ObjectOutputStream output =
                      new ObjectOutputStream(new FileOutputStream(pathRepository))) {
@@ -39,6 +56,10 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
         }
     }
 
+    /**
+     * Metodo che carica tutti gli utenti e tutte le gerar-
+     * chie su file.
+     */
     protected void caricaElementi() {
         if (new File(pathRepository).exists()) {
             try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(pathRepository))) {
@@ -52,14 +73,34 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
         }
     }
 
+    /**
+     * Metodo che controlla se un elemento è presente
+     * nella lista o meno.
+     *
+     * @param nome il nome dell'elemento
+     * @return TRUE se l'elemento è presente in lista
+     *         FALSE se l'elemento non è presente in lista
+     */
     public boolean isElementoInListaByNome(String nome) {
         return trovaElementoConNome(nome).isPresent();
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return la lista degli elementi
+     */
     public List<T> getListaElementi() {
         return listaElementi;
     }
 
+    /**
+     * Metodo che permette di cercare un elemento
+     * dato il suo nome passato come parametro.
+     *
+     * @param nome il nome dell'elemento
+     * @return l'elemento cercato
+     */
     public Optional<T> trovaElementoConNome(String nome) {
         for (T elemento :
                 listaElementi) {
@@ -70,6 +111,11 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
         return Optional.empty();
     }
 
+    /**
+     * Metodo che permette di inserire un elemento.
+     *
+     * @param e un oggetto generico
+     */
     public void inserisciElemento(T e) {
         this.listaElementi.add(e);
     }

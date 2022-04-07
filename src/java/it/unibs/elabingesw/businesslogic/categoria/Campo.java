@@ -72,6 +72,13 @@ public final class Campo implements Serializable {
         return this.nome;
     }
 
+    /**
+     * Metodo che permette di confrontare due oggetti.
+     *
+     * @param o un oggetto generico
+     * @return TRUE se i due oggetti sono uguali
+     *         FALSE se i due oggetti sono diversi
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,6 +90,11 @@ public final class Campo implements Serializable {
         return getNome() != null ? getNome().equals(campo.getNome()) : campo.getNome() == null;
     }
 
+    /**
+     * Metodo che fornisce il codice hash dell'oggetto.
+     *
+     * @return l'hashcode dell'oggetto gerarchia
+     */
     @Override
     public int hashCode() {
         int result = getNome() != null ? getNome().hashCode() : 0;

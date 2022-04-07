@@ -8,9 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Elia
+ * Classe IntervalloOrariService che gestisce le varie operazioni
+ * che si effettuano su uno o più intervalli orari.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 class IntervalloOrariService {
+    
+    /**
+     * Metodo che chiede all'utente gli intervalli orari in cui
+     * è possibile effettuare gli scambi: questi intervalli orari
+     * verranno poi inseriti in una lista apposita.
+     *
+     * @return la lista degli intervalli orari
+     */
     public static List<IntervalloOrario> chiediIntervalliOrari() {
         List<IntervalloOrario> listaIntervalliOrari = new ArrayList<>();
 
@@ -36,10 +48,23 @@ class IntervalloOrariService {
         return listaIntervalliOrari;
     }
 
+    /**
+     * Metodo per chiedere all'utente se vuole aggiungere un altro
+     * intervallo orario.
+     *
+     * @return TRUE se si vuole aggiungere un intervallo orario
+     *         FALSE se non si vuole aggiungere un intervallo orario
+     */
     private static boolean chiediSeAggiungereAltroIntervalloOrario() {
         return InputDati.yesOrNo("Vuoi aggiungere un altro intervallo orario?");
     }
 
+    /**
+     * Metodo che chiede all'utente di inserire un singolo
+     * intervallo orario.
+     *
+     * @return l'intervallo orario
+     */
     private static IntervalloOrario chiediIntervalloOrario() {
         System.out.println("Inserimento orario iniziale");
         LocalTime iniziale = chiediOrario();
@@ -56,16 +81,34 @@ class IntervalloOrariService {
         return new IntervalloOrario(iniziale, finale);
     }
 
+    /**
+     * Metodo che chiede all'utente di inserire un singolo
+     * orario.
+     *
+     * @return l'orario
+     */
     private static LocalTime chiediOrario() {
         int ora = chiediOre();
         int minuti = chiediMinuti();
         return LocalTime.of(ora, minuti);
     }
 
+    /**
+     * Metodo che chiede all'utente di inserire le ore
+     * di un determinato orario
+     *
+     * @return le ore
+     */
     private static int chiediOre() {
         return InputDati.leggiIntero("Inserisci solo l'ora (24h): ", 0, 23);
     }
 
+    /**
+     * Metodo che chiede all'utente di inserire i minuti
+     * di un determinato orario
+     *
+     * @return i minuti
+     */
     private static int chiediMinuti() {
         int minuti = InputDati.leggiIntero("Inserisci solo i minuti(0 o 30): ");
         while (minuti != 0 && minuti != 30) {

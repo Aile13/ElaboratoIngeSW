@@ -4,9 +4,22 @@ import it.unibs.elabingesw.businesslogic.offerta.ListaCampiCompilati;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
- * @author Elia
+ * Classe ListaCampiCompilatiService per la gestione
+ * della compilazione dei vari campi che vengono ri-
+ * chiesti durante l'esecuzione dell'applicativo.
+ * 
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class ListaCampiCompilatiService {
+    
+    /**
+     * Metodo che effettua la compilazione dei campi
+     * di un oggetto distinguendoli tra obbligatori
+     * e non obbligatori.
+     *
+     * @param listaCampiCompilati la lista dei campi compilati
+     */
     public static void compila(ListaCampiCompilati listaCampiCompilati) {
         listaCampiCompilati.getCampiCompilati().forEach((campo, s) -> {
             String compilazione = null;
