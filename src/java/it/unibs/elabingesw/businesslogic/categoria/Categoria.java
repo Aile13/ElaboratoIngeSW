@@ -15,7 +15,7 @@ public class Categoria implements Manageable, Serializable {
     private final String nome;
     private final String descrizione;
     private final List<Campo> campiNativi;
-    
+
     /**
      * Costruttore di classe, accetta come parametri il nome, la
      * descrizione e la lista dei campi nativi di una categoria.
@@ -23,13 +23,13 @@ public class Categoria implements Manageable, Serializable {
      * @param nome
      * @param descrizione
      * @param campiNativi
-     */ 
+     */
     public Categoria(String nome, String descrizione, List<Campo> campiNativi) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.campiNativi = campiNativi;
     }
-    
+
     /**
      * Metodo getter.
      *
@@ -38,17 +38,17 @@ public class Categoria implements Manageable, Serializable {
     public String getNome() {
         return nome;
     }
-    
+
     /**
      * Metodo che permette all'utente di inserire una lista di
      * campi nativi per una determinata categoria.
-     * 
+     *
      * @param campi la lista dei campi
      */
     public void inserisciCampiNativi(List<Campo> campi) {
         this.campiNativi.addAll(campi);
     }
-    
+
     /**
      * Metodo per la formattazione che converte un oggetto nella re-
      * lativa rappresentazione di stringa.
@@ -57,17 +57,17 @@ public class Categoria implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return  "nome='" + nome + '\'' +
+        return "nome='" + nome + '\'' +
                 ", descrizione='" + descrizione + '\'' +
                 ", campiNativi=" + campiNativi;
     }
-    
+
     /**
      * Metodo che permette di confrontare due oggetti.
      *
      * @param o un oggetto generico
      * @return TRUE se i due oggetti sono uguali
-     *         FALSE se i due oggetti sono diversi
+     * FALSE se i due oggetti sono diversi
      */
     @Override
     public boolean equals(Object o) {
@@ -78,7 +78,7 @@ public class Categoria implements Manageable, Serializable {
 
         return getNome().equals(categoria.getNome());
     }
-    
+
     /**
      * Metodo che fornisce il codice hash dell'oggetto.
      *
@@ -88,7 +88,7 @@ public class Categoria implements Manageable, Serializable {
     public int hashCode() {
         return getNome().hashCode();
     }
-    
+
     /**
      * Metodo implementato dall'interfaccia Manageable
      * che verifica se due gerarchie hanno lo stesso no-
@@ -96,13 +96,13 @@ public class Categoria implements Manageable, Serializable {
      *
      * @param nome il nome della gerarchia
      * @return TRUE se i nomi sono uguali
-     *         FALSE se i nomi sono diversi
+     * FALSE se i nomi sono diversi
      */
     @Override
     public boolean isStessoNome(String nome) {
         return this.getNome().equals(nome);
     }
-    
+
     /**
      * Metodo toString ridotto in cui mostro a video
      * solo il nome e la descrizione della categoria.
@@ -112,5 +112,9 @@ public class Categoria implements Manageable, Serializable {
     public String toStringRidotto() {
         return "nome='" + nome + '\'' +
                 ", descrizione='" + descrizione + '\'';
+    }
+
+    public boolean isCampoGiaPreso(Campo campo) {
+        return campo.isCampoInListaByNome(campiNativi);
     }
 }

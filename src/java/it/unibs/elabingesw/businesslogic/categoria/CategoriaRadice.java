@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  * @author Ali Laaraj
  */
 public final class CategoriaRadice extends Categoria {
-    
+
     /**
      * Costruttore di classe, accetta come parametri il nome,
      * la descrizione e la lista di campi nativi della catego-
@@ -20,10 +21,11 @@ public final class CategoriaRadice extends Categoria {
      * @param campiNativi
      */
     public CategoriaRadice(String nome, String descrizione, List<Campo> campiNativi) {
-        super(nome, descrizione, campiNativi);
-        this.inserisciCampiNativi(Campo.getCampiDiDefault());
+        super(nome, descrizione, new LinkedList<>());
+        this.inserisciCampiNativi(Campo.getCampiDiDefaultPerCategoriaRadice());
+        this.inserisciCampiNativi(campiNativi);
     }
-    
+
     /**
      * Metodo per la formattazione che converte un oggetto nella re-
      * lativa rappresentazione di stringa.
@@ -34,7 +36,7 @@ public final class CategoriaRadice extends Categoria {
     public String toString() {
         return "CategoriaRadice{ " + super.toString() + " }";
     }
-    
+
     /**
      * Metodo toString ridotto in cui mostro a video
      * solo il nome e la descrizione della categoria.
