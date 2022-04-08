@@ -228,7 +228,7 @@ public class OfferteService {
             } else {
                 Offerta offertaDaBarattareA = chiediOffertaByList(listaOfferteAperteUtente);
                 System.out.println("Seleziona ora una offerta aperta di medesima categoria " +
-                        "e di diverso utente che intedi barattare");
+                        "e di diverso utente che intendi barattare");
                 var listaOffAperteNonUtenteStessaCat = this.gestoreOfferte
                         .getOfferteAperteByCategoriaFogliaAndExcludeUser(
                                 offertaDaBarattareA.getCategoriaDiAppartenenza(), utente);
