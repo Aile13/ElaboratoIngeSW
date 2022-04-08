@@ -81,7 +81,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     /**
      * Metodo che fornisce il codice hash dell'oggetto.
      *
-     * @return l'hashcode dell'oggetto gerarchia
+     * @return l'hashcode dell'oggetto campo
      */
     @Override
     public int hashCode() {
@@ -105,10 +105,10 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     }
 
     /**
-     * Metodo che controlla se un campo col nome
-     * passato per parametro è in lista o meno.
+     * Metodo che controlla se un campo è in lista
+     * passata per parametro.
      *
-     * @param nome il nome del campo
+     * @param listaCampi la lista dei campi
      * @return TRUE se il campo è in lista 
      *         FALSE se il campo non è in lista
      */
@@ -117,11 +117,8 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     }
 
     /**
-     * Metodo implementato dall'interfaccia Manageable
-     * che verifica se due gerarchie hanno lo stesso no-
-     * me o meno.
+     * Metodo che controlla se un campo è di default o meno.
      *
-     * @param nome il nome della gerarchia
      * @return TRUE se il campo è di default
      *         FALSE se il campo non è di default
      */
