@@ -6,12 +6,13 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Classe Campo che definisce un campo di una determinata categoria.
+ * Record Campo che definisce un campo di una determinata categoria.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
 public record Campo(String nome, boolean obbligatorio) implements Manageable, Serializable {
+    
     /**
      * Metodo che ritorna la lista dei campi nativi che una catego-
      * ria deve avere che possono essere a compilazione obbligatoria
@@ -59,6 +60,13 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
         return this.nome;
     }
 
+    /**
+     * Metodo che permette di confrontare due oggetti.
+     *
+     * @param o un oggetto generico
+     * @return TRUE se i due oggetti sono uguali
+     *         FALSE se i due oggetti sono diversi
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -70,6 +78,11 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
         return getNome() != null ? getNome().equals(campo.getNome()) : campo.getNome() == null;
     }
 
+    /**
+     * Metodo che fornisce il codice hash dell'oggetto.
+     *
+     * @return l'hashcode dell'oggetto campo
+     */
     @Override
     public int hashCode() {
         int result = getNome() != null ? getNome().hashCode() : 0;
@@ -77,15 +90,38 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
         return result;
     }
 
+    /**
+     * Metodo implementato dall'interfaccia Manageable
+     * che verifica se due campi hanno lo stesso no-
+     * me o meno.
+     *
+     * @param nome il nome del campo
+     * @return TRUE se i nomi sono uguali
+     *         FALSE se i nomi sono diversi
+     */
     @Override
     public boolean isStessoNome(String nome) {
         return this.nome.equals(nome);
     }
 
+    /**
+     * Metodo che controlla se un campo è in lista
+     * passata per parametro.
+     *
+     * @param listaCampi la lista dei campi
+     * @return TRUE se il campo è in lista 
+     *         FALSE se il campo non è in lista
+     */
     public boolean isCampoInListaByNome(List<Campo> listaCampi) {
         return listaCampi.stream().anyMatch(campoInList -> this.isStessoNome(campoInList.getNome()));
     }
 
+    /**
+     * Metodo che controlla se un campo è di default o meno.
+     *
+     * @return TRUE se il campo è di default
+     *         FALSE se il campo non è di default
+     */
     public boolean isCampoDiDefault() {
         return this.isCampoInListaByNome(Campo.getCampiDiDefaultPerCategoriaRadice());
     }
