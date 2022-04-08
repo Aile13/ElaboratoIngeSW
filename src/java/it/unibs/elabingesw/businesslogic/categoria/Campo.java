@@ -117,9 +117,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     }
 
     /**
-     * Metodo implementato dall'interfaccia Manageable
-     * che verifica se due gerarchie hanno lo stesso no-
-     * me o meno.
+     * Metodo che controlla se un campo è di default o meno.
      *
      * @return TRUE se il campo è di default
      *         FALSE se il campo non è di default
