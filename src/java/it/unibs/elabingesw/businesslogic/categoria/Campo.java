@@ -45,7 +45,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
      * Metodo per controllare se un campo è obbligatorio o meno.
      *
      * @return TRUE se il campo è obbligatorio
-     * FALSE se il campo è facoltativo
+     *         FALSE se il campo è facoltativo
      */
     public boolean isObbligatorio() {
         return this.obbligatorio;
@@ -81,7 +81,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     /**
      * Metodo che fornisce il codice hash dell'oggetto.
      *
-     * @return l'hashcode dell'oggetto gerarchia
+     * @return l'hashcode dell'oggetto campo
      */
     @Override
     public int hashCode() {
@@ -117,11 +117,8 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     }
 
     /**
-     * Metodo implementato dall'interfaccia Manageable
-     * che verifica se due gerarchie hanno lo stesso no-
-     * me o meno.
+     * Metodo che controlla se un campo è di default o meno.
      *
-     * @param nome il nome della gerarchia
      * @return TRUE se il campo è di default
      *         FALSE se il campo non è di default
      */
