@@ -4,6 +4,7 @@ import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
@@ -17,16 +18,19 @@ import it.unibs.eliapitozzi.mylib.InputDati;
 public class GerarchiaService {
 
     private final GestoreGerarchie gestoreGerarchie;
+    private final GestoreScambio gestoreScambio;
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreGerarchie.
      *
      * @param gestoreGerarchie
+     * @param gestoreScambio
      * @see GestoreGerarchie
      */
-    public GerarchiaService(GestoreGerarchie gestoreGerarchie) {
+    public GerarchiaService(GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
         this.gestoreGerarchie = gestoreGerarchie;
+        this.gestoreScambio = gestoreScambio;
     }
 
     /**
@@ -144,8 +148,8 @@ public class GerarchiaService {
         }
     }
 
-    public void caricaGerarchieDaFileUtente() {
-        var fileUtenteService = new GerarchieFileUtenteService(this.gestoreGerarchie);
+    public void caricaDatiDaFileUtente() {
+        var fileUtenteService = new GerarchieFileUtenteService(this.gestoreGerarchie, this.gestoreScambio);
 
         fileUtenteService.avviaServizio();
     }

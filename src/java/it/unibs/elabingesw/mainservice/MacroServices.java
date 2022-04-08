@@ -39,7 +39,7 @@ public class MacroServices {
         this.gestoreScambio = gestoreScambio;
         this.gestoreOfferte = gestoreOfferte;
 
-        this.gerarchiaService = new GerarchiaService(this.gestoreGerarchie);
+        this.gerarchiaService = new GerarchiaService(this.gestoreGerarchie, this.gestoreScambio);
         this.scambioService = new ScambioService(this.gestoreScambio);
         this.offerteService = new OfferteService(this.gestoreOfferte, this.gestoreGerarchie, this.gestoreScambio);
     }
@@ -140,7 +140,7 @@ public class MacroServices {
         this.offerteService.visualizzaOfferteInScambioEChiuseConSelezioneFoglia();
     }
 
-    public void caricaGerarchieDaFileUtente() {
-        this.gerarchiaService.caricaGerarchieDaFileUtente();
+    public void caricaDatiDaFileUtente() {
+        this.gerarchiaService.caricaDatiDaFileUtente();
     }
 }

@@ -50,7 +50,7 @@ public class MainMenu {
                                     service::visualizzaOfferteAperteConSelezioneFoglia),
                             new VoceEComando("Visualizza offerte in scambio e chiuse",
                                     service::visualizzaOfferteInScambioEChiuseConSelezioneFoglia),
-                            new VoceEComando("Carica gerarchia da file", service::caricaGerarchieDaFileUtente)
+                            new VoceEComando("Carica dati da file", service::caricaDatiDaFileUtente)
                     });
         } else {
             functionalMenu = new MyFunctionalMenu("Menu per Fruitore",

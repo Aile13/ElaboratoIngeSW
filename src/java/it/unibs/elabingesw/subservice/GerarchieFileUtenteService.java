@@ -5,11 +5,18 @@ import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
+import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
+import it.unibs.elabingesw.businesslogic.scambio.Scambio;
+import it.unibs.eliapitozzi.mylib.MyMenu;
 
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.time.DayOfWeek;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,35 +26,78 @@ import java.util.List;
 public class GerarchieFileUtenteService {
 
     private final GestoreGerarchie gestoreGerarchie;
+    private final GestoreScambio gestoreScambio;
     private File selectedFile;
     private String contenutoFile;
 
-    public GerarchieFileUtenteService(GestoreGerarchie gestoreGerarchie) {
+    public GerarchieFileUtenteService(GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
 
         this.gestoreGerarchie = gestoreGerarchie;
+        this.gestoreScambio = gestoreScambio;
     }
 
-    private void selezionaFileDaCaricare() {
-        System.out.println("Apertura finestra di selezione file.");
+    private void scegliAzioneESelezionaFileDaCaricare() {
+        var menu = new MyMenu("Menu selezione caricamento dati da file utente", new String[]{
+                "Carica da file i valori dei parametri di configurazione",
+                "Carica da file le gerarchie di categorie"
+        }, true);
 
-        JFileChooser jFileChooser = new JFileChooser(".");
-        int returnValue = jFileChooser.showOpenDialog(null);
+        int scelta = menu.scegli();
 
-        if (returnValue == JFileChooser.APPROVE_OPTION) {
-            this.selectedFile = jFileChooser.getSelectedFile();
-            System.out.println("File selezionato: " + selectedFile.getAbsolutePath());
-            leggiECaricaGerachie();
+        if (scelta != 0) {
+            System.out.println("Ora seleziona dalla finestra il file da cui importare i dati.");
+            System.out.println("Apertura finestra di selezione file.");
+
+            JFileChooser jFileChooser = new JFileChooser(".");
+            int returnValue = jFileChooser.showOpenDialog(null);
+
+            if (returnValue == JFileChooser.APPROVE_OPTION) {
+                this.selectedFile = jFileChooser.getSelectedFile();
+                System.out.println("File selezionato: " + selectedFile.getAbsolutePath());
+                if (scelta == 1) {
+                    if (gestoreScambio.isInfoScambioDaConfigurare()) {
+                        leggiECaricaParametri();
+                    } else {
+                        System.out.println("Attenzione: info di scambio già configurate.");
+                        System.out.println("Esco dalla procedura.");
+                    }
+                } else if (scelta == 2) {
+                    leggiECaricaGerachie();
+                }
+            } else {
+                System.out.println("Nessun file selezionato, esco dalla procedura.");
+            }
+
         } else {
-            System.out.println("Nessun file selezionato, esco dalla procedura.");
+            System.out.println("Opzione di uscita selezionata, esco da procedura.");
         }
-        this.selectedFile = jFileChooser.getSelectedFile();
+    }
+
+    private void leggiECaricaParametri() {
+        try {
+            contenutoFile = Files.readString(selectedFile.toPath());
+            rimuoviSpaziQuandoNonStringa();
+            programParametri();
+            System.out.println("Nuovi parametri caricati in sistema.");
+
+        } catch (IOException e) {
+            System.out.println("Attenzione: errore durante la lettura del file.");
+            System.out.println("Impossibile procedere con il caricamento dei parametri.");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private void programParametri() throws Exception {
+        Scambio scambio = parametri();
+        this.gestoreScambio.impostaInfoDiScambio(scambio);
     }
 
     private void leggiECaricaGerachie() {
         try {
             contenutoFile = Files.readString(selectedFile.toPath());
             rimuoviSpaziQuandoNonStringa();
-            program();
+            programGerarchie();
             System.out.println("Nuove gerarchie caricate in sistema.");
 
         } catch (IOException e) {
@@ -76,7 +126,113 @@ public class GerarchieFileUtenteService {
                 .replaceAll(System.lineSeparator(), "");
     }
 
-    private void program() throws Exception {
+    private Scambio parametri() throws Exception {
+        ifStartsWithAndThenConsumeOrError("scambio{");
+        String piazza = piazza();
+        ifStartsWithAndThenConsumeOrError(",");
+        var luoghi = luoghi();
+        ifStartsWithAndThenConsumeOrError(",");
+        var giorni = giorni();
+        ifStartsWithAndThenConsumeOrError(",");
+        var intervalliOrari = intervalliOrari();
+        ifStartsWithAndThenConsumeOrError(",");
+        var scadenza = scadenza();
+        ifStartsWithAndThenConsumeOrError("};");
+        return new Scambio(piazza, luoghi, giorni, intervalliOrari, scadenza);
+    }
+
+    private int scadenza() throws Exception {
+        ifStartsWithAndThenConsumeOrError("scadenza=");
+        var scadenza = Integer.parseInt(matchStringa());
+        if (scadenza <= 0) {
+            errore();
+        }
+        return scadenza;
+    }
+
+    private List<IntervalloOrario> intervalliOrari() throws Exception {
+        List<IntervalloOrario> intervalliOrari = new LinkedList<>();
+        ifStartsWithAndThenConsumeOrError("intervalli-orari=[");
+        intervalliOrari.add(interalloOrario());
+        while (contenutoFile.startsWith(",")) {
+            consume(",");
+            var nuovoIntervalloOrario = interalloOrario();
+            if (intervalliOrari.stream()
+                    .anyMatch(intervalloOrario ->
+                            intervalloOrario.intersecaAltroIntervalloOrario(nuovoIntervalloOrario))) {
+                errore();
+            } else {
+                intervalliOrari.add(nuovoIntervalloOrario);
+            }
+        }
+        ifStartsWithAndThenConsumeOrError("]");
+        return intervalliOrari;
+    }
+
+    private IntervalloOrario interalloOrario() throws Exception {
+        IntervalloOrario intervalloOrario = null;
+        var intervalloString = matchStringa();
+        var orari = intervalloString.split("-");
+        var minutiOrarioIniziale = orari[0].split(":")[1];
+        if (!minutiOrarioIniziale.equals("00") && !minutiOrarioIniziale.equals("30")) {
+            errore();
+        } else {
+            var minutiOrarioFinale = orari[1].split(":")[1];
+            if (!minutiOrarioFinale.equals("00") && !minutiOrarioFinale.equals("30")) {
+                errore();
+            } else {
+                var orarioIniziale = LocalTime.parse(orari[0], DateTimeFormatter.ofPattern("HH:mm"));
+                var orarioFinale = LocalTime.parse(orari[1], DateTimeFormatter.ofPattern("HH:mm"));
+                if (!orarioFinale.isAfter(orarioIniziale)) {
+                    errore();
+                } else {
+                    intervalloOrario = new IntervalloOrario(orarioIniziale, orarioFinale);
+                }
+            }
+        }
+        return intervalloOrario;
+    }
+
+    private List<DayOfWeek> giorni() throws Exception {
+        List<DayOfWeek> giorni = new LinkedList<>();
+        ifStartsWithAndThenConsumeOrError("giorni=[");
+        giorni.add(DayOfWeek.valueOf(matchStringa()));
+        while (contenutoFile.startsWith(",")) {
+            consume(",");
+            var altroGiorno = DayOfWeek.valueOf(matchStringa());
+            if (giorni.stream().anyMatch(dayOfWeek -> dayOfWeek.equals(altroGiorno))) {
+                errore();
+            } else {
+                giorni.add(altroGiorno);
+            }
+        }
+        ifStartsWithAndThenConsumeOrError("]");
+        return giorni;
+    }
+
+    private List<String> luoghi() throws Exception {
+        List<String> luoghi = new LinkedList<>();
+        ifStartsWithAndThenConsumeOrError("luoghi=[");
+        luoghi.add(matchStringa());
+        while (contenutoFile.startsWith(",")) {
+            consume(",");
+            var altroLuogo = matchStringa();
+            if (luoghi.stream().anyMatch(luogo -> luogo.equals(altroLuogo))) {
+                errore();
+            } else {
+                luoghi.add(altroLuogo);
+            }
+        }
+        ifStartsWithAndThenConsumeOrError("]");
+        return luoghi;
+    }
+
+    private String piazza() throws Exception {
+        ifStartsWithAndThenConsumeOrError("piazza=");
+        return matchStringa();
+    }
+
+    private void programGerarchie() throws Exception {
         List<GerarchiaDiCategorie> listaGerarchie = new LinkedList<>();
         gerarchiaList(listaGerarchie);
         listaGerarchie.forEach(gestoreGerarchie::inserisciNuovaGerarchia);
@@ -246,10 +402,10 @@ public class GerarchieFileUtenteService {
 
     private void errore() throws Exception {
         throw new Exception("Attenzione: contenuto file non conforme a sintassi. " +
-                "Impossibile procedere al caricamento delle gerarchie.");
+                "Impossibile procedere al caricamento dei dati.");
     }
 
     public void avviaServizio() {
-        selezionaFileDaCaricare();
+        scegliAzioneESelezionaFileDaCaricare();
     }
 }
