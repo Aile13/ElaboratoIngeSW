@@ -189,6 +189,14 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che chiede all'utente di selezionare l'offerta aperta
+     * di interesse scegliendola tra le offerte contenute dentro la
+     * lista passata per parametro.
+     *
+     * @return l'offerta aperta
+     * @see GestoreOfferte
+     */
     private Offerta chiediOffertaByList(List<Offerta> listaOfferte) {
         System.out.println("Seleziona l'offerta aperta di interesse: ");
         for (Offerta offerta : listaOfferte) {
@@ -200,6 +208,13 @@ public class OfferteService {
         return chiediOffertaByList(listaOfferte);
     }
 
+    /**
+     * Metodo che permette all'utente di selezionare due offerte aperte
+     * che sono barattabili, rispettando i vincoli che le due offerte
+     * siano della stessa categoria e che siano di due utenti diversi.
+     *
+     * @see GestoreScambio
+     */
     public void selezionaUnaOffertaApertaPerBaratto() {
         if (gestoreScambio.isInfoScambioDaConfigurare()) {
             System.out.println("Attenzione: criteri e tempistiche di scambio non ancora impostati.");
@@ -235,6 +250,14 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che permette all'utente di visualizzare le proposte di 
+     * scambio ricevute: può accettare una proposta di scambio mandan-
+     * do un messaggio all'altro utente contenente una proposta di ap-
+     * puntamento.
+     *
+     * @see GestoreOfferte
+     */
     public void visualizzaProposteDiScambio() {
         gestoreOfferte.aggiornaStatoDelleOfferte();
         var offerteSelezionate = this.gestoreOfferte.getOfferteSelezionateByUser(utente);
@@ -252,11 +275,25 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che permette all'utente di accettare una proposta di
+     * scambio per un'offerta selezionata passata per parametro.
+     * L'utente poi dovrà inserire gli estremi per proporre l'ap-
+     * puntamento.
+     *
+     * @param offertaSel l'offerta selezionata
+     */
     private void accettaPropostaDiScambio(Offerta offertaSel) {
         System.out.println("Proposta di scambio accettata, ora compila gli estremi per proporre l'appuntamento.");
         offertaSel.accettaPropostaDiScambioAssociata(chiediListaCampiAppuntamento());
     }
 
+    /**
+     * Metodo che chiede all'utente gli estremi di un appuntamento,
+     * ossia luogo, data e ora dell'incontro.
+     *
+     * @return la lista degli estremi dell'appuntamento
+     */
     private ListaCampiCompilati chiediListaCampiAppuntamento() {
         var listaCampiAppuntamento = new ListaCampiCompilati();
         listaCampiAppuntamento.inserisci(new Campo("Luogo di incontro", true), chiediLuogoDiIncontro());
@@ -265,6 +302,11 @@ public class OfferteService {
         return listaCampiAppuntamento;
     }
 
+    /**
+     * Metodo che chiede all'utente l'ora dell'appuntamento.
+     *
+     * @return l'orario d'incontro sottoforma di stringa
+     */
     private String chiediOraDiIncontro() {
         System.out.println("Selezionare un orario di incontro");
         for (LocalTime orario : gestoreScambio.getInfoDiScambio().get().getListaOrari()) {
@@ -276,6 +318,11 @@ public class OfferteService {
         return chiediOraDiIncontro();
     }
 
+    /**
+     * Metodo che chiede all'utente la data dell'appuntamento.
+     *
+     * @return il giorno dell'incontro
+     */
     private String chiediDataDiIncontro() {
         System.out.println("Selezionare un giorno di incontro");
         for (DayOfWeek giorno : gestoreScambio.getInfoDiScambio().get().getGiorni()) {
@@ -287,6 +334,11 @@ public class OfferteService {
         return chiediDataDiIncontro();
     }
 
+    /**
+     * Metodo che chiede all'utente il luogo dell'appuntamento.
+     *
+     * @return il luogo dell'incontro
+     */
     private String chiediLuogoDiIncontro() {
         System.out.println("Selezionare luogo di incontro");
         for (String luogo : gestoreScambio.getInfoDiScambio().get().getListaLuoghi()) {
@@ -334,6 +386,12 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che propone un altro appuntamento per poter scambiare
+     * un'offerta che viene passata per parametro.
+     *
+     * @param offertaInScambio l'offerta che si sta scambiando
+     */
     private void proponiAltroAppuntamento(Offerta offertaInScambio) {
         var nuoviEstremiAppuntamento = chiediListaCampiAppuntamento();
         while (nuoviEstremiAppuntamento.equals(offertaInScambio.getListaCampiAppuntamento())) {
@@ -344,10 +402,22 @@ public class OfferteService {
         offertaInScambio.proponiAltroAppuntamento(nuoviEstremiAppuntamento);
     }
 
+    /**
+     * Metodo che permette all'utente di accettare una proposta
+     * di appuntamento per l'offerta passata per parametro.
+     *
+     * @param offertaInScambio l'offerta che si sta scambiando
+     */
     private void accettaAppuntamento(Offerta offertaInScambio) {
         offertaInScambio.accettaAppuntamento();
     }
 
+    /**
+     * Metodo che permette all'utente di vedere tutte le ultime
+     * risposte che ha ricevuto per le offerte in scambio.
+     *
+     * @see GestoreOfferte
+     */
     public void visualizzaUltimeRispostePerOfferteInScambio() {
         List<Offerta> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
         if (offerte.isEmpty()) {
@@ -367,6 +437,13 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che visualizza la lista delle offerte in scambio
+     * e chiuse per una determinata categoria foglia.
+     *
+     * @see GestoreOfferte
+     * @see GestoreGerarchie
+     */
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
         if (gestoreGerarchie.haGerarchie()) {
             System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere " +
