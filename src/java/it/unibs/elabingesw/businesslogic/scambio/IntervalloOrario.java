@@ -42,10 +42,6 @@ public class IntervalloOrario implements Serializable {
                     altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
     }
 
-    public boolean isOrarioValidoInIntervallo(LocalTime orario) {
-        return false;
-    }
-
     public List<LocalTime> getListaOrariValidi() {
         List<LocalTime> listaOrariValidi = new LinkedList<>();
         LocalTime nuovoOrario = this.orarioIniziale;

@@ -26,13 +26,6 @@ public class Scambio implements Manageable, Serializable {
         Scadenza = scadenza;
     }
 
-    public boolean isOrarioInIntervalliOrariValido(LocalTime orario) {
-        for (IntervalloOrario intervalloOrario : intervalliOrari) {
-            if (intervalloOrario.isOrarioValidoInIntervallo(orario)) return true;
-        }
-        return false;
-    }
-
     public List<String> getListaLuoghi() {
         return listaLuoghi;
     }
