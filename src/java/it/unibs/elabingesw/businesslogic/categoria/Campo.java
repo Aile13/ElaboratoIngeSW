@@ -105,10 +105,10 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     }
 
     /**
-     * Metodo che controlla se un campo col nome
-     * passato per parametro è in lista o meno.
+     * Metodo che controlla se un campo è in lista
+     * passata per parametro.
      *
-     * @param nome il nome del campo
+     * @param listaCampi la lista dei campi
      * @return TRUE se il campo è in lista 
      *         FALSE se il campo non è in lista
      */
