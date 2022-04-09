@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:officeooo="http://openoffice.org/2009/office" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.text">
- <office:meta><meta:creation-date>2022-04-06T10:45:26.076000000</meta:creation-date><dc:date>2022-04-06T17:44:13.652000000</dc:date><meta:editing-duration>PT1H3M20S</meta:editing-duration><meta:editing-cycles>9</meta:editing-cycles><meta:generator>LibreOffice/7.3.1.3$Windows_X86_64 LibreOffice_project/a69ca51ded25f3eefd52d7bf9a5fad8c90b87951</meta:generator><meta:document-statistic meta:table-count="8" meta:image-count="1" meta:object-count="0" meta:page-count="4" meta:paragraph-count="100" meta:word-count="565" meta:character-count="3631" meta:non-whitespace-character-count="3198"/></office:meta>
+ <office:meta><meta:creation-date>2022-04-06T10:45:26.076000000</meta:creation-date><dc:date>2022-04-09T17:00:15.350000000</dc:date><meta:editing-duration>PT1H23M25S</meta:editing-duration><meta:editing-cycles>13</meta:editing-cycles><meta:generator>LibreOffice/7.2.5.2$Windows_X86_64 LibreOffice_project/499f9727c189e6ef3471021d6132d4c694f357e5</meta:generator><meta:document-statistic meta:table-count="8" meta:image-count="1" meta:object-count="0" meta:page-count="4" meta:paragraph-count="106" meta:word-count="614" meta:character-count="4016" meta:non-whitespace-character-count="3539"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
-   <config:config-item config:name="ViewAreaTop" config:type="long">93539</config:config-item>
+   <config:config-item config:name="ViewAreaTop" config:type="long">60254</config:config-item>
    <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
-   <config:config-item config:name="ViewAreaWidth" config:type="long">43512</config:config-item>
-   <config:config-item config:name="ViewAreaHeight" config:type="long">19805</config:config-item>
+   <config:config-item config:name="ViewAreaWidth" config:type="long">32634</config:config-item>
+   <config:config-item config:name="ViewAreaHeight" config:type="long">14854</config:config-item>
    <config:config-item config:name="ShowRedlineChanges" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InBrowseMode" config:type="boolean">false</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view2</config:config-item>
-     <config:config-item config:name="ViewLeft" config:type="long">13256</config:config-item>
-     <config:config-item config:name="ViewTop" config:type="long">95052</config:config-item>
+     <config:config-item config:name="ViewLeft" config:type="long">7816</config:config-item>
+     <config:config-item config:name="ViewTop" config:type="long">93105</config:config-item>
      <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
-     <config:config-item config:name="VisibleTop" config:type="long">93539</config:config-item>
-     <config:config-item config:name="VisibleRight" config:type="long">43510</config:config-item>
-     <config:config-item config:name="VisibleBottom" config:type="long">113342</config:config-item>
+     <config:config-item config:name="VisibleTop" config:type="long">60254</config:config-item>
+     <config:config-item config:name="VisibleRight" config:type="long">32632</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="long">75106</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutColumns" config:type="short">1</config:config-item>
      <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
-     <config:config-item config:name="ZoomFactor" config:type="short">90</config:config-item>
+     <config:config-item config:name="ZoomFactor" config:type="short">120</config:config-item>
      <config:config-item config:name="IsSelectedFrame" config:type="boolean">true</config:config-item>
      <config:config-item config:name="KeepRatio" config:type="boolean">false</config:config-item>
      <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -86,7 +86,7 @@
    <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
    <config:config-item config:name="UseOldPrinterMetrics" config:type="boolean">false</config:config-item>
    <config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="Rsid" config:type="int">3399195</config:config-item>
+   <config:config-item config:name="Rsid" config:type="int">3476894</config:config-item>
    <config:config-item config:name="MsWordCompTrailingBlanks" config:type="boolean">false</config:config-item>
    <config:config-item config:name="MathBaselineAlignment" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InvertBorderSpacing" config:type="boolean">false</config:config-item>
@@ -114,7 +114,6 @@
    <config:config-item config:name="HeaderSpacingBelowLastPara" config:type="boolean">false</config:config-item>
    <config:config-item config:name="FrameAutowidthWithMorePara" config:type="boolean">false</config:config-item>
    <config:config-item config:name="GutterAtTop" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="FootnoteInColumnToPageEnd" config:type="boolean">true</config:config-item>
    <config:config-item config:name="PrintAnnotationMode" config:type="short">0</config:config-item>
    <config:config-item config:name="PrintGraphics" config:type="boolean">true</config:config-item>
    <config:config-item config:name="PrintBlackFonts" config:type="boolean">false</config:config-item>
@@ -140,25 +139,25 @@
   </office:script>
  </office:scripts>
  <office:font-face-decls>
-  <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
-  <style:font-face style:name="Liberation Sans1" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Sans1" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
   <style:font-face style:name="Liberation Serif" svg:font-family="&apos;Liberation Serif&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
-  <style:font-face style:name="Lucida Sans" svg:font-family="&apos;Lucida Sans&apos;" style:font-family-generic="swiss"/>
-  <style:font-face style:name="Lucida Sans1" svg:font-family="&apos;Lucida Sans&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Lucida Sans" svg:font-family="&apos;Lucida Sans&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Lucida Sans1" svg:font-family="&apos;Lucida Sans&apos;" style:font-family-generic="swiss"/>
   <style:font-face style:name="Microsoft YaHei" svg:font-family="&apos;Microsoft YaHei&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
   <style:font-face style:name="NSimSun" svg:font-family="NSimSun" style:font-family-generic="system" style:font-pitch="variable"/>
  </office:font-face-decls>
  <office:styles>
   <style:default-style style:family="graphic">
    <style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.3cm" draw:shadow-offset-y="0.3cm" draw:start-line-spacing-horizontal="0.283cm" draw:start-line-spacing-vertical="0.283cm" draw:end-line-spacing-horizontal="0.283cm" draw:end-line-spacing-vertical="0.283cm" style:flow-with-text="false"/>
-   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:font-independent-line-spacing="false">
+   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
     <style:tab-stops/>
    </style:paragraph-properties>
-   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="it" fo:country="IT" style:letter-kerning="true" style:font-name-asian="NSimSun" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Lucida Sans1" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN"/>
+   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="it" fo:country="IT" style:letter-kerning="true" style:font-name-asian="NSimSun" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Lucida Sans" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN"/>
   </style:default-style>
   <style:default-style style:family="paragraph">
    <style:paragraph-properties fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:tab-stop-distance="1.251cm" style:writing-mode="page"/>
-   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="it" fo:country="IT" style:letter-kerning="true" style:font-name-asian="NSimSun" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Lucida Sans1" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false"/>
+   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="it" fo:country="IT" style:letter-kerning="true" style:font-name-asian="NSimSun" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Lucida Sans" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false"/>
   </style:default-style>
   <style:default-style style:family="table">
    <style:table-properties table:border-model="collapsing"/>
@@ -169,21 +168,21 @@
   <style:style style:name="Standard" style:family="paragraph" style:class="text"/>
   <style:style style:name="Heading" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Text_20_body" style:class="text">
    <style:paragraph-properties fo:margin-top="0.423cm" fo:margin-bottom="0.212cm" style:contextual-spacing="false" fo:keep-with-next="always"/>
-   <style:text-properties style:font-name="Liberation Sans1" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="14pt" style:font-name-asian="Microsoft YaHei" style:font-family-asian="&apos;Microsoft YaHei&apos;" style:font-family-generic-asian="system" style:font-pitch-asian="variable" style:font-size-asian="14pt" style:font-name-complex="Lucida Sans1" style:font-family-complex="&apos;Lucida Sans&apos;" style:font-family-generic-complex="system" style:font-pitch-complex="variable" style:font-size-complex="14pt"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="14pt" style:font-name-asian="Microsoft YaHei" style:font-family-asian="&apos;Microsoft YaHei&apos;" style:font-family-generic-asian="system" style:font-pitch-asian="variable" style:font-size-asian="14pt" style:font-name-complex="Lucida Sans" style:font-family-complex="&apos;Lucida Sans&apos;" style:font-family-generic-complex="system" style:font-pitch-complex="variable" style:font-size-complex="14pt"/>
   </style:style>
   <style:style style:name="Text_20_body" style:display-name="Text body" style:family="paragraph" style:parent-style-name="Standard" style:class="text">
    <style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.247cm" style:contextual-spacing="false" fo:line-height="115%"/>
   </style:style>
   <style:style style:name="List" style:family="paragraph" style:parent-style-name="Text_20_body" style:class="list">
-   <style:text-properties style:font-size-asian="12pt" style:font-name-complex="Lucida Sans" style:font-family-complex="&apos;Lucida Sans&apos;" style:font-family-generic-complex="swiss"/>
+   <style:text-properties style:font-size-asian="12pt" style:font-name-complex="Lucida Sans1" style:font-family-complex="&apos;Lucida Sans&apos;" style:font-family-generic-complex="swiss"/>
   </style:style>
   <style:style style:name="Caption" style:family="paragraph" style:parent-style-name="Standard" style:class="extra">
    <style:paragraph-properties fo:margin-top="0.212cm" fo:margin-bottom="0.212cm" style:contextual-spacing="false" text:number-lines="false" text:line-number="0"/>
-   <style:text-properties fo:font-size="12pt" fo:font-style="italic" style:font-size-asian="12pt" style:font-style-asian="italic" style:font-name-complex="Lucida Sans" style:font-family-complex="&apos;Lucida Sans&apos;" style:font-family-generic-complex="swiss" style:font-size-complex="12pt" style:font-style-complex="italic"/>
+   <style:text-properties fo:font-size="12pt" fo:font-style="italic" style:font-size-asian="12pt" style:font-style-asian="italic" style:font-name-complex="Lucida Sans1" style:font-family-complex="&apos;Lucida Sans&apos;" style:font-family-generic-complex="swiss" style:font-size-complex="12pt" style:font-style-complex="italic"/>
   </style:style>
   <style:style style:name="Index" style:family="paragraph" style:parent-style-name="Standard" style:class="index">
    <style:paragraph-properties text:number-lines="false" text:line-number="0"/>
-   <style:text-properties fo:language="zxx" fo:country="none" style:font-size-asian="12pt" style:language-asian="zxx" style:country-asian="none" style:font-name-complex="Lucida Sans" style:font-family-complex="&apos;Lucida Sans&apos;" style:font-family-generic-complex="swiss" style:language-complex="zxx" style:country-complex="none"/>
+   <style:text-properties fo:language="zxx" fo:country="none" style:font-size-asian="12pt" style:language-asian="zxx" style:country-asian="none" style:font-name-complex="Lucida Sans1" style:font-family-complex="&apos;Lucida Sans&apos;" style:font-family-generic-complex="swiss" style:language-complex="zxx" style:country-complex="none"/>
   </style:style>
   <style:style style:name="Table_20_Contents" style:display-name="Table Contents" style:family="paragraph" style:parent-style-name="Standard" style:class="extra">
    <style:paragraph-properties fo:orphans="0" fo:widows="0" text:number-lines="false" text:line-number="0"/>
@@ -448,7 +447,7 @@
   </style:style>
   <style:style style:name="P1" style:family="paragraph" style:parent-style-name="Standard">
    <style:paragraph-properties fo:text-align="center" style:justify-single-word="false" style:writing-mode="lr-tb"/>
-   <style:text-properties style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans" fo:font-size="13pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" officeooo:paragraph-rsid="001ad209" style:font-size-asian="13pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-size-complex="13pt" style:text-emphasize="none"/>
+   <style:text-properties style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Liberation Sans1" fo:font-size="13pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" officeooo:paragraph-rsid="001ad209" style:font-size-asian="13pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-size-complex="13pt" style:text-emphasize="none"/>
   </style:style>
   <style:style style:name="P2" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties officeooo:paragraph-rsid="001c7ccc"/>
@@ -636,56 +635,68 @@
   <style:style style:name="P58" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties officeooo:rsid="002a0411" officeooo:paragraph-rsid="002a0411"/>
   </style:style>
-  <style:style style:name="P59" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L1">
-   <style:text-properties officeooo:rsid="001d4f62" officeooo:paragraph-rsid="001d4f62"/>
+  <style:style style:name="P59" style:family="paragraph" style:parent-style-name="Standard">
+   <style:text-properties officeooo:paragraph-rsid="002231a2"/>
   </style:style>
-  <style:style style:name="P60" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L1">
-   <style:text-properties officeooo:rsid="001c7ccc" officeooo:paragraph-rsid="001d4f62"/>
+  <style:style style:name="P60" style:family="paragraph" style:parent-style-name="Standard">
+   <style:text-properties officeooo:paragraph-rsid="00269bcc"/>
   </style:style>
   <style:style style:name="P61" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L1">
-   <style:text-properties officeooo:rsid="001d11b2" officeooo:paragraph-rsid="001d4f62"/>
+   <style:text-properties officeooo:rsid="001d4f62" officeooo:paragraph-rsid="001d4f62"/>
   </style:style>
   <style:style style:name="P62" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L1">
-   <style:text-properties officeooo:rsid="001618d8" officeooo:paragraph-rsid="001c7ccc"/>
+   <style:text-properties officeooo:rsid="001c7ccc" officeooo:paragraph-rsid="001d4f62"/>
   </style:style>
   <style:style style:name="P63" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L1">
+   <style:text-properties officeooo:rsid="001c7ccc" officeooo:paragraph-rsid="00350d9e"/>
+  </style:style>
+  <style:style style:name="P64" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L1">
+   <style:text-properties officeooo:rsid="001d11b2" officeooo:paragraph-rsid="00350d9e"/>
+  </style:style>
+  <style:style style:name="P65" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L1">
+   <style:text-properties officeooo:rsid="001618d8" officeooo:paragraph-rsid="001c7ccc"/>
+  </style:style>
+  <style:style style:name="P66" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L1">
    <style:text-properties officeooo:rsid="0017da64" officeooo:paragraph-rsid="001c7ccc"/>
   </style:style>
-  <style:style style:name="P64" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L2">
+  <style:style style:name="P67" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L2">
    <style:text-properties officeooo:rsid="00254a1a" officeooo:paragraph-rsid="00254a1a"/>
   </style:style>
-  <style:style style:name="P65" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L5">
+  <style:style style:name="P68" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L5">
    <style:text-properties officeooo:rsid="00254a1a" officeooo:paragraph-rsid="00254a1a"/>
   </style:style>
-  <style:style style:name="P66" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L3">
+  <style:style style:name="P69" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L3">
    <style:text-properties officeooo:rsid="002231a2" officeooo:paragraph-rsid="002231a2"/>
   </style:style>
-  <style:style style:name="P67" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L3">
+  <style:style style:name="P70" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L3">
    <style:text-properties officeooo:rsid="00239d5c" officeooo:paragraph-rsid="00239d5c"/>
   </style:style>
-  <style:style style:name="P68" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L4">
+  <style:style style:name="P71" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L4">
    <style:text-properties officeooo:rsid="00239d5c" officeooo:paragraph-rsid="00239d5c"/>
   </style:style>
-  <style:style style:name="P69" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L5">
+  <style:style style:name="P72" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L5">
    <style:text-properties officeooo:rsid="00269bcc" officeooo:paragraph-rsid="00269bcc"/>
   </style:style>
-  <style:style style:name="P70" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L6">
+  <style:style style:name="P73" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L6">
    <style:text-properties officeooo:rsid="0027630b" officeooo:paragraph-rsid="0027630b"/>
   </style:style>
-  <style:style style:name="P71" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L6">
+  <style:style style:name="P74" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L6">
    <style:text-properties officeooo:rsid="002cce45" officeooo:paragraph-rsid="002cce45"/>
-  </style:style>
-  <style:style style:name="P72" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L8">
-   <style:text-properties officeooo:rsid="002cce45" officeooo:paragraph-rsid="002cce45"/>
-  </style:style>
-  <style:style style:name="P73" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L7">
-   <style:text-properties officeooo:rsid="002930c4" officeooo:paragraph-rsid="002930c4"/>
-  </style:style>
-  <style:style style:name="P74" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L7">
-   <style:text-properties officeooo:rsid="002a0411" officeooo:paragraph-rsid="002a0411"/>
   </style:style>
   <style:style style:name="P75" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L8">
+   <style:text-properties officeooo:rsid="002cce45" officeooo:paragraph-rsid="002cce45"/>
+  </style:style>
+  <style:style style:name="P76" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L7">
+   <style:text-properties officeooo:rsid="002930c4" officeooo:paragraph-rsid="002930c4"/>
+  </style:style>
+  <style:style style:name="P77" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L7">
+   <style:text-properties officeooo:rsid="002a0411" officeooo:paragraph-rsid="002a0411"/>
+  </style:style>
+  <style:style style:name="P78" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L8">
    <style:text-properties officeooo:rsid="002b31d7" officeooo:paragraph-rsid="002b31d7"/>
+  </style:style>
+  <style:style style:name="P79" style:family="paragraph" style:parent-style-name="Table_20_Contents" style:list-style-name="L7">
+   <style:text-properties officeooo:rsid="00350d9e" officeooo:paragraph-rsid="00350d9e"/>
   </style:style>
   <style:style style:name="T1" style:family="text">
    <style:text-properties officeooo:rsid="001e422f"/>
@@ -738,8 +749,17 @@
   <style:style style:name="T17" style:family="text">
    <style:text-properties officeooo:rsid="002cce45"/>
   </style:style>
+  <style:style style:name="T18" style:family="text">
+   <style:text-properties officeooo:rsid="00350d9e"/>
+  </style:style>
+  <style:style style:name="T19" style:family="text">
+   <style:text-properties officeooo:rsid="002231a2"/>
+  </style:style>
+  <style:style style:name="T20" style:family="text">
+   <style:text-properties officeooo:rsid="001e303e"/>
+  </style:style>
   <style:style style:name="fr1" style:family="graphic" style:parent-style-name="Graphics">
-   <style:graphic-properties style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+   <style:graphic-properties style:vertical-pos="top" style:vertical-rel="paragraph" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
   </style:style>
   <text:list-style style:name="L1">
    <text:list-level-style-number text:level="1" text:style-name="Numbering_20_Symbols" loext:num-list-format="%1%." style:num-suffix="." style:num-format="1">
@@ -1187,7 +1207,7 @@
    <table:table table:name="Tabella1" table:style-name="Tabella1">
     <table:table-column table:style-name="Tabella1.A"/>
     <table:table-column table:style-name="Tabella1.B"/>
-    <table:table-row table:style-name="TableLine2514052260848">
+    <table:table-row table:style-name="TableLine2047372765680">
      <table:table-cell table:style-name="Tabella1.A1" office:value-type="string">
       <text:p text:style-name="P12">Nome</text:p>
      </table:table-cell>
@@ -1195,7 +1215,7 @@
       <text:p text:style-name="P20"><text:span text:style-name="T3">Creazione</text:span> nuov<text:span text:style-name="T4">a offerta</text:span></text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514053245472">
+    <table:table-row table:style-name="TableLine2047380638768">
      <table:table-cell table:style-name="Tabella1.A2" office:value-type="string">
       <text:p text:style-name="P12">Attore</text:p>
      </table:table-cell>
@@ -1203,35 +1223,39 @@
       <text:p text:style-name="P35">Fruitore</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514053246336">
+    <table:table-row table:style-name="TableLine2047360851504">
      <table:table-cell table:style-name="Tabella1.A2" office:value-type="string">
       <text:p text:style-name="P12">Scenario principale</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella1.B2" office:value-type="string">
-      <text:list xml:id="list1753233475" text:style-name="L1">
+      <text:list xml:id="list2829156003" text:style-name="L1">
        <text:list-item>
-        <text:p text:style-name="P59">Il fruitore è introdotto alla procedura di creazione di un<text:span text:style-name="T10">a nuova offerta</text:span>.</text:p>
+        <text:p text:style-name="P61">Il fruitore è introdotto alla procedura di creazione di un<text:span text:style-name="T10">a nuova offerta</text:span>.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P60">Il sistema <text:span text:style-name="T5">controlla che l’articolo che si vuole inserire abbia almeno una gerarchia.</text:span></text:p>
+        <text:p text:style-name="P63">Il sistema <text:span text:style-name="T5">controlla che l’articolo che si vuole inserire abbia almeno una gerarchia </text:span><text:span text:style-name="T18">associabile ad esso. Quindi poi fa selezionare all’utente una tra queste, e poi fa selezionare una categoria foglia</text:span><text:span text:style-name="T5"> </text:span><text:span text:style-name="T18">tra quelle presenti nella gerarchia selezionata</text:span><text:span text:style-name="T5">. </text:span></text:p>
+        <text:p text:style-name="P63">&lt;&lt;<text:span text:style-name="T18">include&gt;&gt; “</text:span><text:span text:style-name="T8">Richiesta nome articolo”.</text:span></text:p>
+        <text:p text:style-name="P63">&lt;&lt;<text:span text:style-name="T18">include&gt;&gt; “</text:span><text:span text:style-name="T8">Richiesta </text:span><text:span text:style-name="T9">gerarchia”.</text:span></text:p>
+        <text:p text:style-name="P63"><text:span text:style-name="T5">&lt;&lt;</text:span><text:span text:style-name="T18">include&gt;&gt; “Scelta categoria foglia”.</text:span></text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P60"><text:span text:style-name="T6">Il sistema </text:span>chiede al fruitore i campi per la creazione di una nuova offerta.</text:p>
+        <text:p text:style-name="P62"><text:span text:style-name="T6">Il sistema </text:span>chiede al fruitore i campi per la creazione di una nuova offerta.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P61">Quindi il fruitore inserisce i dati in tali campi.</text:p>
+        <text:p text:style-name="P64">Quindi il fruitore inserisce i dati in tali campi.</text:p>
+        <text:p text:style-name="P64">&lt;&lt;<text:span text:style-name="T18">include&gt;&gt; “</text:span><text:span text:style-name="T19">Compilazione campi nativi ed ereditati</text:span><text:span text:style-name="T18">”.</text:span></text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P59">Il sistema manda un messaggio di conferma dell’avvenuto inserimento.</text:p>
+        <text:p text:style-name="P61">Il sistema manda un messaggio di conferma dell’avvenuto inserimento.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P62">Postcondizione: <text:span text:style-name="T6">la nuova offerta</text:span> è stato inserit<text:span text:style-name="T6">a </text:span><text:span text:style-name="T7">con </text:span><text:span text:style-name="T6">successo nell’applicativo</text:span>.</text:p>
-        <text:p text:style-name="P63">Fine</text:p>
+        <text:p text:style-name="P65">Postcondizione: <text:span text:style-name="T6">la nuova offerta</text:span> è stato inserit<text:span text:style-name="T6">a </text:span><text:span text:style-name="T7">con </text:span><text:span text:style-name="T6">successo nell’applicativo</text:span>.</text:p>
+        <text:p text:style-name="P66">Fine</text:p>
        </text:list-item>
       </text:list>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514053245760">
+    <table:table-row table:style-name="TableLine2047113196832">
      <table:table-cell table:style-name="Tabella1.A2" office:value-type="string">
       <text:p text:style-name="P21">Scenario alternativo</text:p>
      </table:table-cell>
@@ -1246,7 +1270,7 @@
    <table:table table:name="Tabella2" table:style-name="Tabella2">
     <table:table-column table:style-name="Tabella2.A"/>
     <table:table-column table:style-name="Tabella2.B"/>
-    <table:table-row table:style-name="TableLine2514053248064">
+    <table:table-row table:style-name="TableLine2047372625872">
      <table:table-cell table:style-name="Tabella2.A1" office:value-type="string">
       <text:p text:style-name="P13">Nome</text:p>
      </table:table-cell>
@@ -1254,7 +1278,7 @@
       <text:p text:style-name="P44">Scelta categoria foglia</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514053247488">
+    <table:table-row table:style-name="TableLine2047660852816">
      <table:table-cell table:style-name="Tabella2.A2" office:value-type="string">
       <text:p text:style-name="P13">Attore</text:p>
      </table:table-cell>
@@ -1262,28 +1286,28 @@
       <text:p text:style-name="P36">Fruitore</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514053244896">
+    <table:table-row table:style-name="TableLine2047660857440">
      <table:table-cell table:style-name="Tabella2.A2" office:value-type="string">
       <text:p text:style-name="P13">Scenario principale</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella2.B2" office:value-type="string">
-      <text:list xml:id="list1330928417" text:style-name="L2">
+      <text:list xml:id="list2555292008" text:style-name="L2">
        <text:list-item>
-        <text:p text:style-name="P64">Il sistema chiede al fruitore di selezionare la categoria foglia di interesse.</text:p>
+        <text:p text:style-name="P67">Il sistema chiede al fruitore di selezionare la categoria foglia di interesse.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P64">Il fruitore sceglie quindi la categoria di interesse.</text:p>
+        <text:p text:style-name="P67">Il fruitore sceglie quindi la categoria di interesse.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P64">Il sistema chiede al fruitore la conferma della scelta effettuata.</text:p>
+        <text:p text:style-name="P67">Il sistema chiede al fruitore la conferma della scelta effettuata.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P64">Il fruitore dà la conferma.</text:p>
+        <text:p text:style-name="P67">Il fruitore dà la conferma.</text:p>
        </text:list-item>
       </text:list>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514053247776">
+    <table:table-row table:style-name="TableLine2047660861792">
      <table:table-cell table:style-name="Tabella2.A2" office:value-type="string">
       <text:p text:style-name="P22">Scenario alternativo</text:p>
      </table:table-cell>
@@ -1298,7 +1322,7 @@
    <table:table table:name="Tabella3" table:style-name="Tabella3">
     <table:table-column table:style-name="Tabella3.A"/>
     <table:table-column table:style-name="Tabella3.B"/>
-    <table:table-row table:style-name="TableLine2514053245184">
+    <table:table-row table:style-name="TableLine2047660857168">
      <table:table-cell table:style-name="Tabella3.A1" office:value-type="string">
       <text:p text:style-name="P14">Nome</text:p>
      </table:table-cell>
@@ -1306,7 +1330,7 @@
       <text:p text:style-name="P45">Compilazione campi nativi ed ereditati</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061325280">
+    <table:table-row table:style-name="TableLine2047660859072">
      <table:table-cell table:style-name="Tabella3.A2" office:value-type="string">
       <text:p text:style-name="P14">Attore</text:p>
      </table:table-cell>
@@ -1314,20 +1338,20 @@
       <text:p text:style-name="P37">Fruitore</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061335360">
+    <table:table-row table:style-name="TableLine2047660847920">
      <table:table-cell table:style-name="Tabella3.A2" office:value-type="string">
       <text:p text:style-name="P14">Scenario principale</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella3.B2" office:value-type="string">
-      <text:list xml:id="list821825773" text:style-name="L3">
+      <text:list xml:id="list3656672680" text:style-name="L3">
        <text:list-item>
-        <text:p text:style-name="P66">Il sistema chiede al fruitore di compilare i vari campi, che possono essere obbligatori o meno.</text:p>
+        <text:p text:style-name="P69">Il sistema chiede al fruitore di compilare i vari campi, che possono essere obbligatori o meno.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P67">Il fruitore procede quindi con l’inserimento.</text:p>
+        <text:p text:style-name="P70">Il fruitore procede quindi con l’inserimento.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P67">Il sistema acquisi<text:span text:style-name="T9">sc</text:span>e correttamente i campi inseriti.</text:p>
+        <text:p text:style-name="P70">Il sistema acquisi<text:span text:style-name="T9">sc</text:span>e correttamente i campi inseriti.</text:p>
        </text:list-item>
       </text:list>
      </table:table-cell>
@@ -1335,10 +1359,15 @@
    </table:table>
    <text:p text:style-name="P4"/>
    <text:p text:style-name="P4"/>
+   <text:p text:style-name="P4"/>
+   <text:p text:style-name="P4"/>
+   <text:p text:style-name="P4"/>
+   <text:p text:style-name="P4"/>
    <table:table table:name="Tabella4" table:style-name="Tabella4">
     <table:table-column table:style-name="Tabella4.A"/>
     <table:table-column table:style-name="Tabella4.B"/>
-    <table:table-row table:style-name="TableLine2514061339104">
+    <text:soft-page-break/>
+    <table:table-row table:style-name="TableLine2047660857712">
      <table:table-cell table:style-name="Tabella4.A1" office:value-type="string">
       <text:p text:style-name="P15">Nome</text:p>
      </table:table-cell>
@@ -1346,7 +1375,7 @@
       <text:p text:style-name="P46">Richiesta nome articolo</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061327296">
+    <table:table-row table:style-name="TableLine2047660851184">
      <table:table-cell table:style-name="Tabella4.A2" office:value-type="string">
       <text:p text:style-name="P15">Attore</text:p>
      </table:table-cell>
@@ -1354,25 +1383,25 @@
       <text:p text:style-name="P38">Fruitore</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061337088">
+    <table:table-row table:style-name="TableLine2047660861520">
      <table:table-cell table:style-name="Tabella4.A2" office:value-type="string">
       <text:p text:style-name="P15">Scenario principale</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella4.B2" office:value-type="string">
-      <text:list xml:id="list3531406901" text:style-name="L4">
+      <text:list xml:id="list1775778260" text:style-name="L4">
        <text:list-item>
-        <text:p text:style-name="P68">Il sistema chiede al fruitore di inserire il nome dell’articolo.</text:p>
+        <text:p text:style-name="P71">Il sistema chiede al fruitore di inserire il nome dell’articolo.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P68">Il fruitore procede con l’inserimento.</text:p>
+        <text:p text:style-name="P71">Il fruitore procede con l’inserimento.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P68">Il sistema acquisisce correttamente il nome dell’articolo.</text:p>
+        <text:p text:style-name="P71">Il sistema acquisisce correttamente il nome dell’articolo.</text:p>
        </text:list-item>
       </text:list>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061325568">
+    <table:table-row table:style-name="TableLine2047660862608">
      <table:table-cell table:style-name="Tabella4.A2" office:value-type="string">
       <text:p text:style-name="P23">Scenario alternativo</text:p>
      </table:table-cell>
@@ -1387,8 +1416,7 @@
    <table:table table:name="Tabella5" table:style-name="Tabella5">
     <table:table-column table:style-name="Tabella5.A"/>
     <table:table-column table:style-name="Tabella5.B"/>
-    <text:soft-page-break/>
-    <table:table-row table:style-name="TableLine2514061329888">
+    <table:table-row table:style-name="TableLine2047660860704">
      <table:table-cell table:style-name="Tabella5.A1" office:value-type="string">
       <text:p text:style-name="P16">Nome</text:p>
      </table:table-cell>
@@ -1396,7 +1424,7 @@
       <text:p text:style-name="P47">Richiesta <text:span text:style-name="T9">gerarchia</text:span></text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061325856">
+    <table:table-row table:style-name="TableLine2047660853360">
      <table:table-cell table:style-name="Tabella5.A2" office:value-type="string">
       <text:p text:style-name="P16">Attore</text:p>
      </table:table-cell>
@@ -1404,28 +1432,28 @@
       <text:p text:style-name="P39">Fruitore</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061340256">
+    <table:table-row table:style-name="TableLine2047660855264">
      <table:table-cell table:style-name="Tabella5.A2" office:value-type="string">
       <text:p text:style-name="P16">Scenario principale</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella5.B2" office:value-type="string">
-      <text:list xml:id="list3272803336" text:style-name="L5">
+      <text:list xml:id="list3630050763" text:style-name="L5">
        <text:list-item>
-        <text:p text:style-name="P65">Il sistema chiede all’utente di selezionare la gerarchia che contiene la categoria foglia di interesse.</text:p>
+        <text:p text:style-name="P68">Il sistema chiede all’utente di selezionare la gerarchia che contiene la categoria foglia di interesse.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P65">Il <text:span text:style-name="T10">fruitore sceglie quindi la gerarchia contenente la categoria foglia di interesse.</text:span></text:p>
+        <text:p text:style-name="P68">Il <text:span text:style-name="T10">fruitore sceglie quindi la gerarchia contenente la categoria foglia di interesse.</text:span></text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P69">Il sistema chiede al fruitore la conferma della scelta effettuata.</text:p>
+        <text:p text:style-name="P72">Il sistema chiede al fruitore la conferma della scelta effettuata.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P69">Il fruitore dà la conferma.</text:p>
+        <text:p text:style-name="P72">Il fruitore dà la conferma.</text:p>
        </text:list-item>
       </text:list>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061326720">
+    <table:table-row table:style-name="TableLine2047660853632">
      <table:table-cell table:style-name="Tabella5.A2" office:value-type="string">
       <text:p text:style-name="P24">Scenario alternativo</text:p>
      </table:table-cell>
@@ -1442,7 +1470,7 @@
    <table:table table:name="Tabella6" table:style-name="Tabella6">
     <table:table-column table:style-name="Tabella6.A"/>
     <table:table-column table:style-name="Tabella6.B"/>
-    <table:table-row table:style-name="TableLine2514061324992">
+    <table:table-row table:style-name="TableLine2047660864240">
      <table:table-cell table:style-name="Tabella6.A1" office:value-type="string">
       <text:p text:style-name="P17">Nome</text:p>
      </table:table-cell>
@@ -1450,7 +1478,7 @@
       <text:p text:style-name="P48">Visualizza offerte utente</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061330752">
+    <table:table-row table:style-name="TableLine2047660855536">
      <table:table-cell table:style-name="Tabella6.A2" office:value-type="string">
       <text:p text:style-name="P17">Attore</text:p>
      </table:table-cell>
@@ -1458,28 +1486,28 @@
       <text:p text:style-name="P40">Fruitore</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061334208">
+    <table:table-row table:style-name="TableLine2047660847648">
      <table:table-cell table:style-name="Tabella6.A2" office:value-type="string">
       <text:p text:style-name="P17">Scenario principale</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella6.B2" office:value-type="string">
-      <text:list xml:id="list1727309978" text:style-name="L6">
+      <text:list xml:id="list2195113589" text:style-name="L6">
        <text:list-item>
-        <text:p text:style-name="P70">Il fruitore sceglie la funzionalità “Visualizza <text:span text:style-name="T12">tutte le tue offerte</text:span>” dal suo menu.</text:p>
+        <text:p text:style-name="P73">Il fruitore sceglie la funzionalità “Visualizza <text:span text:style-name="T12">tutte le tue offerte</text:span>” dal suo menu.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P70"><text:span text:style-name="T17">Postcondizione: q</text:span>uindi <text:span text:style-name="T13">visualizza correttamente le sue offerte aperte e/o ritirate.</text:span></text:p>
-        <text:p text:style-name="P71">Fine</text:p>
+        <text:p text:style-name="P73"><text:span text:style-name="T17">Postcondizione: q</text:span>uindi <text:span text:style-name="T13">visualizza correttamente le sue offerte aperte e/o ritirate.</text:span></text:p>
+        <text:p text:style-name="P74">Fine</text:p>
        </text:list-item>
       </text:list>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061331616">
+    <table:table-row table:style-name="TableLine2047660848736">
      <table:table-cell table:style-name="Tabella6.A2" office:value-type="string">
       <text:p text:style-name="P25">Scenario alternativo</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella6.B2" office:value-type="string">
-      <text:p text:style-name="P32"><text:span text:style-name="T14">1</text:span>.a <text:span text:style-name="T10">Non ci sono offerte aperte/ritirate che riguardano il fruitore</text:span>.</text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="T14">1</text:span>.a <text:span text:style-name="T10">Non ci sono offerte </text:span><text:span text:style-name="T18">di cui</text:span><text:span text:style-name="T10"> il fruitore </text:span><text:span text:style-name="T18">è autore</text:span>.</text:p>
       <text:p text:style-name="P32">Torna al <text:span text:style-name="T11">menu precedente</text:span>.</text:p>
      </table:table-cell>
     </table:table-row>
@@ -1487,11 +1515,23 @@
    <text:p text:style-name="P7"/>
    <text:p text:style-name="P7"/>
    <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P7"/>
    <text:p text:style-name="P8"/>
    <table:table table:name="Tabella7" table:style-name="Tabella7">
     <table:table-column table:style-name="Tabella7.A"/>
     <table:table-column table:style-name="Tabella7.B"/>
-    <table:table-row table:style-name="TableLine2514061327872">
+    <text:soft-page-break/>
+    <table:table-row table:style-name="TableLine2047660853904">
      <table:table-cell table:style-name="Tabella7.A1" office:value-type="string">
       <text:p text:style-name="P18">Nome</text:p>
      </table:table-cell>
@@ -1499,7 +1539,7 @@
       <text:p text:style-name="P49">Visualizza offerte <text:span text:style-name="T12">aperte di categoria foglia</text:span></text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061331040">
+    <table:table-row table:style-name="TableLine2047660856080">
      <table:table-cell table:style-name="Tabella7.A2" office:value-type="string">
       <text:p text:style-name="P18">Attore</text:p>
      </table:table-cell>
@@ -1507,35 +1547,37 @@
       <text:p text:style-name="P41">Fruitore</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061334496">
+    <table:table-row table:style-name="TableLine2047660849280">
      <table:table-cell table:style-name="Tabella7.A2" office:value-type="string">
       <text:p text:style-name="P18">Scenario principale</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella7.B2" office:value-type="string">
-      <text:list xml:id="list1259726184" text:style-name="L7">
+      <text:list xml:id="list1928236175" text:style-name="L7">
        <text:list-item>
-        <text:p text:style-name="P73">Il fruitore sceglie la funzionalità “Visualizza offerte aperte di categoria foglia” dal suo menu.</text:p>
+        <text:p text:style-name="P76">Il fruitore sceglie la funzionalità “Visualizza offerte aperte di categoria foglia” dal suo menu.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P74">Il sistema chiede all’utente di scegliere una gerarchia e la categoria foglia di interesse in essa contenuta.</text:p>
+        <text:p text:style-name="P77">Il sistema chiede all’utente di scegliere una gerarchia e la categoria foglia di interesse in essa contenuta.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P74">Il fruitore sceglie quindi la gerarchia e la categoria.</text:p>
+        <text:p text:style-name="P77">Il fruitore sceglie quindi la gerarchia e la categoria.</text:p>
+        <text:p text:style-name="P79">&lt;&lt;include&gt;&gt; “<text:span text:style-name="T8">Richiesta </text:span><text:span text:style-name="T9">gerarchia</text:span>”.</text:p>
+        <text:p text:style-name="P79">&lt;&lt;include&gt;&gt; “<text:span text:style-name="T20">Scelta categoria foglia</text:span>”.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P74">Successivamente, <text:span text:style-name="T16">il sistema mostra all’utente la lista delle offerte aperte per la categoria foglia da lui scelta.</text:span></text:p>
+        <text:p text:style-name="P77">Successivamente, <text:span text:style-name="T16">il sistema mostra all’utente la lista delle offerte aperte per la categoria foglia da lui scelta.</text:span></text:p>
        </text:list-item>
       </text:list>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061338528">
+    <table:table-row table:style-name="TableLine2047660850096">
      <table:table-cell table:style-name="Tabella7.A2" office:value-type="string">
       <text:p text:style-name="P26">Scenario alternativo</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella7.B2" office:value-type="string">
-      <text:p text:style-name="P33"><text:span text:style-name="T15">3</text:span>.a <text:span text:style-name="T10">Non ci sono offerte </text:span><text:span text:style-name="T15">aperte per la categoria foglia scelta</text:span>.</text:p>
+      <text:p text:style-name="P33"><text:span text:style-name="T18">2</text:span>.a <text:span text:style-name="T10">Non ci sono offerte </text:span><text:span text:style-name="T15">aperte per la categoria foglia scelta</text:span>.</text:p>
       <text:p text:style-name="P33">Torna al punto <text:span text:style-name="T15">2</text:span>.</text:p>
-      <text:p text:style-name="P50">3.b Non ci sono gerarchie da selezionare per visualizzare offerte.</text:p>
+      <text:p text:style-name="P50"><text:span text:style-name="T18">2</text:span>.b Non ci sono gerarchie da selezionare per visualizzare offerte.</text:p>
       <text:p text:style-name="P50">Torna al menu precedente.</text:p>
      </table:table-cell>
     </table:table-row>
@@ -1547,7 +1589,7 @@
    <table:table table:name="Tabella8" table:style-name="Tabella8">
     <table:table-column table:style-name="Tabella8.A"/>
     <table:table-column table:style-name="Tabella8.B"/>
-    <table:table-row table:style-name="TableLine2514061338816">
+    <table:table-row table:style-name="TableLine2047660854176">
      <table:table-cell table:style-name="Tabella8.A1" office:value-type="string">
       <text:p text:style-name="P19">Nome</text:p>
      </table:table-cell>
@@ -1555,7 +1597,7 @@
       <text:p text:style-name="P50">Ritira una o più offerte</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061328736">
+    <table:table-row table:style-name="TableLine2047660852000">
      <table:table-cell table:style-name="Tabella8.A2" office:value-type="string">
       <text:p text:style-name="P19">Attore</text:p>
      </table:table-cell>
@@ -1563,36 +1605,35 @@
       <text:p text:style-name="P42">Fruitore</text:p>
      </table:table-cell>
     </table:table-row>
-    <text:soft-page-break/>
-    <table:table-row table:style-name="TableLine2514061335936">
+    <table:table-row table:style-name="TableLine2047660856352">
      <table:table-cell table:style-name="Tabella8.A2" office:value-type="string">
       <text:p text:style-name="P19">Scenario principale</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Tabella8.B2" office:value-type="string">
-      <text:list xml:id="list3913405579" text:style-name="L8">
+      <text:list xml:id="list2843373402" text:style-name="L8">
        <text:list-item>
-        <text:p text:style-name="P75">Il fruitore sceglie la funzionalità “Ritira una o più offerte” dal suo menu.</text:p>
+        <text:p text:style-name="P78">Il fruitore sceglie la funzionalità “Ritira una o più offerte” dal suo menu.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P75">Il sistema mostra al fruitore la lista delle offerte aperte che si possono ritirare.</text:p>
+        <text:p text:style-name="P78">Il sistema mostra al fruitore la lista delle offerte aperte che si possono ritirare.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P75">Il fruitore sceglie l’offerta che vuole ritirare.</text:p>
+        <text:p text:style-name="P78">Il fruitore sceglie l’offerta che vuole ritirare.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P75">Il sistema chiede conferma all’utente di ritiro dell’offerta.</text:p>
+        <text:p text:style-name="P78">Il sistema chiede conferma all’utente di ritiro dell’offerta.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P72">Il fruitore conferma.</text:p>
+        <text:p text:style-name="P75">Il fruitore conferma.</text:p>
        </text:list-item>
        <text:list-item>
-        <text:p text:style-name="P72">Postcondizione: il sistema ritira correttamente l’offerta.</text:p>
-        <text:p text:style-name="P72">Fine</text:p>
+        <text:p text:style-name="P75">Postcondizione: il sistema ritira correttamente l’offerta.</text:p>
+        <text:p text:style-name="P75">Fine</text:p>
        </text:list-item>
       </text:list>
      </table:table-cell>
     </table:table-row>
-    <table:table-row table:style-name="TableLine2514061339680">
+    <table:table-row table:style-name="TableLine2047660856624">
      <table:table-cell table:style-name="Tabella8.A2" office:value-type="string">
       <text:p text:style-name="P27">Scenario alternativo</text:p>
      </table:table-cell>
@@ -1602,7 +1643,7 @@
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P10"><text:soft-page-break/></text:p>
+   <text:p text:style-name="P10"/>
    <text:p text:style-name="P8"/>
    <text:p text:style-name="P11">Segue versione grafica dei casi d’uso sopra riportati.</text:p>
    <text:p text:style-name="P8"/>
@@ -3686,7 +3727,7 @@
        OjAwrDTGFQAAAABJRU5ErkJggg==
       </office:binary-data>
      </draw:image>
-    </draw:frame></text:p>
+    </draw:frame><text:soft-page-break/></text:p>
   </office:text>
  </office:body>
 </office:document>
