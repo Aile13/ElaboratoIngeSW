@@ -149,7 +149,7 @@ public class GerarchiaService {
     }
 
     public void caricaDatiDaFileUtente() {
-        var fileUtenteService = new GerarchieFileUtenteService(this.gestoreGerarchie, this.gestoreScambio);
+        var fileUtenteService = new FileUtenteService(this.gestoreGerarchie, this.gestoreScambio);
 
         fileUtenteService.avviaServizio();
     }

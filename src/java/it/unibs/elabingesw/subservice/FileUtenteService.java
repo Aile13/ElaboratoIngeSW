@@ -23,14 +23,14 @@ import java.util.List;
 /**
  * @author Elia
  */
-public class GerarchieFileUtenteService {
+public class FileUtenteService {
 
     private final GestoreGerarchie gestoreGerarchie;
     private final GestoreScambio gestoreScambio;
     private File selectedFile;
     private String contenutoFile;
 
-    public GerarchieFileUtenteService(GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
+    public FileUtenteService(GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
 
         this.gestoreGerarchie = gestoreGerarchie;
         this.gestoreScambio = gestoreScambio;
