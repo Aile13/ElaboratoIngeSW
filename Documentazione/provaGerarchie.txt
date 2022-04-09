@@ -11,8 +11,8 @@ gerarchia {
                 []
             ),
             categoriaFiglio(
-                "bimbo",
-                "per bambini",
+                "bici per bimbo",
+                "bici per bambini",
                 [("eta": f)],
                 []
             )
