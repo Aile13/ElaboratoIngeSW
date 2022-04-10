@@ -7,6 +7,9 @@ import java.util.List;
 
 /**
  * Classe Categoria che rappresenta una categoria generica.
+ * <p>
+ * Invariante di classe: assumo gli attributi immutabili,
+ * dopo la creazione dell'oggetto.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
@@ -19,10 +22,12 @@ public class Categoria implements Manageable, Serializable {
     /**
      * Costruttore di classe, accetta come parametri il nome, la
      * descrizione e la lista dei campi nativi di una categoria.
+     * <p>
+     * Precondizione: assumo parametri costruttore non nulli.
      *
-     * @param nome
-     * @param descrizione
-     * @param campiNativi
+     * @param nome        nome della categoria
+     * @param descrizione descrizione della categoria
+     * @param campiNativi campi nativi associati alla categoria
      */
     public Categoria(String nome, String descrizione, List<Campo> campiNativi) {
         this.nome = nome;
@@ -51,8 +56,10 @@ public class Categoria implements Manageable, Serializable {
     /**
      * Metodo che permette all'utente di inserire una lista di
      * campi nativi per una determinata categoria.
+     * <p>
+     * Precondizione: assumo parametro metodo non nullo.
      *
-     * @param campi la lista dei campi
+     * @param campi la lista dei campi da aggiungere
      */
     public void inserisciCampiNativi(List<Campo> campi) {
         this.campiNativi.addAll(campi);
@@ -102,6 +109,8 @@ public class Categoria implements Manageable, Serializable {
      * Metodo implementato dall'interfaccia Manageable
      * che verifica se due gerarchie hanno lo stesso no-
      * me o meno.
+     * <p>
+     * Precondizione: assumo parametro del metodo non nullo.
      *
      * @param nome il nome della gerarchia
      * @return TRUE se i nomi sono uguali
