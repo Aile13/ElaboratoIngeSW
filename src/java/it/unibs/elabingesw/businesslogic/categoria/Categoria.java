@@ -54,7 +54,7 @@ public class Categoria implements Manageable, Serializable {
     }
 
     /**
-     * Metodo che permette all'utente di inserire una lista di
+     * Metodo che permette all'utente d'inserire una lista di
      * campi nativi per una determinata categoria.
      * <p>
      * Precondizione: assumo parametro metodo non nullo.
@@ -66,8 +66,8 @@ public class Categoria implements Manageable, Serializable {
     }
 
     /**
-     * Metodo per la formattazione che converte un oggetto nella re-
-     * lativa rappresentazione di stringa.
+     * Metodo per la formattazione che converte un oggetto nella relativa
+     * rappresentazione di stringa.
      *
      * @return stringa dell'oggetto convertito
      */
