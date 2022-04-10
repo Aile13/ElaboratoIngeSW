@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * Classe Categoria che rappresenta una categoria generica.
- *
+ * <p>
  * Invariante di classe: assumo gli attributi immutabili,
  * dopo la creazione dell'oggetto.
  *
@@ -22,10 +22,10 @@ public class Categoria implements Manageable, Serializable {
     /**
      * Costruttore di classe, accetta come parametri il nome, la
      * descrizione e la lista dei campi nativi di una categoria.
-     *
+     * <p>
      * Precondizione: assumo parametri costruttore non nulli.
      *
-     * @param nome nome della categoria
+     * @param nome        nome della categoria
      * @param descrizione descrizione della categoria
      * @param campiNativi campi nativi associati alla categoria
      */
@@ -47,7 +47,7 @@ public class Categoria implements Manageable, Serializable {
     /**
      * Metodo che permette all'utente di inserire una lista di
      * campi nativi per una determinata categoria.
-     *
+     * <p>
      * Precondizione: assumo parametro metodo non nullo.
      *
      * @param campi la lista dei campi da aggiungere
@@ -100,7 +100,7 @@ public class Categoria implements Manageable, Serializable {
      * Metodo implementato dall'interfaccia Manageable
      * che verifica se due gerarchie hanno lo stesso no-
      * me o meno.
-     *
+     * <p>
      * Precondizione: assumo parametro del metodo non nullo.
      *
      * @param nome il nome della gerarchia
@@ -111,7 +111,7 @@ public class Categoria implements Manageable, Serializable {
     public boolean isStessoNome(String nome) {
         return this.getNome().equals(nome);
     }
-    
+
     public boolean isCampoGiaPreso(Campo campo) {
         return campo.isCampoInListaByNome(campiNativi);
     }
