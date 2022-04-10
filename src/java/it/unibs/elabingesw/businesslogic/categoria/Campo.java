@@ -8,14 +8,20 @@ import java.util.List;
 /**
  * Record Campo che definisce un campo di una determinata categoria.
  *
+ * L'invariante di classe è che gli attributi del record Campo: nome e obbligatorio
+ * una volta settati con la creazione dell'istanza rimangano immutati
+ * per tutto il ciclo di vita dell'oggetto.
+ *
+ * Precondizione del costruttore: gli argomenti passati non siano nulli.
+ *
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
 public record Campo(String nome, boolean obbligatorio) implements Manageable, Serializable {
-    
+
     /**
      * Metodo che ritorna la lista dei campi nativi che una catego-
-     * ria deve avere che possono essere a compilazione obbligatoria
+     * ria radice deve avere che possono essere a compilazione obbligatoria
      * o facoltativa.
      *
      * @return lista dei campi nativi necessari a una categoria
@@ -45,7 +51,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
      * Metodo per controllare se un campo è obbligatorio o meno.
      *
      * @return TRUE se il campo è obbligatorio
-     * FALSE se il campo è facoltativo
+     *         FALSE se il campo è facoltativo
      */
     public boolean isObbligatorio() {
         return this.obbligatorio;
@@ -107,6 +113,8 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     /**
      * Metodo che controlla se un campo è in lista
      * passata per parametro.
+     *
+     * Precondizione: argomento del metodo non nullo.
      *
      * @param listaCampi la lista dei campi
      * @return TRUE se il campo è in lista 
