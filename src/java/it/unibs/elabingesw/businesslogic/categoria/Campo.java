@@ -20,11 +20,11 @@ import java.util.List;
 public record Campo(String nome, boolean obbligatorio) implements Manageable, Serializable {
 
     /**
-     * Metodo che ritorna la lista dei campi nativi che una catego-
-     * ria radice deve avere che possono essere a compilazione obbligatoria
+     * Metodo che ritorna la lista dei campi nativi che una categoria
+     * radice deve avere che possono essere a compilazione obbligatoria
      * o facoltativa.
      *
-     * @return lista dei campi nativi necessari a una categoria
+     * @return lista dei campi nativi necessari a una categoria radice
      */
     public static List<Campo> getCampiDiDefaultPerCategoriaRadice() {
         return List.of(
