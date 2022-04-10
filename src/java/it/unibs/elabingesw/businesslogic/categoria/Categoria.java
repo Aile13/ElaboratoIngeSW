@@ -8,6 +8,9 @@ import java.util.List;
 /**
  * Classe Categoria che rappresenta una categoria generica.
  *
+ * Invariante di classe: assumo gli attributi immutabili,
+ * dopo la creazione dell'oggetto.
+ *
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
