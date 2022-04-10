@@ -20,23 +20,16 @@ public class Categoria implements Manageable, Serializable {
      * Costruttore di classe, accetta come parametri il nome, la
      * descrizione e la lista dei campi nativi di una categoria.
      *
-     * @param nome
-     * @param descrizione
-     * @param campiNativi
+     * Precondizione: assumo parametri costruttore non nulli.
+     *
+     * @param nome nome della categoria
+     * @param descrizione descrizione della categoria
+     * @param campiNativi campi nativi associati alla categoria
      */
     public Categoria(String nome, String descrizione, List<Campo> campiNativi) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.campiNativi = campiNativi;
-    }
-
-    /**
-     * Metodo getter.
-     *
-     * @return la lista dei campi nativi
-     */
-    public List<Campo> getCampiNativi() {
-        return campiNativi;
     }
 
     /**
@@ -52,7 +45,9 @@ public class Categoria implements Manageable, Serializable {
      * Metodo che permette all'utente di inserire una lista di
      * campi nativi per una determinata categoria.
      *
-     * @param campi la lista dei campi
+     * Precondizione: assumo parametro metodo non nullo.
+     *
+     * @param campi la lista dei campi da aggiungere
      */
     public void inserisciCampiNativi(List<Campo> campi) {
         this.campiNativi.addAll(campi);
@@ -103,6 +98,8 @@ public class Categoria implements Manageable, Serializable {
      * che verifica se due gerarchie hanno lo stesso no-
      * me o meno.
      *
+     * Precondizione: assumo parametro del metodo non nullo.
+     *
      * @param nome il nome della gerarchia
      * @return TRUE se i nomi sono uguali
      * FALSE se i nomi sono diversi
@@ -111,18 +108,7 @@ public class Categoria implements Manageable, Serializable {
     public boolean isStessoNome(String nome) {
         return this.getNome().equals(nome);
     }
-
-    /**
-     * Metodo toString ridotto in cui mostro a video
-     * solo il nome e la descrizione della categoria.
-     *
-     * @return stringa dell'oggetto convertito
-     */
-    public String toStringRidotto() {
-        return "nome='" + nome + '\'' +
-                ", descrizione='" + descrizione + '\'';
-    }
-
+    
     public boolean isCampoGiaPreso(Campo campo) {
         return campo.isCampoInListaByNome(campiNativi);
     }
