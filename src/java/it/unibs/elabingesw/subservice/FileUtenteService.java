@@ -21,7 +21,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author Elia
+ * Classe FileUtenteService che gestisce le varie operazioni
+ * che si effettuano perchè l'utente possa caricare nell'
+ * applicativo dei dati da file.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class FileUtenteService {
 
@@ -30,12 +35,28 @@ public class FileUtenteService {
     private File selectedFile;
     private String contenutoFile;
 
+    /**
+     * Costruttore di classe, accetta come parametri un oggetto
+     * GestoreGerarchie e un oggetto GestoreScambio.
+     *
+     * @param gestoreGerarchie
+     * @param gestoreScambio
+     * @see GestoreGerarchie
+     * @see GestoreScambio
+     */
     public FileUtenteService(GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
 
         this.gestoreGerarchie = gestoreGerarchie;
         this.gestoreScambio = gestoreScambio;
     }
 
+    /**
+     * Metodo che chiede all'utente quale modalità di caricamento
+     * dei dati vuole scegliere: può caricare da file le gerarchie
+     * di categorie oppure caricare da file i valori dei parametri
+     * di configurazione. Dopo tale scelta, permette anche di sce-
+     * gliere quale file caricare.
+     */
     private void scegliAzioneESelezionaFileDaCaricare() {
         var menu = new MyMenu("Menu selezione caricamento dati da file utente", new String[]{
                 "Carica da file i valori dei parametri di configurazione",
@@ -73,6 +94,10 @@ public class FileUtenteService {
         }
     }
 
+    /**
+     * Metodo che legge e carica i parametri dal file
+     * dell'utente.
+     */
     private void leggiECaricaParametri() {
         try {
             contenutoFile = Files.readString(selectedFile.toPath());
@@ -88,11 +113,21 @@ public class FileUtenteService {
         }
     }
 
+    /**
+     * Metodo che programma i parametri degli scambi
+     * che sono stati impostati.
+     * 
+     * @throws Exception
+     */
     private void programParametri() throws Exception {
         Scambio scambio = parametri();
         this.gestoreScambio.impostaInfoDiScambio(scambio);
     }
 
+    /**
+     * Metodo che legge e carica le gerarchie dal file
+     * dell'utente.
+     */
     private void leggiECaricaGerachie() {
         try {
             contenutoFile = Files.readString(selectedFile.toPath());
@@ -108,6 +143,11 @@ public class FileUtenteService {
         }
     }
 
+    /**
+     * Metodo che rimuove gli spazi quando l'applicativo
+     * legge il file e incontra qualcosa che non sia una
+     * stringa.
+     */
     private void rimuoviSpaziQuandoNonStringa() {
         StringBuilder builder = new StringBuilder();
         contenutoFile = contenutoFile.trim();
@@ -126,6 +166,13 @@ public class FileUtenteService {
                 .replaceAll(System.lineSeparator(), "");
     }
 
+    /**
+     * Metodo che controlla e inizializza i parametri
+     * che l'applicativo legge da file.
+     *
+     * @throws Exception
+     * @return un oggetto di tipo Scambio
+     */
     private Scambio parametri() throws Exception {
         ifStartsWithAndThenConsumeOrError("scambio{");
         String piazza = piazza();
@@ -141,6 +188,12 @@ public class FileUtenteService {
         return new Scambio(piazza, luoghi, giorni, intervalliOrari, scadenza);
     }
 
+    /**
+     * Metodo che controlla la scadenza acquisita.
+     *
+     * @throws Exception
+     * @return la scadenza
+     */
     private int scadenza() throws Exception {
         ifStartsWithAndThenConsumeOrError("scadenza=");
         var scadenza = Integer.parseInt(matchStringa());
@@ -150,6 +203,13 @@ public class FileUtenteService {
         return scadenza;
     }
 
+    /**
+     * Metodo che controlla la lista degli intervalli
+     * orari acquisiti.
+     *
+     * @throws Exception
+     * @return la lista degli intervalli orari
+     */
     private List<IntervalloOrario> intervalliOrari() throws Exception {
         List<IntervalloOrario> intervalliOrari = new LinkedList<>();
         ifStartsWithAndThenConsumeOrError("intervalli-orari=[");
@@ -169,6 +229,13 @@ public class FileUtenteService {
         return intervalliOrari;
     }
 
+    /**
+     * Metodo che controlla la un singolo intervallo
+     * orario acquisito.
+     *
+     * @throws Exception
+     * @return un oggetto di tipo IntervalloOrario
+     */
     private IntervalloOrario interalloOrario() throws Exception {
         IntervalloOrario intervalloOrario = null;
         var intervalloString = matchStringa();
@@ -193,6 +260,13 @@ public class FileUtenteService {
         return intervalloOrario;
     }
 
+    /**
+     * Metodo che controlla la lista dei giorni
+     * acquisiti.
+     *
+     * @throws Exception
+     * @return la lista dei giorni 
+     */
     private List<DayOfWeek> giorni() throws Exception {
         List<DayOfWeek> giorni = new LinkedList<>();
         ifStartsWithAndThenConsumeOrError("giorni=[");
@@ -210,6 +284,13 @@ public class FileUtenteService {
         return giorni;
     }
 
+    /**
+     * Metodo che controlla la lista dei luoghi
+     * acquisiti.
+     *
+     * @throws Exception
+     * @return la lista dei luoghi 
+     */
     private List<String> luoghi() throws Exception {
         List<String> luoghi = new LinkedList<>();
         ifStartsWithAndThenConsumeOrError("luoghi=[");
@@ -227,17 +308,36 @@ public class FileUtenteService {
         return luoghi;
     }
 
+    /**
+     * Metodo che controlla la piazza acquisita.
+     *
+     * @throws Exception
+     * @return la piazza 
+     */
     private String piazza() throws Exception {
         ifStartsWithAndThenConsumeOrError("piazza=");
         return matchStringa();
     }
 
+    /**
+     * Metodo che programma le gerarchie che sono 
+     * state acquisite.
+     *
+     * @throws Exception
+     */
     private void programGerarchie() throws Exception {
         List<GerarchiaDiCategorie> listaGerarchie = new LinkedList<>();
         gerarchiaList(listaGerarchie);
         listaGerarchie.forEach(gestoreGerarchie::inserisciNuovaGerarchia);
     }
 
+    /**
+     * Metodo che ritorna la lista delle gerarchie che 
+     * vengono acquisite dal file dell'utente.
+     *
+     * @param gerarchie una lista di gerarchie di categorie
+     * @throws Exception
+     */
     private void gerarchiaList(List<GerarchiaDiCategorie> gerarchie) throws Exception {
         if (!contenutoFile.isEmpty()) {
             var nuovaGerarchia = gerarchia();
@@ -257,6 +357,13 @@ public class FileUtenteService {
         }
     }
 
+    /**
+     * Metodo che controlla e inizializza le gerarchie
+     * che l'applicativo legge da file.
+     *
+     * @throws Exception
+     * @return un oggetto di tipo GerarchiaDiCategorie
+     */
     private GerarchiaDiCategorie gerarchia() throws Exception {
         ifStartsWithAndThenConsumeOrError("gerarchia{");
         var gerarchiaDiCategorie = categoriaRadice();
@@ -264,6 +371,12 @@ public class FileUtenteService {
         return gerarchiaDiCategorie;
     }
 
+    /**
+     * Metodo che imposta una categoria radice.
+     *
+     * @throws Exception
+     * @return un oggetto di tipo GerarchiaDiCategorie
+     */
     private GerarchiaDiCategorie categoriaRadice() throws Exception {
         ifStartsWithAndThenConsumeOrError("categoriaRadice(");
         var nomeCategoriaRadice = matchStringa();
@@ -287,6 +400,12 @@ public class FileUtenteService {
         return gerarchiaDiCategorie;
     }
 
+    /**
+     * Metodo ...
+     *
+     * @param gerarchia un oggetto di tipo GerarchiaDiCategorie
+     * @throws Exception
+     */
     private void categoriaFiglioListOp(GerarchiaDiCategorie gerarchia) throws Exception {
         ifStartsWithAndThenConsumeOrError("[");
         if (!contenutoFile.startsWith("]"))
@@ -294,6 +413,12 @@ public class FileUtenteService {
         ifStartsWithAndThenConsumeOrError("]");
     }
 
+    /**
+     * Metodo ...
+     *
+     * @param gerarchia un oggetto di tipo GerarchiaDiCategorie
+     * @throws Exception
+     */
     private void categoriaFiglioList(GerarchiaDiCategorie gerarchia) throws Exception {
         if (!contenutoFile.isEmpty()) {
             categoriaFiglio(gerarchia);
@@ -305,7 +430,12 @@ public class FileUtenteService {
         }
     }
 
-
+    /**
+     * Metodo che imposta una categoria figlio.
+     *
+     * @param listaCampi la lista dei campi
+     * @throws Exception
+     */
     private void categoriaFiglio(GerarchiaDiCategorie gerarchia) throws Exception {
         ifStartsWithAndThenConsumeOrError("categoriaFiglio(");
         var nomeCategoria = matchStringa();
@@ -325,6 +455,12 @@ public class FileUtenteService {
         ifStartsWithAndThenConsumeOrError(")");
     }
 
+    /**
+     * Metodo ...
+     *
+     * @param listaCampi la lista dei campi
+     * @throws Exception
+     */
     private List<Campo> campoListOp() throws Exception {
         List<Campo> listaCampi = new LinkedList<>();
 
@@ -336,6 +472,13 @@ public class FileUtenteService {
         return listaCampi;
     }
 
+    /**
+     * Metodo che imposta la lista dei campi che 
+     * vengono acquisiti da ogni gerarchia.
+     *
+     * @param listaCampi la lista dei campi
+     * @throws Exception
+     */
     private void campoList(List<Campo> listaCampi) throws Exception {
         Campo campo = campo();
         if (campo.isCampoInListaByNome(listaCampi)) {
@@ -351,6 +494,12 @@ public class FileUtenteService {
 
     }
 
+    /**
+     * Metodo che controlla il campo acquisito.
+     *
+     * @throws Exception
+     * @return un oggetto di tipo Campo
+     */
     private Campo campo() throws Exception {
         ifStartsWithAndThenConsumeOrError("(");
         var nomeCampo = matchStringa();
@@ -360,6 +509,13 @@ public class FileUtenteService {
         return new Campo(nomeCampo, isObbl);
     }
 
+    /**
+     * Metodo ...
+     *
+     * @throws Exception
+     * @return TRUE
+     *         FALSE
+     */
     private boolean matchBoolean() throws Exception {
         if (contenutoFile.startsWith("t")) {
             consume("t");
@@ -371,6 +527,12 @@ public class FileUtenteService {
         return false;
     }
 
+    /**
+     * Metodo ...
+     *
+     * @throws Exception
+     * @return una stringa
+     */
     private String matchStringa() throws Exception {
         ifStartsWithAndThenConsumeOrError("\"");
         if (contenutoFile.startsWith("\""))
@@ -390,21 +552,38 @@ public class FileUtenteService {
         return builder.toString();
     }
 
+    /**
+     * Metodo ...
+     *
+     * @param string una stringa
+     * @throws Exception
+     */
     private void ifStartsWithAndThenConsumeOrError(String string) throws Exception {
         if (contenutoFile.startsWith(string)) {
             consume(string);
         } else errore();
     }
 
+    /**
+     * Metodo ...
+     *
+     * @param string una stringa
+     */
     private void consume(String string) {
         contenutoFile = contenutoFile.substring(string.length());
     }
 
+    /**
+     * Metodo che manda un messaggio d'errore.
+     */
     private void errore() throws Exception {
         throw new Exception("Attenzione: contenuto file non conforme a sintassi. " +
                 "Impossibile procedere al caricamento dei dati.");
     }
 
+    /**
+     * Metodo che dà avvio alla funzionalità
+     */
     public void avviaServizio() {
         scegliAzioneESelezionaFileDaCaricare();
     }
