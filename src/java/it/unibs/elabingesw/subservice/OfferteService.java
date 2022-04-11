@@ -453,7 +453,7 @@ public class OfferteService {
 
             var offerteInScambio =
                     this.gestoreOfferte.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
-            var offerteChiuse = this.gestoreOfferte.getofferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
+            var offerteChiuse = this.gestoreOfferte.getOfferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
 
             System.out.println("Per categoria: " + categoriaFogliaSelezionata.getNome());
             System.out.println("Le offerte in scambio:");
