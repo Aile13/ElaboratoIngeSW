@@ -1,7 +1,10 @@
 package it.unibs.elabingesw.businesslogic.utente;
 
 /**
- * @author Elia
+ * Classe Fruitore, sottoclasse di Utente.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 final public class Fruitore extends Utente {
 
@@ -16,6 +19,11 @@ final public class Fruitore extends Utente {
         super(username, password);
     }
 
+    /**
+     * Metodo getter.
+     * 
+     * @return il tipo di utente (fruitore in questo caso)
+     */
     @Override
     public UserType getUserType() {
         return UserType.FRUITORE;
