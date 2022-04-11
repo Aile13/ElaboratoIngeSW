@@ -41,21 +41,6 @@ public class Scambio implements Manageable, Serializable {
     }
 
     /**
-     * Metodo che controlla se un orario passato per parametro
-     * è valido all'interno della lista degli intervalli orari.
-     *
-     * @param orario l'orario da controllare
-     * @return TRUE se l'orario è valido
-     *         FALSE se l'orario non è valido
-     */
-    public boolean isOrarioInIntervalliOrariValido(LocalTime orario) {
-        for (IntervalloOrario intervalloOrario : intervalliOrari) {
-            if (intervalloOrario.isOrarioValidoInIntervallo(orario)) return true;
-        }
-        return false;
-    }
-
-    /**
      * Metodo getter.
      *
      * @return i luoghi in cui avvengono gli scambi
