@@ -20,7 +20,8 @@ public class MainMenu {
      * oggetto di tipo MacroService.
      * <p>
      * Al suo interno creo un istanza della classe MyFunctionalMenu
-     * e mostra a video tre operazioni che si possono effettuare.
+     * e mostra a video le operazioni che si possono effettuare in 
+     * base al tipo di utente che sta utilizzando l'applicativo.
      *
      * @param service
      * @see MacroServices
