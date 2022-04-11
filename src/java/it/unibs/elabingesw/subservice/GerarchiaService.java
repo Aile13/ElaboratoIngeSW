@@ -133,6 +133,10 @@ public class GerarchiaService {
         }
     }
 
+    /**
+     * Metodo che visualizza le gerarchie che sono state caricate
+     * nell'applicativo in forma ridotta.
+     */
     public void visualizzaGerarchieInFormaRidotta() {
         System.out.println("Elenco delle gerarchie caricate:");
         if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
