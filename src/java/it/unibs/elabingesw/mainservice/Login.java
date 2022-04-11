@@ -101,10 +101,20 @@ public class Login {
         } while (ricontrolla);
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return il tipo di utente
+     */
     public UserType getUserType() {
         return userType;
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return l'utente loggato
+     */
     public Utente getUserLogged() {
         return this.utente;
     }
