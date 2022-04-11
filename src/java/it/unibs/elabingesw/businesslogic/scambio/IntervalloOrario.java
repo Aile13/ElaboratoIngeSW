@@ -4,32 +4,40 @@ import java.io.Serializable;
 import java.time.LocalTime;
 
 /**
- * Classe IntervalloOrario per definire gli intervalli orari
+ * Classe IntervalloOrario per definire un intervallo oraro
  * entro cui è possibile effettuare scambi.
+ * <p>
+ * Invariante di classe: assumo gli attributi immutabili,
+ * dopo la creazione dell'oggetto.
  *
  * @author Elia Pitozzi
- * @auhor Ali Laaraj
+ * @author Ali Laaraj
  */
 public class IntervalloOrario implements Serializable {
     private final LocalTime orarioIniziale;
     private final LocalTime orarioFinale;
-    
+
     /**
      * Costruttore di classe, accetta come parametri un orario
-     * iniziale e un orario finale che costituiscono un inter-
-     * vallo orario.
+     * iniziale e un orario finale che costituiscono un intervallo orario.
+     * <p>
+     * Precondizione: assumo parametri costruttore non nulli
+     * e correttamente inizializzati.
+     * Assumo inoltre che l'orario iniziale passato come
+     * parametro non succeda o coincida con l'orario finale
+     * passato come parametro.
      *
-     * @param orarioIniziale
-     * @param orarioFinale
-     */ 
+     * @param orarioIniziale orario iniziale dell'intervallo orario
+     * @param orarioFinale   orario finale dell'intervallo orario
+     */
     public IntervalloOrario(LocalTime orarioIniziale, LocalTime orarioFinale) {
         this.orarioIniziale = orarioIniziale;
         this.orarioFinale = orarioFinale;
     }
-    
+
     /**
-     * Metodo per la formattazione che converte un oggetto nella re-
-     * lativa rappresentazione di stringa.
+     * Metodo per la formattazione che converte un oggetto nella
+     * relativa rappresentazione di stringa.
      *
      * @return stringa dell'oggetto convertito
      */
@@ -40,14 +48,19 @@ public class IntervalloOrario implements Serializable {
                 ", orarioFinale=" + orarioFinale +
                 '}';
     }
-    
+
     /**
      * Metodo che permette di controllare se due intervalli orari
      * si intersecano tra di loro o meno.
+     * <p>
+     * Precondizione: assumo parametro non nullo e correttamente inizializzato.
+     * Post condizione: verifica se un intervallo orario finisce prima che
+     * l'altro inizi, o se inizia dopo che finisca l'altro, o ancora,
+     * se uno sia contenuto nell'altro. Quindi dà l'esito circa la intersezione.
      *
-     * @param altroIntervalloOrario un intervallo orario
+     * @param altroIntervalloOrario un intervallo orario da confrontare
      * @return TRUE se i due intervalli si intersecano
-     *         FALSE se i due intervalli non si intersecano
+     * FALSE se i due intervalli non si intersecano
      */
     public boolean intersecaAltroIntervalloOrario(IntervalloOrario altroIntervalloOrario) {
         // inizio del secondo compreso nell'intervallo del primo
@@ -57,10 +70,10 @@ public class IntervalloOrario implements Serializable {
         }
         // fine del secondo compreso nell'intervallo del primo
         else if (!altroIntervalloOrario.orarioFinale.isBefore(this.orarioIniziale) &&
-                    !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale)) {
+                !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale)) {
             return true;
         }
-        // il secondo contine il primo. se no non c'è intersezine
+        // Il secondo contiene il primo. Se no non c'è intersezione
         else return altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale) &&
                     altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
     }
