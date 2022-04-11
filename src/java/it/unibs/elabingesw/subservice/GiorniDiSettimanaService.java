@@ -7,9 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Elia
+ * Classe GiorniDiSettimanaService che gestisce la
+ * richiesta dei giorni della settimana.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class GiorniDiSettimanaService {
+    
+    /**
+     * Metodo che chiede all'utente di inserire la lista
+     * dei giorni in cui è possibile effettuare scambi.
+     *
+     * @return la lista dei giorni
+     */
     public static List<DayOfWeek> chiediGiorniDiSettimana() {
         List<DayOfWeek> listaGiorni = new ArrayList<>();
         for (DayOfWeek day : DayOfWeek.values()) {
