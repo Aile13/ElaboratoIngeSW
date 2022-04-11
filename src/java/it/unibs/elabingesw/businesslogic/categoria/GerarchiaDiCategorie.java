@@ -79,7 +79,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      *
      * @param nome il nome della gerarchia
      * @return TRUE se i nomi sono uguali
-     * FALSE se i nomi sono diversi
+     *         FALSE se i nomi sono diversi
      */
     @Override
     public boolean isStessoNome(String nome) {
@@ -155,6 +155,15 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
         return gerarchia.getListOfDataInTreeNodePadriByNome(categoria.getNome());
     }
 
+    /**
+     * Metodo che controlla se un campo di una categoria
+     * all'interno di una gerarchia di categorie ha omo-
+     * nimi o meno.
+     *
+     * @param campo l'oggetto Campo
+     * @return TRUE se il campo è già stato preso
+     *         FALSE se il campo non è già stato preso
+     */
     public boolean isCampoGiaPreso(Campo campo) {
         var listaCategoriePadri = this.getListaDiCategoriePadriByCategoria(this.gerarchia.getDato());
         for (Categoria categoria : listaCategoriePadri) {
