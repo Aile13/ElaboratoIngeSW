@@ -26,12 +26,27 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
         super(FILE_NAME);
     }
 
+    /**
+     * Metodo che carica, dal file, tutti gli elementi in lista.
+     * Inoltre aggiorna lo stato delle offerte dall'ultimo loro salvataggio.
+     * <p>
+     * Post condizione: quella del metodo super chiamata.
+     * E inoltre esegue l'aggiornamento dello stato di tutte
+     * le offerte in lista.
+     */
     @Override
     protected void caricaElementi() {
         super.caricaElementi();
         aggiornaStatoDelleOfferte();
     }
 
+    /**
+     * Aggiorna stato delle offerte presenti in lista.
+     * <p>
+     * Precondizione: quella del metodo chiamata su ogni offerta.
+     * Post condizione: ogni offerta presente correntemente in lista è aggiornata circa
+     * il suo stato rispetto alla logica del sistema.
+     */
     public void aggiornaStatoDelleOfferte() {
         this.getListaElementi().forEach(Offerta::aggiornaStatoOfferta);
     }
