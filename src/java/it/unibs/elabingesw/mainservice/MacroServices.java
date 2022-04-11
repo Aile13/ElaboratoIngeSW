@@ -45,7 +45,8 @@ public class MacroServices {
     }
     
     /**
-     * Metodo che salva utenti e gerarchie su file JSON.
+     * Metodo che salva utenti e gerarchie su file.
+     *
      * @see GestoreUtenti
      * @see GestoreGerarchie
      */
@@ -84,62 +85,162 @@ public class MacroServices {
        this.gerarchiaService.visualizzaGerarchieInFormaEstesa();
     }
 
+    /**
+     * Metodo che rimanda alla classe GerarchiaService per
+     * visualizzare tutte le gerarchie caricate in forma 
+     * ridotta.
+     *
+     * @see GerarchiaService
+     */
     public void visualizzaGerarchieFormaRidotta() {
      this.gerarchiaService.visualizzaGerarchieInFormaRidotta();
     }
 
+    /**
+     * Metodo che rimanda alla classe ScambioService per
+     * visualizzare tutte le informazioni degli scambi.
+     *
+     * @see ScambioService
+     */
     public void visualizzaInfoDiScambioFormaEstesa() {
         this.scambioService.visualizzaInfoDiScambioFormaEstesa();
     }
 
+    /**
+     * Metodo che rimanda alla classe ScambioService per
+     * visualizzaretutte le informazioni degli scambi in
+     * forma ridotta.
+     *
+     * @see ScambioService
+     */
     public void visualizzaInfoDiScambioFormaRidotta() {
         this.scambioService.visualizzaInfoDiScambioFormaRidotta();
     }
 
+    /**
+     * Metodo che rimanda alla classe ScambioService per
+     * impostare le informazioni sugli scambi.
+     *
+     * @see ScambioService
+     */
     public void impostaInfoDiScambio() {
         this.scambioService.impostaInfoScambio();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * settare l'utente loggato.
+     *
+     * @param userLogged l'utente loggato
+     * @see OfferteService
+     */
     public void setUser(Utente userLogged) {
         this.offerteService.setUser(userLogged);
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * visualizzare le offerte di un utente.
+     *
+     * @see OfferteService
+     */
     public void visualizzaOfferteUtente() {
         this.offerteService.visualizzaOfferteUtente();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * creare una nuova offerta.
+     *
+     * @see OfferteService
+     */
     public void creaNuovaOfferta() {
         this.offerteService.creaNuovaOfferta();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * ritirare le offerte di un utente.
+     *
+     * @see offerteService
+     */
     public void ritiraOfferte() {
         this.offerteService.ritiraOfferte();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * visualizzare le offerte aperte con la selezione
+     * della categoria foglia.
+     *
+     * @see OfferteService
+     */
     public void visualizzaOfferteAperteConSelezioneFoglia() {
         this.offerteService.visualizzaOfferteAperteConSelezioneFoglia();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService e per-
+     * mette di selezionare un'offerta aperta per poterla
+     * barattare.
+     *
+     * @see OfferteService
+     */
     public void selezionaUnaOffertaApertaPerBaratto() {
         this.offerteService.selezionaUnaOffertaApertaPerBaratto();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * visualizzare le proposte di scambio che un utente
+     * ha ricevuto.
+     *
+     * @see OfferteService
+     */
     public void visualizzaProposteDiScambio() {
         this.offerteService.visualizzaProposteDiScambio();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * visualizzare le offerte in scambio di un utente.
+     *
+     * @see OfferteService
+     */
     public void visualizzaOfferteInScambio() {
         this.offerteService.visualizzaOfferteInScambio();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * visualizzare le ultime risposte ricevute per le
+     * offerte in scambio.
+     *
+     * @see OfferteService
+     */
     public void visualizzaUltimeRispostePerOfferteInScambio() {
         this.offerteService.visualizzaUltimeRispostePerOfferteInScambio();
     }
 
+    /**
+     * Metodo che rimanda alla classe OfferteService per
+     * visualizzare le offerte in scambio e chiuse con la 
+     * selezione della categoria foglia.
+     *
+     * @see OfferteService
+     */
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
         this.offerteService.visualizzaOfferteInScambioEChiuseConSelezioneFoglia();
     }
 
+    /**
+     * Metodo che rimanda alla classe GerarchiaService e che
+     * permette all'utente di caricare gerarchie delle cate-
+     * gorie e valori dei parametri di configurazione da un
+     * file.
+     *
+     * @see GerarchiaService
+     */
     public void caricaDatiDaFileUtente() {
         this.gerarchiaService.caricaDatiDaFileUtente();
     }
