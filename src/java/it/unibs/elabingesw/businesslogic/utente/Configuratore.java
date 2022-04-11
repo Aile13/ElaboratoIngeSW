@@ -23,6 +23,11 @@ final public class Configuratore extends Utente {
         super(username, password);
     }
 
+    /**
+     * Metodo getter.
+     * 
+     * @return il tipo di utente (configuratore in questo caso)
+     */
     @Override
     public UserType getUserType() {
         return UserType.CONFIGURATORE;
@@ -39,11 +44,12 @@ final public class Configuratore extends Utente {
     }
     
     /**
-     * Metodo ....
+     * Metodo che controlla se lo username inserito sia uguale allo
+     * username del configuratore di default o meno.
      *
      * @param username lo username del configuratore
-     * @return TRUE
-     *         FALSE
+     * @return TRUE se lo username inserito è uguale a quello di default
+     *         FALSE se lo username inserito è diverso da quello di default
      */
     public static boolean isDefaultConfiguratoreByUsername(String username) {
         return getDefaultConfiguratore().isStessoNome(username);
