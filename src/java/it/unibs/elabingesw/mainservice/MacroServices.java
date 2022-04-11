@@ -197,7 +197,8 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le offerte di un utente.
+     * visualizzare le proposte di scambio che un utente
+     * ha ricevuto.
      *
      * @see OfferteService
      */
@@ -207,7 +208,7 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le offerte di un utente.
+     * visualizzare le offerte in scambio di un utente.
      *
      * @see OfferteService
      */
@@ -228,8 +229,8 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le offerte in scambio con la selezio-
-     * ne della categoria foglia.
+     * visualizzare le offerte in scambio e chiuse con la 
+     * selezione della categoria foglia.
      *
      * @see OfferteService
      */
