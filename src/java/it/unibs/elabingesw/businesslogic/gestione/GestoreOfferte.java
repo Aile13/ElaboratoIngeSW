@@ -74,7 +74,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * <p>
      * Precondizione: assumo che il parametro passato
      * non sia nullo e sia inizializzato correttamente. Ovvero
-     * che il parametro corrisponda a un utente già registrato nel sistema.
+     * che il parametro corrisponda a un utente fruitore già registrato nel sistema.
      * Post condizione: se l'utente non ha ancora fatto alcuna offerta
      * la lista ritornata è vuota. Altrimenti nella lista vengono messe
      * tutte le offerte di cui l'utente, passato come parametro, è autore.
@@ -92,7 +92,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * <p>
      * Precondizione: assumo che il parametro passato
      * non sia nullo e sia inizializzato correttamente. Ovvero
-     * che il parametro corrisponda a un utente già registrato nel sistema.
+     * che il parametro corrisponda a un utente fruitore già registrato nel sistema.
      * Post condizione: se l'utente non ha attualmente alcuna offerta aperta
      * la lista ritornata è vuota. Altrimenti nella lista vengono messe
      * tutte le offerte attualmente aperte di cui l'utente, passato
@@ -118,8 +118,8 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * Altrimenti nella lista vengono messe tutte le offerte attualmente aperte
      * appartenenti alla medesima categoria foglia passata come parametro.
      *
-     * @param categoriaFoglia l'oggetto di tipo Categoria per la ricerca
-     * @return la lista delle offerte aperte associate alla categoria
+     * @param categoriaFoglia l'oggetto di tipo Categoria
+     * @return la lista delle offerte aperte
      */
     public List<Offerta> getOfferteAperteByCategoriaFoglia(Categoria categoriaFoglia) {
         return getListaElementi().stream()
