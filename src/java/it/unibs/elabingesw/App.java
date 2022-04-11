@@ -18,6 +18,9 @@ import it.unibs.elabingesw.mainservice.MainMenu;
  */
 public class App {
 
+    /**
+     * Metodo run() che permette di eseguire l'applicativo.
+     */
     public void run() {
         final var gestoreUtenti = new GestoreUtenti();
         final var gestoreGerarchie = new GestoreGerarchie();

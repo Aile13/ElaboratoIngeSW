@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe CampoService contenente due metodi statici appositi
- * per gestire le richieste dell'utente di aggiungere nuovi
- * campi alle categorie.
+ * Classe CampoService contenente metodi che gestiscono
+ * l'interazione con l'utente chiedendo una lista di
+ * campi.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
@@ -46,7 +46,15 @@ class CampoService {
         return campi;
     }
 
-
+    /**
+     * Metodo statico che chiede all'utente di inserire la lista dei
+     * campi per una determinata gerarchia che viene passata per pa-
+     * rametro.
+     *
+     * @param gerarchia un oggetto Gerarchia
+     * @return la lista dei campi inseriti dall'utente
+     * @see Campo
+     */
     public static List<Campo> chiediListaDiCampiPerCategoriaFiglio(GerarchiaDiCategorie gerarchia) {
         List<Campo> campi = new ArrayList<>();
         if (InputDati.yesOrNo("Inserire un campo?")) {

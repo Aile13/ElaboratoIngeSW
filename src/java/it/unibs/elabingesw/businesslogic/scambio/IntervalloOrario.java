@@ -69,17 +69,6 @@ public class IntervalloOrario implements Serializable {
     }
 
     /**
-     * Metodo che controlla se un orario è valido all'
-     * interno di un intervallo
-     *
-     * @param orario un orario
-     * @return FALSE
-     */
-    public boolean isOrarioValidoInIntervallo(LocalTime orario) {
-        return false;
-    }
-
-    /**
      * Metodo getter
      *
      * @return la lista degli orari validi
