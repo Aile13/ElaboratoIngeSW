@@ -17,7 +17,12 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @author Elia
+ * Classe OfferteService che gestisce le varie operazioni
+ * che si effettuano su un'offerta di un fruitore su un
+ * determinato articolo.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class OfferteService {
     private final GestoreOfferte gestoreOfferte;
@@ -25,6 +30,15 @@ public class OfferteService {
     private final GestoreScambio gestoreScambio;
     private Utente utente;
 
+    /**
+     * Costruttore di classe, accetta come parametro un oggetto
+     * GestoreOfferte e un oggetto GestoreGerarchie.
+     *
+     * @param gestoreOfferte
+     * @param gestoreGerarchie
+     * @see GestoreOfferte
+     * @see GestoreGerarchie
+     */
     public OfferteService(GestoreOfferte gestoreOfferte, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
 
         this.gestoreOfferte = gestoreOfferte;
@@ -32,6 +46,10 @@ public class OfferteService {
         this.gestoreScambio = gestoreScambio;
     }
 
+    /**
+     * Metodo che crea una nuova offerta: una volta confermata la
+     * sua creazione, questa viene aggiunta all'applicativo.
+     */
     public void creaNuovaOfferta() {
         System.out.println("Procedura di creazione nuovo articolo avviata");
         if (this.gestoreGerarchie.haGerarchie()) {
@@ -52,6 +70,14 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che chiede all'utente di inserire una categoria foglia
+     * passando per parametro la gerarchia selezionata.
+     *
+     * @param gerarchiaSelezionata una gerarchia di categorie
+     * @return una categoria foglia
+     * @see GerarchiaDiCategorie
+     */
     private Categoria chiediCategoriaFogliaByGerarchia(GerarchiaDiCategorie gerarchiaSelezionata) {
         System.out.println("Seleziona la categoria foglia di interesse: ");
         for (Categoria categoria : gerarchiaSelezionata.getListaDiCategoriaFoglia()) {
@@ -63,6 +89,13 @@ public class OfferteService {
         return chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
     }
 
+    /**
+     * Metodo che chiede all'utente la gerarchia contenente la categoria
+     * foglia di interesse.
+     *
+     * @return una gerarchia
+     * @see GerarchiaDiCategorie
+     */
     private GerarchiaDiCategorie chiediGerarchia() {
         System.out.println("Seleziona la gerarchia che contiene la categoria foglia di interesse: ");
         for (GerarchiaDiCategorie gerarchia : this.gestoreGerarchie.getListaGerarchie()) {
@@ -74,6 +107,13 @@ public class OfferteService {
         return chiediGerarchia();
     }
 
+    /**
+     * Metodo che chiede all'utente il nome dell'articolo da inserire, 
+     * controllando che il nom enon è già stato inserito.
+     *
+     * @return il nome dell'articolo
+     * @see GestoreOfferte
+     */
     private String chiediNomeArticolo() {
         var nomeArticolo = InputDati.leggiStringaNonVuota("Inserisci il titolo dell'articolo: ");
         while (this.gestoreOfferte.isOffertaGiaPresenteByNome(nomeArticolo)) {
@@ -83,6 +123,11 @@ public class OfferteService {
         return nomeArticolo;
     }
 
+    /**
+     * Metodo che visualizza le offerte di un utente.
+     *
+     * @see GestoreOfferte
+     */
     public void visualizzaOfferteUtente() {
         if (this.gestoreOfferte.getOfferteByUser(utente).isEmpty()) {
             System.out.println("\tAttenzione non ci sono offerte di " + utente.getUsername() + " da visualizzare.");
@@ -94,10 +139,21 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo setter.
+     *
+     * @param utente l'oggetto Utente
+     */
     public void setUser(Utente utente) {
         this.utente = utente;
     }
 
+    /**
+     * Metodo che permette all'utente di scegliere quale offerta
+     * ritirare tra quelle aperte.
+     *
+     * @see GestoreOfferte
+     */
     public void ritiraOfferte() {
         if (this.gestoreOfferte.getOfferteAperteByUser(this.utente).isEmpty()) {
             System.out.println("\tAttenzione: non ci sono offerte aperte da ritirare.");
@@ -111,6 +167,13 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che visualizza la lista delle offerte aperte (contenente
+     * almeno un'offerta aperta) per una determinata categoria foglia.
+     *
+     * @see GestoreOfferte
+     * @see GestoreGerarchie
+     */
     public void visualizzaOfferteAperteConSelezioneFoglia() {
         if (this.gestoreGerarchie.haGerarchie()) {
             GerarchiaDiCategorie gerarchia = chiediGerarchia();
@@ -127,6 +190,14 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che chiede all'utente di selezionare l'offerta aperta
+     * di interesse scegliendola tra le offerte contenute dentro la
+     * lista passata per parametro.
+     *
+     * @return l'offerta aperta
+     * @see GestoreOfferte
+     */
     private Offerta chiediOffertaByList(List<Offerta> listaOfferte) {
         System.out.println("Seleziona l'offerta aperta di interesse: ");
         for (Offerta offerta : listaOfferte) {
@@ -138,6 +209,13 @@ public class OfferteService {
         return chiediOffertaByList(listaOfferte);
     }
 
+    /**
+     * Metodo che permette all'utente di selezionare due offerte aperte
+     * che sono barattabili, rispettando i vincoli che le due offerte
+     * siano della stessa categoria e che siano di due utenti diversi.
+     *
+     * @see GestoreScambio
+     */
     public void selezionaUnaOffertaApertaPerBaratto() {
         if (gestoreScambio.isInfoScambioDaConfigurare()) {
             System.out.println("Attenzione: criteri e tempistiche di scambio non ancora impostati.");
@@ -190,11 +268,25 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che permette all'utente di accettare una proposta di
+     * scambio per un'offerta selezionata passata per parametro.
+     * L'utente poi dovrà inserire gli estremi per proporre l'ap-
+     * puntamento.
+     *
+     * @param offertaSel l'offerta selezionata
+     */
     private void accettaPropostaDiScambio(Offerta offertaSel) {
         System.out.println("Proposta di scambio accettata, ora compila gli estremi per proporre l'appuntamento.");
         offertaSel.accettaPropostaDiScambioAssociata(chiediListaCampiAppuntamento());
     }
 
+    /**
+     * Metodo che chiede all'utente gli estremi di un appuntamento,
+     * ossia luogo, data e ora dell'incontro.
+     *
+     * @return la lista degli estremi dell'appuntamento
+     */
     private ListaCampiCompilati chiediListaCampiAppuntamento() {
         var listaCampiAppuntamento = new ListaCampiCompilati();
         listaCampiAppuntamento.inserisci(new Campo("Luogo di incontro", true), chiediLuogoDiIncontro());
@@ -203,6 +295,11 @@ public class OfferteService {
         return listaCampiAppuntamento;
     }
 
+    /**
+     * Metodo che chiede all'utente l'ora dell'appuntamento.
+     *
+     * @return l'orario d'incontro sottoforma di stringa
+     */
     private String chiediOraDiIncontro() {
         System.out.println("Selezionare un orario di incontro");
         for (LocalTime orario : gestoreScambio.getInfoDiScambio().get().getListaOrari()) {
@@ -214,6 +311,11 @@ public class OfferteService {
         return chiediOraDiIncontro();
     }
 
+    /**
+     * Metodo che chiede all'utente la data dell'appuntamento.
+     *
+     * @return il giorno dell'incontro
+     */
     private String chiediDataDiIncontro() {
         System.out.println("Selezionare un giorno di incontro");
         for (DayOfWeek giorno : gestoreScambio.getInfoDiScambio().get().getGiorni()) {
@@ -225,6 +327,11 @@ public class OfferteService {
         return chiediDataDiIncontro();
     }
 
+    /**
+     * Metodo che chiede all'utente il luogo dell'appuntamento.
+     *
+     * @return il luogo dell'incontro
+     */
     private String chiediLuogoDiIncontro() {
         System.out.println("Selezionare luogo di incontro");
         for (String luogo : gestoreScambio.getInfoDiScambio().get().getListaLuoghi()) {
@@ -236,6 +343,11 @@ public class OfferteService {
         return chiediLuogoDiIncontro();
     }
 
+    /**
+     * Metodo che visualizza le offerte in scambio di un utente.
+     *
+     * @see GestoreOfferte
+     */
     public void visualizzaOfferteInScambio() {
         List<Offerta> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
         if (offerte.isEmpty()) {
@@ -267,6 +379,12 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che propone un altro appuntamento per poter scambiare
+     * un'offerta che viene passata per parametro.
+     *
+     * @param offertaInScambio l'offerta che si sta scambiando
+     */
     private void proponiAltroAppuntamento(Offerta offertaInScambio) {
         var nuoviEstremiAppuntamento = chiediListaCampiAppuntamento();
         while (nuoviEstremiAppuntamento.equals(offertaInScambio.getListaCampiAppuntamento())) {
@@ -277,10 +395,22 @@ public class OfferteService {
         offertaInScambio.proponiAltroAppuntamento(nuoviEstremiAppuntamento);
     }
 
+    /**
+     * Metodo che permette all'utente di accettare una proposta
+     * di appuntamento per l'offerta passata per parametro.
+     *
+     * @param offertaInScambio l'offerta che si sta scambiando
+     */
     private void accettaAppuntamento(Offerta offertaInScambio) {
         offertaInScambio.accettaAppuntamento();
     }
 
+    /**
+     * Metodo che permette all'utente di vedere tutte le ultime
+     * risposte che ha ricevuto per le offerte in scambio.
+     *
+     * @see GestoreOfferte
+     */
     public void visualizzaUltimeRispostePerOfferteInScambio() {
         List<Offerta> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
         if (offerte.isEmpty()) {
@@ -300,6 +430,13 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che visualizza la lista delle offerte in scambio
+     * e chiuse per una determinata categoria foglia.
+     *
+     * @see GestoreOfferte
+     * @see GestoreGerarchie
+     */
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
         if (gestoreGerarchie.haGerarchie()) {
             System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere " +
