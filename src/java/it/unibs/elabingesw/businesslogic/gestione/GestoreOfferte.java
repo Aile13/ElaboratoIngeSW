@@ -81,7 +81,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
                 .toList();
     }
 
-    public List<Offerta> getofferteChiuseByCategoriaFoglia(Categoria categoriaFoglia) {
+    public List<Offerta> getOfferteChiuseByCategoriaFoglia(Categoria categoriaFoglia) {
         return getOfferteByCategoriaFoglia(categoriaFoglia).stream()
                 .filter(Offerta::isOffertaChiusa).toList();
     }
