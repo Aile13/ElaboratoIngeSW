@@ -9,7 +9,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author Elia
+ * Classe Scambio che definisce uno scambio di un determinato articolo.
+ * 
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class Scambio implements Manageable, Serializable {
     private final String piazza;
@@ -18,6 +21,17 @@ public class Scambio implements Manageable, Serializable {
     private final List<IntervalloOrario> intervalliOrari;
     private final int Scadenza;
 
+    /**
+     * Costruttore di classe, accetta come parametri la piazza, la lista
+     * dei luoghi, la lista dei giorni, la lista degli intervalli orari
+     * e la scadenza di uno scambio.
+     * 
+     * @param nome
+     * @param listaLuoghi
+     * @param giorni
+     * @param intervalliOrari
+     * @param scadenza
+     */
     public Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> giorni, List<IntervalloOrario> intervalliOrari, int scadenza) {
         this.piazza = piazza;
         this.listaLuoghi = listaLuoghi;
@@ -26,23 +40,52 @@ public class Scambio implements Manageable, Serializable {
         Scadenza = scadenza;
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return i luoghi in cui avvengono gli scambi
+     */
     public List<String> getListaLuoghi() {
         return listaLuoghi;
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return i giorni della settimana in cui avvengono gli scambi
+     */
     public List<DayOfWeek> getGiorni() {
         return giorni;
     }
 
+    /**
+     * Metodo implementato dall'interfaccia Manageable
+     * che verifica se due piazze sono uguali.
+     *
+     * @param nome la piazza da paragonare
+     * @return TRUE se le piazze sono uguali
+     *         FALSE se le piazze sono diverse
+     */
     @Override
     public boolean isStessoNome(String piazza) {
         return this.piazza.equals(piazza);
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return la scadenza in giorni di un'offerta
+     */
     public int getScadenza() {
         return Scadenza;
     }
 
+    /**
+     * Metodo per la formattazione che converte un oggetto nella re-
+     * lativa rappresentazione di stringa.
+     *
+     * @return stringa dell'oggetto convertito
+     */
     @Override
     public String toString() {
         return "Scambio{" + "\n" +
@@ -54,6 +97,13 @@ public class Scambio implements Manageable, Serializable {
                 '}';
     }
 
+    /**
+     * Metodo toString ridotto in cui mostro a video
+     * tutti gli attributi della classe Scambio tranne
+     * la scadenza.
+     *
+     * @return stringa dell'oggetto convertito
+     */
     public String toStringFormaRidotta() {
         return "Scambio{" + "\n" +
                 "\tpiazza='" + piazza + "',\n" +
@@ -63,6 +113,11 @@ public class Scambio implements Manageable, Serializable {
                 '}';
     }
 
+    /**
+     * Metodo getter.
+     * 
+     * @return la lista degli orari
+     */
     public List<LocalTime> getListaOrari() {
         List<LocalTime> listaOrari = new LinkedList<>();
         for (IntervalloOrario intervalloOrario : intervalliOrari) {
