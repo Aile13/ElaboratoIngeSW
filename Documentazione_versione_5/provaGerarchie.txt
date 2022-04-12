@@ -1,0 +1,36 @@
+gerarchia {
+    categoriaRadice (
+        "Bicicletta",
+        "Mezzo di trasporto ecologico",
+        [( "numero ruote": t ), ("colore": f)],
+        [
+            categoriaFiglio(
+                "bmx",
+                "bici extreme",
+                [],
+                []
+            ),
+            categoriaFiglio(
+                "bici per bimbo",
+                "bici per bambini",
+                [("eta": f)],
+                []
+            )
+        ]
+    )
+};
+gerarchia {
+    categoriaRadice(
+        "Libro",
+        "opera cartacea",
+        [("titolo": t), ("numero pagine": f)],
+        [
+            categoriaFiglio(
+                "romanzo",
+                "altro genere di libro",
+                [],
+                []
+            )
+        ]
+    )
+};
