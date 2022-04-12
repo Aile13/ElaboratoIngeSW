@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:officeooo="http://openoffice.org/2009/office" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.text">
- <office:meta><meta:creation-date>2022-04-08T14:46:09.206000000</meta:creation-date><meta:generator>LibreOffice/7.2.5.2$Windows_X86_64 LibreOffice_project/499f9727c189e6ef3471021d6132d4c694f357e5</meta:generator><dc:date>2022-04-09T15:40:19.787000000</dc:date><meta:editing-duration>PT1H33M25S</meta:editing-duration><meta:editing-cycles>13</meta:editing-cycles><meta:document-statistic meta:table-count="0" meta:image-count="0" meta:object-count="0" meta:page-count="4" meta:paragraph-count="63" meta:word-count="1246" meta:character-count="8402" meta:non-whitespace-character-count="6968"/></office:meta>
+ <office:meta><meta:creation-date>2022-04-08T14:46:09.206000000</meta:creation-date><meta:generator>LibreOffice/7.2.5.2$Windows_X86_64 LibreOffice_project/499f9727c189e6ef3471021d6132d4c694f357e5</meta:generator><dc:date>2022-04-12T18:07:10.238000000</dc:date><meta:editing-duration>PT1H43M35S</meta:editing-duration><meta:editing-cycles>16</meta:editing-cycles><meta:document-statistic meta:table-count="0" meta:image-count="0" meta:object-count="0" meta:page-count="4" meta:paragraph-count="64" meta:word-count="1283" meta:character-count="8623" meta:non-whitespace-character-count="7153"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
-   <config:config-item config:name="ViewAreaTop" config:type="long">15804</config:config-item>
+   <config:config-item config:name="ViewAreaTop" config:type="long">2540</config:config-item>
    <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
    <config:config-item config:name="ViewAreaWidth" config:type="long">32634</config:config-item>
-   <config:config-item config:name="ViewAreaHeight" config:type="long">14871</config:config-item>
+   <config:config-item config:name="ViewAreaHeight" config:type="long">14854</config:config-item>
    <config:config-item config:name="ShowRedlineChanges" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InBrowseMode" config:type="boolean">false</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view2</config:config-item>
-     <config:config-item config:name="ViewLeft" config:type="long">13988</config:config-item>
-     <config:config-item config:name="ViewTop" config:type="long">21491</config:config-item>
+     <config:config-item config:name="ViewLeft" config:type="long">15690</config:config-item>
+     <config:config-item config:name="ViewTop" config:type="long">6722</config:config-item>
      <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
-     <config:config-item config:name="VisibleTop" config:type="long">15804</config:config-item>
+     <config:config-item config:name="VisibleTop" config:type="long">2540</config:config-item>
      <config:config-item config:name="VisibleRight" config:type="long">32632</config:config-item>
-     <config:config-item config:name="VisibleBottom" config:type="long">30674</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="long">17392</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutColumns" config:type="short">1</config:config-item>
      <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
@@ -86,7 +86,7 @@
    <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
    <config:config-item config:name="UseOldPrinterMetrics" config:type="boolean">false</config:config-item>
    <config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="Rsid" config:type="int">2455826</config:config-item>
+   <config:config-item config:name="Rsid" config:type="int">2494219</config:config-item>
    <config:config-item config:name="MsWordCompTrailingBlanks" config:type="boolean">true</config:config-item>
    <config:config-item config:name="MathBaselineAlignment" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InvertBorderSpacing" config:type="boolean">false</config:config-item>
@@ -152,7 +152,7 @@
  <office:styles>
   <style:default-style style:family="graphic">
    <style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.3cm" draw:shadow-offset-y="0.3cm" draw:start-line-spacing-horizontal="0.283cm" draw:start-line-spacing-vertical="0.283cm" draw:end-line-spacing-horizontal="0.283cm" draw:end-line-spacing-vertical="0.283cm" style:flow-with-text="false"/>
-   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:font-independent-line-spacing="false">
+   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
     <style:tab-stops/>
    </style:paragraph-properties>
    <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="it" fo:country="IT" style:letter-kerning="true" style:font-name-asian="NSimSun" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Lucida Sans" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN"/>
@@ -291,31 +291,31 @@
    <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="0020eef1" officeooo:paragraph-rsid="0020eef1" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="P13" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="00216ae3" officeooo:paragraph-rsid="0020eef1" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="0020eef1" officeooo:paragraph-rsid="001ff3f5" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="P14" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="00216ae3" officeooo:paragraph-rsid="00216ae3" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="00216ae3" officeooo:paragraph-rsid="0020eef1" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="P15" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="00218743" officeooo:paragraph-rsid="00218743" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="00216ae3" officeooo:paragraph-rsid="00216ae3" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="P16" style:family="paragraph" style:parent-style-name="Standard">
+   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="00218743" officeooo:paragraph-rsid="00218743" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="00218743" officeooo:paragraph-rsid="00230112" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
   </style:style>
-  <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
+  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L1">
    <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="0019283c" officeooo:paragraph-rsid="0019283c" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
   </style:style>
-  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L2">
+  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="Standard">
+   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="0019283c" officeooo:paragraph-rsid="00260f0b" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="P20" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L2">
    <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="001a1710" officeooo:paragraph-rsid="001a1710" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
   </style:style>
-  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="001f2e02" officeooo:paragraph-rsid="001f2e02" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
-  </style:style>
-  <style:style style:name="P20" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L3">
+  <style:style style:name="P21" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L3">
    <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="001ff3f5" officeooo:paragraph-rsid="001ff3f5" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
-  </style:style>
-  <style:style style:name="P21" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="0020eef1" officeooo:paragraph-rsid="001ff3f5" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="P22" style:family="paragraph" style:parent-style-name="Standard" style:list-style-name="L4">
    <style:text-properties fo:font-size="14pt" fo:font-weight="normal" officeooo:rsid="0020eef1" officeooo:paragraph-rsid="0020eef1" style:font-size-asian="12.25pt" style:font-weight-asian="normal" style:font-size-complex="14pt" style:font-weight-complex="normal"/>
@@ -352,6 +352,9 @@
   </style:style>
   <style:style style:name="T11" style:family="text">
    <style:text-properties officeooo:rsid="00257912"/>
+  </style:style>
+  <style:style style:name="T12" style:family="text">
+   <style:text-properties officeooo:rsid="00260f0b"/>
   </style:style>
   <text:list-style style:name="L1">
    <text:list-level-style-bullet text:level="1" text:style-name="Bullet_20_Symbols" loext:num-list-format="%1%." style:num-suffix="." text:bullet-char="•">
@@ -586,17 +589,18 @@
    </text:sequence-decls>
    <text:p text:style-name="P1">Manuale Utente per Quinta versione Elaborato </text:p>
    <text:p text:style-name="P2"/>
-   <text:list xml:id="list421209139" text:style-name="L1">
+   <text:list xml:id="list2098383737" text:style-name="L1">
     <text:list-item>
-     <text:p text:style-name="P17">Installazione</text:p>
+     <text:p text:style-name="P18">“Installazione” <text:span text:style-name="T12">o Primo avvio</text:span></text:p>
     </text:list-item>
    </text:list>
-   <text:p text:style-name="P4">Essendo il programma fornito u<text:span text:style-name="T2">n’</text:span>app Stand-alone, e dato che <text:span text:style-name="T2">l’eseguibile fornito è un jar, l’app risulta avviabile con un semplice doppio click sull’icona del file jar stesso. </text:span><text:span text:style-name="T4">Tutte le relative librerie e dipendenze per l’esecuzione del programma sono già incluse nell’eseguibile, quindi l’app non necessità di alcuna inizializzazione o installazione a livello di os, risultando quindi una app di tipo portable.</text:span></text:p>
+   <text:p text:style-name="P19">Essendo il programma fornito u<text:span text:style-name="T2">n’</text:span>app Stand-alone, e dato che <text:span text:style-name="T2">l’eseguibile fornito è un jar, l’app risulta avviabile </text:span><text:span text:style-name="T12">da terminale</text:span><text:span text:style-name="T2">. </text:span><text:span text:style-name="T12">Bisogna infatti avere installato almeno Java 17 sul proprio pc. Poi si deve aprire una sessione del terminale e digitando il comando di esecuzione: java -jar + il percorso del file jar del programma fornito, si va così ad avviare l’applicazione stessa.</text:span></text:p>
+   <text:p text:style-name="P19"><text:span text:style-name="T4">Tutte le relative librerie e dipendenze per l’esecuzione del programma sono già incluse nell’eseguibile, quindi l’app non necessità di alcuna inizializzazione o installazione a livello di os, risultando quindi una app di tipo portable.</text:span></text:p>
    <text:p text:style-name="P5">Al primo avvio tutti i parametri di configurazione e dati del sistema sono ancora assenti. Quindi dopo la configurazione di essi e all’uscita <text:span text:style-name="T4">dalla sessione</text:span> d<text:span text:style-name="T4">e</text:span>l programma, l’app salva all’interno di una <text:span text:style-name="T4">a</text:span>pposita cartella (detta Dati, che è allo stesso livello di file sys dove risiede l’app) tutti i dati e le configurazioni impostate al primo accesso e ai successivi accessi e utilizzi dell’app. Se si migra la posizione del programma bisogna anche conseguentemente migrare nella stessa posizione l’apposita cartella per la persistenza dei dati <text:span text:style-name="T4">e garantire che l’app abbia ancora accesso ad essi</text:span>.</text:p>
    <text:p text:style-name="P5"/>
-   <text:list xml:id="list780877450" text:style-name="L2">
+   <text:list xml:id="list1601692876" text:style-name="L2">
     <text:list-item>
-     <text:p text:style-name="P18">Uso</text:p>
+     <text:p text:style-name="P20">Uso</text:p>
     </text:list-item>
    </text:list>
    <text:p text:style-name="P5">Come primo passo per l’utilizzo dell’app di baratti bisogna identificarsi come un utente del sistema. Quindi sia che si è un utente Fruitore o utente Configuratore bisogna procedere con il login mediante apposite credenziali personali;</text:p>
@@ -605,15 +609,15 @@
    <text:p text:style-name="P5">Nel caso invece <text:span text:style-name="T3">si voglia registrarsi come utente Configuratore bisogna prima procedere con un login “speciale” che permette l’attivazione dell’apposita procedura di registrazione di un utente Configuratore. Quindi come nel caso precedente, dopo l’avvenuta registrazione si è riportati a fare il login, stavolta con la possibilità di accedere al sistema come nuovo utente Configuratore. Le credenziali per il login “speciale” sono {Username: “</text:span><text:span text:style-name="T11">n</text:span><text:span text:style-name="T3">uovoconfiguratore”, Password: “default”}.</text:span></text:p>
    <text:p text:style-name="P5"/>
    <text:p text:style-name="P6">Successivamente al login con credenziali correte l’utente viene reindirizzato al menu principale dove mediante digitazione opportuna può selezionare la specifica azione che <text:span text:style-name="T6">intende</text:span> eseguire. A seconda del tipo di utente loggato, il sistema mostra un menu dedicato con comandi e azioni che quel relativo tipo di utente potrebbe desiderare di <text:span text:style-name="T6">eseguire</text:span> <text:span text:style-name="T6">e per cui</text:span> <text:span text:style-name="T6">dispone del</text:span>l’autorizzazione <text:span text:style-name="T6">rispetto alla logica </text:span>del sistema.</text:p>
-   <text:p text:style-name="P7">Le opzioni del menu sono, per entrambi gli utenti, associate a numeri in modo incrementale seconda la logica con cui poi nell’utilizzo nominale <text:span text:style-name="T6">dell’app dovrebbero essere richiamate dall’utente. </text:span></text:p>
-   <text:p text:style-name="P8"><text:soft-page-break/>Un esempio è il fatto che nel menu Configuratore la voce “Imposta info di scambio” sia al numero 3, dato che prima, rispetto al corretto uso dell’app, sarebbe opportuno occuparsi del setting delle gerarchie (1) e di una loro eventuale visualizzazione (2).</text:p>
+   <text:p text:style-name="P7"><text:soft-page-break/>Le opzioni del menu sono, per entrambi gli utenti, associate a numeri in modo incrementale seconda la logica con cui poi nell’utilizzo nominale <text:span text:style-name="T6">dell’app dovrebbero essere richiamate dall’utente. </text:span></text:p>
+   <text:p text:style-name="P8">Un esempio è il fatto che nel menu Configuratore la voce “Imposta info di scambio” sia al numero 3, dato che prima, rispetto al corretto uso dell’app, sarebbe opportuno occuparsi del setting delle gerarchie (1) e di una loro eventuale visualizzazione (2).</text:p>
    <text:p text:style-name="P8">E ancora, solo dopo aver impostato le info di scambio (3) sarebbe giusto procedere ad una loro visualizzazione con il comando successivo ovvero “Visualizza info di scambio” al numero 4. </text:p>
    <text:p text:style-name="P8"/>
    <text:p text:style-name="P9">Quindi dopo che l’utente ha selezionato un’azione, il sistema continua l’interazione con esso mediante messaggi a schermo e digitazione da tastiera, guidando l’utente nella compilazione di campi e raccogliendo così risposte e preferenze che l’utente ha in quello specifico contesto.</text:p>
    <text:p text:style-name="P9"/>
-   <text:list xml:id="list2303393372" text:style-name="L3">
+   <text:list xml:id="list3159159946" text:style-name="L3">
     <text:list-item>
-     <text:p text:style-name="P20">Focus sul caricamento di dati da file per utente Configuratore</text:p>
+     <text:p text:style-name="P21">Focus sul caricamento di dati da file per utente Configuratore</text:p>
     </text:list-item>
    </text:list>
    <text:p text:style-name="P10">Per utenti Configuratori è possibile operare il setting non solo mediante digitazione ma anche con il caricamento di dati provenienti da un file utente. Selezionando l’opzione 7 l’utente avvia la procedura in questione nella seconda modalità. </text:p>
@@ -621,19 +625,19 @@
    <text:p text:style-name="P12">Ci sono alcuni vincoli e specifiche da rispettare perché l’app possa eseguire il corretto import dei dati. Il nome del file e la sua posizione sono arbitrarie, ma il suo formato deve essere strettamente di tipo testuale (.txt).</text:p>
    <text:p text:style-name="P12">Inoltre, sia per esprimere le gerarchie che le info di scambio sono richieste sintassi apposite e vincoli di compilazione che se non rispettati mandano in errore l’import, e conseguentemente non permettono neanche un caricamento parziale dei dati nel sistema.</text:p>
    <text:p text:style-name="P12"/>
-   <text:p text:style-name="P21">Nota: I vincoli logici, quelli che per esempio riguardano le regole di costruzione di una gerarchia o la non omonimia dei suoi campi nativi, sono controllati nell’interpretazione del file, e se non sono rispettati l’utente è avvisato mediante un errore. Questi vincoli però non sono qui riportati in quanto per questi si assume che l’utente Configuratore (utente di backend e quindi esperto) li conosca già.</text:p>
+   <text:p text:style-name="P13">Nota: I vincoli logici, quelli che per esempio riguardano le regole di costruzione di una gerarchia o la non omonimia dei suoi campi nativi, sono controllati nell’interpretazione del file, e se non sono rispettati l’utente è avvisato mediante un errore. Questi vincoli però non sono qui riportati in quanto per questi si assume che l’utente Configuratore (utente di backend e quindi esperto) li conosca già.</text:p>
    <text:p text:style-name="P10"/>
    <text:p text:style-name="P12">Qui di seguito vengono riportate solo le specifiche sintattiche che bisogna seguire per <text:s/>esprimere in modo interpretabile dall’app le varie info di configurazione.</text:p>
    <text:p text:style-name="P8"/>
-   <text:p text:style-name="P14">Gli spazi e i new-line sono arbitrari, si può seguire l’indentazione che si preferisce.</text:p>
-   <text:p text:style-name="P14">Inoltre si specifica che il sistema è case sensitive.</text:p>
+   <text:p text:style-name="P15">Gli spazi e i new-line sono arbitrari, si può seguire l’indentazione che si preferisce.</text:p>
+   <text:p text:style-name="P15">Inoltre si specifica che il sistema è case sensitive.</text:p>
+   <text:p text:style-name="P8"/>
+   <text:p text:style-name="P8"><text:soft-page-break/></text:p>
    <text:p text:style-name="P8"/>
    <text:p text:style-name="P8"/>
-   <text:p text:style-name="P8"/>
-   <text:p text:style-name="P8"/>
-   <text:list xml:id="list1852574305" text:style-name="L4">
+   <text:list xml:id="list1996886701" text:style-name="L4">
     <text:list-item>
-     <text:p text:style-name="P22"><text:soft-page-break/>Sintassi per gerarchie:</text:p>
+     <text:p text:style-name="P22">Sintassi per gerarchie:</text:p>
     </text:list-item>
    </text:list>
    <text:p text:style-name="P12"><text:span text:style-name="T8">E</text:span>sempio di definizione di gerarchie:</text:p>
@@ -659,24 +663,24 @@
    <text:p text:style-name="P12"><text:s text:c="8"/>]</text:p>
    <text:p text:style-name="P12"><text:s text:c="4"/>)</text:p>
    <text:p text:style-name="P12">};</text:p>
-   <text:p text:style-name="P13"/>
-   <text:p text:style-name="P14">Nel file possono seguire più definizioni di gerarchie. </text:p>
-   <text:p text:style-name="P14">Per definire una gerarchia si scrive “gerarchia {…}” e se ci sono più gerarchie serve separarle tra di loro mediante “;”.</text:p>
-   <text:p text:style-name="P14">In ogni gerarchia va poi definita l’apposita categoria radice con “categoriaRadice (…)”.</text:p>
-   <text:p text:style-name="P14">Quindi seguono all’interno i suoi argomenti per la costruzione, quali nome descrizione e due elenchi tra “[]” per esprimere prima i suoi campi nativi, e poi le categorie figlio associate ad essa.</text:p>
-   <text:p text:style-name="P14">I campi nativi hanno <text:span text:style-name="T8">singolarmente</text:span> la struttura di tupla “(“nome campo” : t|f)”, dove t e f indicano la obbligatorietà o meno del campo. <text:span text:style-name="T8">Quindi si separano tra loro mediante “,”.</text:span></text:p>
-   <text:p text:style-name="P15">Seguono poi nell’apposito elenco, con medesimo separatore, eventuali definizioni di categorie figlio, con struttura equivalente a quella usata per le categorie radici ma con apposito nome (“categoriaFiglio (…)”), e anche ad esse sono poi associabili altre sotto categorie figlio specificate nell’apposito elenco.</text:p>
+   <text:p text:style-name="P14"/>
+   <text:p text:style-name="P15">Nel file possono seguire più definizioni di gerarchie. </text:p>
+   <text:p text:style-name="P15">Per definire una gerarchia si scrive “gerarchia {…}” e se ci sono più gerarchie serve separarle tra di loro mediante “;”.</text:p>
+   <text:p text:style-name="P15">In ogni gerarchia va poi definita l’apposita categoria radice con “categoriaRadice (…)”.</text:p>
+   <text:p text:style-name="P15">Quindi seguono all’interno i suoi argomenti per la costruzione, quali nome descrizione e due elenchi tra “[]” per esprimere prima i suoi campi nativi, e poi le categorie figlio associate ad essa.</text:p>
+   <text:p text:style-name="P15">I campi nativi hanno <text:span text:style-name="T8">singolarmente</text:span> la struttura di tupla “(“nome campo” : t|f)”, dove t e f indicano la obbligatorietà o meno del campo. <text:span text:style-name="T8">Quindi si separano tra loro mediante “,”.</text:span></text:p>
+   <text:p text:style-name="P16">Seguono poi nell’apposito elenco, con medesimo separatore, eventuali definizioni di categorie figlio, con struttura equivalente a quella usata per le categorie radici ma con apposito nome (“categoriaFiglio (…)”), e anche ad esse sono poi associabili altre sotto categorie figlio specificate nell’apposito elenco.</text:p>
    <text:p text:style-name="P12"/>
    <text:p text:style-name="P12"/>
+   <text:p text:style-name="P12"><text:soft-page-break/></text:p>
    <text:p text:style-name="P12"/>
    <text:p text:style-name="P12"/>
-   <text:p text:style-name="P12"/>
-   <text:list xml:id="list154022288968744" text:continue-numbering="true" text:style-name="L4">
+   <text:list xml:id="list180711466327687" text:continue-numbering="true" text:style-name="L4">
     <text:list-item>
-     <text:p text:style-name="P22"><text:soft-page-break/>Sintassi per info di scambio:</text:p>
+     <text:p text:style-name="P22">Sintassi per info di scambio:</text:p>
     </text:list-item>
    </text:list>
-   <text:p text:style-name="P15">Esempio di definizione di info di scambio:</text:p>
+   <text:p text:style-name="P16">Esempio di definizione di info di scambio:</text:p>
    <text:p text:style-name="P4"><text:line-break/> scambio {</text:p>
    <text:p text:style-name="P4"><text:s text:c="4"/>piazza =&quot;Brescia&quot; ,</text:p>
    <text:p text:style-name="P4"><text:s text:c="4"/>luoghi=[&quot;parcheggio 1&quot;, &quot;piazza 2&quot;],</text:p>
@@ -685,8 +689,8 @@
    <text:p text:style-name="P4"><text:s text:c="4"/>scadenza = &quot;5&quot;</text:p>
    <text:p text:style-name="P4">};</text:p>
    <text:p text:style-name="P4"/>
-   <text:p text:style-name="P15">Nel file va dichiarato una sola definizione di scambio.</text:p>
-   <text:p text:style-name="P16">Per definirlo si scrive “scambio {…};”. All’interno si elencano, specificando <text:span text:style-name="T9">i vari assegnamenti nel medesimo </text:span>ordine <text:span text:style-name="T9">usato da</text:span>ll’esempio, <text:span text:style-name="T9">i valori dei</text:span> parametri di configurazione, ciascuno separato dall’altro con “,”. <text:s/>Ogni singolo valore compresi la scadenza e gli intervalli orari sono da includere tra doppi apici. Per esprimere <text:span text:style-name="T9">luoghi, giorni e intervalli orari è sempre richiesto l’assegnamento ad un elenco (“[]”), anche quando il valore da assegnare è solo uno. Per la specifica dei luoghi non c’è alcuna limitazione. Per quella dei giorni è richiesto che vengano riportati in inglese e in formato tutto maiuscolo. Infine per esprimere un intervallo orario bisogna seguire la costruzione fornita in esempio: dove all’orario iniziale, con “:” come separatore tra minuti e ore, segue separato da un “-” </text:span><text:span text:style-name="T10">senza spazi</text:span><text:span text:style-name="T9"> l’orario finale del medesimo intervallo. Inoltre si specifica che entrambi gli orari seguono il formato 24h. </text:span></text:p>
+   <text:p text:style-name="P16">Nel file va dichiarato una sola definizione di scambio.</text:p>
+   <text:p text:style-name="P17">Per definirlo si scrive “scambio {…};”. All’interno si elencano, specificando <text:span text:style-name="T9">i vari assegnamenti nel medesimo </text:span>ordine <text:span text:style-name="T9">usato da</text:span>ll’esempio, <text:span text:style-name="T9">i valori dei</text:span> parametri di configurazione, ciascuno separato dall’altro con “,”. <text:s/>Ogni singolo valore compresi la scadenza e gli intervalli orari sono da includere tra doppi apici. Per esprimere <text:span text:style-name="T9">luoghi, giorni e intervalli orari è sempre richiesto l’assegnamento ad un elenco (“[]”), anche quando il valore da assegnare è solo uno. Per la specifica dei luoghi non c’è alcuna limitazione. Per quella dei giorni è richiesto che vengano riportati in inglese e in formato tutto maiuscolo. Infine per esprimere un intervallo orario bisogna seguire la costruzione fornita in esempio: dove all’orario iniziale, con “:” come separatore tra minuti e ore, segue separato da un “-” </text:span><text:span text:style-name="T10">senza spazi</text:span><text:span text:style-name="T9"> l’orario finale del medesimo intervallo. Inoltre si specifica che entrambi gli orari seguono il formato 24h. </text:span></text:p>
    <text:p text:style-name="P4"/>
    <text:p text:style-name="P4"/>
    <text:p text:style-name="P4"/>
