@@ -116,7 +116,7 @@ public class FileUtenteService {
     /**
      * Metodo che programma i parametri degli scambi
      * che sono stati impostati.
-     * 
+     *
      * @throws Exception
      */
     private void programParametri() throws Exception {
@@ -170,8 +170,8 @@ public class FileUtenteService {
      * Metodo che controlla e inizializza i parametri
      * che l'applicativo legge da file.
      *
-     * @throws Exception
      * @return un oggetto di tipo Scambio
+     * @throws Exception
      */
     private Scambio parametri() throws Exception {
         ifStartsWithAndThenConsumeOrError("scambio{");
@@ -191,8 +191,8 @@ public class FileUtenteService {
     /**
      * Metodo che controlla la scadenza acquisita.
      *
-     * @throws Exception
      * @return la scadenza
+     * @throws Exception
      */
     private int scadenza() throws Exception {
         ifStartsWithAndThenConsumeOrError("scadenza=");
@@ -207,8 +207,8 @@ public class FileUtenteService {
      * Metodo che controlla la lista degli intervalli
      * orari acquisiti.
      *
-     * @throws Exception
      * @return la lista degli intervalli orari
+     * @throws Exception
      */
     private List<IntervalloOrario> intervalliOrari() throws Exception {
         List<IntervalloOrario> intervalliOrari = new LinkedList<>();
@@ -230,11 +230,11 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo che controlla la un singolo intervallo
+     * Metodo che controlla un singolo intervallo
      * orario acquisito.
      *
-     * @throws Exception
      * @return un oggetto di tipo IntervalloOrario
+     * @throws Exception
      */
     private IntervalloOrario interalloOrario() throws Exception {
         IntervalloOrario intervalloOrario = null;
@@ -264,8 +264,8 @@ public class FileUtenteService {
      * Metodo che controlla la lista dei giorni
      * acquisiti.
      *
+     * @return la lista dei giorni
      * @throws Exception
-     * @return la lista dei giorni 
      */
     private List<DayOfWeek> giorni() throws Exception {
         List<DayOfWeek> giorni = new LinkedList<>();
@@ -288,8 +288,8 @@ public class FileUtenteService {
      * Metodo che controlla la lista dei luoghi
      * acquisiti.
      *
+     * @return la lista dei luoghi
      * @throws Exception
-     * @return la lista dei luoghi 
      */
     private List<String> luoghi() throws Exception {
         List<String> luoghi = new LinkedList<>();
@@ -311,8 +311,8 @@ public class FileUtenteService {
     /**
      * Metodo che controlla la piazza acquisita.
      *
+     * @return la piazza
      * @throws Exception
-     * @return la piazza 
      */
     private String piazza() throws Exception {
         ifStartsWithAndThenConsumeOrError("piazza=");
@@ -320,7 +320,7 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo che programma le gerarchie che sono 
+     * Metodo che programma le gerarchie che sono
      * state acquisite.
      *
      * @throws Exception
@@ -332,7 +332,7 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo che ritorna la lista delle gerarchie che 
+     * Metodo che ritorna la lista delle gerarchie che
      * vengono acquisite dal file dell'utente.
      *
      * @param gerarchie una lista di gerarchie di categorie
@@ -361,8 +361,8 @@ public class FileUtenteService {
      * Metodo che controlla e inizializza le gerarchie
      * che l'applicativo legge da file.
      *
-     * @throws Exception
      * @return un oggetto di tipo GerarchiaDiCategorie
+     * @throws Exception
      */
     private GerarchiaDiCategorie gerarchia() throws Exception {
         ifStartsWithAndThenConsumeOrError("gerarchia{");
@@ -374,8 +374,8 @@ public class FileUtenteService {
     /**
      * Metodo che imposta una categoria radice.
      *
-     * @throws Exception
      * @return un oggetto di tipo GerarchiaDiCategorie
+     * @throws Exception
      */
     private GerarchiaDiCategorie categoriaRadice() throws Exception {
         ifStartsWithAndThenConsumeOrError("categoriaRadice(");
@@ -401,7 +401,8 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo ...
+     * Metodo che controlla se ci sono categorie figlio
+     * nella lista e nel caso le legge e le immette nella gerarchia.
      *
      * @param gerarchia un oggetto di tipo GerarchiaDiCategorie
      * @throws Exception
@@ -414,7 +415,8 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo ...
+     * Metodo legge una o più categorie figlio in una lista e
+     * le aggiunge alla gerarchia passata come parametro.
      *
      * @param gerarchia un oggetto di tipo GerarchiaDiCategorie
      * @throws Exception
@@ -431,9 +433,10 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo che imposta una categoria figlio.
+     * Metodo che imposta, dopo averla letta,
+     * una categoria figlio nella gerarchia passata come parametro.
      *
-     * @param listaCampi la lista dei campi
+     * @param gerarchia la gerarchia a cui si aggiunge la categoria letta.
      * @throws Exception
      */
     private void categoriaFiglio(GerarchiaDiCategorie gerarchia) throws Exception {
@@ -456,9 +459,9 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo ...
+     * Metodo che controlla se ci sono campi nativi
+     * nella lista e nel caso le legge e le colleziona e le ritorna.
      *
-     * @param listaCampi la lista dei campi
      * @throws Exception
      */
     private List<Campo> campoListOp() throws Exception {
@@ -473,8 +476,8 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo che imposta la lista dei campi che 
-     * vengono acquisiti da ogni gerarchia.
+     * Metodo che imposta la lista dei campi che
+     * vengono acquisiti dalla lettura nell'elenco dei campi nel file.
      *
      * @param listaCampi la lista dei campi
      * @throws Exception
@@ -495,10 +498,10 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo che controlla il campo acquisito.
+     * Metodo che legge un campo.
      *
-     * @throws Exception
      * @return un oggetto di tipo Campo
+     * @throws Exception
      */
     private Campo campo() throws Exception {
         ifStartsWithAndThenConsumeOrError("(");
@@ -510,11 +513,13 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo ...
+     * Metodo che controlla la presenza di un
+     * termine booleano nel file e ne ritorna
+     * il corrispondente valore.
      *
+     * @return TRUE se legge "t"
+     * FALSE se legge "f"
      * @throws Exception
-     * @return TRUE
-     *         FALSE
      */
     private boolean matchBoolean() throws Exception {
         if (contenutoFile.startsWith("t")) {
@@ -528,10 +533,12 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo ...
+     * Metodo che controlla la presenza di un
+     * termine stringa nel file e ne ritorna
+     * il corrispondente valore.
      *
+     * @return una stringa, quella letta
      * @throws Exception
-     * @return una stringa
      */
     private String matchStringa() throws Exception {
         ifStartsWithAndThenConsumeOrError("\"");
@@ -553,7 +560,12 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo ...
+     * Metodo che accerta che l'inizio corrente
+     * del file inizi con la stringa passata come parametro.
+     * Quindi se è così procede a rimuovere tale inizio
+     * dal contenuto del file.
+     * Altrimenti lancia una eccezione perché il file non
+     * rispetta la sintassi per l'import dei dati.
      *
      * @param string una stringa
      * @throws Exception
@@ -565,7 +577,11 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo ...
+     * Metodo che rimuove tanti caratteri iniziali dal file
+     * quanti sono quelli che costituisco la stringa parametro.
+     * <p>
+     * Precondizione: assumo che il file inizi esattamente
+     * come indicato nella stringa parametro.
      *
      * @param string una stringa
      */
@@ -575,6 +591,11 @@ public class FileUtenteService {
 
     /**
      * Metodo che manda un messaggio d'errore.
+     * Specifica che la sintassi del file di caricamento dei dati
+     * non è corretta e per questo viene richiamato per sollevare
+     * tale eccezione.
+     *
+     * @throws Exception
      */
     private void errore() throws Exception {
         throw new Exception("Attenzione: contenuto file non conforme a sintassi. " +
