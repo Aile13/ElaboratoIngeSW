@@ -1,7 +1,0 @@
-scambio {
-    piazza ="Brescia" ,
-    luoghi=["parcheggio 1", "piazza 2"],
-    giorni = ["MONDAY", "FRIDAY"],
-    intervalli-orari = ["17:00-18:30", "20:00-20:30"],
-    scadenza = "1"
-};
