@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Classe IntervalloOrario per definire un intervallo oraro
+ * Classe IntervalloOrario per definire un intervallo orario
  * entro cui è possibile effettuare scambi.
  * <p>
  * Invariante di classe: assumo gli attributi immutabili,
