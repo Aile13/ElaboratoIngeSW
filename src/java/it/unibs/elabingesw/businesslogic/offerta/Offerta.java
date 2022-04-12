@@ -10,6 +10,9 @@ import java.util.Optional;
 
 /**
  * Classe Offerta che rappresenta un'offerta generica.
+ * <p>
+ * Invariante di classe: assumo gli attributi immutabili,
+ * dopo la creazione dell'oggetto.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
@@ -23,14 +26,26 @@ public class Offerta implements Manageable, Serializable {
 
     /**
      * Costruttore di classe, accetta come parametri il nome dell'
-     * articolo, l'autore dell'offerta, la lista dei campi compi-
-     * lati e la catgoria di appartenenza dell'articolo.
+     * articolo, l'autore dell'offerta, la lista dei campi compilati e
+     * la categoria di appartenenza dell'articolo.
+     * <p>
+     * Precondizione: assumo ogni parametro non nullo e inizializzato correttamente.
+     * Per nomeArticolo si intende che il parametro non corrisponda a una stringa vuota,
+     * e che non sia coincidente a nessun nomeArticolo di nessun'altra offerta registrata
+     * precedentemente nel sistema.
+     * Per autore si intende che il parametro sia una istanza di un utente fruitore
+     * registrato nel sistema.
+     * Per listaCampiCompilati si intende una istanza dell'apposito tipo e che questa sia compilata
+     * ad hoc rispetto campi nativi ricavati dalla gerarchia a cui appartiene la categoria foglia a
+     * cui l'offerta è associata.
+     * Per categoriaDiAppartenenza si intende una categoria foglia (terminale) appartenente a
+     * una gerarchia registrata nel sistema a cui l'offerta è poi associata.
      *
-     * @param nomeArticolo
-     * @param autore
-     * @param listaCampiCompilati
-     * @param categoriaDiAppartenenza
-     */ 
+     * @param nomeArticolo            nome dell'articolo.
+     * @param autore                  utente fruitore autore dell'offerta
+     * @param listaCampiCompilati     lista dei campi con associato eventuale valore compilato
+     * @param categoriaDiAppartenenza categoria foglia a cui l'articolo appartiene
+     */
     public Offerta(String nomeArticolo, Utente autore, ListaCampiCompilati listaCampiCompilati, Categoria categoriaDiAppartenenza) {
         this.nomeArticolo = nomeArticolo;
         this.autore = autore;
@@ -59,12 +74,13 @@ public class Offerta implements Manageable, Serializable {
 
     /**
      * Metodo implementato dall'interfaccia Manageable
-     * che verifica se due articoli hanno lo stesso no-
-     * me o meno.
+     * che verifica se due articoli hanno lo stesso nome o meno.
+     * <p>
+     * Precondizione: assumo parametro del metodo non nullo.
      *
      * @param nomeArticolo il nome dell'articolo
      * @return TRUE se i nomi sono uguali
-     *         FALSE se i nomi sono diversi
+     * FALSE se i nomi sono diversi
      */
     @Override
     public boolean isStessoNome(String nomeArticolo) {
@@ -75,7 +91,7 @@ public class Offerta implements Manageable, Serializable {
      * Metodo che controlla se un'offerta è aperta o meno.
      *
      * @return TRUE se l'offerta è aperta
-     *         FALSE se l'offerta non è aperta
+     * FALSE se l'offerta non è aperta
      */
     public boolean isOffertaAperta() {
         return this.statoOfferta.isAperta();
@@ -84,25 +100,30 @@ public class Offerta implements Manageable, Serializable {
     /**
      * Metodo che controlla se due autori sono uguali
      * o meno.
+     * <p>
+     * Precondizione: assumo parametro del metodo non nullo.
+     * Inoltre assumo che l'utente passato come parametro sia
+     * un fruitore registrato nel sistema.
      *
-     * @param autore l'oggetto di tipo Utente
+     * @param autore l'oggetto di tipo Utente fruitore
      * @return TRUE se gli autori sono uguali
-     *         FALSE se gli autori sono diversi
+     * FALSE se gli autori sono diversi
      */
     public boolean isStessoAutore(Utente autore) {
         return this.autore.equals(autore);
     }
 
     /**
-     * Metodo che ritira un'offerta.
+     * Metodo che ritira un'offerta trasformandone lo
+     * stato in RITIRATA.
      */
     public void ritiraOfferta() {
-       this.statoOfferta.ritiraOfferta();
+        this.statoOfferta.ritiraOfferta();
     }
 
     /**
-     * Metodo per la formattazione che converte un oggetto nella re-
-     * lativa rappresentazione di stringa.
+     * Metodo per la formattazione che converte un oggetto
+     * nella relativa rappresentazione di stringa.
      *
      * @return stringa dell'oggetto convertito
      */
@@ -129,19 +150,31 @@ public class Offerta implements Manageable, Serializable {
     /**
      * Metodo che controlla se un articolo appartiene
      * a una categoria passata per parametro.
+     * <p>
+     * Precondizione: assumo parametro del metodo non nullo.
+     * Inoltre assumo che la categoria parametro sia una categoria foglia (terminale)
+     * appartenente a una gerarchia registrata nel sistema.
      *
      * @param categoria l'oggetto di tipo Categoria
-     * @return TRUE se l'articolo appartiene alla categoria in input
-     *         FALSE se l'articolo non appartiene alla categoria in input
+     * @return TRUE se l'articolo appartiene alla categoria in ingresso
+     * FALSE se l'articolo non appartiene alla categoria in ingresso
      */
     public boolean appartieneA(Categoria categoria) {
         return this.categoriaDiAppartenenza.equals(categoria);
     }
 
     /**
-     * Metodo che permette di creare un legame tra due 
-     * tipi diversi di offerte (es. offerta accoppiata-
-     * selezionata).
+     * Metodo che permette di creare un legame tra due diverse offerte
+     * <p>
+     * Precondizione: assumo parametro metodo non nullo e correttamente inizializzata.
+     * Ovvero assumo che l'offerta parametro sia
+     * una offerta attualmente aperta e registrata nel sistema, e che questa
+     * sia diversa dall'offerta che chiama il metodo e che rispetto a questa abbia
+     * un autore associato diverso.
+     * Post condizione: abbiamo che l'offerta parametro e l'offerta
+     * che ha chiamato il metodo sono ora legato tra loro.
+     * E abbiamo che l'offerta che ha chiamato il metodo cambia di stato, diventando
+     * offerta accoppiata. Mentre l'offerta parametro va nello stato di offerta selezionata.
      *
      * @param offertaDaBarattareB oggetto di tipo Offerta
      */
@@ -152,6 +185,8 @@ public class Offerta implements Manageable, Serializable {
 
     /**
      * Metodo che aggiorna lo stato di un'offerta.
+     * <p>
+     * Post condizione: quella del metodo chiamato.
      */
     public void aggiornaStatoOfferta() {
         this.statoOfferta.aggiornaStatoOfferta();
@@ -159,6 +194,19 @@ public class Offerta implements Manageable, Serializable {
 
     /**
      * Metodo setter.
+     * <p>
+     * Precondizione: assumo parametro non nullo e
+     * correttamente inizializzato.
+     * Assumo che questo metodo sia chiamato
+     * solo quando l'info di scambio è stato
+     * registrata nel sistema.
+     * Assumo che il parametro sia o un optional Empty oppure
+     * un optional contente l'istanza di Scambio
+     * registrata nel sistema.
+     * Post condizione: se l'optional è Empty non
+     * si fa nulla, nel caso invece contenga l'istanza
+     * di Scambio questa viene associata all'offerta
+     * che ha chiamato il metodo.
      *
      * @param infoDiScambio le informazioni di uno scambio
      */
@@ -170,7 +218,7 @@ public class Offerta implements Manageable, Serializable {
      * Metodo che controlla se un'offerta è selezionata o meno.
      *
      * @return TRUE se l'offerta è selezionata
-     *         FALSE se l'offerta non è selezionata
+     * FALSE se l'offerta non è selezionata
      */
     public boolean isOffertaSelezionata() {
         return statoOfferta.isSelezionata();
@@ -178,6 +226,11 @@ public class Offerta implements Manageable, Serializable {
 
     /**
      * Metodo getter.
+     * <p>
+     * Precondizione: assumo che questo metodo venga
+     * chiamato solo quando l'offerta è in stato di
+     * offerta selezionata. E quindi si vuole conoscere
+     * l'offerte accoppiata a essa.
      *
      * @return l'offerta accoppiata
      */
@@ -188,6 +241,16 @@ public class Offerta implements Manageable, Serializable {
     /**
      * Metodo che permette di accettare una proposta
      * di scambio associata.
+     * <p>
+     * Precondizione: assumo che questo metodo sia chiamato
+     * solo da offerte in stato di offerta selezionata.
+     * E quindi si vuole accettare la proposta di scambio
+     * che la offerta accoppiata gli ha suggerito.
+     * Assumo inoltre che la lista campi appuntamento non sia
+     * nulla, e sia adeguatamente compilata con i campi e loro valori
+     * che identificano un valido appuntamento tra quelli che
+     * le info di scambio possono ammettere.
+     * Post condizione: quella del metodo chiamato.
      *
      * @param listaCampiAppuntamento la lista dei campi dell'appuntamento
      */
@@ -199,7 +262,7 @@ public class Offerta implements Manageable, Serializable {
      * Metodo che controlla se un'offerta è in scambio o meno.
      *
      * @return TRUE se l'offerta è in scambio
-     *         FALSE se l'offerta non è in scambio
+     * FALSE se l'offerta non è in scambio
      */
     public boolean isOffertaInScambio() {
         return statoOfferta.isInScambio();
@@ -207,6 +270,9 @@ public class Offerta implements Manageable, Serializable {
 
     /**
      * Metodo getter.
+     * <p>
+     * Precondizione: assumo che questo metodo venga chiamato
+     * solo quando l'offerta è in stato di offerta in scambio.
      *
      * @return lo lista dei campi di un appuntamento
      */
@@ -215,10 +281,18 @@ public class Offerta implements Manageable, Serializable {
     }
 
     /**
-     * Metodo che permette ad una parte di accettare 
-     * l'appuntamento per lo scambio di un'offerta 
+     * Metodo che permette a una parte di accettare
+     * l'appuntamento per lo scambio di un'offerta
      * di un'altra parte.
-     *
+     * <p>
+     * Precondizione: assumo che questo metodo venga
+     * chiamato solo dalle offerte in stato di
+     * offerta in scambio, e che a questa offerta chiamante
+     * sia associata una lista campi appuntamento
+     * non nulla e correttamente inizializzata.
+     * Perché si vuole così procedere allo scambio dei beni
+     * con le modalità fissate in quella lista di campi.
+     * Post condizione: quella del metodo chiamato.
      */
     public void accettaAppuntamento() {
         this.statoOfferta.accettaAppuntamento();
@@ -228,8 +302,19 @@ public class Offerta implements Manageable, Serializable {
      * Metodo che propone un altro appuntamento,
      * con le specifiche di quest'ultimo inserite
      * in una lista che viene passata per parametro.
+     * <p>
+     * Precondizione: assumo che questo metodo sia
+     * chiamato solo da offerte in stato di offerta
+     * in scambio. E che questa offerta sia già dotata
+     * di una lista campi compilati per un appuntamento non
+     * nulla e valida. Che in questo caso si vuole rifiutare.
+     * Assumo inoltre che il parametro del metodo sia un'altra
+     * lista campi compilati per un nuovo appuntamento non
+     * nulla e valida e diversa dall'appuntamento che l'offerta
+     * ha associato e sta rifiutando.
+     * Post condizione: quella del metodo chiamato.
      *
-     * @param listaCampiAppuntamento la lista dei campi dell'appuntamento
+     * @param listaCampiAppuntamento la lista dei campi del nuovo appuntamento
      */
     public void proponiAltroAppuntamento(ListaCampiCompilati listaCampiAppuntamento) {
         this.statoOfferta.proponiAltroAppuntamento(listaCampiAppuntamento);
@@ -239,7 +324,7 @@ public class Offerta implements Manageable, Serializable {
      * Metodo che controlla se un'offerta è chiusa o meno.
      *
      * @return TRUE se l'offerta è chiusa
-     *         FALSE se l'offerta non è chiusa
+     * FALSE se l'offerta non è chiusa
      */
     public boolean isOffertaChiusa() {
         return this.statoOfferta.isChiusa();
