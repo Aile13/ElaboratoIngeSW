@@ -132,6 +132,14 @@ public class Categoria implements Manageable, Serializable {
                 ", descrizione='" + descrizione + '\'';
     }
 
+    /**
+     * Metodo che controlla se un campo è omonimo
+     * di un altro o meno.
+     *
+     * @param campo un oggetto Campo
+     * @return TRUE se il campo è già stato preso
+     * FALSE se il campo non è già stato preso
+     */
     public boolean isCampoGiaPreso(Campo campo) {
         return campo.isCampoInListaByNome(campiNativi);
     }
