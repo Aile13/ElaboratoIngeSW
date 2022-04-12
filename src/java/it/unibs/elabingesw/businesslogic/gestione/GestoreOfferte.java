@@ -71,7 +71,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      *
      * @param nomeArticolo il nome dell'articolo
      * @return TRUE se l'offerta è già presente
-     *         FALSE se l'offerta non è già presente
+     * FALSE se l'offerta non è già presente
      */
     public boolean isOffertaGiaPresenteByNome(String nomeArticolo) {
         return super.isElementoInListaByNome(nomeArticolo);

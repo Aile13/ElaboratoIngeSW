@@ -48,7 +48,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      *
      * @param username lo username di un configuratore
      * @return TRUE se il configuratore è quello di default
-     *         FALSE se il configuratore non è quello di default
+     * FALSE se il configuratore non è quello di default
      */
     public boolean isDefaultConfiguratore(String username) {
         return Configuratore.isDefaultConfiguratoreByUsername(username);
@@ -86,7 +86,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      *
      * @param username lo username dell'utente
      * @return TRUE se l'utente è già registrato
-     *         FALSE se l'utente non è già registrato
+     * FALSE se l'utente non è già registrato
      */
     public boolean isUtenteRegistrato(String username) {
         return isElementoInListaByNome(username);

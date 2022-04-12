@@ -135,6 +135,8 @@ public class Categoria implements Manageable, Serializable {
     /**
      * Metodo che controlla se un campo è omonimo
      * di un altro o meno.
+     * <p>
+     * Precondizione: Quella del metodo che ne fa uso.
      *
      * @param campo un oggetto Campo
      * @return TRUE se il campo è già stato preso

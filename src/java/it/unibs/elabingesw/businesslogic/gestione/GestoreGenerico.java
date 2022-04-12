@@ -99,7 +99,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      *
      * @param nome il nome dell'elemento
      * @return TRUE se l'elemento è presente in lista
-     *         FALSE se l'elemento non è presente in lista
+     * FALSE se l'elemento non è presente in lista
      */
     public boolean isElementoInListaByNome(String nome) {
         return trovaElementoConNome(nome).isPresent();

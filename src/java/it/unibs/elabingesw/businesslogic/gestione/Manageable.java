@@ -13,7 +13,7 @@ package it.unibs.elabingesw.businesslogic.gestione;
  * @author Ali Laaraj
  */
 public interface Manageable {
-    
+
     /**
      * Firma di un metodo che controlla se
      * il nome passato come parametro

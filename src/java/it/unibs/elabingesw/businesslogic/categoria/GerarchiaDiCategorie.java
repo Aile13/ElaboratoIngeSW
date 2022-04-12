@@ -37,15 +37,6 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
     private GerarchiaDiCategorie(TreeNode<Categoria> gerarchia) {
         this.gerarchia = gerarchia;
     }
-    
-    /**
-     * Metodo getter.
-     *
-     * @return la lista delle categorie foglia
-     */
-    public List<Categoria> getListaDiCategoriaFoglia() {
-        return this.gerarchia.getListOfDataInTreeNodeFogliaFromRoot();
-    }
 
     /**
      * Costruttore di classe che accetta come parametro una categoria
@@ -60,6 +51,17 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      */
     public GerarchiaDiCategorie(Categoria categoriaRadice) {
         this(new TreeNode<>(categoriaRadice));
+    }
+
+    /**
+     * Metodo getter.
+     * <p>
+     * Post condizione: quella del metodo chiamato.
+     *
+     * @return la lista delle categorie foglia dell'intera gerarchia
+     */
+    public List<Categoria> getListaDiCategoriaFoglia() {
+        return this.gerarchia.getListOfDataInTreeNodeFogliaFromRoot();
     }
 
     /**
@@ -190,12 +192,23 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
 
     /**
      * Metodo che controlla se un campo di una categoria
-     * all'interno di una gerarchia di categorie ha omo-
-     * nimi o meno.
+     * all'interno di una gerarchia di categorie ha omonimi o meno.
+     * <p>
+     * Precondizione: assumo che il parametro non sia nullo e
+     * sia correttamente inizializzato.
+     * Ovvero che sia dotato di almeno il nome inizializzato per poterlo confrontare
+     * con altri campi. Inoltre assumo che il campo parametro
+     * sia da associare alla categoria figlio che sarà parte di questa gerarchia
+     * su cui si sta invocando il metodo.
+     * Post condizione: cercando in ogni categoria padre della categoria figlio a cui
+     * si vuole agganciare la nuova categoria figlio, e cercando anche in questa categoria
+     * figlio a cui si vuole agganciare la nuova categoria figlio, si confrontano i loro
+     * rispettivi campi e si cercano eventuali omonimie con il campo passato come parametro.
+     * Restituendo poi il risultato della ricerca.
      *
      * @param campo l'oggetto Campo
      * @return TRUE se il campo è già stato preso
-     *         FALSE se il campo non è già stato preso
+     * FALSE se il campo non è già stato preso
      */
     public boolean isCampoGiaPreso(Campo campo) {
         var listaCategoriePadri = this.getListaDiCategoriePadriByCategoria(this.gerarchia.getDato());

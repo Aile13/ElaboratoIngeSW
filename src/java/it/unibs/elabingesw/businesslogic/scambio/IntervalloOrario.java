@@ -2,7 +2,6 @@ package it.unibs.elabingesw.businesslogic.scambio;
 
 import java.io.Serializable;
 import java.time.LocalTime;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class IntervalloOrario implements Serializable {
      *
      * @param orarioIniziale
      * @param orarioFinale
-     */ 
+     */
     public IntervalloOrario(LocalTime orarioIniziale, LocalTime orarioFinale) {
         this.orarioIniziale = orarioIniziale;
         this.orarioFinale = orarioFinale;
@@ -50,7 +49,7 @@ public class IntervalloOrario implements Serializable {
      *
      * @param altroIntervalloOrario un intervallo orario
      * @return TRUE se i due intervalli si intersecano
-     *         FALSE se i due intervalli non si intersecano
+     * FALSE se i due intervalli non si intersecano
      */
     public boolean intersecaAltroIntervalloOrario(IntervalloOrario altroIntervalloOrario) {
         // inizio del secondo compreso nell'intervallo del primo
@@ -60,7 +59,7 @@ public class IntervalloOrario implements Serializable {
         }
         // fine del secondo compreso nell'intervallo del primo
         else if (!altroIntervalloOrario.orarioFinale.isBefore(this.orarioIniziale) &&
-                    !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale)) {
+                !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale)) {
             return true;
         }
         // il secondo contiene il primo. se no non c'è intersezine

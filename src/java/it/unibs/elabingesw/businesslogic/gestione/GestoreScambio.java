@@ -36,7 +36,7 @@ public class GestoreScambio extends GestoreGenerico<Scambio> {
      * Infine la post condizione qui è quella del metodo chiamato.
      *
      * @return TRUE se le info di uno scambio sono da configurare
-     *         FALSE se le info di uno scambio non sono da configurare
+     * FALSE se le info di uno scambio non sono da configurare
      */
     public boolean isInfoScambioDaConfigurare() {
         return this.getListaElementi().isEmpty();
