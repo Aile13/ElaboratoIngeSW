@@ -169,8 +169,9 @@ public class Offerta implements Manageable, Serializable {
      * Precondizione: assumo parametro metodo non nullo e correttamente inizializzata.
      * Ovvero assumo che l'offerta parametro sia
      * una offerta attualmente aperta e registrata nel sistema, e che questa
-     * sia diversa dall'offerta che chiama il metodo e che rispetto a questa abbia
-     * un autore associato diverso.
+     * sia diversa dall'offerta che chiama il metodo e che rispetto a questa abbia un autore associato diverso.
+     * Inoltre assumo che l'offerta che chiama il metodo e l'offerta parametro siano
+     * della stessa categoria foglia della medesima gerarchia.
      * Post condizione: abbiamo che l'offerta parametro e l'offerta
      * che ha chiamato il metodo sono ora legato tra loro.
      * E abbiamo che l'offerta che ha chiamato il metodo cambia di stato, diventando
@@ -270,9 +271,11 @@ public class Offerta implements Manageable, Serializable {
 
     /**
      * Metodo getter.
-     * <p>
-     * Precondizione: assumo che questo metodo venga chiamato
-     * solo quando l'offerta è in stato di offerta in scambio.
+     *
+     * Precondizione: assumo che il metodo in questione
+     * venga invocato solo quando l'offerta è nello
+     * stato di offerta in scambio.
+     * Post condizione: quella del metodo chiamato.
      *
      * @return lo lista dei campi di un appuntamento
      */
