@@ -204,7 +204,7 @@ class StatoOfferta implements Serializable {
         if (statoOffertaEnum == StatoOffertaEnum.ACCOPPIATA
                 || statoOffertaEnum == StatoOffertaEnum.SELEZIONATA
                 || statoOffertaEnum == StatoOffertaEnum.IN_SCAMBIO) {
-            if (dataCreazioneStato.isAfter(LocalDate.now().plusDays(scambio.getScadenza()))) {
+            if (LocalDate.now().isAfter(dataCreazioneStato.plusDays(scambio.getScadenza()))) {
                 this.statoOffertaEnum = StatoOffertaEnum.APERTA;
                 this.altraOfferta = null;
                 this.listaCampiAppuntamento = null;
