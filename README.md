@@ -1,2 +1,2 @@
-# ElaboratoIngeSW-PrimaParte
-Elaborato della prima parte dell'insegnamento di ingegneria del software.
+# ElaboratoIngeSW
+Elaborato dell'insegnamento di ingegneria del software.
