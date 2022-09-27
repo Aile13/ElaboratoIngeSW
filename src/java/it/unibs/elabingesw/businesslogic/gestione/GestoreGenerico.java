@@ -61,8 +61,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      * Metodo che salva i dati su file.
      */
     public void salvaDati() {
-        try (ObjectOutputStream output =
-                     new ObjectOutputStream(new FileOutputStream(pathRepository))) {
+        try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(pathRepository))) {
             output.writeObject(this.listaElementi);
         } catch (IOException e) {
             e.printStackTrace();
@@ -129,10 +128,8 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      * @return l'optional dell'elemento cercato
      */
     public Optional<T> trovaElementoConNome(String nome) {
-        for (T elemento :
-                listaElementi) {
-            if (elemento.isStessoNome(nome))
-                return Optional.of(elemento);
+        for (T elemento : listaElementi) {
+            if (elemento.isStessoNome(nome)) return Optional.of(elemento);
         }
 
         return Optional.empty();

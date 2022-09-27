@@ -118,7 +118,7 @@ public class Offerta implements Manageable, Serializable {
      * stato in RITIRATA.
      */
     public void ritiraOfferta() {
-       this.statoOfferta.ritiraOfferta();
+        this.statoOfferta.ritiraOfferta();
     }
 
     /**
@@ -129,13 +129,7 @@ public class Offerta implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Offerta{" +
-                "nomeArticolo='" + nomeArticolo + '\'' +
-                ", autore=" + autore +
-                ", listaCampiCompilati=" + listaCampiCompilati +
-                ", categoriaDiAppartenenza=" + categoriaDiAppartenenza.toStringRidotto() +
-                ", statoOfferta=" + statoOfferta +
-                '}';
+        return "Offerta{" + "nomeArticolo='" + nomeArticolo + '\'' + ", autore=" + autore + ", listaCampiCompilati=" + listaCampiCompilati + ", categoriaDiAppartenenza=" + categoriaDiAppartenenza.toStringRidotto() + ", statoOfferta=" + statoOfferta + '}';
     }
 
     /**
@@ -271,7 +265,7 @@ public class Offerta implements Manageable, Serializable {
 
     /**
      * Metodo getter.
-     *
+     * <p>
      * Precondizione: assumo che il metodo in questione
      * venga invocato solo quando l'offerta è nello
      * stato di offerta in scambio.

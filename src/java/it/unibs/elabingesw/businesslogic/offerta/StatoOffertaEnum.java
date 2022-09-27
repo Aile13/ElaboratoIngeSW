@@ -13,10 +13,5 @@ package it.unibs.elabingesw.businesslogic.offerta;
  * @author Ali Laaraj
  */
 public enum StatoOffertaEnum {
-    APERTA,
-    ACCOPPIATA,
-    SELEZIONATA,
-    IN_SCAMBIO,
-    CHIUSA,
-    RITIRATA;
+    APERTA, ACCOPPIATA, SELEZIONATA, IN_SCAMBIO, CHIUSA, RITIRATA;
 }

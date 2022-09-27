@@ -147,8 +147,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @return la lista delle offerte aperte
      */
     public List<Offerta> getOfferteAperteByCategoriaFoglia(Categoria categoriaFoglia) {
-        return getOfferteByCategoriaFoglia(categoriaFoglia).stream()
-                .filter(Offerta::isOffertaAperta).toList();
+        return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(Offerta::isOffertaAperta).toList();
     }
 
     /**
@@ -171,10 +170,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @return la lista delle offerte aperte
      */
     public List<Offerta> getOfferteAperteByCategoriaFogliaAndExcludeUser(Categoria categoriaFoglia, Utente utente) {
-        return getOfferteAperteByCategoriaFoglia(categoriaFoglia).stream()
-                .filter(
-                        offerta -> !offerta.isStessoAutore(utente)
-                ).toList();
+        return getOfferteAperteByCategoriaFoglia(categoriaFoglia).stream().filter(offerta -> !offerta.isStessoAutore(utente)).toList();
     }
 
     /**
@@ -193,9 +189,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @return la lista delle offerte selezionate
      */
     public List<Offerta> getOfferteSelezionateByUser(Utente utente) {
-        return getOfferteByUser(utente).stream()
-                .filter(Offerta::isOffertaSelezionata)
-                .toList();
+        return getOfferteByUser(utente).stream().filter(Offerta::isOffertaSelezionata).toList();
     }
 
     /**
@@ -214,9 +208,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @return la lista delle offerte in scambio
      */
     public List<Offerta> getOfferteInScambioByUser(Utente utente) {
-        return getOfferteByUser(utente).stream()
-                .filter(Offerta::isOffertaInScambio)
-                .toList();
+        return getOfferteByUser(utente).stream().filter(Offerta::isOffertaInScambio).toList();
     }
 
     /**
@@ -235,8 +227,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @return la lista delle offerte in scambio
      */
     public List<Offerta> getOfferteInScambioByCategoriaFoglia(Categoria categoriaFoglia) {
-        return getOfferteByCategoriaFoglia(categoriaFoglia).stream()
-                .filter(Offerta::isOffertaInScambio).toList();
+        return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(Offerta::isOffertaInScambio).toList();
     }
 
     /**
@@ -255,9 +246,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @return la lista delle offerte
      */
     private List<Offerta> getOfferteByCategoriaFoglia(Categoria categoriaFoglia) {
-        return getListaElementi().stream()
-                .filter(offerta -> offerta.appartieneA(categoriaFoglia))
-                .toList();
+        return getListaElementi().stream().filter(offerta -> offerta.appartieneA(categoriaFoglia)).toList();
     }
 
     /**
@@ -276,7 +265,6 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @return la lista delle offerte chiuse
      */
     public List<Offerta> getOfferteChiuseByCategoriaFoglia(Categoria categoriaFoglia) {
-        return getOfferteByCategoriaFoglia(categoriaFoglia).stream()
-                .filter(Offerta::isOffertaChiusa).toList();
+        return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(Offerta::isOffertaChiusa).toList();
     }
 }

@@ -11,7 +11,7 @@ import it.unibs.elabingesw.subservice.ScambioService;
 
 /**
  * Classe MacroService di gestione generale.
- * 
+ *
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
@@ -29,7 +29,6 @@ public class MacroServices {
      * Costruttore di classe, accetta come parametri un oggetto di
      * tipo GestoreUtenti e un oggetto di tipo GestoreGerarchie.
      *
-     *
      * @see GestoreUtenti
      * @see GestoreGerarchie
      */
@@ -43,7 +42,7 @@ public class MacroServices {
         this.scambioService = new ScambioService(this.gestoreScambio);
         this.offerteService = new OfferteService(this.gestoreOfferte, this.gestoreGerarchie, this.gestoreScambio);
     }
-    
+
     /**
      * Metodo che salva utenti e gerarchie su file.
      *
@@ -56,17 +55,17 @@ public class MacroServices {
         gestoreScambio.salvaInfoScambio();
         gestoreOfferte.salvaOfferte();
     }
-    
+
     /**
      * Metodo che rimanda alla classe GerarchiaService per
      * creare una nuova gerarchia.
-     * 
+     *
      * @see GerarchiaService
      */
     public void creaNuovaGerarchia() {
         this.gerarchiaService.creaNuovaGerarchia();
     }
-    
+
     /**
      * Metodo che esegue la procedura di uscita dall'appli-
      * cativo dopo aver salvato i dati inseriti.
@@ -74,7 +73,7 @@ public class MacroServices {
     public void eseguiProceduraDiUscita() {
         eseguiSalvataggio();
     }
-    
+
     /**
      * Metodo che rimanda alla classe GerarchiaService per
      * visualizzare le tutte gerarchie caricate.
@@ -82,18 +81,18 @@ public class MacroServices {
      * @see GerarchiaService
      */
     public void visualizzaGerarchieFormaEstesa() {
-       this.gerarchiaService.visualizzaGerarchieInFormaEstesa();
+        this.gerarchiaService.visualizzaGerarchieInFormaEstesa();
     }
 
     /**
      * Metodo che rimanda alla classe GerarchiaService per
-     * visualizzare tutte le gerarchie caricate in forma 
+     * visualizzare tutte le gerarchie caricate in forma
      * ridotta.
      *
      * @see GerarchiaService
      */
     public void visualizzaGerarchieFormaRidotta() {
-     this.gerarchiaService.visualizzaGerarchieInFormaRidotta();
+        this.gerarchiaService.visualizzaGerarchieInFormaRidotta();
     }
 
     /**
@@ -224,7 +223,7 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le offerte in scambio e chiuse con la 
+     * visualizzare le offerte in scambio e chiuse con la
      * selezione della categoria foglia.
      *
      * @see OfferteService

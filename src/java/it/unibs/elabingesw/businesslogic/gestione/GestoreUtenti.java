@@ -35,8 +35,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * default nella lista, se questo non è già presente in essa.
      */
     private void inserisciDefaultConfiguratore() {
-        if (!isElementoInListaByNome(
-                Configuratore.getDefaultConfiguratore().getUsername()))
+        if (!isElementoInListaByNome(Configuratore.getDefaultConfiguratore().getUsername()))
             this.inserisciElemento(Configuratore.getDefaultConfiguratore());
     }
 
@@ -145,8 +144,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
     public UserType getUserTypeByNome(String username) {
         if (trovaElementoConNome(username).isPresent()) {
             return trovaElementoConNome(username).get().getUserType();
-        }
-        else return null;
+        } else return null;
     }
 
     /**
@@ -166,7 +164,6 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
     public Utente getUserByNome(String username) {
         if (trovaElementoConNome(username).isPresent()) {
             return trovaElementoConNome(username).get();
-        }
-        else return null;
+        } else return null;
     }
 }

@@ -109,13 +109,7 @@ public class Scambio implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Scambio{" + "\n" +
-                "\tpiazza='" + piazza + "',\n" +
-                "\tlistaLuoghi=" + listaLuoghi + ",\n" +
-                "\tgiorni=" + giorni + "\n" +
-                "\tintervalliOrari=" + intervalliOrari + ",\n" +
-                "\tScadenza=" + Scadenza + "\n" +
-                '}';
+        return "Scambio{" + "\n" + "\tpiazza='" + piazza + "',\n" + "\tlistaLuoghi=" + listaLuoghi + ",\n" + "\tgiorni=" + giorni + "\n" + "\tintervalliOrari=" + intervalliOrari + ",\n" + "\tScadenza=" + Scadenza + "\n" + '}';
     }
 
     /**
@@ -126,17 +120,12 @@ public class Scambio implements Manageable, Serializable {
      * @return stringa dell'oggetto convertito
      */
     public String toStringFormaRidotta() {
-        return "Scambio{" + "\n" +
-                "\tpiazza='" + piazza + "',\n" +
-                "\tlistaLuoghi=" + listaLuoghi + ",\n" +
-                "\tgiorni=" + giorni + ",\n" +
-                "\tintervalliOrari=" + intervalliOrari + "\n" +
-                '}';
+        return "Scambio{" + "\n" + "\tpiazza='" + piazza + "',\n" + "\tlistaLuoghi=" + listaLuoghi + ",\n" + "\tgiorni=" + giorni + ",\n" + "\tintervalliOrari=" + intervalliOrari + "\n" + '}';
     }
 
     /**
      * Metodo getter.
-     *
+     * <p>
      * Post condizione: ritorna la lista di orari per cui,
      * per ogni intervallo orario in lista, è possibile
      * prendere un appuntamento per trovarsi per fare lo scambio.
