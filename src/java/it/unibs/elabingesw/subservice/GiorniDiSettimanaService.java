@@ -14,7 +14,7 @@ import java.util.List;
  * @author Ali Laaraj
  */
 public class GiorniDiSettimanaService {
-    
+
     /**
      * Metodo che chiede all'utente di inserire la lista
      * dei giorni in cui è possibile effettuare scambi.

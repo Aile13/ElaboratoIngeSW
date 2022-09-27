@@ -58,10 +58,7 @@ public class FileUtenteService {
      * gliere quale file caricare.
      */
     private void scegliAzioneESelezionaFileDaCaricare() {
-        var menu = new MyMenu("Menu selezione caricamento dati da file utente", new String[]{
-                "Carica da file i valori dei parametri di configurazione",
-                "Carica da file le gerarchie di categorie"
-        }, true);
+        var menu = new MyMenu("Menu selezione caricamento dati da file utente", new String[]{"Carica da file i valori dei parametri di configurazione", "Carica da file le gerarchie di categorie"}, true);
 
         int scelta = menu.scegli();
 
@@ -162,8 +159,7 @@ public class FileUtenteService {
             consume(String.valueOf(contenutoFile.charAt(0)));
         }
 
-        contenutoFile = builder.toString()
-                .replaceAll(System.lineSeparator(), "");
+        contenutoFile = builder.toString().replaceAll(System.lineSeparator(), "");
     }
 
     /**
@@ -217,9 +213,7 @@ public class FileUtenteService {
         while (contenutoFile.startsWith(",")) {
             consume(",");
             var nuovoIntervalloOrario = interalloOrario();
-            if (intervalliOrari.stream()
-                    .anyMatch(intervalloOrario ->
-                            intervalloOrario.intersecaAltroIntervalloOrario(nuovoIntervalloOrario))) {
+            if (intervalliOrari.stream().anyMatch(intervalloOrario -> intervalloOrario.intersecaAltroIntervalloOrario(nuovoIntervalloOrario))) {
                 errore();
             } else {
                 intervalliOrari.add(nuovoIntervalloOrario);
@@ -342,9 +336,7 @@ public class FileUtenteService {
         if (!contenutoFile.isEmpty()) {
             var nuovaGerarchia = gerarchia();
 
-            if (gerarchie.stream()
-                    .anyMatch(gerarchiaDiCategorie ->
-                            gerarchiaDiCategorie.isStessoNome(nuovaGerarchia.getNome()))) {
+            if (gerarchie.stream().anyMatch(gerarchiaDiCategorie -> gerarchiaDiCategorie.isStessoNome(nuovaGerarchia.getNome()))) {
                 errore();
             } else {
                 gerarchie.add(nuovaGerarchia);
@@ -386,13 +378,10 @@ public class FileUtenteService {
         List<Campo> listaCampi = campoListOp();
         ifStartsWithAndThenConsumeOrError(",");
 
-        if (listaCampi.stream().anyMatch(Campo::isCampoDiDefault) ||
-                gestoreGerarchie.isElementoInListaByNome(nomeCategoriaRadice))
+        if (listaCampi.stream().anyMatch(Campo::isCampoDiDefault) || gestoreGerarchie.isElementoInListaByNome(nomeCategoriaRadice))
             errore();
 
-        GerarchiaDiCategorie gerarchiaDiCategorie = new GerarchiaDiCategorie(
-                new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi)
-        );
+        GerarchiaDiCategorie gerarchiaDiCategorie = new GerarchiaDiCategorie(new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi));
 
         categoriaFiglioListOp(gerarchiaDiCategorie);
 
@@ -409,8 +398,7 @@ public class FileUtenteService {
      */
     private void categoriaFiglioListOp(GerarchiaDiCategorie gerarchia) throws Exception {
         ifStartsWithAndThenConsumeOrError("[");
-        if (!contenutoFile.startsWith("]"))
-            categoriaFiglioList(gerarchia);
+        if (!contenutoFile.startsWith("]")) categoriaFiglioList(gerarchia);
         ifStartsWithAndThenConsumeOrError("]");
     }
 
@@ -443,8 +431,7 @@ public class FileUtenteService {
         ifStartsWithAndThenConsumeOrError("categoriaFiglio(");
         var nomeCategoria = matchStringa();
 
-        if (gerarchia.isNomeCategoriaUsato(nomeCategoria))
-            errore();
+        if (gerarchia.isNomeCategoriaUsato(nomeCategoria)) errore();
 
         ifStartsWithAndThenConsumeOrError(",");
         var descrizione = matchStringa();
@@ -468,8 +455,7 @@ public class FileUtenteService {
         List<Campo> listaCampi = new LinkedList<>();
 
         ifStartsWithAndThenConsumeOrError("[");
-        if (!contenutoFile.startsWith("]"))
-            campoList(listaCampi);
+        if (!contenutoFile.startsWith("]")) campoList(listaCampi);
 
         ifStartsWithAndThenConsumeOrError("]");
         return listaCampi;
@@ -542,8 +528,7 @@ public class FileUtenteService {
      */
     private String matchStringa() throws Exception {
         ifStartsWithAndThenConsumeOrError("\"");
-        if (contenutoFile.startsWith("\""))
-            errore();
+        if (contenutoFile.startsWith("\"")) errore();
 
         StringBuilder builder = new StringBuilder();
 
@@ -598,8 +583,7 @@ public class FileUtenteService {
      * @throws Exception
      */
     private void errore() throws Exception {
-        throw new Exception("Attenzione: contenuto file non conforme a sintassi. " +
-                "Impossibile procedere al caricamento dei dati.");
+        throw new Exception("Attenzione: contenuto file non conforme a sintassi. " + "Impossibile procedere al caricamento dei dati.");
     }
 
     /**

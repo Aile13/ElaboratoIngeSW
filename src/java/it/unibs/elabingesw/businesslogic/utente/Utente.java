@@ -15,7 +15,7 @@ import java.util.Objects;
 public abstract class Utente implements Manageable, Serializable {
     private final String username;
     private final String password;
-    
+
     /**
      * Costruttore di classe che accetta come parametri uno username
      * e una password.
@@ -27,32 +27,32 @@ public abstract class Utente implements Manageable, Serializable {
         this.username = username;
         this.password = password;
     }
-    
+
     /**
      * Metodo implementato dall'interfaccia Manageable
      * che verifica se due username sono uguali.
      *
      * @param nome lo username da paragonare
      * @return TRUE se gli username sono uguali
-     *         FALSE se gli username sono diversi
+     * FALSE se gli username sono diversi
      */
     @Override
     public boolean isStessoNome(String nome) {
         return this.username.equals(nome);
     }
-    
+
     /**
      * Metodo che controlla se la password inserita dall'utente
      * è corretta.
      *
      * @param pwd la password dell'utente
      * @return TRUE se la password è corretta
-     *         FALSE se la password è errata
+     * FALSE se la password è errata
      */
     public boolean isPasswordCorretta(String pwd) {
         return this.password.equals(pwd);
     }
-    
+
     /**
      * Metodo getter.
      *
@@ -61,7 +61,7 @@ public abstract class Utente implements Manageable, Serializable {
     public String getUsername() {
         return username;
     }
-    
+
     /**
      * Metodo per la formattazione che converte un oggetto nella re-
      * lativa rappresentazione di stringa.
@@ -70,17 +70,15 @@ public abstract class Utente implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Utente{" +
-                "username='" + username + '\'' +
-                '}';
+        return "Utente{" + "username='" + username + '\'' + '}';
     }
-    
+
     /**
      * Metodo che permette di confrontare due oggetti.
      *
      * @param o un oggetto generico
      * @return TRUE se i due oggetti sono uguali
-     *         FALSE se i due oggetti sono diversi
+     * FALSE se i due oggetti sono diversi
      */
     @Override
     public boolean equals(Object o) {
@@ -89,7 +87,7 @@ public abstract class Utente implements Manageable, Serializable {
         Utente utente = (Utente) o;
         return getUsername().equals(utente.getUsername());
     }
-    
+
     /**
      * Metodo che fornisce il codice hash dell'oggetto.
      *
@@ -101,7 +99,7 @@ public abstract class Utente implements Manageable, Serializable {
     }
 
     /**
-     * Metodo getter astratto che verrà usato dalle classi 
+     * Metodo getter astratto che verrà usato dalle classi
      * figlio di Utente.
      *
      * @return il tipo di Utente

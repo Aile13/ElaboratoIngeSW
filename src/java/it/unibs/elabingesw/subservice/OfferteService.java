@@ -60,9 +60,7 @@ public class OfferteService {
             var listaCampiCompilati = new ListaCampiCompilati(gerarchiaSelezionata, categoriaFogliaSelezionata);
             ListaCampiCompilatiService.compila(listaCampiCompilati);
 
-            this.gestoreOfferte.inserisciNuovaOfferta(
-                    new Offerta(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata)
-            );
+            this.gestoreOfferte.inserisciNuovaOfferta(new Offerta(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata));
             System.out.println("Offerta inserita.");
         } else {
             System.out.println("Attenzione: non sono presenti gerarchie per inserire nessun articolo.");
@@ -108,7 +106,7 @@ public class OfferteService {
     }
 
     /**
-     * Metodo che chiede all'utente il nome dell'articolo da inserire, 
+     * Metodo che chiede all'utente il nome dell'articolo da inserire,
      * controllando che il nom enon è già stato inserito.
      *
      * @return il nome dell'articolo
@@ -133,9 +131,7 @@ public class OfferteService {
             System.out.println("\tAttenzione non ci sono offerte di " + utente.getUsername() + " da visualizzare.");
         } else {
             System.out.println("Offerte di " + utente.getUsername() + ":");
-            this.gestoreOfferte.getOfferteByUser(utente).forEach(
-                    System.out::println
-            );
+            this.gestoreOfferte.getOfferteByUser(utente).forEach(System.out::println);
         }
     }
 
@@ -228,11 +224,8 @@ public class OfferteService {
                 System.out.println("Impossibile procedere con l'operazione di baratto.");
             } else {
                 Offerta offertaDaBarattareA = chiediOffertaByList(listaOfferteAperteUtente);
-                System.out.println("Seleziona ora una offerta aperta di medesima categoria " +
-                        "e di diverso utente che intedi barattare");
-                var listaOffAperteNonUtenteStessaCat = this.gestoreOfferte
-                        .getOfferteAperteByCategoriaFogliaAndExcludeUser(
-                                offertaDaBarattareA.getCategoriaDiAppartenenza(), utente);
+                System.out.println("Seleziona ora una offerta aperta di medesima categoria " + "e di diverso utente che intedi barattare");
+                var listaOffAperteNonUtenteStessaCat = this.gestoreOfferte.getOfferteAperteByCategoriaFogliaAndExcludeUser(offertaDaBarattareA.getCategoriaDiAppartenenza(), utente);
                 if (listaOffAperteNonUtenteStessaCat.isEmpty()) {
                     System.out.println("Attenzione: non ci sono altre offerte da selezionare disponibili.");
                     System.out.println("Impossibile procedere con l'operazione di baratto.");
@@ -258,9 +251,7 @@ public class OfferteService {
             System.out.println("Non ci sono proposte di scambio.");
         } else {
             for (Offerta offertaSel : offerteSelezionate) {
-                if (InputDati.yesOrNo("Vuoi accettare la proposta di scambio per " +
-                        offertaSel.getOffertaAccoppiata().getNomeArticolo() + ", con " +
-                        offertaSel.getNomeArticolo() + "?")) {
+                if (InputDati.yesOrNo("Vuoi accettare la proposta di scambio per " + offertaSel.getOffertaAccoppiata().getNomeArticolo() + ", con " + offertaSel.getNomeArticolo() + "?")) {
                     accettaPropostaDiScambio(offertaSel);
                     System.out.println("Proposta di appuntamento inviata alla controparte.");
                 }
@@ -354,15 +345,12 @@ public class OfferteService {
             System.out.println("Non ci sono offerte in scambio.");
         } else {
             for (Offerta offertaInScambio : offerte) {
-                System.out.println("Proposta di scambio per " +
-                        offertaInScambio.getOffertaAccoppiata().getNomeArticolo() +
-                        " con " + offertaInScambio.getNomeArticolo() + ":");
+                System.out.println("Proposta di scambio per " + offertaInScambio.getOffertaAccoppiata().getNomeArticolo() + " con " + offertaInScambio.getNomeArticolo() + ":");
                 System.out.println("\t" + offertaInScambio.getOffertaAccoppiata());
                 System.out.println("\t" + offertaInScambio);
 
                 if (!Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
-                    System.out.println("\tEstremi di appuntamento proposto dalla controparte: "
-                            + offertaInScambio.getListaCampiAppuntamento());
+                    System.out.println("\tEstremi di appuntamento proposto dalla controparte: " + offertaInScambio.getListaCampiAppuntamento());
                     if (InputDati.yesOrNo("Vuoi accettare l'appuntamento?")) {
                         accettaAppuntamento(offertaInScambio);
                         System.out.println("Proposta di appuntamento accettata.");
@@ -417,12 +405,9 @@ public class OfferteService {
             System.out.println("Non ci sono offerte in scambio. Quindi neanche risposte.");
         } else {
             for (Offerta offertaInScambio : offerte) {
-                System.out.println("Proposta di scambio per " +
-                        offertaInScambio.getOffertaAccoppiata().getNomeArticolo() +
-                        " con " + offertaInScambio.getNomeArticolo() + ":");
+                System.out.println("Proposta di scambio per " + offertaInScambio.getOffertaAccoppiata().getNomeArticolo() + " con " + offertaInScambio.getNomeArticolo() + ":");
                 if (!Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
-                    System.out.println("\tUltima risposta di utente controparte: "
-                            + offertaInScambio.getListaCampiAppuntamento());
+                    System.out.println("\tUltima risposta di utente controparte: " + offertaInScambio.getListaCampiAppuntamento());
                 } else {
                     System.out.println("\tL'utente controparte non ha ancora risposto.");
                 }
@@ -439,13 +424,11 @@ public class OfferteService {
      */
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
         if (gestoreGerarchie.haGerarchie()) {
-            System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere " +
-                    "relative offerte in scambio e chiuse");
+            System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere " + "relative offerte in scambio e chiuse");
             var gerarchiaSelezionata = chiediGerarchia();
             var categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
 
-            var offerteInScambio =
-                    this.gestoreOfferte.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
+            var offerteInScambio = this.gestoreOfferte.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
             var offerteChiuse = this.gestoreOfferte.getOfferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
 
             System.out.println("Per categoria: " + categoriaFogliaSelezionata.getNome());

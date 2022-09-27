@@ -55,12 +55,10 @@ public class Login {
                         this.utente = gestoreUtenti.getUserByNome(username);
                         ricontrolla = false;
                     }
-                } else
-                    System.out.println("Errore: password inserita non valida. Riprovare.");
+                } else System.out.println("Errore: password inserita non valida. Riprovare.");
             } else {
                 System.out.println("Errore: utente inserito non presente.");
-                if (chiediSeCreareNuovoFruitore())
-                    creaNuovoFruitore(username);
+                if (chiediSeCreareNuovoFruitore()) creaNuovoFruitore(username);
             }
         } while (ricontrolla);
     }
