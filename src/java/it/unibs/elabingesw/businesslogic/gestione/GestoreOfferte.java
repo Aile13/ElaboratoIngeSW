@@ -122,9 +122,6 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @return la lista delle offerte aperte
      */
     public List<Offerta> getOfferteAperteByCategoriaFoglia(Categoria categoriaFoglia) {
-        return getListaElementi().stream()
-                .filter(
-                        offerta -> offerta.isOffertaAperta() && offerta.appartieneA(categoriaFoglia)
-                ).toList();
+        return getListaElementi().stream().filter(offerta -> offerta.isOffertaAperta() && offerta.appartieneA(categoriaFoglia)).toList();
     }
 }

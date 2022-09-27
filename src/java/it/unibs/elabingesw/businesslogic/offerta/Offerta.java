@@ -111,13 +111,7 @@ public class Offerta implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Offerta{" +
-                "nomeArticolo='" + nomeArticolo + '\'' +
-                ", autore=" + autore +
-                ", listaCampiCompilati=" + listaCampiCompilati +
-                ", categoriaDiAppartenenza=" + categoriaDiAppartenenza.toStringRidotto() +
-                ", statoOfferta=" + statoOfferta +
-                '}';
+        return "Offerta{" + "nomeArticolo='" + nomeArticolo + '\'' + ", autore=" + autore + ", listaCampiCompilati=" + listaCampiCompilati + ", categoriaDiAppartenenza=" + categoriaDiAppartenenza.toStringRidotto() + ", statoOfferta=" + statoOfferta + '}';
     }
 
     /**

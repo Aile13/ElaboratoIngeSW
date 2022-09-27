@@ -61,9 +61,7 @@ public class ScambioService {
      */
     private int chiediScadenza() {
         System.out.println("Settaggio parametro scadenza");
-        return InputDati.leggiInteroPositivo(
-                "Inserisci il massimo numero di giorni consentito per accettazione proposta di scambio: "
-        );
+        return InputDati.leggiInteroPositivo("Inserisci il massimo numero di giorni consentito per accettazione proposta di scambio: ");
     }
 
     /**

@@ -51,9 +51,7 @@ public class OfferteService {
             var listaCampiCompilati = new ListaCampiCompilati(gerarchiaSelezionata, categoriaFogliaSelezionata);
             compilaListaCampiCompilati(listaCampiCompilati);
 
-            this.gestoreOfferte.inserisciNuovaOfferta(
-                    new Offerta(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata)
-            );
+            this.gestoreOfferte.inserisciNuovaOfferta(new Offerta(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata));
             System.out.println("Offerta inserita.");
         } else {
             System.out.println("Attenzione: non sono presenti gerarchie per inserire nessun articolo.");
@@ -66,7 +64,7 @@ public class OfferteService {
      * ed ereditati relativi ad una determinata categoria foglia.
      *
      * @param listaCampiCompilati lista dei campi nativi ed ereditati
-                                  di un'offerta
+     *                            di un'offerta
      * @see ListaCampiCompilati
      */
     private void compilaListaCampiCompilati(ListaCampiCompilati listaCampiCompilati) {
@@ -121,7 +119,7 @@ public class OfferteService {
     }
 
     /**
-     * Metodo che chiede all'utente il nome dell'articolo da inserire, 
+     * Metodo che chiede all'utente il nome dell'articolo da inserire,
      * controllando che il nom enon è già stato inserito.
      *
      * @return il nome dell'articolo
@@ -146,9 +144,7 @@ public class OfferteService {
             System.out.println("\tAttenzione non ci sono offerte di " + utente.getUsername() + " da visualizzare.");
         } else {
             System.out.println("Offerte aperte e ritirate di " + utente.getUsername() + ":");
-            this.gestoreOfferte.getOfferteByUser(utente).forEach(
-                    System.out::println
-            );
+            this.gestoreOfferte.getOfferteByUser(utente).forEach(System.out::println);
         }
     }
 

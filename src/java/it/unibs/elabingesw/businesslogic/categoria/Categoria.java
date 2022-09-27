@@ -73,9 +73,7 @@ public class Categoria implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "nome='" + nome + '\'' +
-                ", descrizione='" + descrizione + '\'' +
-                ", campiNativi=" + campiNativi;
+        return "nome='" + nome + '\'' + ", descrizione='" + descrizione + '\'' + ", campiNativi=" + campiNativi;
     }
 
     /**
@@ -128,8 +126,7 @@ public class Categoria implements Manageable, Serializable {
      * @return stringa dell'oggetto convertito
      */
     public String toStringRidotto() {
-        return "nome='" + nome + '\'' +
-                ", descrizione='" + descrizione + '\'';
+        return "nome='" + nome + '\'' + ", descrizione='" + descrizione + '\'';
     }
 
     public boolean isCampoGiaPreso(Campo campo) {

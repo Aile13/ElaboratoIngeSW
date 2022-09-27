@@ -43,10 +43,7 @@ public class IntervalloOrario implements Serializable {
      */
     @Override
     public String toString() {
-        return "IntervalloOrario{" +
-                "orarioIniziale=" + orarioIniziale +
-                ", orarioFinale=" + orarioFinale +
-                '}';
+        return "IntervalloOrario{" + "orarioIniziale=" + orarioIniziale + ", orarioFinale=" + orarioFinale + '}';
     }
 
     /**
@@ -64,18 +61,16 @@ public class IntervalloOrario implements Serializable {
      */
     public boolean intersecaAltroIntervalloOrario(IntervalloOrario altroIntervalloOrario) {
         // inizio del secondo compreso nell'intervallo del primo
-        if (!altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale) &&
-                !altroIntervalloOrario.orarioIniziale.isAfter(this.orarioFinale)) {
+        if (!altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale) && !altroIntervalloOrario.orarioIniziale.isAfter(this.orarioFinale)) {
             return true;
         }
         // fine del secondo compreso nell'intervallo del primo
-        else if (!altroIntervalloOrario.orarioFinale.isBefore(this.orarioIniziale) &&
-                !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale)) {
+        else if (!altroIntervalloOrario.orarioFinale.isBefore(this.orarioIniziale) && !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale)) {
             return true;
         }
         // Il secondo contiene il primo. Se no non c'è intersezione
-        else return altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale) &&
-                    altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
+        else
+            return altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale) && altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
     }
 
 }

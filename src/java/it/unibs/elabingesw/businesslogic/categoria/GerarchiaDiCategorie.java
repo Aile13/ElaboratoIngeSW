@@ -122,9 +122,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" +
-                gerarchia.toStringAlbero()
-                + "}";
+        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" + gerarchia.toStringAlbero() + "}";
     }
 
     /**
@@ -168,9 +166,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      * @return stringa dell'oggetto convertito
      */
     public String toStringRidotto() {
-        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" +
-                '\t' + this.gerarchia.getDato().toStringRidotto() + '\n'
-                + "}";
+        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" + '\t' + this.gerarchia.getDato().toStringRidotto() + '\n' + "}";
     }
 
     /**

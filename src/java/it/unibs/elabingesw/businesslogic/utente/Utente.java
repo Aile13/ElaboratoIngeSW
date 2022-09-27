@@ -85,9 +85,7 @@ public abstract class Utente implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Utente{" +
-                "username='" + username + '\'' +
-                '}';
+        return "Utente{" + "username='" + username + '\'' + '}';
     }
 
     /**
