@@ -12,14 +12,14 @@ import it.unibs.eliapitozzi.mylib.InputDati;
  */
 public class Login {
     private final GestoreUtenti gestoreUtenti;
-    
+
     /**
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreUtenti.
-     * 
+     *
      * @param gestoreUtenti
      * @see GestoreUtenti
-     */ 
+     */
     public Login(GestoreUtenti gestoreUtenti) {
         this.gestoreUtenti = gestoreUtenti;
     }
@@ -62,7 +62,7 @@ public class Login {
         } while (ricontrolla);
 
     }
-    
+
     /**
      * Metodo che permette di creare un nuovo configuratore: devo-
      * no essere inseriti uno username adatto (non già utilizzato

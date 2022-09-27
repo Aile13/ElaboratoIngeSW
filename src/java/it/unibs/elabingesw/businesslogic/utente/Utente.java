@@ -56,7 +56,7 @@ public abstract class Utente implements Manageable, Serializable {
     /**
      * Metodo che controlla se la password inserita dall'utente
      * è corretta.
-     *
+     * <p>
      * Precondizione: assumo parametro non nullo e
      * non coincidente a una stringa vuota.
      *
@@ -85,10 +85,7 @@ public abstract class Utente implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Utente{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return "Utente{" + "username='" + username + '\'' + ", password='" + password + '\'' + '}';
     }
 
     /**

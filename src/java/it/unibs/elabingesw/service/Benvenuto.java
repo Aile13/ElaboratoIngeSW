@@ -7,7 +7,7 @@ package it.unibs.elabingesw.service;
  * @author Ali Laaraj
  */
 public class Benvenuto {
-    
+
     /**
      * Metodo statico che verrà utilizzato per salutare
      * un utente ogni qualvolta accede all'applicativo.

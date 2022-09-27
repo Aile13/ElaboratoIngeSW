@@ -27,10 +27,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
      * @return lista dei campi nativi necessari a una categoria radice
      */
     public static List<Campo> getCampiDiDefaultPerCategoriaRadice() {
-        return List.of(
-                new Campo("Stato di conservazione", true),
-                new Campo("Descrizione libera", false)
-        );
+        return List.of(new Campo("Stato di conservazione", true), new Campo("Descrizione libera", false));
     }
 
     /**
@@ -41,10 +38,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
      */
     @Override
     public String toString() {
-        return "Campo{" +
-                "nome='" + nome + '\'' +
-                ", obbligatorio=" + obbligatorio +
-                '}';
+        return "Campo{" + "nome='" + nome + '\'' + ", obbligatorio=" + obbligatorio + '}';
     }
 
     /**

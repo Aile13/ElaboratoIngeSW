@@ -64,9 +64,7 @@ public class Categoria implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "nome='" + nome + '\'' +
-                ", descrizione='" + descrizione + '\'' +
-                ", campiNativi=" + campiNativi;
+        return "nome='" + nome + '\'' + ", descrizione='" + descrizione + '\'' + ", campiNativi=" + campiNativi;
     }
 
     /**

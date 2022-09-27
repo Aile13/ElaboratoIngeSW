@@ -45,7 +45,7 @@ final public class Configuratore extends Utente {
     /**
      * Metodo che controlla se il configuratore con lo username
      * passato per parametro è di default o meno.
-     *
+     * <p>
      * Precondizione: assumo il parametro non nullo, e
      * diverso da stringa vuota.
      *

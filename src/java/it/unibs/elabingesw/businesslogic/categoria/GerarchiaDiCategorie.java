@@ -113,9 +113,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" +
-                gerarchia.toStringAlbero()
-                + "}";
+        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" + gerarchia.toStringAlbero() + "}";
     }
 
     /**
