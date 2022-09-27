@@ -15,7 +15,7 @@ import java.util.List;
  * @author Ali Laaraj
  */
 class IntervalloOrariService {
-    
+
     /**
      * Metodo che chiede all'utente gli intervalli orari in cui
      * è possibile effettuare gli scambi: questi intervalli orari
@@ -32,14 +32,12 @@ class IntervalloOrariService {
         while (chiediSeAggiungereAltroIntervalloOrario()) {
             System.out.println("Inserisci altro intervallo orario");
             var nuovoIntervalloOrario = chiediIntervalloOrario();
-            boolean incompatibile = listaIntervalliOrari.stream()
-                    .anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
+            boolean incompatibile = listaIntervalliOrari.stream().anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
 
             while (incompatibile) {
                 System.out.println("Errore: ultimo intervallo inserito interseca altri intervalli già inseriti. Riprovare");
                 nuovoIntervalloOrario = chiediIntervalloOrario();
-                incompatibile = listaIntervalliOrari.stream()
-                        .anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
+                incompatibile = listaIntervalliOrari.stream().anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
             }
 
             listaIntervalliOrari.add(nuovoIntervalloOrario);
@@ -47,18 +45,18 @@ class IntervalloOrariService {
 
         return listaIntervalliOrari;
     }
-    
+
     /**
      * Metodo per chiedere all'utente se vuole aggiungere un altro
      * intervallo orario.
      *
      * @return TRUE se si vuole aggiungere un intervallo orario
-     *         FALSE se non si vuole aggiungere un intervallo orario
+     * FALSE se non si vuole aggiungere un intervallo orario
      */
     private static boolean chiediSeAggiungereAltroIntervalloOrario() {
         return InputDati.yesOrNo("Vuoi aggiungere un altro intervallo orario?");
     }
-    
+
     /**
      * Metodo che chiede all'utente di inserire un singolo
      * intervallo orario.
@@ -80,7 +78,7 @@ class IntervalloOrariService {
 
         return new IntervalloOrario(iniziale, finale);
     }
-    
+
     /**
      * Metodo che chiede all'utente di inserire un singolo
      * orario.
@@ -92,7 +90,7 @@ class IntervalloOrariService {
         int minuti = chiediMinuti();
         return LocalTime.of(ora, minuti);
     }
-    
+
     /**
      * Metodo che chiede all'utente di inserire le ore
      * di un determinato orario
@@ -102,7 +100,7 @@ class IntervalloOrariService {
     private static int chiediOre() {
         return InputDati.leggiIntero("Inserisci solo l'ora (24h): ", 0, 23);
     }
-    
+
     /**
      * Metodo che chiede all'utente di inserire i minuti
      * di un determinato orario

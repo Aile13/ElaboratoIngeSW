@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class ScambioService {
     private final GestoreScambio gestoreScambio;
-    
+
     /**
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreScambio.
@@ -29,7 +29,7 @@ public class ScambioService {
     public ScambioService(GestoreScambio gestoreScambio) {
         this.gestoreScambio = gestoreScambio;
     }
-    
+
     /**
      * Metodo che chiede all'utente e imposta le varie informazioni
      * relative a uno scambio.
@@ -51,7 +51,7 @@ public class ScambioService {
             System.out.println("\tAttenzione: info di scambio già impostate.");
         }
     }
-    
+
     /**
      * Metodo che chiede la scadenza, ossia il numero massimo di
      * giorni entro cui un fruitore può accettare una proposta di
@@ -61,9 +61,7 @@ public class ScambioService {
      */
     private int chiediScadenza() {
         System.out.println("Settaggio parametro scadenza");
-        return InputDati.leggiInteroPositivo(
-                "Inserisci il massimo numero di giorni consentito per accettazione proposta di scambio: "
-        );
+        return InputDati.leggiInteroPositivo("Inserisci il massimo numero di giorni consentito per accettazione proposta di scambio: ");
     }
 
     /**
@@ -77,7 +75,7 @@ public class ScambioService {
         System.out.println("Settaggio parametro intervalli orari");
         return IntervalloOrariService.chiediIntervalliOrari();
     }
-    
+
     /**
      * Metodo che chiede i giorni della settimana in cui è possibile
      * effettuare scambi.
@@ -88,7 +86,7 @@ public class ScambioService {
         System.out.println("Settaggio parametro giorni di scambio");
         return GiorniDiSettimanaService.chiediGiorniDiSettimana();
     }
-    
+
     /**
      * Metodo che chiede i luoghi in cui si possono effettuare gli
      * scambi.
@@ -110,7 +108,7 @@ public class ScambioService {
         }
         return listaLuoghi;
     }
-    
+
     /**
      * Metodo che chiede il nome della piazza.
      *
@@ -120,7 +118,7 @@ public class ScambioService {
         System.out.println("Settaggio paramentro piazza");
         return InputDati.leggiStringaNonVuota("Inserisci nome della città: ");
     }
-    
+
     /**
      * Metodo che visualizza le informazioni di un determinato
      * scambio.
@@ -134,7 +132,7 @@ public class ScambioService {
         }
 
     }
-    
+
     /**
      * Metodo che visualizza le informazioni di un determinato
      * scambio in forma ridotta.

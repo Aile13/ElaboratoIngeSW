@@ -35,8 +35,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * default nella lista, se questo non è già presente in essa.
      */
     private void inserisciDefaultConfiguratore() {
-        if (!isElementoInListaByNome(
-                Configuratore.getDefaultConfiguratore().getUsername()))
+        if (!isElementoInListaByNome(Configuratore.getDefaultConfiguratore().getUsername()))
             this.inserisciElemento(Configuratore.getDefaultConfiguratore());
     }
 

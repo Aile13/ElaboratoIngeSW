@@ -142,9 +142,7 @@ public class GerarchiaService {
         if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
             System.out.println("\tNessuna gerarchia presente.");
         } else {
-            this.gestoreGerarchie.getListaGerarchie().forEach(
-                    gerarchiaDiCategorie -> System.out.println(gerarchiaDiCategorie.toStringRidotto())
-            );
+            this.gestoreGerarchie.getListaGerarchie().forEach(gerarchiaDiCategorie -> System.out.println(gerarchiaDiCategorie.toStringRidotto()));
         }
     }
 }

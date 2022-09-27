@@ -167,12 +167,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     public String toStringAlbero() {
         var builder = new StringBuilder("\t");
         builder.append(dato).append("\n");
-        listaFigli.forEach(tTreeNode ->
-                builder.append(
-                                Arrays.stream(
-                                        tTreeNode.toStringAlbero().split("\n")
-                                ).map(this::indentaLineaDiUnTab).collect(Collectors.joining("\n")))
-                        .append("\n"));
+        listaFigli.forEach(tTreeNode -> builder.append(Arrays.stream(tTreeNode.toStringAlbero().split("\n")).map(this::indentaLineaDiUnTab).collect(Collectors.joining("\n"))).append("\n"));
         return builder.toString();
     }
 

@@ -52,16 +52,14 @@ public class Login {
                         this.userType = gestoreUtenti.getUserTypeByNome(username);
                         ricontrolla = false;
                     }
-                } else
-                    System.out.println("Errore: password inserita non valida. Riprovare.");
+                } else System.out.println("Errore: password inserita non valida. Riprovare.");
             } else {
                 System.out.println("Errore: utente inserito non presente.");
-                if (chiediSeCreareNuovoFruitore())
-                    creaNuovoFruitore(username);
+                if (chiediSeCreareNuovoFruitore()) creaNuovoFruitore(username);
             }
         } while (ricontrolla);
     }
-    
+
     /**
      * Metodo che permette di creare un nuovo fruitore pas-
      * sando come parametro il suo username.
@@ -74,13 +72,13 @@ public class Login {
         gestoreUtenti.inserisciNuovoFruitore(username, password);
         System.out.println("Nuovo fruitore aggiunto, ora accedi.");
     }
-    
+
     /**
      * Metodo che chiede se ci si vuole registrare come
      * nuovo fruitore.
      *
      * @return TRUE se ci si registra come nuovo fruitore
-     *         FALSE se non ci si registra come nuovo fruitore
+     * FALSE se non ci si registra come nuovo fruitore
      */
     private boolean chiediSeCreareNuovoFruitore() {
         return InputDati.yesOrNo("Si desidera registrarsi come nuovo fruitore? ");
@@ -110,7 +108,7 @@ public class Login {
             }
         } while (ricontrolla);
     }
-    
+
     /**
      * Metodo getter.
      *

@@ -80,13 +80,7 @@ public class Scambio implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Scambio{" + "\n" +
-                "\tpiazza='" + piazza + "',\n" +
-                "\tlistaLuoghi=" + listaLuoghi + ",\n" +
-                "\tgiorni=" + giorni + "\n" +
-                "\tintervalliOrari=" + intervalliOrari + ",\n" +
-                "\tScadenza=" + Scadenza + "\n" +
-                '}';
+        return "Scambio{" + "\n" + "\tpiazza='" + piazza + "',\n" + "\tlistaLuoghi=" + listaLuoghi + ",\n" + "\tgiorni=" + giorni + "\n" + "\tintervalliOrari=" + intervalliOrari + ",\n" + "\tScadenza=" + Scadenza + "\n" + '}';
     }
 
     /**
@@ -97,11 +91,6 @@ public class Scambio implements Manageable, Serializable {
      * @return stringa dell'oggetto convertito
      */
     public String toStringFormaRidotta() {
-        return "Scambio{" + "\n" +
-                "\tpiazza='" + piazza + "',\n" +
-                "\tlistaLuoghi=" + listaLuoghi + ",\n" +
-                "\tgiorni=" + giorni + ",\n" +
-                "\tintervalliOrari=" + intervalliOrari + "\n" +
-                '}';
+        return "Scambio{" + "\n" + "\tpiazza='" + piazza + "',\n" + "\tlistaLuoghi=" + listaLuoghi + ",\n" + "\tgiorni=" + giorni + ",\n" + "\tintervalliOrari=" + intervalliOrari + "\n" + '}';
     }
 }
