@@ -116,9 +116,7 @@ public class ListaCampiCompilati implements Serializable {
      */
     @Override
     public String toString() {
-        return "ListaCampiCompilati{" +
-                "campiCompilati=" + campiCompilati +
-                '}';
+        return "ListaCampiCompilati{" + "campiCompilati=" + campiCompilati + '}';
     }
 
     /**

@@ -70,7 +70,7 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
      * contiene almeno una gerarchia.
      *
      * @return TRUE se la lista delle gerarchie non è vuota
-     *         FALSE se la lista delle gerarchie è vuota
+     * FALSE se la lista delle gerarchie è vuota
      */
     public boolean haGerarchie() {
         return !super.getListaElementi().isEmpty();

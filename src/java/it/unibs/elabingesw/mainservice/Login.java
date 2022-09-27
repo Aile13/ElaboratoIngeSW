@@ -55,12 +55,10 @@ public class Login {
                         this.utente = gestoreUtenti.getUserByNome(username);
                         ricontrolla = false;
                     }
-                } else
-                    System.out.println("Errore: password inserita non valida. Riprovare.");
+                } else System.out.println("Errore: password inserita non valida. Riprovare.");
             } else {
                 System.out.println("Errore: utente inserito non presente.");
-                if (chiediSeCreareNuovoFruitore())
-                    creaNuovoFruitore(username);
+                if (chiediSeCreareNuovoFruitore()) creaNuovoFruitore(username);
             }
         } while (ricontrolla);
     }
@@ -83,7 +81,7 @@ public class Login {
      * nuovo fruitore.
      *
      * @return TRUE se ci si registra come nuovo fruitore
-     *         FALSE se non ci si registra come nuovo fruitore
+     * FALSE se non ci si registra come nuovo fruitore
      */
     private boolean chiediSeCreareNuovoFruitore() {
         return InputDati.yesOrNo("Si desidera registrarsi come nuovo fruitore? ");

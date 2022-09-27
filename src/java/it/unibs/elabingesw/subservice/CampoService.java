@@ -67,8 +67,7 @@ class CampoService {
 
             while (InputDati.yesOrNo("Inserire un nuovo campo?")) {
                 campo = chiediNuovoCampo();
-                while (gerarchia.isCampoGiaPreso(campo) ||
-                        campo.isCampoInListaByNome(campi)) {
+                while (gerarchia.isCampoGiaPreso(campo) || campo.isCampoInListaByNome(campi)) {
                     System.out.println("Attenzione: campo già usato, reinserirne un altro.");
                     campo = chiediNuovoCampo();
                 }

@@ -15,7 +15,7 @@ import java.util.List;
  * @author Ali Laaraj
  */
 class IntervalloOrariService {
-    
+
     /**
      * Metodo che chiede all'utente gli intervalli orari in cui
      * è possibile effettuare gli scambi: questi intervalli orari
@@ -32,14 +32,12 @@ class IntervalloOrariService {
         while (chiediSeAggiungereAltroIntervalloOrario()) {
             System.out.println("Inserisci altro intervallo orario");
             var nuovoIntervalloOrario = chiediIntervalloOrario();
-            boolean incompatibile = listaIntervalliOrari.stream()
-                    .anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
+            boolean incompatibile = listaIntervalliOrari.stream().anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
 
             while (incompatibile) {
                 System.out.println("Errore: ultimo intervallo inserito interseca altri intervalli già inseriti. Riprovare");
                 nuovoIntervalloOrario = chiediIntervalloOrario();
-                incompatibile = listaIntervalliOrari.stream()
-                        .anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
+                incompatibile = listaIntervalliOrari.stream().anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
             }
 
             listaIntervalliOrari.add(nuovoIntervalloOrario);
@@ -53,7 +51,7 @@ class IntervalloOrariService {
      * intervallo orario.
      *
      * @return TRUE se si vuole aggiungere un intervallo orario
-     *         FALSE se non si vuole aggiungere un intervallo orario
+     * FALSE se non si vuole aggiungere un intervallo orario
      */
     private static boolean chiediSeAggiungereAltroIntervalloOrario() {
         return InputDati.yesOrNo("Vuoi aggiungere un altro intervallo orario?");
