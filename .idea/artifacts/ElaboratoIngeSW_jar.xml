@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ElaboratoIngeSW:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ElaboratoIngeSW_jar</output-path>
+    <root id="archive" name="ElaboratoIngeSW.jar">
+      <element id="module-output" name="ElaboratoIngeSW" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../MyLib/out/artifacts/MyLib_jar/MyLib.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
