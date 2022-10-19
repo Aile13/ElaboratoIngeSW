@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Record Campo che definisce un campo di una determinata categoria.
  * <p>
- * L'invariante di classe è che gli attributi del record Campo: nome e obbligatorio
+ * L'invariante di classe è che gli attributi del record Campo nome e obbligatorio
  * una volta settati con la creazione dell'istanza rimangano immutati
  * per tutto il ciclo di vita dell'oggetto.
  * <p>
@@ -107,7 +107,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     }
 
     /**
-     * Metodo che controlla se un campo è in lista
+     * Metodo che controlla se un campo è in una lista
      * passata per parametro.
      * <p>
      * Precondizione: argomento del metodo non nullo.
