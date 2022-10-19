@@ -16,6 +16,9 @@ import it.unibs.elabingesw.service.MainMenu;
  */
 public class App {
 
+    /**
+     * Metodo run che crea i vari oggetti ed esegue il menu.
+     */
     public void run() {
         GestoreUtenti gestoreUtenti = new GestoreUtenti();
         GestoreGerarchie gestoreGerarchie = new GestoreGerarchie();
