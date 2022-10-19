@@ -21,7 +21,7 @@ public class MainMenu {
      * Al suo interno creo un istanza della classe MyFunctionalMenu
      * e mostra a video tre operazioni che si possono effettuare.
      *
-     * @param service
+     * @param service oggetto di tipo MacroService
      * @see MacroService
      */
     public MainMenu(MacroService service) {
