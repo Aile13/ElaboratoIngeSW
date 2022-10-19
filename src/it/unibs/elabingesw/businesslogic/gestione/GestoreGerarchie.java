@@ -50,7 +50,7 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
     }
 
     /**
-     * Metodo che permette d'inserire una gerarchia.
+     * Metodo che permette di inserire una gerarchia.
      * <p>
      * Precondizione: Assumo che il parametro non sia nullo, e
      * che sia correttamente inizializzato. Ovvero che
