@@ -6,9 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b10857a7-015c-4c52-bf4b-32aa3769865d" name="Changes" comment="Javadoc GerarchiaDiCategorie.java V3">
+    <list default="true" id="b10857a7-015c-4c52-bf4b-32aa3769865d" name="Changes" comment="Javadoc TreeNode.java V3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unibs/elabingesw/businesslogic/categoria/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibs/elabingesw/businesslogic/categoria/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/unibs/elabingesw/businesslogic/gestione/GestoreGenerico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibs/elabingesw/businesslogic/gestione/GestoreGenerico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666358289844</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Javadoc TreeNode.java V3">
+      <created>1666359408260</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1666359408260</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +232,7 @@
     <MESSAGE value="Generazione e build automatica del jar." />
     <MESSAGE value="Javadoc Categoria.java V3" />
     <MESSAGE value="Javadoc GerarchiaDiCategorie.java V3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Javadoc GerarchiaDiCategorie.java V3" />
+    <MESSAGE value="Javadoc TreeNode.java V3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc TreeNode.java V3" />
   </component>
 </project>

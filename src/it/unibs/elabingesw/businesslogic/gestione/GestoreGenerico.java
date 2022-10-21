@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Classe GestoreGenerico che verrà ereditata dalle classi
- * GestoreUtenti e GestoreGerarchie.
+ * Classe GestoreGenerico che verrà ereditata da classi
+ * che gestiranno gerarchie, offerte, scambi e utenti.
  * <p>
  * Invariante di classe: assumo gli attributi immutabili,
  * dopo la creazione dell'oggetto.
