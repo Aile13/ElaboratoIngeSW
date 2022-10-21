@@ -19,7 +19,7 @@ public class Login {
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreUtenti.
      *
-     * @param gestoreUtenti
+     * @param gestoreUtenti oggetto di tipo GestoreUtenti
      * @see GestoreUtenti
      */
     public Login(GestoreUtenti gestoreUtenti) {
