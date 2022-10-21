@@ -53,7 +53,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
     }
 
     /**
-     * Metodo che permette d'inserire una nuova offerta.
+     * Metodo che permette di inserire una nuova offerta.
      * <p>
      * Precondizione: Assumo che il parametro non sia nullo, e
      * che sia correttamente inizializzato. Ovvero che
