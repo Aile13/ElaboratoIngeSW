@@ -105,7 +105,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     }
 
     /**
-     * Metodo che controlla se un campo è in lista
+     * Metodo che controlla se un campo è in una lista
      * passata per parametro.
      * <p>
      * Precondizione: argomento del metodo non nullo.
