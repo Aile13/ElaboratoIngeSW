@@ -45,7 +45,7 @@ public class Categoria implements Manageable, Serializable {
     }
 
     /**
-     * Metodo che permette all'utente d'inserire una lista di
+     * Metodo che permette all'utente di inserire una lista di
      * campi nativi per una determinata categoria.
      * <p>
      * Precondizione: assumo parametro metodo non nullo.
@@ -120,6 +120,14 @@ public class Categoria implements Manageable, Serializable {
         return "nome='" + nome + '\'' + ", descrizione='" + descrizione + '\'';
     }
 
+    /**
+     * Metodo che controlla se il campo passato per parametro
+     * è già in lista o meno.
+     *
+     * @param campo il nome del campo
+     * @return TRUE se il campo inserito è già presente in lista
+     * FALSE se il campo inserito non è già presente in lista
+     */
     public boolean isCampoGiaPreso(Campo campo) {
         return campo.isCampoInListaByNome(campiNativi);
     }
