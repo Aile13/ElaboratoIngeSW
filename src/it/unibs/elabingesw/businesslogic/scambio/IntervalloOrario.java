@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalTime;
 
 /**
- * Classe IntervalloOrario per definire un intervallo oraro
+ * Classe IntervalloOrario per definire un intervallo orario
  * entro cui è possibile effettuare scambi.
  * <p>
  * Invariante di classe: assumo gli attributi immutabili,
