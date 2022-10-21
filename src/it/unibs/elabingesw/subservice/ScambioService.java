@@ -23,7 +23,7 @@ public class ScambioService {
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreScambio.
      *
-     * @param gestoreScambio
+     * @param gestoreScambio oggetto di tipo GestoreScambio
      * @see GestoreScambio
      */
     public ScambioService(GestoreScambio gestoreScambio) {
