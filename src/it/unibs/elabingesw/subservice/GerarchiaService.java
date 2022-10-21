@@ -22,7 +22,7 @@ public class GerarchiaService {
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreGerarchie.
      *
-     * @param gestoreGerarchie
+     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
      * @see GestoreGerarchie
      */
     public GerarchiaService(GestoreGerarchie gestoreGerarchie) {
@@ -93,7 +93,8 @@ public class GerarchiaService {
      * Metodo che chiede all'utente di inserire una categoria figlio
      * con i suoi vari campi.
      *
-     * @param gerarchia una gerarchia di categorie
+     * @param gerarchia l'oggetto gerarchia a cui aggiungo la catego-
+     *                  ria figlio che chiede all'utente
      * @return una categoria figlio
      * @see CampoService
      */
