@@ -23,9 +23,9 @@ public class MacroServices {
      * Costruttore di classe, accetta come parametri un oggetto di
      * tipo GestoreUtenti e un oggetto di tipo GestoreGerarchie.
      *
-     * @param gestoreUtenti
-     * @param gestoreGerarchie
-     * @param gestoreScambio
+     * @param gestoreUtenti oggetto di tipo GestoreUtenti
+     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
+     * @param gestoreScambio oggetto di tipo GestoreScambio
      * @see GestoreUtenti
      * @see GestoreGerarchie
      * @see GestoreScambio
@@ -102,7 +102,7 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe ScambioService per
-     * visualizzaretutte le informazioni degli scambi in
+     * visualizzare tutte le informazioni degli scambi in
      * forma ridotta.
      *
      * @see ScambioService
