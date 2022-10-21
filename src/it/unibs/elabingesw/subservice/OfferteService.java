@@ -26,8 +26,8 @@ public class OfferteService {
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreOfferte e un oggetto GestoreGerarchie.
      *
-     * @param gestoreOfferte
-     * @param gestoreGerarchie
+     * @param gestoreOfferte oggetto di tipo GestoreOfferte
+     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
      * @see GestoreOfferte
      * @see GestoreGerarchie
      */
@@ -102,7 +102,7 @@ public class OfferteService {
 
     /**
      * Metodo che chiede all'utente la gerarchia contenente la categoria
-     * foglia di interesse.
+     * foglia d'interesse.
      *
      * @return una gerarchia
      * @see GerarchiaDiCategorie
@@ -120,7 +120,7 @@ public class OfferteService {
 
     /**
      * Metodo che chiede all'utente il nome dell'articolo da inserire,
-     * controllando che il nom enon è già stato inserito.
+     * controllando che il nome non sia già stato inserito.
      *
      * @return il nome dell'articolo
      * @see GestoreOfferte
