@@ -17,12 +17,9 @@ public class MainMenu {
 
     /**
      * Costruttore di classe che accetta come parametro un
-     * oggetto di tipo MacroService.
-     * <p>
-     * Al suo interno creo un'istanza della classe MyFunctionalMenu
-     * e mostra a video le operazioni che si possono effettuare.
+     * oggetto di tipo MacroServices.
      *
-     * @param service
+     * @param service oggetto di tipo MacroServices
      * @see MacroServices
      */
     public MainMenu(MacroServices service) {
