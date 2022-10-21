@@ -32,7 +32,8 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      * Ciascuna categoria figlia deve inoltre garantire campi nativi non omonimi rispetto agli altri campi
      * nativi delle sue categorie padri.
      *
-     * @param gerarchia gerarchia delle categorie
+     * @param gerarchia gerarchia delle categorie di tipo TreeNode
+     * @see TreeNode
      */
     private GerarchiaDiCategorie(TreeNode<Categoria> gerarchia) {
         this.gerarchia = gerarchia;
@@ -46,7 +47,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      * correttamente inizializzato. Ovvero non omonimia della categoria radice
      * passata come parametro con altre categorie radice di altre gerarchie già esistenti.
      *
-     * @param categoriaRadice root della gerarchia
+     * @param categoriaRadice radice della gerarchia di categorie
      * @see TreeNode
      */
     public GerarchiaDiCategorie(Categoria categoriaRadice) {
@@ -175,6 +176,14 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
         return gerarchia.getListOfDataInTreeNodePadriByNome(categoria.getNome());
     }
 
+    /**
+     * Metodo che controlla se il campo passato per parametro
+     * è già preso o meno.
+     *
+     * @param campo il nome del campo
+     * @return TRUE se il campo inserito è già presente in lista
+     * FALSE se il campo inserito non è già presente in lista
+     */
     public boolean isCampoGiaPreso(Campo campo) {
         var listaCategoriePadri = this.getListaDiCategoriePadriByCategoria(this.gerarchia.getDato());
         for (Categoria categoria : listaCategoriePadri) {
