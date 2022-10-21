@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Classe Tree che serve per rappresentare una generica struttura
+ * Classe TreeNode che serve per rappresentare una generica struttura
  * ad albero.
  * <p>
  * Invariante di classe: assumo gli attributi immutabili,
@@ -74,7 +74,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
     }
 
     /**
-     * Metodo che restituisce la radice di un albero.
+     * Metodo getter.
      *
      * @return la radice dell'albero
      */
@@ -209,6 +209,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
      * <p>
      * Precondizione: assumo parametro non nullo.
      *
+     * @param singleLine la stringa da indentare
      * @return la stringa indentata
      */
     private String indentaLineaDiUnTab(String singleLine) {
@@ -263,7 +264,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
      * Post condizione: colleziono i data associati a nodi padre del nodo di riferimento
      * passato come parametro.
      *
-     * @param treeNode un istanza della classe.
+     * @param treeNode un'istanza della classe.
      * @return la lista delle informazioni
      */
     private List<T> getListOfDataInTreeNodePadriByTreeNode(TreeNode<T> treeNode) {
