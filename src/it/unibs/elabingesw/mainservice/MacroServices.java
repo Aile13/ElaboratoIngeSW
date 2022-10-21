@@ -31,12 +31,14 @@ public class MacroServices {
      * Costruttore di classe, accetta come parametri un oggetto di
      * tipo GestoreUtenti e un oggetto di tipo GestoreGerarchie.
      *
-     * @param gestoreUtenti
-     * @param gestoreGerarchie
-     * @param gestoreScambio
-     * @param gestoreOfferte
+     * @param gestoreUtenti oggetto di tipo GestoreUtenti
+     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
+     * @param gestoreScambio oggetto di tipo GestoreScambio
+     * @param gestoreOfferte oggetto di tipo GestoreOfferte
      * @see GestoreUtenti
      * @see GestoreGerarchie
+     * @see GestoreScambio
+     * @see GestoreOfferte
      */
     public MacroServices(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio, GestoreOfferte gestoreOfferte) {
         this.gestoreUtenti = gestoreUtenti;
@@ -116,7 +118,7 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe ScambioService per
-     * visualizzaretutte le informazioni degli scambi in
+     * visualizzare tutte le informazioni degli scambi in
      * forma ridotta.
      *
      * @see ScambioService
@@ -170,7 +172,7 @@ public class MacroServices {
      * Metodo che rimanda alla classe OfferteService per
      * ritirare le offerte di un utente.
      *
-     * @see offerteService
+     * @see OfferteService
      */
     public void ritiraOfferte() {
         this.offerteService.ritiraOfferte();
