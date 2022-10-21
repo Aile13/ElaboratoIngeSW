@@ -31,7 +31,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
     }
 
     /**
-     * Metodo che permette d'inserire il configuratore di
+     * Metodo che permette di inserire il configuratore di
      * default nella lista, se questo non è già presente in essa.
      */
     private void inserisciDefaultConfiguratore() {
@@ -116,7 +116,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
     }
 
     /**
-     * Metodo che permette d'inserire un nuovo fruitore nella lista.
+     * Metodo che permette di inserire un nuovo fruitore nella lista.
      * <p>
      * Precondizione: Quella del metodo chiamato.
      * Post condizione: dati username e password viene creato un
