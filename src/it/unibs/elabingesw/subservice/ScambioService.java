@@ -23,7 +23,7 @@ public class ScambioService {
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreScambio.
      *
-     * @param gestoreScambio
+     * @param gestoreScambio oggetto di tipo GestoreScambio
      * @see GestoreScambio
      */
     public ScambioService(GestoreScambio gestoreScambio) {
@@ -115,7 +115,7 @@ public class ScambioService {
      * @return il nome della piazza
      */
     private String chiediNomePiazza() {
-        System.out.println("Settaggio paramentro piazza");
+        System.out.println("Settaggio parametro piazza");
         return InputDati.leggiStringaNonVuota("Inserisci nome della città: ");
     }
 
