@@ -239,7 +239,7 @@ class StatoOfferta implements Serializable {
      * solo quando l'offerta che chiama il metodo è correntemente
      * nello stato di offerta selezionata.
      *
-     * @return un offerta accoppiata
+     * @return un'offerta accoppiata
      */
     public Offerta getOffertaAccoppiata() {
         return altraOfferta;
