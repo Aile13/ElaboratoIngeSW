@@ -9,7 +9,7 @@ import java.util.Optional;
 
 /**
  * Classe GestoreGenerico che verrà ereditata dalle classi
- * GestoreUtenti e GestoreGerarchie.
+ * gerarchie, offerte, scambi e utenti.
  * <p>
  * Invariante di classe: assumo gli attributi immutabili,
  * dopo la creazione dell'oggetto.
@@ -136,7 +136,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
     }
 
     /**
-     * Metodo che permette d'inserire un elemento.
+     * Metodo che permette di inserire un elemento.
      * <p>
      * Precondizione: assumo il parametro non nullo e
      * correttamente inizializzato. Ovvero che sia
