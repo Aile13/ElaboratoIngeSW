@@ -10,7 +10,7 @@ import it.unibs.elabingesw.subservice.OfferteService;
 import it.unibs.elabingesw.subservice.ScambioService;
 
 /**
- * Classe MacroService di gestione generale.
+ * Classe MacroServices di gestione generale.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
@@ -31,10 +31,10 @@ public class MacroServices {
      * Costruttore di classe, accetta come parametri un oggetto di
      * tipo GestoreUtenti e un oggetto di tipo GestoreGerarchie.
      *
-     * @param gestoreUtenti
-     * @param gestoreGerarchie
-     * @param gestoreScambio
-     * @param gestoreOfferte
+     * @param gestoreUtenti oggetto di tipo GestoreUtenti
+     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
+     * @param gestoreScambio oggetto di tipo GestoreScambio
+     * @param gestoreOfferte oggetto di tipo GestoreScambio
      * @see GestoreUtenti
      * @see GestoreGerarchie
      */
