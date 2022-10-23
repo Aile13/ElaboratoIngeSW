@@ -10,7 +10,7 @@ import it.unibs.elabingesw.subservice.OfferteService;
 import it.unibs.elabingesw.subservice.ScambioService;
 
 /**
- * Classe MacroService di gestione generale.
+ * Classe MacroServices di gestione generale.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
