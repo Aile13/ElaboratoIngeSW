@@ -7,7 +7,10 @@ import java.util.Objects;
 
 /**
  * Classe Utente che rappresenta un generico utente. Questa classe
- * verrà estesa dalla classe Configuratore.
+ * verrà estesa dalla classe Configuratore e poi da Fruitore.
+ * <p>
+ * Invariante di classe: assumo gli attributi immutabili,
+ * dopo la creazione dell'oggetto.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
@@ -20,8 +23,8 @@ public abstract class Utente implements Manageable, Serializable {
      * Costruttore di classe che accetta come parametri uno username
      * e una password.
      *
-     * @param username
-     * @param password
+     * @param username username di utente
+     * @param password password di utente
      */
     public Utente(String username, String password) {
         this.username = username;
@@ -102,7 +105,7 @@ public abstract class Utente implements Manageable, Serializable {
      * Metodo getter astratto che verrà usato dalle classi
      * figlio di Utente.
      *
-     * @return il tipo di Utente
+     * @return il tipo di utente
      */
     public abstract UserType getUserType();
 
