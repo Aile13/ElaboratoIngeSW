@@ -19,7 +19,7 @@ import it.unibs.elabingesw.mainservice.MainMenu;
 public class App {
 
     /**
-     * Metodo run() che permette di eseguire l'applicativo.
+     * Metodo run che crea i vari oggetti ed esegue il menu.
      */
     public void run() {
         final var gestoreUtenti = new GestoreUtenti();
