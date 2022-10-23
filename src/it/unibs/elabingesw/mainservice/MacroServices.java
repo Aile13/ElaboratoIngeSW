@@ -34,9 +34,12 @@ public class MacroServices {
      * @param gestoreUtenti oggetto di tipo GestoreUtenti
      * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
      * @param gestoreScambio oggetto di tipo GestoreScambio
-     * @param gestoreOfferte oggetto di tipo GestoreScambio
+     * @param gestoreOfferte oggetto di tipo GestoreOfferte
+     *
      * @see GestoreUtenti
      * @see GestoreGerarchie
+     * @see GestoreScambio
+     * @see GestoreOfferte
      */
     public MacroServices(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio, GestoreOfferte gestoreOfferte) {
         this.gestoreUtenti = gestoreUtenti;
