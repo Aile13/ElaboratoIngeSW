@@ -153,6 +153,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      * <p>
      * Precondizione: assumo parametro non nullo.
      *
+     * @param nomeCategoria nome della categoria
      * @return TRUE se il nome della categoria è già utilizzato
      * FALSE se il nome della categoria non è già utilizzato
      */
