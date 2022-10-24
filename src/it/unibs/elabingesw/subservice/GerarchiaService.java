@@ -22,11 +22,12 @@ public class GerarchiaService {
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
-     * GestoreGerarchie.
+     * GestoreGerarchie e un oggetto GestoreScambio.
      *
-     * @param gestoreGerarchie
-     * @param gestoreScambio
+     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
+     * @param gestoreScambio oggetto di tipo GestoreScambio
      * @see GestoreGerarchie
+     * @see GestoreScambio
      */
     public GerarchiaService(GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
         this.gestoreGerarchie = gestoreGerarchie;
@@ -54,7 +55,6 @@ public class GerarchiaService {
      *
      * @param gerarchia la gerarchia alla quale si vogliono aggiungere
      *                  sottocategorie
-     * @return gerarchia oggetto della classe GerarchiaDiCategorie
      * @see GerarchiaDiCategorie
      */
     private void aggiungiSottoCategorie(GerarchiaDiCategorie gerarchia) {
@@ -97,7 +97,7 @@ public class GerarchiaService {
      * Metodo che chiede all'utente di inserire una categoria figlio
      * con i suoi vari campi.
      *
-     * @param gerarchia
+     * @param gerarchia un oggetto di tipo Gerarchia
      * @return una categoria figlio
      * @see CampoService
      */
