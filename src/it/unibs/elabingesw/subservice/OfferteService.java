@@ -32,12 +32,15 @@ public class OfferteService {
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
-     * GestoreOfferte e un oggetto GestoreGerarchie.
+     * GestoreOfferte, un oggetto GestoreGerarchie e un oggetto
+     * GestoreScambio.
      *
-     * @param gestoreOfferte
-     * @param gestoreGerarchie
+     * @param gestoreOfferte oggetto di tipo GestoreOfferte
+     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
+     * @param gestoreScambio oggetto di tipo GestoreScambio
      * @see GestoreOfferte
      * @see GestoreGerarchie
+     * @see GestoreScambio
      */
     public OfferteService(GestoreOfferte gestoreOfferte, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
 
@@ -107,7 +110,7 @@ public class OfferteService {
 
     /**
      * Metodo che chiede all'utente il nome dell'articolo da inserire,
-     * controllando che il nom enon è già stato inserito.
+     * controllando che il nome non sia già stato inserito.
      *
      * @return il nome dell'articolo
      * @see GestoreOfferte
@@ -191,6 +194,7 @@ public class OfferteService {
      * di interesse scegliendola tra le offerte contenute dentro la
      * lista passata per parametro.
      *
+     * @param listaOfferte la lista delle offerte
      * @return l'offerta aperta
      * @see GestoreOfferte
      */
@@ -244,6 +248,14 @@ public class OfferteService {
         }
     }
 
+    /**
+     * Metodo che permette all'utente di visualizzare le proposte di
+     * scambio ricevute: può accettare una proposta di scambio mandan-
+     * do un messaggio all'altro utente contenente una proposta di ap-
+     * puntamento.
+     *
+     * @see GestoreOfferte
+     */
     public void visualizzaProposteDiScambio() {
         gestoreOfferte.aggiornaStatoDelleOfferte();
         var offerteSelezionate = this.gestoreOfferte.getOfferteSelezionateByUser(utente);
