@@ -22,7 +22,7 @@ import java.util.List;
 
 /**
  * Classe FileUtenteService che gestisce le varie operazioni
- * che si effettuano perchè l'utente possa caricare nell'
+ * che si effettuano in modo che l'utente possa caricare nell'
  * applicativo dei dati da file.
  *
  * @author Elia Pitozzi
@@ -39,8 +39,8 @@ public class FileUtenteService {
      * Costruttore di classe, accetta come parametri un oggetto
      * GestoreGerarchie e un oggetto GestoreScambio.
      *
-     * @param gestoreGerarchie
-     * @param gestoreScambio
+     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
+     * @param gestoreScambio oggetto di tipo GestoreScambio
      * @see GestoreGerarchie
      * @see GestoreScambio
      */
@@ -403,7 +403,7 @@ public class FileUtenteService {
     }
 
     /**
-     * Metodo legge una o più categorie figlio in una lista e
+     * Metodo che legge una o più categorie figlio in una lista e
      * le aggiunge alla gerarchia passata come parametro.
      *
      * @param gerarchia un oggetto di tipo GerarchiaDiCategorie
@@ -449,6 +449,7 @@ public class FileUtenteService {
      * Metodo che controlla se ci sono campi nativi
      * nella lista e nel caso le legge e le colleziona e le ritorna.
      *
+     * @return la lista dei campi
      * @throws Exception
      */
     private List<Campo> campoListOp() throws Exception {
