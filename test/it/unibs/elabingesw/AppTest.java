@@ -10,7 +10,10 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author Elia
+ * Classe AppTest per la generazione ed esecuzione di test.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 class AppTest {
 
