@@ -8,6 +8,10 @@ package it.unibs.elabingesw;
  */
 public class Main {
 
+    /**
+     *
+     * Metodo Main
+     */
     public static void main(String[] args) {
         new App().run();
     }
