@@ -45,7 +45,7 @@ public class Scambio implements Manageable, Serializable {
      * in lista non abbiano tra loro alcuna sovrapposizione.
      * Per scadenza assumo che sia un valore intero non nullo.
      *
-     * @param piazza          Città in cui si organizzano gli scambi
+     * @param piazza          città in cui si organizzano gli scambi
      * @param listaLuoghi     luoghi della città in cui avvengono gli scambi
      * @param giorni          giorni della settimana in cui avvengono gli scambi
      * @param intervalliOrari intervalli orari della giornata in cui avvengono gli scambi
