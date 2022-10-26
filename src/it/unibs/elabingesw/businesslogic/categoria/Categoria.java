@@ -54,7 +54,7 @@ public class Categoria implements Manageable, Serializable {
     }
 
     /**
-     * Metodo che permette all'utente d'inserire una lista di
+     * Metodo che permette all'utente di inserire una lista di
      * campi nativi per una determinata categoria.
      * <p>
      * Precondizione: assumo parametro metodo non nullo.
