@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b10857a7-015c-4c52-bf4b-32aa3769865d" name="Changes" comment="Javadoc TreeNode.java V3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unibs/elabingesw/businesslogic/gestione/GestoreGenerico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibs/elabingesw/businesslogic/gestione/GestoreGenerico.java" afterDir="false" />
-    </list>
+    <list default="true" id="b10857a7-015c-4c52-bf4b-32aa3769865d" name="Changes" comment="Javadoc TreeNode.java V3" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
