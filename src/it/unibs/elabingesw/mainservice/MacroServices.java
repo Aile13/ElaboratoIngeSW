@@ -29,11 +29,10 @@ public class MacroServices {
      * Costruttore di classe, accetta come parametri un oggetto di
      * tipo GestoreUtenti e un oggetto di tipo GestoreGerarchie.
      *
-     * @param gestoreUtenti oggetto di tipo GestoreUtenti
+     * @param gestoreUtenti    oggetto di tipo GestoreUtenti
      * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
-     * @param gestoreScambio oggetto di tipo GestoreScambio
-     * @param gestoreOfferte oggetto di tipo GestoreOfferte
-     *
+     * @param gestoreScambio   oggetto di tipo GestoreScambio
+     * @param gestoreOfferte   oggetto di tipo GestoreOfferte
      * @see GestoreUtenti
      * @see GestoreGerarchie
      * @see GestoreScambio
