@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="approvaltests" type="repository">
+    <properties maven-id="com.approvaltests:approvaltests:18.5.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/approvaltests/approvaltests/18.5.0/approvaltests-18.5.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/approvaltests/approvaltests-util/18.5.0/approvaltests-util-18.5.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/sun/mail/javax.mail/1.6.2/javax.mail-1.6.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

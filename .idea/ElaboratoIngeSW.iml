@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/fileDiProvaCaricamento" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test/it/unibs/elabingesw/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/Dati" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -27,5 +28,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="approvaltests" level="project" />
+    <orderEntry type="library" name="commons.io" level="project" />
   </component>
 </module>

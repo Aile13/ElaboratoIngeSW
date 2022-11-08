@@ -1,0 +1,1559 @@
+Benvenuto nell'app.
+Inserisci username: Errore: utente inserito non presente.
+Si desidera registrarsi come nuovo fruitore?  (S/N): Inserisci username: Inserisci password: Errore: password inserita non valida. Riprovare.
+Inserisci username: Inserisci password: Accesso corretto.
+Procedura di creazione nuovo configuratore avviata.
+Inserisci nuovo username: Inserisci password: Nuovo configuratore aggiunto, ora accedi.
+Inserisci username: Inserisci password: Errore: password inserita non valida. Riprovare.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Elenco delle gerarchie caricate:
+	Nessuna gerarchia presente.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Info parametri di scambio:
+	Info ancora da configurare
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.
+Impossibile procedere per visualizzare offerte aperte.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.
+Impossibile procedere per visualizzare offerte in scambio e chiuse.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Errore: password inserita non valida. Riprovare.
+Inserisci username: Errore: utente inserito non presente.
+Si desidera registrarsi come nuovo fruitore?  (S/N): Procedura di creazione nuovo fruitore avviata.
+Imposta password per pippo: Nuovo fruitore aggiunto, ora accedi.
+Inserisci username: Inserisci password: Errore: password inserita non valida. Riprovare.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Elenco delle gerarchie caricate:
+	Nessuna gerarchia presente.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Info parametri di scambio:
+	Info ancora da configurare
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Procedura di creazione nuovo articolo avviata
+Attenzione: non sono presenti gerarchie per inserire nessun articolo.
+Impossibile inserire una nuova offerta.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> 	Attenzione: non ci sono offerte aperte da ritirare.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> 	Attenzione non ci sono offerte di pippo da visualizzare.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.
+Impossibile procedere per visualizzare offerte aperte.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Attenzione: criteri e tempistiche di scambio non ancora impostati.
+Impossibile procedere con l'operazione di baratto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono proposte di scambio.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono offerte in scambio.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono offerte in scambio. Quindi neanche risposte.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Inserisci nome della categoria radice: Attenzione: non hai inserito alcun carattere.
+Inserisci nome della categoria radice: Inserisci descrizione per la categoria radice: Attenzione: non hai inserito alcun carattere.
+Inserisci descrizione per la categoria radice: Inserire un campo? (S/N): Inserisci il nome del campo: È obbligatorio? (S/N): Attenzione: campo già usato, reinserirne un altro.
+Inserisci il nome del campo: È obbligatorio? (S/N): Attenzione: campo già usato, reinserirne un altro.
+Inserisci il nome del campo: È obbligatorio? (S/N): Inserire un nuovo campo? (S/N): Vuoi aggiungere una sotto-categoria per Bici? (S/N): Vuoi inserire la nuova gerarchia? (S/N): ---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Inserisci nome della categoria radice: Inserisci descrizione per la categoria radice: Inserire un campo? (S/N): Inserisci il nome del campo: È obbligatorio? (S/N): Inserire un nuovo campo? (S/N): Vuoi aggiungere una sotto-categoria per Orologio? (S/N): Inserisci nome della categoria figlio: Inserisci descrizione per la categoria figlio: Inserire un campo? (S/N): Vuoi aggiungere una sotto-categoria per Orologio da parete? (S/N): Vuoi aggiungere un'altra sotto-categoria per Orologio? (S/N): Inserisci nome della categoria figlio: Inserisci descrizione per la categoria figlio: Inserire un campo? (S/N): Inserisci il nome del campo: È obbligatorio? (S/N): Inserire un nuovo campo? (S/N): Vuoi aggiungere una sotto-categoria per Orologio da polso? (S/N): Vuoi aggiungere un'altra sotto-categoria per Orologio? (S/N): Vuoi inserire la nuova gerarchia? (S/N): ---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Inserisci nome della categoria radice: Inserisci descrizione per la categoria radice: Inserire un campo? (S/N): Inserisci il nome del campo: È obbligatorio? (S/N): Inserire un nuovo campo? (S/N): Vuoi aggiungere una sotto-categoria per Bici? (S/N): Vuoi inserire la nuova gerarchia? (S/N): ---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Elenco delle gerarchie caricate:
+Gerarchia Orologio {
+	CategoriaRadice{ nome='Orologio', descrizione='segna l'ora', campiNativi=[Campo{nome='Stato di conservazione', obbligatorio=true}, Campo{nome='Descrizione libera', obbligatorio=false}, Campo{nome='Colore', obbligatorio=false}] }
+		CategoriaFiglio{ nome='Orologio da parete', descrizione='orologio che si appende al muro', campiNativi=[] }
+		CategoriaFiglio{ nome='Orologio da polso', descrizione='orologio che si indossa al polso', campiNativi=[Campo{nome='Sesso', obbligatorio=true}] }
+}
+Gerarchia Bici {
+	CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto', campiNativi=[Campo{nome='Stato di conservazione', obbligatorio=true}, Campo{nome='Descrizione libera', obbligatorio=false}, Campo{nome='Dimensione ruote', obbligatorio=true}] }
+}
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Errore: utente inserito non presente.
+Si desidera registrarsi come nuovo fruitore?  (S/N): Procedura di creazione nuovo fruitore avviata.
+Imposta password per pluto: Nuovo fruitore aggiunto, ora accedi.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Elenco delle gerarchie caricate:
+Gerarchia Orologio {
+	CategoriaRadice{ nome='Orologio', descrizione='segna l'ora' }
+}
+Gerarchia Bici {
+	CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }
+}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Info parametri di scambio:
+	Info ancora da configurare
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> 	Attenzione: non ci sono offerte aperte da ritirare.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> 	Attenzione non ci sono offerte di pluto da visualizzare.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Orologio da parete? (S/N): Attenzione: nessuna offerta aperta per questa categoria foglia.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Bici? (S/N): Attenzione: nessuna offerta aperta per questa categoria foglia.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Attenzione: criteri e tempistiche di scambio non ancora impostati.
+Impossibile procedere con l'operazione di baratto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono proposte di scambio.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono offerte in scambio.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono offerte in scambio. Quindi neanche risposte.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Procedura di creazione nuovo articolo avviata
+Inserisci il titolo dell'articolo: Attenzione: non hai inserito alcun carattere.
+Inserisci il titolo dell'articolo: Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Errore: nessuna gerarchia selezionata, riprovare.
+Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Orologio da parete? (S/N): Vuoi selezionare Orologio da polso? (S/N): Errore: nessuna categoria selezionata, riprovare.
+Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Orologio da parete? (S/N): Vuoi selezionare Orologio da polso? (S/N): Compila campo obbligatorio Stato di conservazione: Attenzione: non hai inserito alcun carattere.
+Compila campo obbligatorio Stato di conservazione: Compilare campo non obbligatorio Descrizione libera ?  (S/N): Compilare campo non obbligatorio Colore ?  (S/N): Compila campo obbligatorio Sesso: Attenzione: non hai inserito alcun carattere.
+Compila campo obbligatorio Sesso: Offerta inserita.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Offerte di pippo:
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=StatoOfferta{statoOffertaEnum=APERTA}}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Errore: nessuna gerarchia selezionata, riprovare.
+Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Orologio da parete? (S/N): Vuoi selezionare Orologio da polso? (S/N): Errore: nessuna categoria selezionata, riprovare.
+Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Orologio da parete? (S/N): Vuoi selezionare Orologio da polso? (S/N): Elenco offerte data la categoria selezionata: 
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=StatoOfferta{statoOffertaEnum=APERTA}}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Orologio da parete? (S/N): Vuoi selezionare Orologio da polso? (S/N): Elenco offerte data la categoria selezionata: 
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=StatoOfferta{statoOffertaEnum=APERTA}}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> 	Attenzione non ci sono offerte di pluto da visualizzare.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Procedura di creazione nuovo articolo avviata
+Inserisci il titolo dell'articolo: Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Bici? (S/N): Compila campo obbligatorio Stato di conservazione: Compilare campo non obbligatorio Descrizione libera ?  (S/N): Compila campo Descrizione libera: Compila campo obbligatorio Dimensione ruote: Offerta inserita.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona quali offerte aperte vuoi ritirare: 
+	Vuoi ritirare l'offerta: Rolex?  (S/N): ---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona quali offerte aperte vuoi ritirare: 
+	Vuoi ritirare l'offerta: Rolex?  (S/N): ---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Procedura di creazione nuovo articolo avviata
+Inserisci il titolo dell'articolo: Errore: nome articolo già usato, riprovare.
+Reinserisci il titolo dell'ariticolo: Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Bici? (S/N): Compila campo obbligatorio Stato di conservazione: Compilare campo non obbligatorio Descrizione libera ?  (S/N): Compila campo Descrizione libera: Compila campo obbligatorio Dimensione ruote: Offerta inserita.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Bici? (S/N): Elenco offerte data la categoria selezionata: 
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=APERTA}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=APERTA}}
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona gerarchia e categoria foglia di interesse per vedere relative offerte in scambio e chiuse
+Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Bici? (S/N): Per categoria: Bici
+Le offerte in scambio:
+	Non ci sono offerte in scambio per la categoria selezionata.
+Le offerte chiuse:
+	Non ci sono offerte chiuse per la categoria selezionata.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Bici? (S/N): Elenco offerte data la categoria selezionata: 
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=APERTA}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=APERTA}}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Attenzione: criteri e tempistiche di scambio non ancora impostati.
+Impossibile procedere con l'operazione di baratto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Procedura settaggio info di scambio avviata
+Settaggio paramentro piazza
+Inserisci nome della città: Attenzione: non hai inserito alcun carattere.
+Inserisci nome della città: Settaggio parametro luoghi di scambio
+Inserisci un luogo dove fare gli scambi: Attenzione: non hai inserito alcun carattere.
+Inserisci un luogo dove fare gli scambi: Vuoi inserire un altro luogo? (S/N): Inserisci un altro luogo dove fare gli scambi: Vuoi inserire un altro luogo? (S/N): Settaggio parametro giorni di scambio
+Vuoi avere MONDAY tra i giorni di scambio? (S/N): Vuoi avere TUESDAY tra i giorni di scambio? (S/N): Vuoi avere WEDNESDAY tra i giorni di scambio? (S/N): Vuoi avere THURSDAY tra i giorni di scambio? (S/N): Vuoi avere FRIDAY tra i giorni di scambio? (S/N): Vuoi avere SATURDAY tra i giorni di scambio? (S/N): Vuoi avere SUNDAY tra i giorni di scambio? (S/N): Errore: nessun giorno della settimana selezionato, riprovare.
+Vuoi avere MONDAY tra i giorni di scambio? (S/N): Vuoi avere TUESDAY tra i giorni di scambio? (S/N): Vuoi avere WEDNESDAY tra i giorni di scambio? (S/N): Vuoi avere THURSDAY tra i giorni di scambio? (S/N): Vuoi avere FRIDAY tra i giorni di scambio? (S/N): Vuoi avere SATURDAY tra i giorni di scambio? (S/N): Vuoi avere SUNDAY tra i giorni di scambio? (S/N): Settaggio parametro intervalli orari
+Inserisci un intervallo orario
+Inserimento orario iniziale
+Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Inserimento orario finale
+Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Errore: orario finale precede o è uguale a orario iniziale. Riprovare.
+Reinserimento di orario finale
+Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Errore: orario finale precede o è uguale a orario iniziale. Riprovare.
+Reinserimento di orario finale
+Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Attenzione minuto inserito non valido: riprovare.
+Inserisci solo i minuti (0 o 30): Vuoi aggiungere un altro intervallo orario? (S/N): Inserisci altro intervallo orario
+Inserimento orario iniziale
+Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Inserimento orario finale
+Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Errore: ultimo intervallo inserito interseca altri intervalli già inseriti. Riprovare
+Inserimento orario iniziale
+Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Inserimento orario finale
+Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Vuoi aggiungere un altro intervallo orario? (S/N): Settaggio parametro scadenza
+Inserisci il massimo numero di giorni consentito per accettazione proposta di scambio: Attenzione: e' richiesto un valore maggiore o uguale a 1
+Inserisci il massimo numero di giorni consentito per accettazione proposta di scambio: Info di scambio impostate correttamente.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Info parametri di scambio:
+Scambio{
+	piazza='Brescia',
+	listaLuoghi=[Piazza Vittoria, Piazza Loggia],
+	giorni=[SATURDAY, SUNDAY]
+	intervalliOrari=[IntervalloOrario{orarioIniziale=09:00, orarioFinale=12:30}, IntervalloOrario{orarioIniziale=15:30, orarioFinale=18:30}],
+	Scadenza=5
+}
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Info parametri di scambio:
+Scambio{
+	piazza='Brescia',
+	listaLuoghi=[Piazza Vittoria, Piazza Loggia],
+	giorni=[SATURDAY, SUNDAY],
+	intervalliOrari=[IntervalloOrario{orarioIniziale=09:00, orarioFinale=12:30}, IntervalloOrario{orarioIniziale=15:30, orarioFinale=18:30}]
+}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona una tua offerta aperta che intendi barattare
+Seleziona l'offerta aperta di interesse: 
+Vuoi selezionare Bici Mountainbike? (S/N): Errore: nessuna offerta selezionata, riprovare.
+Seleziona l'offerta aperta di interesse: 
+Vuoi selezionare Bici Mountainbike? (S/N): Seleziona ora una offerta aperta di medesima categoria e di diverso utente che intedi barattare
+Seleziona l'offerta aperta di interesse: 
+Vuoi selezionare Bici da donna? (S/N): Errore: nessuna offerta selezionata, riprovare.
+Seleziona l'offerta aperta di interesse: 
+Vuoi selezionare Bici da donna? (S/N): Creazione legame tra le offerte selezionate.
+Ora attendi eventuale risposta della controparte.
+Guarda in offerte in scambio per visualizzare eventuale risposta.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> 	Attenzione: non ci sono offerte aperte da ritirare.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Offerte di pippo:
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=StatoOfferta{statoOffertaEnum=RITIRATA}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=ACCOPPIATA}}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Bici? (S/N): Attenzione: nessuna offerta aperta per questa categoria foglia.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona una tua offerta aperta che intendi barattare
+Attenzione: non ci sono offerte aperte da selezionare.
+Impossibile procedere con l'operazione di baratto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono proposte di scambio.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono offerte in scambio.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono offerte in scambio. Quindi neanche risposte.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Vuoi accettare la proposta di scambio per Bici Mountainbike, con Bici da donna? (S/N): ---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Vuoi accettare la proposta di scambio per Bici Mountainbike, con Bici da donna? (S/N): Proposta di scambio accettata, ora compila gli estremi per proporre l'appuntamento.
+Selezionare luogo di incontro
+Vuoi selezionare luogo: Piazza Vittoria? (S/N): Vuoi selezionare luogo: Piazza Loggia? (S/N): Attenzione: selezionare un luogo.
+Selezionare luogo di incontro
+Vuoi selezionare luogo: Piazza Vittoria? (S/N): Vuoi selezionare luogo: Piazza Loggia? (S/N): Selezionare un giorno di incontro
+Vuoi selezionare il giorno: SATURDAY? (S/N): Vuoi selezionare il giorno: SUNDAY? (S/N): Attenzione: selezionare un giorno.
+Selezionare un giorno di incontro
+Vuoi selezionare il giorno: SATURDAY? (S/N): Selezionare un orario di incontro
+Vuoi selezionare l'orario: 09:00? (S/N): Vuoi selezionare l'orario: 09:30? (S/N): Vuoi selezionare l'orario: 10:00? (S/N): Vuoi selezionare l'orario: 10:30? (S/N): Vuoi selezionare l'orario: 11:00? (S/N): Vuoi selezionare l'orario: 11:30? (S/N): Vuoi selezionare l'orario: 12:00? (S/N): Vuoi selezionare l'orario: 12:30? (S/N): Vuoi selezionare l'orario: 15:30? (S/N): Vuoi selezionare l'orario: 16:00? (S/N): Vuoi selezionare l'orario: 16:30? (S/N): Vuoi selezionare l'orario: 17:00? (S/N): Vuoi selezionare l'orario: 17:30? (S/N): Vuoi selezionare l'orario: 18:00? (S/N): Vuoi selezionare l'orario: 18:30? (S/N): Attenzione: selezionare un orario.
+Selezionare un orario di incontro
+Vuoi selezionare l'orario: 09:00? (S/N): Vuoi selezionare l'orario: 09:30? (S/N): Vuoi selezionare l'orario: 10:00? (S/N): Proposta di appuntamento inviata alla controparte.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Proposta di scambio per Bici Mountainbike con Bici da donna:
+	L'utente controparte non ha ancora risposto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona gerarchia e categoria foglia di interesse per vedere relative offerte in scambio e chiuse
+Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Errore: nessuna gerarchia selezionata, riprovare.
+Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Bici? (S/N): Per categoria: Bici
+Le offerte in scambio:
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=IN_SCAMBIO}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=IN_SCAMBIO}}
+Le offerte chiuse:
+	Non ci sono offerte chiuse per la categoria selezionata.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Proposta di scambio per Bici da donna con Bici Mountainbike:
+	Ultima risposta di utente controparte: ListaCampiCompilati{campiCompilati={Campo{nome='Luogo di incontro', obbligatorio=true}=Piazza Loggia, Campo{nome='Data di appuntamento', obbligatorio=true}=SATURDAY, Campo{nome='Ora di appuntamento', obbligatorio=true}=10:00}}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Proposta di scambio per Bici da donna con Bici Mountainbike:
+	Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=IN_SCAMBIO}}
+	Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=IN_SCAMBIO}}
+	Estremi di appuntamento proposto dalla controparte: ListaCampiCompilati{campiCompilati={Campo{nome='Luogo di incontro', obbligatorio=true}=Piazza Loggia, Campo{nome='Data di appuntamento', obbligatorio=true}=SATURDAY, Campo{nome='Ora di appuntamento', obbligatorio=true}=10:00}}
+Vuoi accettare l'appuntamento? (S/N): Proponi altri estremi di appuntamento alla controparte:
+Selezionare luogo di incontro
+Vuoi selezionare luogo: Piazza Vittoria? (S/N): Selezionare un giorno di incontro
+Vuoi selezionare il giorno: SATURDAY? (S/N): Vuoi selezionare il giorno: SUNDAY? (S/N): Selezionare un orario di incontro
+Vuoi selezionare l'orario: 09:00? (S/N): Vuoi selezionare l'orario: 09:30? (S/N): Vuoi selezionare l'orario: 10:00? (S/N): Vuoi selezionare l'orario: 10:30? (S/N): Vuoi selezionare l'orario: 11:00? (S/N): Vuoi selezionare l'orario: 11:30? (S/N): Vuoi selezionare l'orario: 12:00? (S/N): Nuova proposta di appuntamento inivata alla controparte.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Proposta di scambio per Bici Mountainbike con Bici da donna:
+	Ultima risposta di utente controparte: ListaCampiCompilati{campiCompilati={Campo{nome='Luogo di incontro', obbligatorio=true}=Piazza Vittoria, Campo{nome='Data di appuntamento', obbligatorio=true}=SUNDAY, Campo{nome='Ora di appuntamento', obbligatorio=true}=12:00}}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Proposta di scambio per Bici Mountainbike con Bici da donna:
+	Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=IN_SCAMBIO}}
+	Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=IN_SCAMBIO}}
+	Estremi di appuntamento proposto dalla controparte: ListaCampiCompilati{campiCompilati={Campo{nome='Luogo di incontro', obbligatorio=true}=Piazza Vittoria, Campo{nome='Data di appuntamento', obbligatorio=true}=SUNDAY, Campo{nome='Ora di appuntamento', obbligatorio=true}=12:00}}
+Vuoi accettare l'appuntamento? (S/N): Proposta di appuntamento accettata.
+Adesso entrambe le offerte diventano chiuse.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Offerte di pluto:
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=CHIUSA}}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona gerarchia e categoria foglia di interesse per vedere relative offerte in scambio e chiuse
+Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Orologio da parete? (S/N): Per categoria: Orologio da parete
+Le offerte in scambio:
+	Non ci sono offerte in scambio per la categoria selezionata.
+Le offerte chiuse:
+	Non ci sono offerte chiuse per la categoria selezionata.
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Seleziona gerarchia e categoria foglia di interesse per vedere relative offerte in scambio e chiuse
+Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
+Vuoi selezionare Bici? (S/N): Per categoria: Bici
+Le offerte in scambio:
+	Non ci sono offerte in scambio per la categoria selezionata.
+Le offerte chiuse:
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=CHIUSA}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=CHIUSA}}
+---------------------------------
+Menu per Configuratore
+---------------------------------
+1	Crea nuova gerarchia
+2	Visualizza gerarchie
+3	Imposta info di scambio
+4	Visualizza info di scambio
+5	Visualizza offerte aperte di categoria foglia
+6	Visualizza offerte in scambio e chiuse
+7	Carica dati da file
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Benvenuto nell'app.
+Inserisci username: Inserisci password: Accesso corretto.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Non ci sono offerte in scambio. Quindi neanche risposte.
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> Offerte di pippo:
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=StatoOfferta{statoOffertaEnum=RITIRATA}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=StatoOfferta{statoOffertaEnum=CHIUSA}}
+---------------------------------
+Menu per Fruitore
+---------------------------------
+1	Visualizza gerarchie
+2	Visualizza info di scambio
+3	Crea nuova offerta
+4	Ritira una o più offerte
+5	Visualizza tutte le tue offerte
+6	Visualizza offerte aperte di categoria foglia
+7	Seleziona un'altra offerta aperta per barattare
+8	Visualizza proposte di scambio da altri utenti
+9	Visualizza offerte in scambio
+10	Visualizza ultime risposte per offerte in scambio
+
+0	Esci
+
+Digita il numero dell'opzione desiderata -> 
