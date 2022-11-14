@@ -7,7 +7,7 @@ import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreOfferte;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
 import it.unibs.elabingesw.businesslogic.offerta.ListaCampiCompilati;
-import it.unibs.elabingesw.businesslogic.offerta.Offerta;
+import it.unibs.elabingesw.businesslogic.offerta.OffertaContext;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
@@ -40,7 +40,6 @@ public class OfferteService {
      * @see GestoreGerarchie
      */
     public OfferteService(GestoreOfferte gestoreOfferte, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
-
         this.gestoreOfferte = gestoreOfferte;
         this.gestoreGerarchie = gestoreGerarchie;
         this.gestoreScambio = gestoreScambio;
@@ -60,7 +59,7 @@ public class OfferteService {
             var listaCampiCompilati = new ListaCampiCompilati(gerarchiaSelezionata, categoriaFogliaSelezionata);
             ListaCampiCompilatiService.compila(listaCampiCompilati);
 
-            this.gestoreOfferte.inserisciNuovaOfferta(new Offerta(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata));
+            this.gestoreOfferte.inserisciNuovaOfferta(new OffertaContext(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata));
             System.out.println("Offerta inserita.");
         } else {
             System.out.println("Attenzione: non sono presenti gerarchie per inserire nessun articolo.");
@@ -188,17 +187,17 @@ public class OfferteService {
 
     /**
      * Metodo che chiede all'utente di selezionare l'offerta aperta
-     * di interesse scegliendola tra le offerte contenute dentro la
+     * d'interesse scegliendola tra le offerte contenute dentro la
      * lista passata per parametro.
      *
      * @return l'offerta aperta
      * @see GestoreOfferte
      */
-    private Offerta chiediOffertaByList(List<Offerta> listaOfferte) {
+    private OffertaContext chiediOffertaByList(List<OffertaContext> listaOfferte) {
         System.out.println("Seleziona l'offerta aperta di interesse: ");
-        for (Offerta offerta : listaOfferte) {
-            if (InputDati.yesOrNo("Vuoi selezionare " + offerta.getNomeArticolo() + "?")) {
-                return offerta;
+        for (OffertaContext offertaContext : listaOfferte) {
+            if (InputDati.yesOrNo("Vuoi selezionare " + offertaContext.getNomeArticolo() + "?")) {
+                return offertaContext;
             }
         }
         System.out.println("Errore: nessuna offerta selezionata, riprovare.");
@@ -223,9 +222,10 @@ public class OfferteService {
                 System.out.println("Attenzione: non ci sono offerte aperte da selezionare.");
                 System.out.println("Impossibile procedere con l'operazione di baratto.");
             } else {
-                Offerta offertaDaBarattareA = chiediOffertaByList(listaOfferteAperteUtente);
+                OffertaContext offertaContextDaBarattareA = chiediOffertaByList(listaOfferteAperteUtente);
+                //todo aspetta a correggere lo spel di msg.
                 System.out.println("Seleziona ora una offerta aperta di medesima categoria " + "e di diverso utente che intedi barattare");
-                var listaOffAperteNonUtenteStessaCat = this.gestoreOfferte.getOfferteAperteByCategoriaFogliaAndExcludeUser(offertaDaBarattareA.getCategoriaDiAppartenenza(), utente);
+                var listaOffAperteNonUtenteStessaCat = this.gestoreOfferte.getOfferteAperteByCategoriaFogliaAndExcludeUser(offertaContextDaBarattareA.getCategoriaDiAppartenenza(), utente);
                 if (listaOffAperteNonUtenteStessaCat.isEmpty()) {
                     System.out.println("Attenzione: non ci sono altre offerte da selezionare disponibili.");
                     System.out.println("Impossibile procedere con l'operazione di baratto.");
@@ -235,24 +235,24 @@ public class OfferteService {
                     System.out.println("Ora attendi eventuale risposta della controparte.");
                     System.out.println("Guarda in offerte in scambio per visualizzare eventuale risposta.");
 
-                    offertaDaBarattareA.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
-                    offertaDaBarattareB.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
+//                    offertaContextDaBarattareA.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
+//                    offertaDaBarattareB.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
 
-                    offertaDaBarattareA.creaLegameEModificaStatiConOfferta(offertaDaBarattareB);
+                    offertaContextDaBarattareA.creaLegameEModificaStatiConOffertaEInfoScambio(offertaDaBarattareB , this.gestoreScambio.getInfoDiScambio());
                 }
             }
         }
     }
 
     public void visualizzaProposteDiScambio() {
-        gestoreOfferte.aggiornaStatoDelleOfferte();
+        //gestoreOfferte.aggiornaStatoDelleOfferte();
         var offerteSelezionate = this.gestoreOfferte.getOfferteSelezionateByUser(utente);
         if (offerteSelezionate.isEmpty()) {
             System.out.println("Non ci sono proposte di scambio.");
         } else {
-            for (Offerta offertaSel : offerteSelezionate) {
-                if (InputDati.yesOrNo("Vuoi accettare la proposta di scambio per " + offertaSel.getOffertaAccoppiata().getNomeArticolo() + ", con " + offertaSel.getNomeArticolo() + "?")) {
-                    accettaPropostaDiScambio(offertaSel);
+            for (OffertaContext offertaContextSel : offerteSelezionate) {
+                if (InputDati.yesOrNo("Vuoi accettare la proposta di scambio per " + offertaContextSel.getOffertaAssociata().getNomeArticolo() + ", con " + offertaContextSel.getNomeArticolo() + "?")) {
+                    accettaPropostaDiScambio(offertaContextSel);
                     System.out.println("Proposta di appuntamento inviata alla controparte.");
                 }
             }
@@ -265,11 +265,11 @@ public class OfferteService {
      * L'utente poi dovrà inserire gli estremi per proporre l'ap-
      * puntamento.
      *
-     * @param offertaSel l'offerta selezionata
+     * @param offertaContextSel l'offerta selezionata
      */
-    private void accettaPropostaDiScambio(Offerta offertaSel) {
+    private void accettaPropostaDiScambio(OffertaContext offertaContextSel) {
         System.out.println("Proposta di scambio accettata, ora compila gli estremi per proporre l'appuntamento.");
-        offertaSel.accettaPropostaDiScambioAssociata(chiediListaCampiAppuntamento());
+        offertaContextSel.accettaPropostaDiScambioAssociata(chiediListaCampiAppuntamento());
     }
 
     /**
@@ -340,24 +340,24 @@ public class OfferteService {
      * @see GestoreOfferte
      */
     public void visualizzaOfferteInScambio() {
-        List<Offerta> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
+        List<OffertaContext> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
         if (offerte.isEmpty()) {
             System.out.println("Non ci sono offerte in scambio.");
         } else {
-            for (Offerta offertaInScambio : offerte) {
-                System.out.println("Proposta di scambio per " + offertaInScambio.getOffertaAccoppiata().getNomeArticolo() + " con " + offertaInScambio.getNomeArticolo() + ":");
-                System.out.println("\t" + offertaInScambio.getOffertaAccoppiata());
-                System.out.println("\t" + offertaInScambio);
+            for (OffertaContext offertaContextInScambio : offerte) {
+                System.out.println("Proposta di scambio per " + offertaContextInScambio.getOffertaAssociata().getNomeArticolo() + " con " + offertaContextInScambio.getNomeArticolo() + ":");
+                System.out.println("\t" + offertaContextInScambio.getOffertaAssociata());
+                System.out.println("\t" + offertaContextInScambio);
 
-                if (!Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
-                    System.out.println("\tEstremi di appuntamento proposto dalla controparte: " + offertaInScambio.getListaCampiAppuntamento());
+                if (!Objects.isNull(offertaContextInScambio.getListaCampiAppuntamento())) {
+                    System.out.println("\tEstremi di appuntamento proposto dalla controparte: " + offertaContextInScambio.getListaCampiAppuntamento());
                     if (InputDati.yesOrNo("Vuoi accettare l'appuntamento?")) {
-                        accettaAppuntamento(offertaInScambio);
+                        accettaAppuntamento(offertaContextInScambio);
                         System.out.println("Proposta di appuntamento accettata.");
                         System.out.println("Adesso entrambe le offerte diventano chiuse.");
                     } else {
                         System.out.println("Proponi altri estremi di appuntamento alla controparte:");
-                        proponiAltroAppuntamento(offertaInScambio);
+                        proponiAltroAppuntamento(offertaContextInScambio);
                         System.out.println("Nuova proposta di appuntamento inivata alla controparte.");
                     }
                 } else {
@@ -371,26 +371,26 @@ public class OfferteService {
      * Metodo che propone un altro appuntamento per poter scambiare
      * un'offerta che viene passata per parametro.
      *
-     * @param offertaInScambio l'offerta che si sta scambiando
+     * @param offertaContextInScambio l'offerta che si sta scambiando
      */
-    private void proponiAltroAppuntamento(Offerta offertaInScambio) {
+    private void proponiAltroAppuntamento(OffertaContext offertaContextInScambio) {
         var nuoviEstremiAppuntamento = chiediListaCampiAppuntamento();
-        while (nuoviEstremiAppuntamento.equals(offertaInScambio.getListaCampiAppuntamento())) {
+        while (nuoviEstremiAppuntamento.equals(offertaContextInScambio.getListaCampiAppuntamento())) {
             System.out.println("Attenzione estremi appuntamento coincidenti con l'appuntamento già proposto.");
             System.out.println("Reinserire altri estremi nel nuovo appuntamento.");
             nuoviEstremiAppuntamento = chiediListaCampiAppuntamento();
         }
-        offertaInScambio.proponiAltroAppuntamento(nuoviEstremiAppuntamento);
+        offertaContextInScambio.proponiAltroAppuntamento(nuoviEstremiAppuntamento);
     }
 
     /**
      * Metodo che permette all'utente di accettare una proposta
      * di appuntamento per l'offerta passata per parametro.
      *
-     * @param offertaInScambio l'offerta che si sta scambiando
+     * @param offertaContextInScambio l'offerta che si sta scambiando
      */
-    private void accettaAppuntamento(Offerta offertaInScambio) {
-        offertaInScambio.accettaAppuntamento();
+    private void accettaAppuntamento(OffertaContext offertaContextInScambio) {
+        offertaContextInScambio.accettaAppuntamento();
     }
 
     /**
@@ -400,14 +400,14 @@ public class OfferteService {
      * @see GestoreOfferte
      */
     public void visualizzaUltimeRispostePerOfferteInScambio() {
-        List<Offerta> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
+        List<OffertaContext> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
         if (offerte.isEmpty()) {
             System.out.println("Non ci sono offerte in scambio. Quindi neanche risposte.");
         } else {
-            for (Offerta offertaInScambio : offerte) {
-                System.out.println("Proposta di scambio per " + offertaInScambio.getOffertaAccoppiata().getNomeArticolo() + " con " + offertaInScambio.getNomeArticolo() + ":");
-                if (!Objects.isNull(offertaInScambio.getListaCampiAppuntamento())) {
-                    System.out.println("\tUltima risposta di utente controparte: " + offertaInScambio.getListaCampiAppuntamento());
+            for (OffertaContext offertaContextInScambio : offerte) {
+                System.out.println("Proposta di scambio per " + offertaContextInScambio.getOffertaAssociata().getNomeArticolo() + " con " + offertaContextInScambio.getNomeArticolo() + ":");
+                if (!Objects.isNull(offertaContextInScambio.getListaCampiAppuntamento())) {
+                    System.out.println("\tUltima risposta di utente controparte: " + offertaContextInScambio.getListaCampiAppuntamento());
                 } else {
                     System.out.println("\tL'utente controparte non ha ancora risposto.");
                 }

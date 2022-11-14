@@ -148,11 +148,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -167,11 +167,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -186,11 +186,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -200,17 +200,17 @@ Menu per Fruitore
 Digita il numero dell'opzione desiderata -> 3
 Procedura di creazione nuovo articolo avviata
 Attenzione: non sono presenti gerarchie per inserire nessun articolo.
-Impossibile inserire una nuova offerta.
+Impossibile inserire una nuova offertaContext.
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -224,11 +224,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -242,11 +242,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -261,11 +261,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -280,11 +280,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -298,11 +298,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -316,11 +316,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -334,11 +334,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -503,11 +503,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -527,11 +527,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -546,11 +546,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -564,11 +564,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -582,11 +582,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -598,17 +598,17 @@ Seleziona la gerarchia che contiene la categoria foglia di interesse:
 Vuoi selezionare Orologio? (S/N): s
 Seleziona la categoria foglia di interesse:
 Vuoi selezionare Orologio da parete? (S/N): s
-Attenzione: nessuna offerta aperta per questa categoria foglia.
+Attenzione: nessuna offertaContext aperta per questa categoria foglia.
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -621,17 +621,17 @@ Vuoi selezionare Orologio? (S/N): n
 Vuoi selezionare Bici? (S/N): s
 Seleziona la categoria foglia di interesse:
 Vuoi selezionare Bici? (S/N): s
-Attenzione: nessuna offerta aperta per questa categoria foglia.
+Attenzione: nessuna offertaContext aperta per questa categoria foglia.
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -646,11 +646,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -664,11 +664,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -682,11 +682,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -700,11 +700,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -727,11 +727,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -770,11 +770,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -789,11 +789,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -821,11 +821,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -848,11 +848,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -872,11 +872,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -890,11 +890,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -919,11 +919,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -946,11 +946,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -959,17 +959,17 @@ Menu per Fruitore
 
 Digita il numero dell'opzione desiderata -> 4
 Seleziona quali offerte aperte vuoi ritirare:
-	Vuoi ritirare l'offerta: Rolex?  (S/N): n
+	Vuoi ritirare l'offertaContext: Rolex?  (S/N): n
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -978,17 +978,17 @@ Menu per Fruitore
 
 Digita il numero dell'opzione desiderata -> 4
 Seleziona quali offerte aperte vuoi ritirare:
-	Vuoi ritirare l'offerta: Rolex?  (S/N): s
+	Vuoi ritirare l'offertaContext: Rolex?  (S/N): s
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1015,11 +1015,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1113,11 +1113,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1138,11 +1138,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1157,11 +1157,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1311,11 +1311,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1335,11 +1335,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1347,17 +1347,17 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> 7
-Seleziona una tua offerta aperta che intendi barattare
-Seleziona l'offerta aperta di interesse:
+Seleziona una tua offertaContext aperta che intendi barattare
+Seleziona l'offertaContext aperta di interesse:
 Vuoi selezionare Bici Mountainbike? (S/N): n
-Errore: nessuna offerta selezionata, riprovare.
-Seleziona l'offerta aperta di interesse:
+Errore: nessuna offertaContext selezionata, riprovare.
+Seleziona l'offertaContext aperta di interesse:
 Vuoi selezionare Bici Mountainbike? (S/N): s
-Seleziona ora una offerta aperta di medesima categoria e di diverso utente che intedi barattare
-Seleziona l'offerta aperta di interesse:
+Seleziona ora una offertaContext aperta di medesima categoria e di diverso utente che intedi barattare
+Seleziona l'offertaContext aperta di interesse:
 Vuoi selezionare Bici da donna? (S/N): n
-Errore: nessuna offerta selezionata, riprovare.
-Seleziona l'offerta aperta di interesse:
+Errore: nessuna offertaContext selezionata, riprovare.
+Seleziona l'offertaContext aperta di interesse:
 Vuoi selezionare Bici da donna? (S/N): s
 Creazione legame tra le offerte selezionate.
 Ora attendi eventuale risposta della controparte.
@@ -1367,11 +1367,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1385,11 +1385,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1405,11 +1405,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1422,17 +1422,17 @@ Vuoi selezionare Orologio? (S/N): n
 Vuoi selezionare Bici? (S/N): s
 Seleziona la categoria foglia di interesse:
 Vuoi selezionare Bici? (S/N): s
-Attenzione: nessuna offerta aperta per questa categoria foglia.
+Attenzione: nessuna offertaContext aperta per questa categoria foglia.
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1440,7 +1440,7 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> 7
-Seleziona una tua offerta aperta che intendi barattare
+Seleziona una tua offertaContext aperta che intendi barattare
 Attenzione: non ci sono offerte aperte da selezionare.
 Impossibile procedere con l'operazione di baratto.
 ---------------------------------
@@ -1448,11 +1448,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1466,11 +1466,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1484,11 +1484,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1502,11 +1502,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1529,11 +1529,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1547,11 +1547,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1601,11 +1601,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1620,11 +1620,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1701,11 +1701,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1720,11 +1720,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1757,11 +1757,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1784,11 +1784,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1803,11 +1803,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1827,11 +1827,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1846,11 +1846,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1947,11 +1947,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1965,11 +1965,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio
@@ -1985,11 +1985,11 @@ Menu per Fruitore
 ---------------------------------
 1	Visualizza gerarchie
 2	Visualizza info di scambio
-3	Crea nuova offerta
+3	Crea nuova offertaContext
 4	Ritira una o più offerte
 5	Visualizza tutte le tue offerte
 6	Visualizza offerte aperte di categoria foglia
-7	Seleziona un'altra offerta aperta per barattare
+7	Seleziona un'altra offertaContext aperta per barattare
 8	Visualizza proposte di scambio da altri utenti
 9	Visualizza offerte in scambio
 10	Visualizza ultime risposte per offerte in scambio

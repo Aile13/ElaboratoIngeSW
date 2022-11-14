@@ -35,7 +35,7 @@ class StatoOfferta implements Serializable {
     private LocalDate dataCreazioneStato;
     private Scambio scambio;
 
-    private Offerta altraOfferta;
+    private OffertaContext altraOffertaContext;
     private ListaCampiCompilati listaCampiAppuntamento;
 
     /**
@@ -150,11 +150,11 @@ class StatoOfferta implements Serializable {
      * come parametro.
      * Infine si annota la data del passaggio di stato.
      *
-     * @param offertaDaBarattareB l'oggetto di tipo offerta
+     * @param offertaContextDaBarattareB l'oggetto di tipo offerta
      */
-    public void setOffertaAccoppiataCon(Offerta offertaDaBarattareB) {
+    public void setOffertaAccoppiataCon(OffertaContext offertaContextDaBarattareB) {
         this.statoOffertaEnum = StatoOffertaEnum.ACCOPPIATA;
-        this.altraOfferta = offertaDaBarattareB;
+        this.altraOffertaContext = offertaContextDaBarattareB;
         impostaData();
     }
 
@@ -169,11 +169,11 @@ class StatoOfferta implements Serializable {
      * come parametro.
      * Infine si annota la data del passaggio di stato.
      *
-     * @param offertaDaBarattareA l'oggetto di tipo offerta
+     * @param offertaContextDaBarattareA l'oggetto di tipo offerta
      */
-    public void setOffertaSelezionataCon(Offerta offertaDaBarattareA) {
+    public void setOffertaSelezionataCon(OffertaContext offertaContextDaBarattareA) {
         this.statoOffertaEnum = StatoOffertaEnum.SELEZIONATA;
-        this.altraOfferta = offertaDaBarattareA;
+        this.altraOffertaContext = offertaContextDaBarattareA;
         impostaData();
     }
 
@@ -204,7 +204,7 @@ class StatoOfferta implements Serializable {
         if (statoOffertaEnum == StatoOffertaEnum.ACCOPPIATA || statoOffertaEnum == StatoOffertaEnum.SELEZIONATA || statoOffertaEnum == StatoOffertaEnum.IN_SCAMBIO) {
             if (LocalDate.now().isAfter(dataCreazioneStato.plusDays(scambio.getScadenza()))) {
                 this.statoOffertaEnum = StatoOffertaEnum.APERTA;
-                this.altraOfferta = null;
+                this.altraOffertaContext = null;
                 this.listaCampiAppuntamento = null;
                 impostaData();
             }
@@ -241,8 +241,9 @@ class StatoOfferta implements Serializable {
      *
      * @return un'offerta accoppiata
      */
-    public Offerta getOffertaAccoppiata() {
-        return altraOfferta;
+    //todo rifare la doc
+    public OffertaContext getOffertaAssociata() {
+        return altraOffertaContext;
     }
 
     /**
@@ -261,12 +262,12 @@ class StatoOfferta implements Serializable {
      */
     public void accettaPropostaDiScambioAssociata(ListaCampiCompilati listaCampiAppuntamento) {
         this.statoOffertaEnum = StatoOffertaEnum.IN_SCAMBIO; // B
-        this.altraOfferta // A
+        this.altraOffertaContext // A
                 .getStatoOfferta().statoOffertaEnum = StatoOffertaEnum.IN_SCAMBIO;
-        this.altraOfferta.getStatoOfferta().setListaCampiAppuntamento(listaCampiAppuntamento);
+        this.altraOffertaContext.getStatoOfferta().setListaCampiAppuntamento(listaCampiAppuntamento);
 
         this.impostaData();
-        this.altraOfferta.getStatoOfferta().impostaData();
+        this.altraOffertaContext.getStatoOfferta().impostaData();
     }
 
     /**
@@ -299,9 +300,9 @@ class StatoOfferta implements Serializable {
         this.statoOffertaEnum = StatoOffertaEnum.CHIUSA;
         impostaData();
 
-        this.getOffertaAccoppiata().getStatoOfferta().statoOffertaEnum = StatoOffertaEnum.CHIUSA;
-        this.altraOfferta.getStatoOfferta().setListaCampiAppuntamento(this.getListaCampiAppuntamento());
-        this.getOffertaAccoppiata().getStatoOfferta().impostaData();
+        this.getOffertaAssociata().getStatoOfferta().statoOffertaEnum = StatoOffertaEnum.CHIUSA;
+        this.altraOffertaContext.getStatoOfferta().setListaCampiAppuntamento(this.getListaCampiAppuntamento());
+        this.getOffertaAssociata().getStatoOfferta().impostaData();
     }
 
     /**
@@ -323,11 +324,11 @@ class StatoOfferta implements Serializable {
      * @param listaCampiAppuntamento la lista dei campi che definiscono un appuntamento
      */
     public void proponiAltroAppuntamento(ListaCampiCompilati listaCampiAppuntamento) {
-        this.altraOfferta.getStatoOfferta().setListaCampiAppuntamento(listaCampiAppuntamento);
+        this.altraOffertaContext.getStatoOfferta().setListaCampiAppuntamento(listaCampiAppuntamento);
         this.setListaCampiAppuntamento(null);
 
         this.impostaData();
-        this.altraOfferta.getStatoOfferta().impostaData();
+        this.altraOffertaContext.getStatoOfferta().impostaData();
     }
 
     /**

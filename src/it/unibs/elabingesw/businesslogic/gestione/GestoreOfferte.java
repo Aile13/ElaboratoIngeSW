@@ -1,7 +1,7 @@
 package it.unibs.elabingesw.businesslogic.gestione;
 
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
-import it.unibs.elabingesw.businesslogic.offerta.Offerta;
+import it.unibs.elabingesw.businesslogic.offerta.OffertaContext;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class GestoreOfferte extends GestoreGenerico<Offerta> {
+public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
     private static final String FILE_NAME = "Offerte";
 
     /**
@@ -48,7 +48,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * il suo stato rispetto alla logica del sistema.
      */
     public void aggiornaStatoDelleOfferte() {
-        this.getListaElementi().forEach(Offerta::aggiornaStatoOfferta);
+        this.getListaElementi().forEach(OffertaContext::aggiornaStatoOfferta);
     }
 
     /**
@@ -87,10 +87,10 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * associati alle offerte già presenti in lista.
      * Post condizione: quella del metodo chiamato.
      *
-     * @param offerta l'oggetto di tipo Offerta
+     * @param offertaContext l'oggetto di tipo Offerta
      */
-    public void inserisciNuovaOfferta(Offerta offerta) {
-        super.inserisciElemento(offerta);
+    public void inserisciNuovaOfferta(OffertaContext offertaContext) {
+        super.inserisciElemento(offertaContext);
     }
 
     /**
@@ -107,7 +107,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @param utente l'oggetto di tipo Utente
      * @return la lista delle offerte
      */
-    public List<Offerta> getOfferteByUser(Utente utente) {
+    public List<OffertaContext> getOfferteByUser(Utente utente) {
         return getListaElementi().stream().filter(offerta -> offerta.isStessoAutore(utente)).toList();
     }
 
@@ -126,8 +126,8 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @param utente l'oggetto di tipo Utente
      * @return la lista delle offerte aperte
      */
-    public List<Offerta> getOfferteAperteByUser(Utente utente) {
-        return getOfferteByUser(utente).stream().filter(Offerta::isOffertaAperta).toList();
+    public List<OffertaContext> getOfferteAperteByUser(Utente utente) {
+        return getOfferteByUser(utente).stream().filter(OffertaContext::isOffertaAperta).toList();
     }
 
     /**
@@ -146,8 +146,8 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @param categoriaFoglia l'oggetto di tipo Categoria
      * @return la lista delle offerte aperte
      */
-    public List<Offerta> getOfferteAperteByCategoriaFoglia(Categoria categoriaFoglia) {
-        return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(Offerta::isOffertaAperta).toList();
+    public List<OffertaContext> getOfferteAperteByCategoriaFoglia(Categoria categoriaFoglia) {
+        return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(OffertaContext::isOffertaAperta).toList();
     }
 
     /**
@@ -169,7 +169,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @param utente          l'oggetto di tipo Utente
      * @return la lista delle offerte aperte
      */
-    public List<Offerta> getOfferteAperteByCategoriaFogliaAndExcludeUser(Categoria categoriaFoglia, Utente utente) {
+    public List<OffertaContext> getOfferteAperteByCategoriaFogliaAndExcludeUser(Categoria categoriaFoglia, Utente utente) {
         return getOfferteAperteByCategoriaFoglia(categoriaFoglia).stream().filter(offerta -> !offerta.isStessoAutore(utente)).toList();
     }
 
@@ -188,8 +188,8 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @param utente l'oggetto di tipo Utente
      * @return la lista delle offerte selezionate
      */
-    public List<Offerta> getOfferteSelezionateByUser(Utente utente) {
-        return getOfferteByUser(utente).stream().filter(Offerta::isOffertaSelezionata).toList();
+    public List<OffertaContext> getOfferteSelezionateByUser(Utente utente) {
+        return getOfferteByUser(utente).stream().filter(OffertaContext::isOffertaSelezionata).toList();
     }
 
     /**
@@ -207,8 +207,8 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @param utente l'oggetto di tipo Utente
      * @return la lista delle offerte in scambio
      */
-    public List<Offerta> getOfferteInScambioByUser(Utente utente) {
-        return getOfferteByUser(utente).stream().filter(Offerta::isOffertaInScambio).toList();
+    public List<OffertaContext> getOfferteInScambioByUser(Utente utente) {
+        return getOfferteByUser(utente).stream().filter(OffertaContext::isOffertaInScambio).toList();
     }
 
     /**
@@ -226,8 +226,8 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @param categoriaFoglia l'oggetto di tipo Categoria
      * @return la lista delle offerte in scambio
      */
-    public List<Offerta> getOfferteInScambioByCategoriaFoglia(Categoria categoriaFoglia) {
-        return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(Offerta::isOffertaInScambio).toList();
+    public List<OffertaContext> getOfferteInScambioByCategoriaFoglia(Categoria categoriaFoglia) {
+        return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(OffertaContext::isOffertaInScambio).toList();
     }
 
     /**
@@ -245,7 +245,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @param categoriaFoglia l'oggetto di tipo Categoria
      * @return la lista delle offerte
      */
-    private List<Offerta> getOfferteByCategoriaFoglia(Categoria categoriaFoglia) {
+    private List<OffertaContext> getOfferteByCategoriaFoglia(Categoria categoriaFoglia) {
         return getListaElementi().stream().filter(offerta -> offerta.appartieneA(categoriaFoglia)).toList();
     }
 
@@ -264,7 +264,7 @@ public class GestoreOfferte extends GestoreGenerico<Offerta> {
      * @param categoriaFoglia l'oggetto di tipo Categoria
      * @return la lista delle offerte chiuse
      */
-    public List<Offerta> getOfferteChiuseByCategoriaFoglia(Categoria categoriaFoglia) {
-        return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(Offerta::isOffertaChiusa).toList();
+    public List<OffertaContext> getOfferteChiuseByCategoriaFoglia(Categoria categoriaFoglia) {
+        return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(OffertaContext::isOffertaChiusa).toList();
     }
 }

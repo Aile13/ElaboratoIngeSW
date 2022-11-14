@@ -2,6 +2,7 @@ package it.unibs.elabingesw.businesslogic.offerta;
 
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
+import it.unibs.elabingesw.businesslogic.offerta.state.ApertaState;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 
@@ -17,12 +18,14 @@ import java.util.Optional;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class Offerta implements Manageable, Serializable {
+public final class OffertaContext implements Manageable, Serializable {
     private final String nomeArticolo;
     private final Utente autore;
     private final Categoria categoriaDiAppartenenza;
     private final ListaCampiCompilati listaCampiCompilati;
     private final StatoOfferta statoOfferta;
+
+    private OffertaState offertaState;
 
     /**
      * Costruttore di classe, accetta come parametri il nome dell'
@@ -46,12 +49,17 @@ public class Offerta implements Manageable, Serializable {
      * @param listaCampiCompilati     lista dei campi con associato eventuale valore compilato
      * @param categoriaDiAppartenenza categoria foglia a cui l'articolo appartiene
      */
-    public Offerta(String nomeArticolo, Utente autore, ListaCampiCompilati listaCampiCompilati, Categoria categoriaDiAppartenenza) {
+    public OffertaContext(String nomeArticolo, Utente autore, ListaCampiCompilati listaCampiCompilati, Categoria categoriaDiAppartenenza) {
         this.nomeArticolo = nomeArticolo;
         this.autore = autore;
         this.categoriaDiAppartenenza = categoriaDiAppartenenza;
         this.listaCampiCompilati = listaCampiCompilati;
         this.statoOfferta = new StatoOfferta();
+        offertaState = new ApertaState();
+    }
+
+    public void setOffertaState(OffertaState offertaState) {
+        this.offertaState = offertaState;
     }
 
     /**
@@ -66,10 +74,52 @@ public class Offerta implements Manageable, Serializable {
     /**
      * Metodo getter.
      *
+     * @return il nome dell'articolo
+     */
+    public String getNomeArticolo() {
+        return nomeArticolo;
+    }
+
+    /**
+     * Metodo getter.
+     *
      * @return lo stato dell'offerta
      */
     StatoOfferta getStatoOfferta() {
         return statoOfferta;
+    }
+
+    public OffertaState getOffertaState() {
+        return offertaState;
+    }
+
+    /**
+     * Metodo getter.
+     * <p>
+     * Precondizione: assumo che questo metodo venga
+     * chiamato solo quando l'offerta è in stato di
+     * offerta selezionata. E quindi si vuole conoscere
+     * l'offerte accoppiata a essa.
+     *
+     * @return l'offerta accoppiata
+     */
+    public OffertaContext getOffertaAssociata() {
+        return offertaState.getOffertaAssociata(this);
+    }
+
+    /**
+     * Metodo getter.
+     * <p>
+     * Precondizione: assumo che il metodo in questione
+     * venga invocato solo quando l'offerta è nello
+     * stato di offerta in scambio.
+     * Post condizione: quella del metodo chiamato.
+     *
+     * @return lo lista dei campi di un appuntamento
+     */
+    public ListaCampiCompilati getListaCampiAppuntamento() {
+        //return statoOfferta.getListaCampiAppuntamento();
+        return this.offertaState.getListaCampiAppuntamento(this);
     }
 
     /**
@@ -94,7 +144,7 @@ public class Offerta implements Manageable, Serializable {
      * FALSE se l'offerta non è aperta
      */
     public boolean isOffertaAperta() {
-        return this.statoOfferta.isAperta();
+        return this.offertaState.isOffertaAperta(this);
     }
 
     /**
@@ -118,7 +168,7 @@ public class Offerta implements Manageable, Serializable {
      * stato in RITIRATA.
      */
     public void ritiraOfferta() {
-        this.statoOfferta.ritiraOfferta();
+        this.offertaState.ritiraOfferta(this);
     }
 
     /**
@@ -129,16 +179,7 @@ public class Offerta implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Offerta{" + "nomeArticolo='" + nomeArticolo + '\'' + ", autore=" + autore + ", listaCampiCompilati=" + listaCampiCompilati + ", categoriaDiAppartenenza=" + categoriaDiAppartenenza.toStringRidotto() + ", statoOfferta=" + statoOfferta + '}';
-    }
-
-    /**
-     * Metodo getter.
-     *
-     * @return il nome dell'articolo
-     */
-    public String getNomeArticolo() {
-        return nomeArticolo;
+        return "Offerta{" + "nomeArticolo='" + nomeArticolo + '\'' + ", autore=" + autore + ", listaCampiCompilati=" + listaCampiCompilati + ", categoriaDiAppartenenza=" + categoriaDiAppartenenza.toStringRidotto() + ", statoOfferta=" + offertaState + '}';
     }
 
     /**
@@ -171,11 +212,11 @@ public class Offerta implements Manageable, Serializable {
      * E abbiamo che l'offerta che ha chiamato il metodo cambia di stato, diventando
      * offerta accoppiata. Mentre l'offerta parametro va nello stato di offerta selezionata.
      *
-     * @param offertaDaBarattareB oggetto di tipo Offerta
+     * @param offertaContextDaBarattareB oggetto di tipo Offerta
+     * @param infoDiScambio
      */
-    public void creaLegameEModificaStatiConOfferta(Offerta offertaDaBarattareB) {
-        this.statoOfferta.setOffertaAccoppiataCon(offertaDaBarattareB);
-        offertaDaBarattareB.statoOfferta.setOffertaSelezionataCon(this);
+    public void creaLegameEModificaStatiConOffertaEInfoScambio(OffertaContext offertaContextDaBarattareB, Optional<Scambio> infoDiScambio) {
+        this.offertaState.creaLegameEModificaStatiConOffertaEInfoScambio(this, offertaContextDaBarattareB, infoDiScambio.orElse(null));
     }
 
     /**
@@ -184,7 +225,8 @@ public class Offerta implements Manageable, Serializable {
      * Post condizione: quella del metodo chiamato.
      */
     public void aggiornaStatoOfferta() {
-        this.statoOfferta.aggiornaStatoOfferta();
+        //this.statoOfferta.aggiornaStatoOfferta();
+        this.offertaState.aggiornaStatoOfferta(this);
     }
 
     /**
@@ -205,9 +247,9 @@ public class Offerta implements Manageable, Serializable {
      *
      * @param infoDiScambio le informazioni di uno scambio
      */
-    public void setInfoScambio(Optional<Scambio> infoDiScambio) {
+    /*public void setInfoScambio(Optional<Scambio> infoDiScambio) {
         infoDiScambio.ifPresent(this.statoOfferta::setScambio);
-    }
+    }*/
 
     /**
      * Metodo che controlla se un'offerta è selezionata o meno.
@@ -216,21 +258,7 @@ public class Offerta implements Manageable, Serializable {
      * FALSE se l'offerta non è selezionata
      */
     public boolean isOffertaSelezionata() {
-        return statoOfferta.isSelezionata();
-    }
-
-    /**
-     * Metodo getter.
-     * <p>
-     * Precondizione: assumo che questo metodo venga
-     * chiamato solo quando l'offerta è in stato di
-     * offerta selezionata. E quindi si vuole conoscere
-     * l'offerte accoppiata a essa.
-     *
-     * @return l'offerta accoppiata
-     */
-    public Offerta getOffertaAccoppiata() {
-        return statoOfferta.getOffertaAccoppiata();
+        return this.offertaState.isOffertaSelezionata(this);
     }
 
     /**
@@ -250,7 +278,7 @@ public class Offerta implements Manageable, Serializable {
      * @param listaCampiAppuntamento la lista dei campi dell'appuntamento
      */
     public void accettaPropostaDiScambioAssociata(ListaCampiCompilati listaCampiAppuntamento) {
-        this.statoOfferta.accettaPropostaDiScambioAssociata(listaCampiAppuntamento);
+        this.offertaState.accettaPropostaDiScambioAssociata(this, listaCampiAppuntamento);
     }
 
     /**
@@ -260,21 +288,7 @@ public class Offerta implements Manageable, Serializable {
      * FALSE se l'offerta non è in scambio
      */
     public boolean isOffertaInScambio() {
-        return statoOfferta.isInScambio();
-    }
-
-    /**
-     * Metodo getter.
-     * <p>
-     * Precondizione: assumo che il metodo in questione
-     * venga invocato solo quando l'offerta è nello
-     * stato di offerta in scambio.
-     * Post condizione: quella del metodo chiamato.
-     *
-     * @return lo lista dei campi di un appuntamento
-     */
-    public ListaCampiCompilati getListaCampiAppuntamento() {
-        return statoOfferta.getListaCampiAppuntamento();
+        return this.offertaState.isOffertaInScambio(this);
     }
 
     /**
@@ -292,7 +306,8 @@ public class Offerta implements Manageable, Serializable {
      * Post condizione: quella del metodo chiamato.
      */
     public void accettaAppuntamento() {
-        this.statoOfferta.accettaAppuntamento();
+        //this.statoOfferta.accettaAppuntamento();
+        this.offertaState.accettaAppuntamento(this);
     }
 
     /**
@@ -314,7 +329,8 @@ public class Offerta implements Manageable, Serializable {
      * @param listaCampiAppuntamento la lista dei campi del nuovo appuntamento
      */
     public void proponiAltroAppuntamento(ListaCampiCompilati listaCampiAppuntamento) {
-        this.statoOfferta.proponiAltroAppuntamento(listaCampiAppuntamento);
+       // this.statoOfferta.proponiAltroAppuntamento(listaCampiAppuntamento);
+        this.offertaState.proponiAltroAppuntamento(this, listaCampiAppuntamento);
     }
 
     /**
@@ -324,6 +340,6 @@ public class Offerta implements Manageable, Serializable {
      * FALSE se l'offerta non è chiusa
      */
     public boolean isOffertaChiusa() {
-        return this.statoOfferta.isChiusa();
+        return this.offertaState.isOffertaChiusa(this);
     }
 }
