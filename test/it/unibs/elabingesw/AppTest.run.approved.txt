@@ -1041,7 +1041,7 @@ Digita il numero dell'opzione desiderata -> Seleziona una tua offerta aperta che
 Seleziona l'offerta aperta di interesse: 
 Vuoi selezionare Bici Mountainbike? (S/N): Errore: nessuna offerta selezionata, riprovare.
 Seleziona l'offerta aperta di interesse: 
-Vuoi selezionare Bici Mountainbike? (S/N): Seleziona ora una offerta aperta di medesima categoria e di diverso utente che intedi barattare
+Vuoi selezionare Bici Mountainbike? (S/N): Seleziona ora una offerta aperta di medesima categoria e di diverso utente che intendi barattare
 Seleziona l'offerta aperta di interesse: 
 Vuoi selezionare Bici da donna? (S/N): Errore: nessuna offerta selezionata, riprovare.
 Seleziona l'offerta aperta di interesse: 

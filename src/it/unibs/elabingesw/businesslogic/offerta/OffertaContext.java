@@ -23,8 +23,6 @@ public final class OffertaContext implements Manageable, Serializable {
     private final Utente autore;
     private final Categoria categoriaDiAppartenenza;
     private final ListaCampiCompilati listaCampiCompilati;
-    private final StatoOfferta statoOfferta;
-
     private OffertaState offertaState;
 
     /**
@@ -54,8 +52,7 @@ public final class OffertaContext implements Manageable, Serializable {
         this.autore = autore;
         this.categoriaDiAppartenenza = categoriaDiAppartenenza;
         this.listaCampiCompilati = listaCampiCompilati;
-        this.statoOfferta = new StatoOfferta();
-        offertaState = new ApertaState();
+        this.offertaState = new ApertaState();
     }
 
     public void setOffertaState(OffertaState offertaState) {
@@ -78,15 +75,6 @@ public final class OffertaContext implements Manageable, Serializable {
      */
     public String getNomeArticolo() {
         return nomeArticolo;
-    }
-
-    /**
-     * Metodo getter.
-     *
-     * @return lo stato dell'offerta
-     */
-    StatoOfferta getStatoOfferta() {
-        return statoOfferta;
     }
 
     public OffertaState getOffertaState() {
@@ -118,7 +106,6 @@ public final class OffertaContext implements Manageable, Serializable {
      * @return lo lista dei campi di un appuntamento
      */
     public ListaCampiCompilati getListaCampiAppuntamento() {
-        //return statoOfferta.getListaCampiAppuntamento();
         return this.offertaState.getListaCampiAppuntamento(this);
     }
 
@@ -215,6 +202,7 @@ public final class OffertaContext implements Manageable, Serializable {
      * @param offertaContextDaBarattareB oggetto di tipo Offerta
      * @param infoDiScambio
      */
+    // todo descrizione param mancante in doc.
     public void creaLegameEModificaStatiConOffertaEInfoScambio(OffertaContext offertaContextDaBarattareB, Optional<Scambio> infoDiScambio) {
         this.offertaState.creaLegameEModificaStatiConOffertaEInfoScambio(this, offertaContextDaBarattareB, infoDiScambio.orElse(null));
     }
@@ -225,31 +213,8 @@ public final class OffertaContext implements Manageable, Serializable {
      * Post condizione: quella del metodo chiamato.
      */
     public void aggiornaStatoOfferta() {
-        //this.statoOfferta.aggiornaStatoOfferta();
         this.offertaState.aggiornaStatoOfferta(this);
     }
-
-    /**
-     * Metodo setter.
-     * <p>
-     * Precondizione: assumo parametro non nullo e
-     * correttamente inizializzato.
-     * Assumo che questo metodo sia chiamato
-     * solo quando l'info di scambio è stato
-     * registrata nel sistema.
-     * Assumo che il parametro sia o un optional Empty oppure
-     * un optional contente l'istanza di Scambio
-     * registrata nel sistema.
-     * Post condizione: se l'optional è Empty non
-     * si fa nulla, nel caso invece contenga l'istanza
-     * di Scambio questa viene associata all'offerta
-     * che ha chiamato il metodo.
-     *
-     * @param infoDiScambio le informazioni di uno scambio
-     */
-    /*public void setInfoScambio(Optional<Scambio> infoDiScambio) {
-        infoDiScambio.ifPresent(this.statoOfferta::setScambio);
-    }*/
 
     /**
      * Metodo che controlla se un'offerta è selezionata o meno.
@@ -306,7 +271,6 @@ public final class OffertaContext implements Manageable, Serializable {
      * Post condizione: quella del metodo chiamato.
      */
     public void accettaAppuntamento() {
-        //this.statoOfferta.accettaAppuntamento();
         this.offertaState.accettaAppuntamento(this);
     }
 
@@ -329,7 +293,6 @@ public final class OffertaContext implements Manageable, Serializable {
      * @param listaCampiAppuntamento la lista dei campi del nuovo appuntamento
      */
     public void proponiAltroAppuntamento(ListaCampiCompilati listaCampiAppuntamento) {
-       // this.statoOfferta.proponiAltroAppuntamento(listaCampiAppuntamento);
         this.offertaState.proponiAltroAppuntamento(this, listaCampiAppuntamento);
     }
 
