@@ -1600,7 +1600,11 @@ Process finished with exit code 0
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-
+Secondo fruitore (pluto) si logga.
+Esegue comando 8, quindi la prima volta non accetta niente. Poi accetta proposta di pippo.
+Quindi propone un incontro, prima non riempie o seleziona alcun campo,
+poi fa Saturday, 10:00, Loggia e conferma.
+Poi guarda con comando 10 eventuali risposte che ancora non posso esserci.
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51394:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
@@ -1720,6 +1724,10 @@ Process finished with exit code 0
 
 ///////////////////////////////////////////////////////////////////////////////////
 
+Utente configuratore (conf) si logga.
+Esegue comando 6, all'inizio non seleziono nessuna gerarchia e poi nessuna sotto-categoria.
+Poi visualizza offerte in scambio e chiuse pe Bici.
+
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51410:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
 Inserisci username: conf
@@ -1773,6 +1781,11 @@ Digita il numero dell'opzione desiderata -> 0
 Process finished with exit code 0
 
 ///////////////////////////////////////////////////////////////////////////////////
+
+Secondo fruitore (pippo) si logga.
+Visualizza risposte con comando 10.
+Risponde negando gli estremi dell'incontro proposti, con comando 9,
+e ne propone di nuovi: Sunday, 12:00, Piazza Vittoria.
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51417:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
@@ -1856,6 +1869,11 @@ Digita il numero dell'opzione desiderata -> 0
 Process finished with exit code 0
 
 /////////////////////////////////////////////////////////////////////////////////////
+
+Utente fruitore (pluto) si logga.
+Vede la proposta di appuntamento con comando 10.
+Poi accetta tale proposta con comando 9.
+Quindi controlla le sue offerte con comando 5.
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51422:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
@@ -1946,6 +1964,9 @@ Process finished with exit code 0
 
 ///////////////////////////////////////////////////////////////////////////////////
 
+Utente configuratore (conf) si logga.
+Controlla stato di offerte con comando 6, sia per Orologio da parete che per Bici.
+
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51435:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
 Inserisci username: conf
@@ -2019,6 +2040,10 @@ Digita il numero dell'opzione desiderata -> 0
 Process finished with exit code 0
 
 ////////////////////////////////////////////////////////////////////////////////////
+
+Utente fruitore (pippo) si logga.
+Controlla ultime risposte per offerte in scambio con comando 10.
+Poi visualizza le sue offerte con comando 5.
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51440:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
