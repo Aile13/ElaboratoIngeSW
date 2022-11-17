@@ -1,3 +1,13 @@
+Di seguito sono riportati gli output delle 18 esecuzioni sequenziali della quinta versione del programma.
+Queste rappresentano un possibile flusso di utilizzo comune del programma.
+Ogni esecuzione è preceduta da una breve descrizione di ciò che si intende fare nella stessa.
+(L'ultima operazione per ognuna delle esecuzioni è quella di uscita, che è sotto-intesta nella descrizione);
+
+
+L'utente configuratore (conf: conf) prova a registrarsi, ma sbaglia prima username e poi password.
+Poi riesce a registrarsi.
+Prima si logga in modo sbagliato, poi giusto.
+
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=50428:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
 Inserisci username: conf
@@ -37,6 +47,8 @@ Digita il numero dell'opzione desiderata -> 0
 Process finished with exit code 0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Utente configuratore (conf) si logga, esegue in sequenza comandi: 2, 4, 5, 6.
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=50479:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
@@ -125,6 +137,12 @@ Digita il numero dell'opzione desiderata -> 0
 Process finished with exit code 0
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
+
+Utente fruitore (pippo: pippo) prova a registrarsi ma usa username di configuratore.
+Genera collisione, tenta un password. Non entra. Usa suo vero nome e si registra correttamente.
+Si logga in maniera errata.
+Si logga in maniera corretta.
+Esegue in sequenza i comandi: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=50488:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
@@ -351,6 +369,18 @@ Process finished with exit code 0
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+Utente configuratore (conf) si logga correttamente.
+Introduce co comando 1 la nuova gerarchia Bici, con campo "Dim ruote" obbligatorio.
+Non compila inizialmente Nome categoria e descrizione.
+Costruendo questa gerarchia inserisce prima campi custom vuoti e poi genera collisioni con nomi di campi nativi,
+e solo dopo inserisce input correttamente. Quindi non conferma inserimento di nuova gerarchia.
+Quindi compila altra gerarchia, Orologio, con campo custom "Colore", non obbligatorio.
+Mette sotto-categorie orologio da parete, e orologio da polso, quest'ultimo con campo custom obbligatorio "Sesso".
+Inserisce questa gerarchia.
+Quindi ricompila di nuovo per inserire la gerarchia che prima non aveva inserito, Bici, con stessa struttura.
+Stavolta inserisce anche questa.
+Esegue comando 2.
+
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=50768:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
 Inserisci username: conf
@@ -486,6 +516,10 @@ Digita il numero dell'opzione desiderata -> 0
 Process finished with exit code 0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Secondo utente fruitore (pluto: pluto) si registra e si logga.
+Esegue in sequenza comandi: 1, 2, 4, 5, 6 (vede sia Bici, che Orologio da parete), 7, 8, 9, 10.
+
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51221:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
@@ -717,6 +751,15 @@ Process finished with exit code 0
 
 ///////////////////////////////////////////////////////////////////////////////////
 
+Si logga primo fruitore pippo.
+Con comando 3 prova ad inserire una offerta.
+Prima non seleziona nessuna gerarchia, e poi nessuna sotto-categoria.
+Crea offerta orologio da polso: "Rolex", campo colore vuoto, e inizialmente anche sesso, poi mette maschile.
+Per stato di conservazione all'inizio non mette niente poi mette "Mai usato".
+Conferma inserimento.
+Poi guardo info offerte, con comandi 5 e 6 (per Orologio da polso, anche qui inizialmente non selezionando
+niente tra gerarchie e sotto-categorie).
+
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51277:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
 Inserisci username: pippo
@@ -838,6 +881,12 @@ Process finished with exit code 0
 
 ///////////////////////////////////////////////////////////////////////////////////
 
+Secondo fruitore (pluto) si logga.
+Esegue comando 6, su orologio da polso, e vede offerta di pippo.
+Poi esegue comando 5.
+Quindi compila e inserisce una sua offerta con comando 3.
+Bici da donna, 26 pollici, Usata solo su asfalto.
+
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51315:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
 Inserisci username: pluto
@@ -936,6 +985,11 @@ Process finished with exit code 0
 
 ////////////////////////////////////////////////////////////////////////////////////
 
+Primo fruitore (pippo) si logga.
+Ritira offerta Rolex, con comando 4. Prima nega, poi ripete e conferma operazione.
+Crea nuova offerta, con comando 3, Bici Mountain bike, 26 pollici, Usata con qualche graffio, Modello xb5.
+Prima immette nome Bici da donna, genera collisione, poi inserisce nome giusto.
+
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51344:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
 Inserisci username: pippo
@@ -1032,6 +1086,10 @@ Process finished with exit code 0
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
+Si logga configuratore (conf).
+Con comando 5 visualizza offerte Bici.
+Poi con 6 ancora bici.
+
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51349:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
 Inserisci username: conf
@@ -1103,6 +1161,10 @@ Process finished with exit code 0
 
 //////////////////////////////////////////////////////////////////////////////////
 
+Primo fruitore (pippo) si logga.
+Esegue comando 6 su Bici.
+Poi cerca offerte per barattare, comando 7, ma trova messaggio di errore: mancano info di scambio.
+
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51362:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
 Inserisci username: pippo
@@ -1173,6 +1235,19 @@ Digita il numero dell'opzione desiderata -> 0
 Process finished with exit code 0
 
 ///////////////////////////////////////////////////////////////////////////////////
+
+Utente configuratore (conf) si logga.
+Con comando 3 imposta info di scambio.
+Prima cerca di non compilare i campi.
+Poi inserisce, Piazza Vittoria e Loggia.
+Non seleziona nessun giorno, poi Saturday e Sunday.
+Orari:
+1) 09:00 -> 12:30, prima come secondo orario inserisce 08:00, errore, poi mette 09:00, ancora errore.
+Po mette 12:45, ancora errore, quindi compila giusto.
+2) 15:30 -> 18:30, prima inserisce orario che si interseca con il primo, ovvero 10:00 -> 15:30, poi compila giusto.
+
+Per il num di giorni all'inizio mette 0, poi 5.
+Poi lancia comando 4 per visualizzazione info di scambio.
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51372:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
@@ -1300,6 +1375,12 @@ Digita il numero dell'opzione desiderata -> 0
 Process finished with exit code 0
 
 /////////////////////////////////////////////////////////////////////////////////
+
+Primo fruitore (pippo) si logga.
+Visualizza info di scambio ora disponibili con comando 2.
+Quindi con comando 7 sulle bici vede sua offerta (Mountain bike) e quella di pluto (Bici da donna).
+All'inizio non seleziona l'altra bici per il baratto, poi ripete e la seleziona.
+Poi esegue in sequenza comandi: 4, 5, 6 (per Bici), 7, 8, 9, 10.
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51384:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
@@ -1518,6 +1599,8 @@ Digita il numero dell'opzione desiderata -> 0
 Process finished with exit code 0
 
 ////////////////////////////////////////////////////////////////////////////////////
+
+
 
 C:\Users\Elia\.jdks\openjdk-17\bin\java.exe -javaagent:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\lib\idea_rt.jar=51394:C:\Users\Elia\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\222.4345.14\bin -Dfile.encoding=UTF-8 -classpath C:\Users\Elia\IdeaProjects\ElaboratoIngeSW\out\production\ElaboratoIngeSW;C:\Users\Elia\IdeaProjects\MyLib\out\artifacts\MyLib_jar\MyLib.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests\18.5.0\approvaltests-18.5.0.jar;C:\Users\Elia\.m2\repository\com\approvaltests\approvaltests-util\18.5.0\approvaltests-util-18.5.0.jar;C:\Users\Elia\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\Elia\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Elia\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Elia\.m2\repository\com\github\stefanbirkner\system-lambda\1.2.1\system-lambda-1.2.1.jar it.unibs.elabingesw.Main
 Benvenuto nell'app.
