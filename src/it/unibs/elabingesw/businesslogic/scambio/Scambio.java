@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.scambio;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
@@ -21,13 +22,9 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class Scambio implements Manageable, Serializable {
-    private final String piazza;
-    private final List<String> listaLuoghi;
-    private final List<DayOfWeek> giorni;
-    private final List<IntervalloOrario> intervalliOrari;
-    private final int Scadenza;
-
+public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> giorni,
+                      List<IntervalloOrario> intervalliOrari,
+                      int scadenza) implements Manageable, Serializable, DomainTypeToRender {
     /**
      * Costruttore di classe, accetta come parametri la piazza, la lista
      * dei luoghi, la lista dei giorni, la lista degli intervalli orari
@@ -51,20 +48,15 @@ public class Scambio implements Manageable, Serializable {
      * @param intervalliOrari intervalli orari della giornata in cui avvengono gli scambi
      * @param scadenza        numero di giorni massimi entro cui si deve rispondere nelle operazioni di baratto
      */
-    public Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> giorni, List<IntervalloOrario> intervalliOrari, int scadenza) {
-        this.piazza = piazza;
-        this.listaLuoghi = listaLuoghi;
-        this.giorni = giorni;
-        this.intervalliOrari = intervalliOrari;
-        Scadenza = scadenza;
-    }
+    // todo spostare doc a livello di costruttore di record.
 
     /**
      * Metodo getter.
      *
      * @return i luoghi in cui avvengono gli scambi
      */
-    public List<String> getListaLuoghi() {
+    @Override
+    public List<String> listaLuoghi() {
         return listaLuoghi;
     }
 
@@ -73,7 +65,8 @@ public class Scambio implements Manageable, Serializable {
      *
      * @return i giorni della settimana in cui avvengono gli scambi
      */
-    public List<DayOfWeek> getGiorni() {
+    @Override
+    public List<DayOfWeek> giorni() {
         return giorni;
     }
 
@@ -97,8 +90,9 @@ public class Scambio implements Manageable, Serializable {
      *
      * @return la scadenza in giorni di un'offerta
      */
-    public int getScadenza() {
-        return Scadenza;
+    @Override
+    public int scadenza() {
+        return scadenza;
     }
 
     /**
@@ -109,7 +103,7 @@ public class Scambio implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Scambio{" + "\n" + "\tpiazza='" + piazza + "',\n" + "\tlistaLuoghi=" + listaLuoghi + ",\n" + "\tgiorni=" + giorni + "\n" + "\tintervalliOrari=" + intervalliOrari + ",\n" + "\tScadenza=" + Scadenza + "\n" + '}';
+        return "Scambio{" + "\n" + "\tpiazza='" + piazza + "',\n" + "\tlistaLuoghi=" + listaLuoghi + ",\n" + "\tgiorni=" + giorni + "\n" + "\tintervalliOrari=" + intervalliOrari + ",\n" + "\tScadenza=" + scadenza + "\n" + '}';
     }
 
     /**

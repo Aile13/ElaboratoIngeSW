@@ -1,5 +1,7 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToLimitedRender;
+import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
@@ -16,7 +18,7 @@ import java.util.stream.Collectors;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public final class TreeNode<T extends Manageable> implements Serializable {
+public final class TreeNode<T extends Manageable> implements Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final T dato;
     private final TreeNode<T> parent;
     private final List<TreeNode<T>> listaFigli;
@@ -62,6 +64,10 @@ public final class TreeNode<T extends Manageable> implements Serializable {
      */
     public T getDato() {
         return dato;
+    }
+
+    public List<TreeNode<T>> getListaFigli() {
+        return listaFigli;
     }
 
     /**
@@ -187,6 +193,7 @@ public final class TreeNode<T extends Manageable> implements Serializable {
      * @return stringa dell'oggetto convertito
      */
     @Override
+    // todo non in chain il suo rendering, dovrebbe essere sistemato
     public String toString() {
         return dato.toString();
     }
@@ -196,10 +203,11 @@ public final class TreeNode<T extends Manageable> implements Serializable {
      *
      * @return stringa dell'albero convertito
      */
-    public String toStringAlbero() {
+    // todo non in chain il suo rendering, dovrebbe essere sistemato
+    public String getAlberoString() {
         var builder = new StringBuilder("\t");
         builder.append(dato).append("\n");
-        listaFigli.forEach(tTreeNode -> builder.append(Arrays.stream(tTreeNode.toStringAlbero().split("\n")).map(this::indentaLineaDiUnTab).collect(Collectors.joining("\n"))).append("\n"));
+        listaFigli.forEach(tTreeNode -> builder.append(Arrays.stream(tTreeNode.getAlberoString().split("\n")).map(this::indentaLineaDiUnTab).collect(Collectors.joining("\n"))).append("\n"));
         return builder.toString();
     }
 

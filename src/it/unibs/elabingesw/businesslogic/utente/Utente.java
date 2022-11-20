@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.utente;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
@@ -12,7 +13,7 @@ import java.util.Objects;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public abstract class Utente implements Manageable, Serializable {
+public abstract class Utente implements Manageable, Serializable, DomainTypeToRender {
     private final String username;
     private final String password;
 

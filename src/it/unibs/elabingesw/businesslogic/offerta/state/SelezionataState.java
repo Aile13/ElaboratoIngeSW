@@ -53,7 +53,7 @@ public class SelezionataState implements OffertaState {
 
     @Override
     public void aggiornaStatoOfferta(OffertaContext context) {
-        if (LocalDate.now().isAfter(dataCreazioneStato.plusDays(infoDiScambio.getScadenza()))) {
+        if (LocalDate.now().isAfter(dataCreazioneStato.plusDays(infoDiScambio.scadenza()))) {
             context.setOffertaState(new ApertaState());
         }
     }

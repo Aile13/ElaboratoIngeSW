@@ -1,5 +1,7 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToLimitedRender;
+import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
@@ -14,7 +16,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class Categoria implements Manageable, Serializable {
+public class Categoria implements Manageable, Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final String nome;
     private final String descrizione;
     private final List<Campo> campiNativi;
@@ -141,5 +143,9 @@ public class Categoria implements Manageable, Serializable {
      */
     public boolean isCampoGiaPreso(Campo campo) {
         return campo.isCampoInListaByNome(campiNativi);
+    }
+
+    public String getDescrizione() {
+        return descrizione;
     }
 }

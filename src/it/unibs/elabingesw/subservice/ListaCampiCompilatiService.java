@@ -23,11 +23,11 @@ public class ListaCampiCompilatiService {
     public static void compila(ListaCampiCompilati listaCampiCompilati) {
         listaCampiCompilati.getCampiCompilati().forEach((campo, s) -> {
             String compilazione = null;
-            if (campo.isObbligatorio()) {
-                compilazione = InputDati.leggiStringaNonVuota("Compila campo obbligatorio " + campo.getNome() + ": ");
+            if (campo.obbligatorio()) {
+                compilazione = InputDati.leggiStringaNonVuota("Compila campo obbligatorio " + campo.nome() + ": ");
             } else {
-                if (InputDati.yesOrNo("Compilare campo non obbligatorio " + campo.getNome() + " ? ")) {
-                    compilazione = InputDati.leggiStringaNonVuota("Compila campo " + campo.getNome() + ": ");
+                if (InputDati.yesOrNo("Compilare campo non obbligatorio " + campo.nome() + " ? ")) {
+                    compilazione = InputDati.leggiStringaNonVuota("Compila campo " + campo.nome() + ": ");
                 }
             }
             listaCampiCompilati.inserisci(campo, compilazione);

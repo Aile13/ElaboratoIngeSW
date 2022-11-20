@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
@@ -15,7 +16,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class GerarchiaDiCategorie implements Manageable, Serializable {
+public class GerarchiaDiCategorie implements Manageable, Serializable, DomainTypeToRender {
     private final TreeNode<Categoria> gerarchia;
 
     /**
@@ -81,6 +82,10 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
         return gerarchia.equals(that.gerarchia);
     }
 
+    public TreeNode<Categoria> getGerarchia() {
+        return gerarchia;
+    }
+
     /**
      * Metodo che fornisce il codice hash dell'oggetto.
      *
@@ -124,7 +129,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable {
      */
     @Override
     public String toString() {
-        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" + gerarchia.toStringAlbero() + "}";
+        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" + gerarchia.getAlberoString() + "}";
     }
 
     /**

@@ -244,7 +244,7 @@ public class OfferteService {
     }
 
     public void visualizzaProposteDiScambio() {
-        //gestoreOfferte.aggiornaStatoDelleOfferte();
+        gestoreOfferte.aggiornaStatoDelleOfferte();
         var offerteSelezionate = this.gestoreOfferte.getOfferteSelezionateByUser(utente);
         if (offerteSelezionate.isEmpty()) {
             System.out.println("Non ci sono proposte di scambio.");
@@ -308,7 +308,7 @@ public class OfferteService {
      */
     private String chiediDataDiIncontro() {
         System.out.println("Selezionare un giorno di incontro");
-        for (DayOfWeek giorno : gestoreScambio.getInfoDiScambio().get().getGiorni()) {
+        for (DayOfWeek giorno : gestoreScambio.getInfoDiScambio().get().giorni()) {
             if (InputDati.yesOrNo("Vuoi selezionare il giorno: " + giorno + "?")) {
                 return giorno.name();
             }
@@ -324,7 +324,7 @@ public class OfferteService {
      */
     private String chiediLuogoDiIncontro() {
         System.out.println("Selezionare luogo di incontro");
-        for (String luogo : gestoreScambio.getInfoDiScambio().get().getListaLuoghi()) {
+        for (String luogo : gestoreScambio.getInfoDiScambio().get().listaLuoghi()) {
             if (InputDati.yesOrNo("Vuoi selezionare luogo: " + luogo + "?")) {
                 return luogo;
             }

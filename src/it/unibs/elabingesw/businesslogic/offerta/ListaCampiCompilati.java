@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.offerta;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
@@ -20,7 +21,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class ListaCampiCompilati implements Serializable {
+public class ListaCampiCompilati implements Serializable, DomainTypeToRender {
     private final LinkedHashMap<Campo, String> campiCompilati;
 
     /**

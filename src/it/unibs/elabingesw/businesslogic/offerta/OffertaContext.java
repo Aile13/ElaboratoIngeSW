@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.offerta;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 import it.unibs.elabingesw.businesslogic.offerta.state.ApertaState;
@@ -18,7 +19,7 @@ import java.util.Optional;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public final class OffertaContext implements Manageable, Serializable {
+public final class OffertaContext implements Manageable, Serializable, DomainTypeToRender {
     private final String nomeArticolo;
     private final Utente autore;
     private final Categoria categoriaDiAppartenenza;
@@ -57,6 +58,14 @@ public final class OffertaContext implements Manageable, Serializable {
 
     public void setOffertaState(OffertaState offertaState) {
         this.offertaState = offertaState;
+    }
+
+    public Utente getAutore() {
+        return autore;
+    }
+
+    public ListaCampiCompilati getListaCampiCompilati() {
+        return listaCampiCompilati;
     }
 
     /**

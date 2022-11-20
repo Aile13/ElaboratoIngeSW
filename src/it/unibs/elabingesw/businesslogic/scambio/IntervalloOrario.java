@@ -1,5 +1,7 @@
 package it.unibs.elabingesw.businesslogic.scambio;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
+
 import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.LinkedList;
@@ -15,10 +17,8 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class IntervalloOrario implements Serializable {
-    private final LocalTime orarioIniziale;
-    private final LocalTime orarioFinale;
-
+public record IntervalloOrario(LocalTime orarioIniziale,
+                               LocalTime orarioFinale) implements Serializable, DomainTypeToRender {
     /**
      * Costruttore di classe, accetta come parametri un orario
      * iniziale e un orario finale che costituiscono un intervallo orario.
@@ -32,9 +32,8 @@ public class IntervalloOrario implements Serializable {
      * @param orarioIniziale orario iniziale dell'intervallo orario
      * @param orarioFinale   orario finale dell'intervallo orario
      */
-    public IntervalloOrario(LocalTime orarioIniziale, LocalTime orarioFinale) {
-        this.orarioIniziale = orarioIniziale;
-        this.orarioFinale = orarioFinale;
+    // todo da mettere a livello di costruttore di record, poi va già bene.
+    public IntervalloOrario {
     }
 
     /**

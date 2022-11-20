@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
 import java.io.Serializable;
@@ -17,7 +18,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public record Campo(String nome, boolean obbligatorio) implements Manageable, Serializable {
+public record Campo(String nome, boolean obbligatorio) implements Manageable, Serializable, DomainTypeToRender {
 
     /**
      * Metodo che ritorna la lista dei campi nativi che una categoria
@@ -36,6 +37,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
      *
      * @return stringa dell'oggetto convertito
      */
+    //todo, per tempo, si usa quello integrato di Record, poi si aggiorna di conseguenza l'output delll'app per approval.
     @Override
     public String toString() {
         return "Campo{" + "nome='" + nome + '\'' + ", obbligatorio=" + obbligatorio + '}';
@@ -47,18 +49,20 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
      * @return TRUE se il campo è obbligatorio
      * FALSE se il campo è facoltativo
      */
-    public boolean isObbligatorio() {
+    //todo da rimuovere, si usa quello integrato di Record
+    /*public boolean obbligatorio() {
         return this.obbligatorio;
-    }
+    }*/
 
     /**
      * Metodo getter.
      *
      * @return il nome del campo
      */
-    public String getNome() {
+    //todo da rimuovere, si usa quello integrato di Record
+    /*public String nome() {
         return this.nome;
-    }
+    }*/
 
     /**
      * Metodo che permette di confrontare due oggetti.
@@ -67,28 +71,30 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
      * @return TRUE se i due oggetti sono uguali
      * FALSE se i due oggetti sono diversi
      */
-    @Override
+    //todo da rimuovere, si usa quello integrato di Record
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
         Campo campo = (Campo) o;
 
-        if (isObbligatorio() != campo.isObbligatorio()) return false;
-        return getNome() != null ? getNome().equals(campo.getNome()) : campo.getNome() == null;
-    }
+        if (obbligatorio() != campo.obbligatorio()) return false;
+        return nome() != null ? nome().equals(campo.nome()) : campo.nome() == null;
+    }*/
 
     /**
      * Metodo che fornisce il codice hash dell'oggetto.
      *
      * @return l'hashcode dell'oggetto campo
      */
-    @Override
+    //todo da rimuovere, si usa quello integrato di Record
+    /*@Override
     public int hashCode() {
-        int result = getNome() != null ? getNome().hashCode() : 0;
-        result = 31 * result + (isObbligatorio() ? 1 : 0);
+        int result = nome() != null ? nome().hashCode() : 0;
+        result = 31 * result + (obbligatorio() ? 1 : 0);
         return result;
-    }
+    }*/
 
     /**
      * Metodo implementato dall'interfaccia Manageable
@@ -115,7 +121,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
      * FALSE se il campo non è in lista
      */
     public boolean isCampoInListaByNome(List<Campo> listaCampi) {
-        return listaCampi.stream().anyMatch(campoInList -> this.isStessoNome(campoInList.getNome()));
+        return listaCampi.stream().anyMatch(campoInList -> this.isStessoNome(campoInList.nome()));
     }
 
     /**
