@@ -18,7 +18,8 @@ import java.util.stream.Collectors;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public final class TreeNode<T extends Manageable> implements Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
+public final class TreeNode<T extends Manageable & DomainTypeToRender & DomainTypeToLimitedRender>
+        implements Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final T dato;
     private final TreeNode<T> parent;
     private final List<TreeNode<T>> listaFigli;
@@ -193,7 +194,7 @@ public final class TreeNode<T extends Manageable> implements Serializable, Domai
      * @return stringa dell'oggetto convertito
      */
     @Override
-    // todo non in chain il suo rendering, dovrebbe essere sistemato
+    // todo non in chain il suo rendering, dovrebbe essere sistemato, ora è lui il composite limited
     public String toString() {
         return dato.toString();
     }
@@ -203,7 +204,7 @@ public final class TreeNode<T extends Manageable> implements Serializable, Domai
      *
      * @return stringa dell'albero convertito
      */
-    // todo non in chain il suo rendering, dovrebbe essere sistemato
+    // todo non in chain il suo rendering, dovrebbe essere sistemato, ora è lui il composite
     public String getAlberoString() {
         var builder = new StringBuilder("\t");
         builder.append(dato).append("\n");

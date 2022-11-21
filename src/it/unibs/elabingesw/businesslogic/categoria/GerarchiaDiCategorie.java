@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToLimitedRender;
 import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
@@ -16,7 +17,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class GerarchiaDiCategorie implements Manageable, Serializable, DomainTypeToRender {
+public class GerarchiaDiCategorie implements Manageable, Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final TreeNode<Categoria> gerarchia;
 
     /**

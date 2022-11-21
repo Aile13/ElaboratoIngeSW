@@ -9,6 +9,7 @@ import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
 import it.unibs.elabingesw.businesslogic.offerta.ListaCampiCompilati;
 import it.unibs.elabingesw.businesslogic.offerta.OffertaContext;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
+import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.time.DayOfWeek;
@@ -55,7 +56,7 @@ public class OfferteService {
 
             var nomeArticolo = chiediNomeArticolo();
             var gerarchiaSelezionata = chiediGerarchia();
-            var categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
+            Categoria categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
             var listaCampiCompilati = new ListaCampiCompilati(gerarchiaSelezionata, categoriaFogliaSelezionata);
             ListaCampiCompilatiService.compila(listaCampiCompilati);
 
@@ -130,7 +131,8 @@ public class OfferteService {
             System.out.println("\tAttenzione non ci sono offerte di " + utente.getUsername() + " da visualizzare.");
         } else {
             System.out.println("Offerte di " + utente.getUsername() + ":");
-            this.gestoreOfferte.getOfferteByUser(utente).forEach(System.out::println);
+            //this.gestoreOfferte.getOfferteByUser(utente).forEach(System.out::println);
+            this.gestoreOfferte.getOfferteByUser(utente).forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
         }
     }
 
@@ -177,7 +179,9 @@ public class OfferteService {
                 System.out.println("Attenzione: nessuna offerta aperta per questa categoria foglia.");
             } else {
                 System.out.println("Elenco offerte data la categoria selezionata: ");
-                this.gestoreOfferte.getOfferteAperteByCategoriaFoglia(categoria).forEach(System.out::println);
+                //this.gestoreOfferte.getOfferteAperteByCategoriaFoglia(categoria).forEach(System.out::println);
+                this.gestoreOfferte.getOfferteAperteByCategoriaFoglia(categoria).forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
+
             }
         } else {
             System.out.println("Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.");
@@ -345,11 +349,14 @@ public class OfferteService {
         } else {
             for (OffertaContext offertaContextInScambio : offerte) {
                 System.out.println("Proposta di scambio per " + offertaContextInScambio.getOffertaAssociata().getNomeArticolo() + " con " + offertaContextInScambio.getNomeArticolo() + ":");
-                System.out.println("\t" + offertaContextInScambio.getOffertaAssociata());
-                System.out.println("\t" + offertaContextInScambio);
+                //System.out.println("\t" + offertaContextInScambio.getOffertaAssociata());
+                System.out.println("\t" + new CompositeDomainTypeRenderer().render(offertaContextInScambio.getOffertaAssociata()));
+                //System.out.println("\t" + offertaContextInScambio);
+                System.out.println("\t" + new CompositeDomainTypeRenderer().render(offertaContextInScambio));
 
                 if (!Objects.isNull(offertaContextInScambio.getListaCampiAppuntamento())) {
-                    System.out.println("\tEstremi di appuntamento proposto dalla controparte: " + offertaContextInScambio.getListaCampiAppuntamento());
+                    //System.out.println("\tEstremi di appuntamento proposto dalla controparte: " + offertaContextInScambio.getListaCampiAppuntamento());
+                    System.out.println("\tEstremi di appuntamento proposto dalla controparte: " + new CompositeDomainTypeRenderer().render(offertaContextInScambio.getListaCampiAppuntamento()));
                     if (InputDati.yesOrNo("Vuoi accettare l'appuntamento?")) {
                         accettaAppuntamento(offertaContextInScambio);
                         System.out.println("Proposta di appuntamento accettata.");
@@ -357,7 +364,7 @@ public class OfferteService {
                     } else {
                         System.out.println("Proponi altri estremi di appuntamento alla controparte:");
                         proponiAltroAppuntamento(offertaContextInScambio);
-                        System.out.println("Nuova proposta di appuntamento inivata alla controparte.");
+                        System.out.println("Nuova proposta di appuntamento inviata alla controparte.");
                     }
                 } else {
                     System.out.println("\tIn attesa di risposta dalla controparte per la tua proposta di appuntamento.");
@@ -406,7 +413,8 @@ public class OfferteService {
             for (OffertaContext offertaContextInScambio : offerte) {
                 System.out.println("Proposta di scambio per " + offertaContextInScambio.getOffertaAssociata().getNomeArticolo() + " con " + offertaContextInScambio.getNomeArticolo() + ":");
                 if (!Objects.isNull(offertaContextInScambio.getListaCampiAppuntamento())) {
-                    System.out.println("\tUltima risposta di utente controparte: " + offertaContextInScambio.getListaCampiAppuntamento());
+                    //System.out.println("\tUltima risposta di utente controparte: " + offertaContextInScambio.getListaCampiAppuntamento());
+                    System.out.println("\tUltima risposta di utente controparte: " + new CompositeDomainTypeRenderer().render(offertaContextInScambio.getListaCampiAppuntamento()));
                 } else {
                     System.out.println("\tL'utente controparte non ha ancora risposto.");
                 }
@@ -425,7 +433,7 @@ public class OfferteService {
         if (gestoreGerarchie.haGerarchie()) {
             System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere " + "relative offerte in scambio e chiuse");
             var gerarchiaSelezionata = chiediGerarchia();
-            var categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
+            Categoria categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
 
             var offerteInScambio = this.gestoreOfferte.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
             var offerteChiuse = this.gestoreOfferte.getOfferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
@@ -435,13 +443,15 @@ public class OfferteService {
             if (offerteInScambio.isEmpty()) {
                 System.out.println("\tNon ci sono offerte in scambio per la categoria selezionata.");
             } else {
-                offerteInScambio.forEach(System.out::println);
+                //offerteInScambio.forEach(System.out::println);
+                offerteInScambio.forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
             }
             System.out.println("Le offerte chiuse:");
             if (offerteChiuse.isEmpty()) {
                 System.out.println("\tNon ci sono offerte chiuse per la categoria selezionata.");
             } else {
-                offerteChiuse.forEach(System.out::println);
+                //offerteChiuse.forEach(System.out::println);
+                offerteChiuse.forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
             }
         } else {
             System.out.println("Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.");

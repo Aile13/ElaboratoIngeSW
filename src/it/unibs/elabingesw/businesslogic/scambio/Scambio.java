@@ -1,5 +1,6 @@
 package it.unibs.elabingesw.businesslogic.scambio;
 
+import it.unibs.elabingesw.businesslogic.DomainTypeToLimitedRender;
 import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.gestione.Manageable;
 
@@ -24,7 +25,7 @@ import java.util.List;
  */
 public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> giorni,
                       List<IntervalloOrario> intervalliOrari,
-                      int scadenza) implements Manageable, Serializable, DomainTypeToRender {
+                      int scadenza) implements Manageable, Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     /**
      * Costruttore di classe, accetta come parametri la piazza, la lista
      * dei luoghi, la lista dei giorni, la lista degli intervalli orari
@@ -55,6 +56,8 @@ public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> g
      *
      * @return i luoghi in cui avvengono gli scambi
      */
+    // TODO: 21/nov/2022 da rimuovere, è già incluso in record.
+
     @Override
     public List<String> listaLuoghi() {
         return listaLuoghi;
@@ -65,6 +68,8 @@ public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> g
      *
      * @return i giorni della settimana in cui avvengono gli scambi
      */
+    // TODO: 21/nov/2022 da rimuovere, è già incluso in record.
+
     @Override
     public List<DayOfWeek> giorni() {
         return giorni;
@@ -90,6 +95,7 @@ public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> g
      *
      * @return la scadenza in giorni di un'offerta
      */
+    // TODO: 21/nov/2022 da rimuovere, è già incluso in record.
     @Override
     public int scadenza() {
         return scadenza;

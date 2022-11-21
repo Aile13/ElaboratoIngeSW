@@ -5,6 +5,8 @@ import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
+import it.unibs.elabingesw.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
+import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
@@ -133,7 +135,10 @@ public class GerarchiaService {
         if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
             System.out.println("\tNessuna gerarchia presente.");
         } else {
-            this.gestoreGerarchie.getListaGerarchie().forEach(System.out::println);
+            this.gestoreGerarchie.getListaGerarchie().forEach(gerarchiaDiCategorie ->
+                    System.out.println(new CompositeDomainTypeRenderer().render(gerarchiaDiCategorie))
+            );
+//            this.gestoreGerarchie.getListaGerarchie().forEach(System.out::println);
         }
     }
 
@@ -146,7 +151,8 @@ public class GerarchiaService {
         if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
             System.out.println("\tNessuna gerarchia presente.");
         } else {
-            this.gestoreGerarchie.getListaGerarchie().forEach(gerarchiaDiCategorie -> System.out.println(gerarchiaDiCategorie.toStringRidotto()));
+            //this.gestoreGerarchie.getListaGerarchie().forEach(gerarchiaDiCategorie -> System.out.println(gerarchiaDiCategorie.toStringRidotto()));
+            this.gestoreGerarchie.getListaGerarchie().forEach(gerarchiaDiCategorie -> System.out.println(new CompositeDomainTypeLimitedRenderer().render(gerarchiaDiCategorie)));
         }
     }
 

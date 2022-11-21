@@ -13,7 +13,7 @@ public class TreeNodeLimitedRenderer implements SelectableDomainTypeLimitedRende
     @Override
     public String render(DomainTypeToLimitedRender domainTypeToLimitedRender) {
         TreeNode<?> treeNode = (TreeNode<?>) domainTypeToLimitedRender;
-        return new CompositeDomainTypeRenderer().render((DomainTypeToRender) treeNode.getDato());
+        return new CompositeDomainTypeRenderer().render(treeNode.getDato());
     }
 
     @Override

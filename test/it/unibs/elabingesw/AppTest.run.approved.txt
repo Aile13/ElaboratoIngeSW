@@ -1351,7 +1351,7 @@ Vuoi accettare l'appuntamento? (S/N): Proponi altri estremi di appuntamento alla
 Selezionare luogo di incontro
 Vuoi selezionare luogo: Piazza Vittoria? (S/N): Selezionare un giorno di incontro
 Vuoi selezionare il giorno: SATURDAY? (S/N): Vuoi selezionare il giorno: SUNDAY? (S/N): Selezionare un orario di incontro
-Vuoi selezionare l'orario: 09:00? (S/N): Vuoi selezionare l'orario: 09:30? (S/N): Vuoi selezionare l'orario: 10:00? (S/N): Vuoi selezionare l'orario: 10:30? (S/N): Vuoi selezionare l'orario: 11:00? (S/N): Vuoi selezionare l'orario: 11:30? (S/N): Vuoi selezionare l'orario: 12:00? (S/N): Nuova proposta di appuntamento inivata alla controparte.
+Vuoi selezionare l'orario: 09:00? (S/N): Vuoi selezionare l'orario: 09:30? (S/N): Vuoi selezionare l'orario: 10:00? (S/N): Vuoi selezionare l'orario: 10:30? (S/N): Vuoi selezionare l'orario: 11:00? (S/N): Vuoi selezionare l'orario: 11:30? (S/N): Vuoi selezionare l'orario: 12:00? (S/N): Nuova proposta di appuntamento inviata alla controparte.
 ---------------------------------
 Menu per Fruitore
 ---------------------------------

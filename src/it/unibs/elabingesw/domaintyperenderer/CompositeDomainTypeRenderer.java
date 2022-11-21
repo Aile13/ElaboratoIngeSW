@@ -10,18 +10,20 @@ import it.unibs.elabingesw.domaintyperenderer.renderers.scambio.ScambioRenderer;
 import it.unibs.elabingesw.domaintyperenderer.renderers.utente.UtenteRenderer;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Elia
  */
 public class CompositeDomainTypeRenderer implements SelectableDomainTypeRenderer {
-    private final List<SelectableDomainTypeRenderer> renderers =
-            List.of(
+    private final Set<SelectableDomainTypeRenderer> renderers =
+            Set.of(
                     new CampoRenderer(),
                     new CategoriaFiglioRenderer(),
                     new CategoriaRadiceRenderer(),
                     new CategoriaRenderer(),
                     new GerarchiaDiCategorieRenderer(),
+                    new TreeNodeRenderer(),
                     new AccoppiataStateRenderer(),
                     new ApertaStateRenderer(),
                     new ChiusaStateRenderer(),
@@ -42,7 +44,7 @@ public class CompositeDomainTypeRenderer implements SelectableDomainTypeRenderer
                 return renderer.render(domainTypeToRender);
             }
         }
-        return null;
+        return "non supportato";
     }
 
     @Override

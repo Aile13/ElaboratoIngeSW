@@ -6,6 +6,7 @@ import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 import it.unibs.elabingesw.domaintyperenderer.SelectableDomainTypeRenderer;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Elia
@@ -24,7 +25,7 @@ public class ScambioRenderer implements SelectableDomainTypeRenderer {
     }
 
     private String renderListaDiIntervalliOrari(List<IntervalloOrario> intervalliOrari) {
-        return "[" + String.join(", ", (CharSequence) intervalliOrari.stream().map(intervalloOrario -> new IntervalloOrarioRenderer().render(intervalloOrario))) +
+        return "[" + intervalliOrari.stream().map(intervalloOrario -> new IntervalloOrarioRenderer().render(intervalloOrario)).collect(Collectors.joining(", ")) +
                 "]";
     }
 

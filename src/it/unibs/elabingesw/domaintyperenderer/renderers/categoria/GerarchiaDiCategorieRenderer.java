@@ -2,7 +2,7 @@ package it.unibs.elabingesw.domaintyperenderer.renderers.categoria;
 
 import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
-import it.unibs.elabingesw.businesslogic.categoria.TreeNode;
+import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.elabingesw.domaintyperenderer.SelectableDomainTypeRenderer;
 
 /**
@@ -10,10 +10,10 @@ import it.unibs.elabingesw.domaintyperenderer.SelectableDomainTypeRenderer;
  */
 public class GerarchiaDiCategorieRenderer implements SelectableDomainTypeRenderer {
     @Override
-    // todo da risolvere il tostring ridotto.
+    //todo da risolvere il tostring ridotto, dovrebbe essere sistemato.
     public String render(DomainTypeToRender domainTypeToRender) {
         GerarchiaDiCategorie gerarchiaDiCategorie = (GerarchiaDiCategorie) domainTypeToRender;
-        return "Gerarchia " + gerarchiaDiCategorie.getNome() + " {\n" + gerarchiaDiCategorie.getGerarchia().getAlberoString() + "}";
+        return "Gerarchia " + gerarchiaDiCategorie.getNome() + " {\n" + new CompositeDomainTypeRenderer().render(gerarchiaDiCategorie.getGerarchia()) + "}";
     }
 
     @Override

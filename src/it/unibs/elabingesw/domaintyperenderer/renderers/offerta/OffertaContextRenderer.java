@@ -2,6 +2,7 @@ package it.unibs.elabingesw.domaintyperenderer.renderers.offerta;
 
 import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.offerta.OffertaContext;
+import it.unibs.elabingesw.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
 import it.unibs.elabingesw.domaintypelimitedrenderer.limitedrenderers.CategoriaLimitedRenderer;
 import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.elabingesw.domaintyperenderer.SelectableDomainTypeRenderer;
@@ -16,7 +17,7 @@ public class OffertaContextRenderer implements SelectableDomainTypeRenderer {
         return "Offerta{" + "nomeArticolo='" + offertaContext.getNomeArticolo() +
                 '\'' + ", autore=" + offertaContext.getAutore() +
                 ", listaCampiCompilati=" + new ListaCampiCompilatiRenderer().render(offertaContext.getListaCampiCompilati()) +
-                ", categoriaDiAppartenenza=" + new CategoriaLimitedRenderer().render(offertaContext.getCategoriaDiAppartenenza()) +
+                ", categoriaDiAppartenenza=" + new CompositeDomainTypeLimitedRenderer().render(offertaContext.getCategoriaDiAppartenenza()) +
                 ", statoOfferta=" + new CompositeDomainTypeRenderer().render(offertaContext.getOffertaState()) + '}';
     }
 

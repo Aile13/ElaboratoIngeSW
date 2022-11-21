@@ -169,6 +169,7 @@ public class MacroServices {
      *
      * @see offerteService
      */
+    // TODO: 21/nov/2022 aggiustare errore doc.
     public void ritiraOfferte() {
         this.offerteService.ritiraOfferte();
     }

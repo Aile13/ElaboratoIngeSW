@@ -3,6 +3,8 @@ package it.unibs.elabingesw.subservice;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
+import it.unibs.elabingesw.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
+import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.time.DayOfWeek;
@@ -127,7 +129,8 @@ public class ScambioService {
         if (this.gestoreScambio.isInfoScambioDaConfigurare()) {
             System.out.println("\tInfo ancora da configurare");
         } else {
-            System.out.println(this.gestoreScambio.getInfoDiScambio().get());
+            //System.out.println(this.gestoreScambio.getInfoDiScambio().get());
+            System.out.println(new CompositeDomainTypeRenderer().render(this.gestoreScambio.getInfoDiScambio().get()));
         }
 
     }
@@ -141,7 +144,8 @@ public class ScambioService {
         if (this.gestoreScambio.isInfoScambioDaConfigurare()) {
             System.out.println("\tInfo ancora da configurare");
         } else {
-            System.out.println(this.gestoreScambio.getInfoDiScambio().get().toStringFormaRidotta());
+            //System.out.println(this.gestoreScambio.getInfoDiScambio().get().toStringFormaRidotta());
+            System.out.println(new CompositeDomainTypeLimitedRenderer().render(this.gestoreScambio.getInfoDiScambio().get()));
         }
 
     }

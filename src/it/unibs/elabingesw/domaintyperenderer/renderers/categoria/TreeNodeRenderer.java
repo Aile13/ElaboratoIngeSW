@@ -16,8 +16,8 @@ public class TreeNodeRenderer implements SelectableDomainTypeRenderer {
     public String render(DomainTypeToRender domainTypeToRender) {
         TreeNode<?> treeNode = (TreeNode<?>) domainTypeToRender;
         var builder = new StringBuilder("\t");
-        builder.append(new CompositeDomainTypeRenderer().render((DomainTypeToRender) treeNode.getDato())).append("\n");
-        treeNode.getListaFigli().forEach(tTreeNode -> builder.append(Arrays.stream(tTreeNode.getAlberoString().split("\n")).map(this::indentaLineaDiUnTab).collect(Collectors.joining("\n"))).append("\n"));
+        builder.append(new CompositeDomainTypeRenderer().render(treeNode.getDato())).append("\n");
+        treeNode.getListaFigli().forEach(tTreeNode -> builder.append(Arrays.stream(new CompositeDomainTypeRenderer().render(tTreeNode).split("\n")).map(this::indentaLineaDiUnTab).collect(Collectors.joining("\n"))).append("\n"));
         return builder.toString();
     }
 
