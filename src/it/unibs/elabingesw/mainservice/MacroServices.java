@@ -163,12 +163,10 @@ public class MacroServices {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per
-     * ritirare le offerte di un utente.
+     * Metodo che rimanda alla classe OfferteService per ritirare le offerte di un utente.
      *
-     * @see offerteService
+     * @see OfferteService
      */
-    // TODO: 21/nov/2022 aggiustare errore doc.
     public void ritiraOfferte() {
         this.offerteService.ritiraOfferte();
     }
