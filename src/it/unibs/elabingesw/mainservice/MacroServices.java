@@ -73,8 +73,7 @@ public class MacroServices {
     }
 
     /**
-     * Metodo che esegue la procedura di uscita dall'appli-
-     * cativo dopo aver salvato i dati inseriti.
+     * Metodo che esegue la procedura di uscita dall'applicativo dopo aver salvato i dati inseriti.
      */
     public void eseguiProceduraDiUscita() {
         eseguiSalvataggio();
@@ -134,9 +133,9 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe OfferteService per
-     * settare l'utente loggato.
+     * settare l'utente che ha eseguito l'accesso.
      *
-     * @param userLogged l'utente loggato
+     * @param userLogged l'utente che ha eseguito l'accesso.
      * @see OfferteService
      */
     public void setUser(Utente userLogged) {
@@ -241,9 +240,8 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe GerarchiaService e che
-     * permette all'utente di caricare gerarchie delle cate-
-     * gorie e valori dei parametri di configurazione da un
-     * file.
+     * permette all'utente di caricare gerarchie delle categorie e
+     * valori dei parametri di configurazione da un file.
      *
      * @see GerarchiaService
      */
