@@ -133,9 +133,9 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe OfferteService per
-     * settare l'utente che ha eseguito l'accesso.
+     * settare l'utente loggato.
      *
-     * @param userLogged l'utente che ha eseguito l'accesso.
+     * @param userLogged l'utente loggato.
      * @see OfferteService
      */
     public void setUser(Utente userLogged) {

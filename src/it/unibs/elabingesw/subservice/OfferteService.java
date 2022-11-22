@@ -69,7 +69,7 @@ public class OfferteService {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire una categoria foglia
+     * Metodo che chiede all'utente d'inserire una categoria foglia
      * passando per parametro la gerarchia selezionata.
      *
      * @param gerarchiaSelezionata una gerarchia di categorie
@@ -89,7 +89,7 @@ public class OfferteService {
 
     /**
      * Metodo che chiede all'utente la gerarchia contenente la categoria
-     * foglia di interesse.
+     * foglia d'interesse.
      *
      * @return una gerarchia
      * @see GerarchiaDiCategorie
@@ -107,7 +107,7 @@ public class OfferteService {
 
     /**
      * Metodo che chiede all'utente il nome dell'articolo da inserire,
-     * controllando che il nom enon è già stato inserito.
+     * controllando che il nome non è già stato inserito.
      *
      * @return il nome dell'articolo
      * @see GestoreOfferte
