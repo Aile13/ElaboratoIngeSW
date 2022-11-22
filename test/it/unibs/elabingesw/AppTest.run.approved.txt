@@ -792,7 +792,7 @@ Menu per Fruitore
 
 Digita il numero dell'opzione desiderata -> Procedura di creazione nuovo articolo avviata
 Inserisci il titolo dell'articolo: Errore: nome articolo già usato, riprovare.
-Reinserisci il titolo dell'ariticolo: Seleziona la gerarchia che contiene la categoria foglia di interesse: 
+Reinserisci il titolo dell'articolo: Seleziona la gerarchia che contiene la categoria foglia di interesse: 
 Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
 Vuoi selezionare Bici? (S/N): Compila campo obbligatorio Stato di conservazione: Compilare campo non obbligatorio Descrizione libera ?  (S/N): Compila campo Descrizione libera: Compila campo obbligatorio Dimensione ruote: Offerta inserita.
 ---------------------------------

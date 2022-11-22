@@ -116,7 +116,7 @@ public class OfferteService {
         var nomeArticolo = InputDati.leggiStringaNonVuota("Inserisci il titolo dell'articolo: ");
         while (this.gestoreOfferte.isOffertaGiaPresenteByNome(nomeArticolo)) {
             System.out.println("Errore: nome articolo già usato, riprovare.");
-            nomeArticolo = InputDati.leggiStringaNonVuota("Reinserisci il titolo dell'ariticolo: ");
+            nomeArticolo = InputDati.leggiStringaNonVuota("Reinserisci il titolo dell'articolo: ");
         }
         return nomeArticolo;
     }
