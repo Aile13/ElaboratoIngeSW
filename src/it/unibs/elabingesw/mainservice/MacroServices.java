@@ -113,7 +113,7 @@ public class MacroServices {
 
     /**
      * Metodo che rimanda alla classe ScambioService per
-     * visualizzaretutte le informazioni degli scambi in
+     * visualizzare tutte le informazioni degli scambi in
      * forma ridotta.
      *
      * @see ScambioService
