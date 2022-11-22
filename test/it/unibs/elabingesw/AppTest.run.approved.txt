@@ -938,7 +938,7 @@ Menu per Configuratore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> Procedura settaggio info di scambio avviata
-Settaggio paramentro piazza
+Settaggio parametro piazza
 Inserisci nome della città: Attenzione: non hai inserito alcun carattere.
 Inserisci nome della città: Settaggio parametro luoghi di scambio
 Inserisci un luogo dove fare gli scambi: Attenzione: non hai inserito alcun carattere.

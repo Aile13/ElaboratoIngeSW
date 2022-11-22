@@ -227,7 +227,7 @@ public class OfferteService {
                 System.out.println("Impossibile procedere con l'operazione di baratto.");
             } else {
                 OffertaContext offertaContextDaBarattareA = chiediOffertaByList(listaOfferteAperteUtente);
-                System.out.println("Seleziona ora una offerta aperta di medesima categoria " + "e di diverso utente che intendi barattare");
+                System.out.println("Seleziona ora una offerta aperta di medesima categoria e di diverso utente che intendi barattare");
                 var listaOffAperteNonUtenteStessaCat = this.gestoreOfferte.getOfferteAperteByCategoriaFogliaAndExcludeUser(offertaContextDaBarattareA.getCategoriaDiAppartenenza(), utente);
                 if (listaOffAperteNonUtenteStessaCat.isEmpty()) {
                     System.out.println("Attenzione: non ci sono altre offerte da selezionare disponibili.");
@@ -431,7 +431,7 @@ public class OfferteService {
      */
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
         if (gestoreGerarchie.haGerarchie()) {
-            System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere " + "relative offerte in scambio e chiuse");
+            System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere relative offerte in scambio e chiuse");
             var gerarchiaSelezionata = chiediGerarchia();
             Categoria categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
 
