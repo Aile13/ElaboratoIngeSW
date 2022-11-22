@@ -1,10 +1,9 @@
 package it.unibs.elabingesw.domaintypelimitedrenderer;
 
 import it.unibs.elabingesw.businesslogic.DomainTypeToLimitedRender;
-import it.unibs.elabingesw.domaintypelimitedrenderer.limitedrenderers.*;
+import it.unibs.elabingesw.domaintypelimitedrenderer.limitedrenderers.categoria.*;
+import it.unibs.elabingesw.domaintypelimitedrenderer.limitedrenderers.scambio.ScambioLimitedRenderer;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 
 /**

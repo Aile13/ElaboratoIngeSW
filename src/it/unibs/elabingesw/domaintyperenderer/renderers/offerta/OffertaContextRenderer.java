@@ -3,7 +3,6 @@ package it.unibs.elabingesw.domaintyperenderer.renderers.offerta;
 import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.offerta.OffertaContext;
 import it.unibs.elabingesw.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
-import it.unibs.elabingesw.domaintypelimitedrenderer.limitedrenderers.CategoriaLimitedRenderer;
 import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.elabingesw.domaintyperenderer.SelectableDomainTypeRenderer;
 

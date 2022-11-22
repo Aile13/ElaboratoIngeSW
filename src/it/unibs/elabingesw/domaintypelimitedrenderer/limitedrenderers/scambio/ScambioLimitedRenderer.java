@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.domaintypelimitedrenderer.limitedrenderers;
+package it.unibs.elabingesw.domaintypelimitedrenderer.limitedrenderers.scambio;
 
 import it.unibs.elabingesw.businesslogic.DomainTypeToLimitedRender;
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
