@@ -1,6 +1,12 @@
 package it.unibs.elabingesw.businesslogic.gestione;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -17,6 +23,7 @@ import java.util.Optional;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
+// TODO: 25/nov/2022 rendere i metodi della classe accessibili solo alle sottoclassi, private simile.
 abstract class GestoreGenerico<T extends Manageable & Serializable> {
     private final String pathRepository;
     private final String dataDir = "./Dati/";
@@ -100,6 +107,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      * @return TRUE se l'elemento è presente in lista
      * FALSE se l'elemento non è presente in lista
      */
+
     public boolean isElementoInListaByNome(String nome) {
         return trovaElementoConNome(nome).isPresent();
     }

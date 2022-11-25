@@ -12,6 +12,7 @@ package it.unibs.elabingesw.businesslogic.gestione;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
+//todo mi chiedo se sia meglio spostarla a livello di businesslogic e non solo di gestione. In quanto viene usato non solo nei gestori ma anche in altri punti del codice.
 public interface Manageable {
 
     /**
