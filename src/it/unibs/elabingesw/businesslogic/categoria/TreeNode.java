@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
+// todo aggiornare uml e compagnia, T ora extends anche Serializable.
 public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRender & DomainTypeToLimitedRender>
         implements Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final T dato;
