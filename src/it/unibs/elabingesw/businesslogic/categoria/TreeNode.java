@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public final class TreeNode<T extends Manageable & DomainTypeToRender & DomainTypeToLimitedRender>
+public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRender & DomainTypeToLimitedRender>
         implements Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final T dato;
     private final TreeNode<T> parent;
