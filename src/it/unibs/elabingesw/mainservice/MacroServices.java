@@ -13,10 +13,10 @@ import it.unibs.elabingesw.subservice.ScambioService;
  * @author Ali Laaraj
  */
 public class MacroServices {
-    private final GestoreUtenti gestoreUtenti;
+    private final UtenteRepository utenteRepository;
     private final GerarchiaRepository gerarchiaRepository;
-    private final GestoreScambio gestoreScambio;
-    private final GestoreOfferte gestoreOfferte;
+    private final ScambioRepository scambioRepository;
+    private final OffertaRepository offertaRepository;
 
     private final GerarchiaService gerarchiaService;
     private final ScambioService scambioService;
@@ -26,37 +26,37 @@ public class MacroServices {
      * Costruttore di classe, accetta come parametri un oggetto di
      * tipo GestoreUtenti e un oggetto di tipo GestoreGerarchie.
      *
-     * @param gestoreUtenti    oggetto di tipo GestoreUtenti
+     * @param utenteRepository    oggetto di tipo GestoreUtenti
      * @param gerarchiaRepository oggetto di tipo GestoreGerarchie
-     * @param gestoreScambio   oggetto di tipo GestoreScambio
-     * @param gestoreOfferte   oggetto di tipo GestoreOfferte
-     * @see GestoreUtenti
+     * @param scambioRepository   oggetto di tipo GestoreScambio
+     * @param offertaRepository   oggetto di tipo GestoreOfferte
+     * @see GestoreUtentiSerializableRepository
      * @see GestoreGerarchieSerializableRepository
-     * @see GestoreScambio
-     * @see GestoreOfferte
+     * @see GestoreScambioSerializableRepository
+     * @see GestoreOfferteSerializableRepository
      */
-    public MacroServices(GestoreUtenti gestoreUtenti, GerarchiaRepository gerarchiaRepository, GestoreScambio gestoreScambio, GestoreOfferte gestoreOfferte) {
-        this.gestoreUtenti = gestoreUtenti;
+    public MacroServices(UtenteRepository utenteRepository, GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository, OffertaRepository offertaRepository) {
+        this.utenteRepository = utenteRepository;
         this.gerarchiaRepository = gerarchiaRepository;
-        this.gestoreScambio = gestoreScambio;
-        this.gestoreOfferte = gestoreOfferte;
+        this.scambioRepository = scambioRepository;
+        this.offertaRepository = offertaRepository;
 
-        this.gerarchiaService = new GerarchiaService(this.gerarchiaRepository, this.gestoreScambio);
-        this.scambioService = new ScambioService(this.gestoreScambio);
-        this.offerteService = new OfferteService(this.gestoreOfferte, this.gerarchiaRepository, this.gestoreScambio);
+        this.gerarchiaService = new GerarchiaService(this.gerarchiaRepository, this.scambioRepository);
+        this.scambioService = new ScambioService(this.scambioRepository);
+        this.offerteService = new OfferteService(this.offertaRepository, this.gerarchiaRepository, this.scambioRepository);
     }
 
     /**
      * Metodo che salva utenti e gerarchie su file.
      *
-     * @see GestoreUtenti
+     * @see GestoreUtentiSerializableRepository
      * @see GestoreGerarchieSerializableRepository
      */
     private void eseguiSalvataggio() {
-        gestoreUtenti.salvaUtenti();
+        utenteRepository.salvaUtenti();
         gerarchiaRepository.salvaGerarchie();
-        gestoreScambio.salvaInfoScambio();
-        gestoreOfferte.salvaOfferte();
+        scambioRepository.salvaInfoScambio();
+        offertaRepository.salvaOfferte();
     }
 
     /**

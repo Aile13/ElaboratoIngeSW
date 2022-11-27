@@ -14,7 +14,7 @@ import java.util.Optional;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class GestoreScambio extends GestoreGenerico<Scambio> {
+public final class GestoreScambioSerializableRepository extends GestoreGenerico<Scambio> implements ScambioRepository {
     private static final String FILE_NAME = "InfoScambio";
 
     /**
@@ -22,7 +22,7 @@ public class GestoreScambio extends GestoreGenerico<Scambio> {
      * <p>
      * Post condizione: Quella del costruttore della super-classe.
      */
-    public GestoreScambio() {
+    public GestoreScambioSerializableRepository() {
         super(FILE_NAME);
     }
 
@@ -38,6 +38,7 @@ public class GestoreScambio extends GestoreGenerico<Scambio> {
      * @return TRUE se le info di uno scambio sono da configurare
      * FALSE se le info di uno scambio non sono da configurare
      */
+    @Override
     public boolean isInfoScambioDaConfigurare() {
         return this.getListaElementi().isEmpty();
     }
@@ -49,6 +50,7 @@ public class GestoreScambio extends GestoreGenerico<Scambio> {
      * Precondizione: quella del metodo chiamato.
      * Post condizione: quella del metodo chiamato.
      */
+    @Override
     public void salvaInfoScambio() {
         salvaDati();
     }
@@ -65,6 +67,7 @@ public class GestoreScambio extends GestoreGenerico<Scambio> {
      *
      * @param scambio l'oggetto di tipo Scambio
      */
+    @Override
     public void impostaInfoDiScambio(Scambio scambio) {
         this.inserisciElemento(scambio);
     }
@@ -80,6 +83,7 @@ public class GestoreScambio extends GestoreGenerico<Scambio> {
      *
      * @return le informazioni di scambio
      */
+    @Override
     public Optional<Scambio> getInfoDiScambio() {
         return this.getListaElementi().stream().findFirst();
     }

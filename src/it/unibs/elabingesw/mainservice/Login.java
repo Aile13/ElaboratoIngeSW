@@ -1,6 +1,7 @@
 package it.unibs.elabingesw.mainservice;
 
-import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
+import it.unibs.elabingesw.businesslogic.gestione.UtenteRepository;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreUtentiSerializableRepository;
 import it.unibs.elabingesw.businesslogic.utente.Configuratore;
 import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
@@ -14,7 +15,7 @@ import it.unibs.eliapitozzi.mylib.InputDati;
  * @author Ali Laaraj
  */
 public class Login {
-    private final GestoreUtenti gestoreUtenti;
+    private final UtenteRepository utenteRepository;
     private UserType userType;
     private Utente utente;
 
@@ -22,11 +23,11 @@ public class Login {
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreUtenti.
      *
-     * @param gestoreUtenti oggetto di tipo GestoreUtenti
-     * @see GestoreUtenti
+     * @param utenteRepository oggetto di tipo GestoreUtenti
+     * @see GestoreUtentiSerializableRepository
      */
-    public Login(GestoreUtenti gestoreUtenti) {
-        this.gestoreUtenti = gestoreUtenti;
+    public Login(UtenteRepository utenteRepository) {
+        this.utenteRepository = utenteRepository;
     }
 
     /**
@@ -45,15 +46,15 @@ public class Login {
             ricontrolla = true;
             var username = InputDati.leggiStringaNonVuota("Inserisci username: ");
 
-            if (gestoreUtenti.isUtenteRegistrato(username)) {
+            if (utenteRepository.isUtenteRegistrato(username)) {
                 var password = InputDati.leggiStringaNonVuota("Inserisci password: ");
-                if (gestoreUtenti.isUtenteValido(username, password)) {
+                if (utenteRepository.isUtenteValido(username, password)) {
                     System.out.println("Accesso corretto.");
                     if (Configuratore.isDefaultConfiguratoreByUsername(username)) {
                         creaNuovoConfiguratore();
                     } else {
-                        this.userType = gestoreUtenti.getUserTypeByNome(username);
-                        this.utente = gestoreUtenti.getUserByNome(username);
+                        this.utente = utenteRepository.getUserByNome(username);
+                        this.userType = this.utente.getUserType();
                         ricontrolla = false;
                     }
                 } else System.out.println("Errore: password inserita non valida. Riprovare.");
@@ -73,7 +74,7 @@ public class Login {
     private void creaNuovoFruitore(String username) {
         System.out.println("Procedura di creazione nuovo fruitore avviata.");
         var password = InputDati.leggiStringaNonVuota("Imposta password per " + username + ": ");
-        gestoreUtenti.inserisciNuovoFruitore(username, password);
+        utenteRepository.inserisciNuovoFruitore(username, password);
         System.out.println("Nuovo fruitore aggiunto, ora accedi.");
     }
 
@@ -102,12 +103,12 @@ public class Login {
             ricontrolla = false;
             String username = InputDati.leggiStringaNonVuota("Inserisci nuovo username: ");
 
-            if (gestoreUtenti.isUtenteRegistrato(username)) {
+            if (utenteRepository.isUtenteRegistrato(username)) {
                 System.out.println("Errore: username non utilizzabile.");
                 ricontrolla = true;
             } else {
                 String password = InputDati.leggiStringaNonVuota("Inserisci password: ");
-                gestoreUtenti.inserisciNuovoConfiguratore(username, password);
+                utenteRepository.inserisciNuovoConfiguratore(username, password);
                 System.out.println("Nuovo configuratore aggiunto, ora accedi.");
             }
         } while (ricontrolla);

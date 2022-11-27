@@ -6,7 +6,8 @@ import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GerarchiaRepository;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchieSerializableRepository;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
+import it.unibs.elabingesw.businesslogic.gestione.ScambioRepository;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 import it.unibs.eliapitozzi.mylib.MyMenu;
@@ -32,7 +33,7 @@ import java.util.List;
 public class FileUtenteService {
 
     private final GerarchiaRepository gerarchiaRepository;
-    private final GestoreScambio gestoreScambio;
+    private final ScambioRepository scambioRepository;
     private File selectedFile;
     private String contenutoFile;
 
@@ -41,14 +42,14 @@ public class FileUtenteService {
      * GestoreGerarchie e un oggetto GestoreScambio.
      *
      * @param gerarchiaRepository oggetto di tipo GestoreGerarchie
-     * @param gestoreScambio oggetto di tipo GestoreScambio
+     * @param scambioRepository oggetto di tipo GestoreScambio
      * @see GestoreGerarchieSerializableRepository
-     * @see GestoreScambio
+     * @see GestoreScambioSerializableRepository
      */
-    public FileUtenteService(GerarchiaRepository gerarchiaRepository, GestoreScambio gestoreScambio) {
+    public FileUtenteService(GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
 
         this.gerarchiaRepository = gerarchiaRepository;
-        this.gestoreScambio = gestoreScambio;
+        this.scambioRepository = scambioRepository;
     }
 
     /**
@@ -74,7 +75,7 @@ public class FileUtenteService {
                 this.selectedFile = jFileChooser.getSelectedFile();
                 System.out.println("File selezionato: " + selectedFile.getAbsolutePath());
                 if (scelta == 1) {
-                    if (gestoreScambio.isInfoScambioDaConfigurare()) {
+                    if (scambioRepository.isInfoScambioDaConfigurare()) {
                         leggiECaricaParametri();
                     } else {
                         System.out.println("Attenzione: info di scambio già configurate.");
@@ -119,7 +120,7 @@ public class FileUtenteService {
      */
     private void programParametri() throws Exception {
         Scambio scambio = parametri();
-        this.gestoreScambio.impostaInfoDiScambio(scambio);
+        this.scambioRepository.impostaInfoDiScambio(scambio);
     }
 
     /**

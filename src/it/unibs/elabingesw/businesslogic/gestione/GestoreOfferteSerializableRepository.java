@@ -16,7 +16,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
+public final class GestoreOfferteSerializableRepository extends GestoreGenerico<OffertaContext> implements OffertaRepository {
     private static final String FILE_NAME = "Offerte";
 
     /**
@@ -27,7 +27,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      *
      */
     // TODO: 27/nov/2022 aggiorna doc, dato che metodo ora aggiorna stato offerte.
-    public GestoreOfferte() {
+    public GestoreOfferteSerializableRepository() {
         super(FILE_NAME);
         //aggiornaStatoDelleOfferte();
     }
@@ -52,6 +52,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * Post condizione: ogni offerta presente correntemente in lista è aggiornata circa
      * il suo stato rispetto alla logica del sistema.
      */
+    @Override
     public void aggiornaStatoDelleOfferte() {
         this.getListaElementi().forEach(OffertaContext::aggiornaStatoOfferta);
     }
@@ -62,6 +63,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * Precondizione: quella del metodo chiamato.
      * Post condizione: quella del metodo chiamato.
      */
+    @Override
     public void salvaOfferte() {
         salvaDati();
     }
@@ -78,6 +80,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @return TRUE se l'offerta è già presente
      * FALSE se l'offerta non è già presente
      */
+    @Override
     public boolean isOffertaPresenteByNome(String nomeArticolo) {
         return super.isElementoInListaByNome(nomeArticolo);
     }
@@ -94,6 +97,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      *
      * @param offertaContext l'oggetto di tipo Offerta
      */
+    @Override
     public void inserisciNuovaOfferta(OffertaContext offertaContext) {
         super.inserisciElemento(offertaContext);
     }
@@ -112,6 +116,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @param utente l'oggetto di tipo Utente
      * @return la lista delle offerte
      */
+    @Override
     public List<OffertaContext> getOfferteByUser(Utente utente) {
         return getListaElementi().stream().filter(offerta -> offerta.isStessoAutore(utente)).toList();
     }
@@ -131,6 +136,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @param utente l'oggetto di tipo Utente
      * @return la lista delle offerte aperte
      */
+    @Override
     public List<OffertaContext> getOfferteAperteByUser(Utente utente) {
         return getOfferteByUser(utente).stream().filter(OffertaContext::isOffertaAperta).toList();
     }
@@ -151,6 +157,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @param categoriaFoglia l'oggetto di tipo Categoria
      * @return la lista delle offerte aperte
      */
+    @Override
     public List<OffertaContext> getOfferteAperteByCategoriaFoglia(Categoria categoriaFoglia) {
         return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(OffertaContext::isOffertaAperta).toList();
     }
@@ -174,6 +181,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @param utente          l'oggetto di tipo Utente
      * @return la lista delle offerte aperte
      */
+    @Override
     public List<OffertaContext> getOfferteAperteByCategoriaFogliaAndExcludeUser(Categoria categoriaFoglia, Utente utente) {
         return getOfferteAperteByCategoriaFoglia(categoriaFoglia).stream().filter(offerta -> !offerta.isStessoAutore(utente)).toList();
     }
@@ -193,6 +201,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @param utente l'oggetto di tipo Utente
      * @return la lista delle offerte selezionate
      */
+    @Override
     public List<OffertaContext> getOfferteSelezionateByUser(Utente utente) {
         return getOfferteByUser(utente).stream().filter(OffertaContext::isOffertaSelezionata).toList();
     }
@@ -212,6 +221,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @param utente l'oggetto di tipo Utente
      * @return la lista delle offerte in scambio
      */
+    @Override
     public List<OffertaContext> getOfferteInScambioByUser(Utente utente) {
         return getOfferteByUser(utente).stream().filter(OffertaContext::isOffertaInScambio).toList();
     }
@@ -231,6 +241,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @param categoriaFoglia l'oggetto di tipo Categoria
      * @return la lista delle offerte in scambio
      */
+    @Override
     public List<OffertaContext> getOfferteInScambioByCategoriaFoglia(Categoria categoriaFoglia) {
         return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(OffertaContext::isOffertaInScambio).toList();
     }
@@ -250,7 +261,8 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @param categoriaFoglia l'oggetto di tipo Categoria
      * @return la lista delle offerte
      */
-    private List<OffertaContext> getOfferteByCategoriaFoglia(Categoria categoriaFoglia) {
+    @Override
+    public List<OffertaContext> getOfferteByCategoriaFoglia(Categoria categoriaFoglia) {
         return getListaElementi().stream().filter(offerta -> offerta.appartieneA(categoriaFoglia)).toList();
     }
 
@@ -269,6 +281,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @param categoriaFoglia l'oggetto di tipo Categoria
      * @return la lista delle offerte chiuse
      */
+    @Override
     public List<OffertaContext> getOfferteChiuseByCategoriaFoglia(Categoria categoriaFoglia) {
         return getOfferteByCategoriaFoglia(categoriaFoglia).stream().filter(OffertaContext::isOffertaChiusa).toList();
     }

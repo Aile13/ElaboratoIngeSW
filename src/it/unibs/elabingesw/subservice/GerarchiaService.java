@@ -5,7 +5,7 @@ import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.gestione.GerarchiaRepository;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchieSerializableRepository;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
+import it.unibs.elabingesw.businesslogic.gestione.ScambioRepository;
 import it.unibs.elabingesw.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
 import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.eliapitozzi.mylib.InputDati;
@@ -21,19 +21,19 @@ import it.unibs.eliapitozzi.mylib.InputDati;
 public class GerarchiaService {
 
     private final GerarchiaRepository gerarchiaRepository;
-    private final GestoreScambio gestoreScambio;
+    private final ScambioRepository scambioRepository;
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreGerarchie e un oggetto GestoreScambio.
      *
      * @param gerarchiaRepository oggetto di tipo GestoreGerarchie
-     * @param gestoreScambio oggetto di tipo GestoreScambio
+     * @param scambioRepository oggetto di tipo GestoreScambio
      * @see GestoreGerarchieSerializableRepository
      */
-    public GerarchiaService(GerarchiaRepository gerarchiaRepository, GestoreScambio gestoreScambio) {
+    public GerarchiaService(GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
         this.gerarchiaRepository = gerarchiaRepository;
-        this.gestoreScambio = gestoreScambio;
+        this.scambioRepository = scambioRepository;
     }
 
     /**
@@ -162,7 +162,7 @@ public class GerarchiaService {
      * Metodo che carica i dati da un file dell'utente.
      */
     public void caricaDatiDaFileUtente() {
-        var fileUtenteService = new FileUtenteService(this.gerarchiaRepository, this.gestoreScambio);
+        var fileUtenteService = new FileUtenteService(this.gerarchiaRepository, this.scambioRepository);
 
         fileUtenteService.avviaServizio();
     }

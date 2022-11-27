@@ -1,6 +1,7 @@
 package it.unibs.elabingesw.subservice;
 
-import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
+import it.unibs.elabingesw.businesslogic.gestione.ScambioRepository;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 import it.unibs.elabingesw.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
@@ -19,17 +20,17 @@ import java.util.List;
  * @author Ali Laaraj
  */
 public class ScambioService {
-    private final GestoreScambio gestoreScambio;
+    private final ScambioRepository scambioRepository;
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreScambio.
      *
-     * @param gestoreScambio
-     * @see GestoreScambio
+     * @param scambioRepository
+     * @see GestoreScambioSerializableRepository
      */
-    public ScambioService(GestoreScambio gestoreScambio) {
-        this.gestoreScambio = gestoreScambio;
+    public ScambioService(ScambioRepository scambioRepository) {
+        this.scambioRepository = scambioRepository;
     }
 
     /**
@@ -37,7 +38,7 @@ public class ScambioService {
      * relative a uno scambio.
      */
     public void impostaInfoScambio() {
-        if (this.gestoreScambio.isInfoScambioDaConfigurare()) {
+        if (this.scambioRepository.isInfoScambioDaConfigurare()) {
             System.out.println("Procedura settaggio info di scambio avviata");
             var piazza = chiediNomePiazza();
             var listaLuoghi = chiediLuoghiDiScambio();
@@ -47,7 +48,7 @@ public class ScambioService {
 
             Scambio scambio = new Scambio(piazza, listaLuoghi, listaGiorni, intervalliOrari, scadenza);
 
-            gestoreScambio.impostaInfoDiScambio(scambio);
+            scambioRepository.impostaInfoDiScambio(scambio);
             System.out.println("Info di scambio impostate correttamente.");
         } else {
             System.out.println("\tAttenzione: info di scambio già impostate.");
@@ -126,11 +127,11 @@ public class ScambioService {
      */
     public void visualizzaInfoDiScambioFormaEstesa() {
         System.out.println("Info parametri di scambio:");
-        if (this.gestoreScambio.isInfoScambioDaConfigurare()) {
+        if (this.scambioRepository.isInfoScambioDaConfigurare()) {
             System.out.println("\tInfo ancora da configurare");
         } else {
             //System.out.println(this.gestoreScambio.getInfoDiScambio().get());
-            System.out.println(new CompositeDomainTypeRenderer().render(this.gestoreScambio.getInfoDiScambio().get()));
+            System.out.println(new CompositeDomainTypeRenderer().render(this.scambioRepository.getInfoDiScambio().get()));
         }
 
     }
@@ -141,11 +142,11 @@ public class ScambioService {
      */
     public void visualizzaInfoDiScambioFormaRidotta() {
         System.out.println("Info parametri di scambio:");
-        if (this.gestoreScambio.isInfoScambioDaConfigurare()) {
+        if (this.scambioRepository.isInfoScambioDaConfigurare()) {
             System.out.println("\tInfo ancora da configurare");
         } else {
             //System.out.println(this.gestoreScambio.getInfoDiScambio().get().toStringFormaRidotta());
-            System.out.println(new CompositeDomainTypeLimitedRenderer().render(this.gestoreScambio.getInfoDiScambio().get()));
+            System.out.println(new CompositeDomainTypeLimitedRenderer().render(this.scambioRepository.getInfoDiScambio().get()));
         }
 
     }

@@ -19,10 +19,11 @@ public class App {
      * Metodo run che crea i vari oggetti ed esegue il menu.
      */
     public void run() {
-        final var gestoreUtenti = new GestoreUtenti();
+        // TODO: 27/nov/2022 aggiornare nomi di var dei gestori. Se si vuole.
+        final var gestoreUtenti = new GestoreUtentiSerializableRepository();
         final var gestoreGerarchie = new GestoreGerarchieSerializableRepository();
-        final var gestoreScambio = new GestoreScambio();
-        final var gestoreOfferte = new GestoreOfferte();
+        final var gestoreScambio = new GestoreScambioSerializableRepository();
+        final var gestoreOfferte = new GestoreOfferteSerializableRepository();
 
         final var login = new Login(gestoreUtenti);
         final var macroServices = new MacroServices(gestoreUtenti, gestoreGerarchie, gestoreScambio, gestoreOfferte);

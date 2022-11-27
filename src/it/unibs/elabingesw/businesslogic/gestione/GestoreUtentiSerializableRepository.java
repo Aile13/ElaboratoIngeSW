@@ -2,7 +2,6 @@ package it.unibs.elabingesw.businesslogic.gestione;
 
 import it.unibs.elabingesw.businesslogic.utente.Configuratore;
 import it.unibs.elabingesw.businesslogic.utente.Fruitore;
-import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 
 /**
@@ -15,7 +14,7 @@ import it.unibs.elabingesw.businesslogic.utente.Utente;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public final class GestoreUtenti extends GestoreGenerico<Utente> {
+public final class GestoreUtentiSerializableRepository extends GestoreGenerico<Utente> implements UtenteRepository {
 
     private static final String FILE_NAME = "Utenti";
 
@@ -25,7 +24,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * Post condizione: Quella del costruttore della super-classe e
      * anche della presenza nella lista del configuratore di default.
      */
-    public GestoreUtenti() {
+    public GestoreUtentiSerializableRepository() {
         super(FILE_NAME);
         inserisciDefaultConfiguratore();
     }
@@ -34,7 +33,8 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * Metodo che permette di inserire il configuratore di
      * default nella lista, se questo non è già presente in essa.
      */
-    private void inserisciDefaultConfiguratore() {
+    @Override
+    public void inserisciDefaultConfiguratore() {
         if (!isElementoInListaByNome(Configuratore.getDefaultConfiguratore().getUsername()))
             this.inserisciElemento(Configuratore.getDefaultConfiguratore());
     }
@@ -72,6 +72,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * @return TRUE se l'utente è valido
      * FALSE se l'utente non è valido
      */
+    @Override
     public boolean isUtenteValido(String username, String password) {
         if (this.trovaElementoConNome(username).isPresent()) {
             return this.trovaElementoConNome(username).get().isPasswordCorretta(password);
@@ -88,6 +89,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * @return TRUE se l'utente è già registrato
      * FALSE se l'utente non è già registrato
      */
+    @Override
     public boolean isUtenteRegistrato(String username) {
         return isElementoInListaByNome(username);
     }
@@ -102,6 +104,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * @param username lo username del nuovo configuratore
      * @param password la password del nuovo configuratore
      */
+    @Override
     public void inserisciNuovoConfiguratore(String username, String password) {
         inserisciElemento(new Configuratore(username, password));
     }
@@ -112,6 +115,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * Precondizione: Quella del metodo chiamato.
      * Post condizione: Quella del metodo chiamato.
      */
+    @Override
     public void salvaUtenti() {
         salvaDati();
     }
@@ -126,6 +130,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * @param username lo username del nuovo fruitore
      * @param password la password del nuovo fruitore
      */
+    @Override
     public void inserisciNuovoFruitore(String username, String password) {
         inserisciElemento(new Fruitore(username, password));
     }
@@ -142,11 +147,13 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * @param username lo username dell'utente
      * @return il tipo di utente
      */
+    // TODO: 27/nov/2022 Rimosso metodo fuori contesto, fatto.
+    /*@Override
     public UserType getUserTypeByNome(String username) {
         if (trovaElementoConNome(username).isPresent()) {
             return trovaElementoConNome(username).get().getUserType();
         } else return null;
-    }
+    }*/
 
     /**
      * Metodo che restituisce l'oggetto Utente una volta
@@ -162,6 +169,7 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * @param username lo username dell'utente
      * @return l'oggetto Utente
      */
+    @Override
     public Utente getUserByNome(String username) {
         if (trovaElementoConNome(username).isPresent()) {
             return trovaElementoConNome(username).get();

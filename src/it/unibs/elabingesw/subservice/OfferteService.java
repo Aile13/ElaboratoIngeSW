@@ -3,10 +3,7 @@ package it.unibs.elabingesw.subservice;
 import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
-import it.unibs.elabingesw.businesslogic.gestione.GerarchiaRepository;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchieSerializableRepository;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreOfferte;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
+import it.unibs.elabingesw.businesslogic.gestione.*;
 import it.unibs.elabingesw.businesslogic.offerta.ListaCampiCompilati;
 import it.unibs.elabingesw.businesslogic.offerta.OffertaContext;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
@@ -27,24 +24,24 @@ import java.util.Objects;
  * @author Ali Laaraj
  */
 public class OfferteService {
-    private final GestoreOfferte gestoreOfferte;
+    private final OffertaRepository offertaRepository;
     private final GerarchiaRepository gerarchiaRepository;
-    private final GestoreScambio gestoreScambio;
+    private final ScambioRepository scambioRepository;
     private Utente utente;
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreOfferte e un oggetto GestoreGerarchie.
      *
-     * @param gestoreOfferte
+     * @param offertaRepository
      * @param gerarchiaRepository
-     * @see GestoreOfferte
+     * @see GestoreOfferteSerializableRepository
      * @see GestoreGerarchieSerializableRepository
      */
-    public OfferteService(GestoreOfferte gestoreOfferte, GerarchiaRepository gerarchiaRepository, GestoreScambio gestoreScambio) {
-        this.gestoreOfferte = gestoreOfferte;
+    public OfferteService(OffertaRepository offertaRepository, GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
+        this.offertaRepository = offertaRepository;
         this.gerarchiaRepository = gerarchiaRepository;
-        this.gestoreScambio = gestoreScambio;
+        this.scambioRepository = scambioRepository;
     }
 
     /**
@@ -61,7 +58,7 @@ public class OfferteService {
             var listaCampiCompilati = new ListaCampiCompilati(gerarchiaSelezionata, categoriaFogliaSelezionata);
             ListaCampiCompilatiService.compila(listaCampiCompilati);
 
-            this.gestoreOfferte.inserisciNuovaOfferta(new OffertaContext(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata));
+            this.offertaRepository.inserisciNuovaOfferta(new OffertaContext(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata));
             System.out.println("Offerta inserita.");
         } else {
             System.out.println("Attenzione: non sono presenti gerarchie per inserire nessun articolo.");
@@ -111,11 +108,11 @@ public class OfferteService {
      * controllando che il nome non è già stato inserito.
      *
      * @return il nome dell'articolo
-     * @see GestoreOfferte
+     * @see GestoreOfferteSerializableRepository
      */
     private String chiediNomeArticolo() {
         var nomeArticolo = InputDati.leggiStringaNonVuota("Inserisci il titolo dell'articolo: ");
-        while (this.gestoreOfferte.isOffertaPresenteByNome(nomeArticolo)) {
+        while (this.offertaRepository.isOffertaPresenteByNome(nomeArticolo)) {
             System.out.println("Errore: nome articolo già usato, riprovare.");
             nomeArticolo = InputDati.leggiStringaNonVuota("Reinserisci il titolo dell'articolo: ");
         }
@@ -125,15 +122,15 @@ public class OfferteService {
     /**
      * Metodo che visualizza le offerte di un utente.
      *
-     * @see GestoreOfferte
+     * @see GestoreOfferteSerializableRepository
      */
     public void visualizzaOfferteUtente() {
-        if (this.gestoreOfferte.getOfferteByUser(utente).isEmpty()) {
+        if (this.offertaRepository.getOfferteByUser(utente).isEmpty()) {
             System.out.println("\tAttenzione non ci sono offerte di " + utente.getUsername() + " da visualizzare.");
         } else {
             System.out.println("Offerte di " + utente.getUsername() + ":");
             //this.gestoreOfferte.getOfferteByUser(utente).forEach(System.out::println);
-            this.gestoreOfferte.getOfferteByUser(utente).forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
+            this.offertaRepository.getOfferteByUser(utente).forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
         }
     }
 
@@ -150,14 +147,14 @@ public class OfferteService {
      * Metodo che permette all'utente di scegliere quale offerta
      * ritirare tra quelle aperte.
      *
-     * @see GestoreOfferte
+     * @see GestoreOfferteSerializableRepository
      */
     public void ritiraOfferte() {
-        if (this.gestoreOfferte.getOfferteAperteByUser(this.utente).isEmpty()) {
+        if (this.offertaRepository.getOfferteAperteByUser(this.utente).isEmpty()) {
             System.out.println("\tAttenzione: non ci sono offerte aperte da ritirare.");
         } else {
             System.out.println("Seleziona quali offerte aperte vuoi ritirare: ");
-            this.gestoreOfferte.getOfferteAperteByUser(this.utente).forEach(offerta -> {
+            this.offertaRepository.getOfferteAperteByUser(this.utente).forEach(offerta -> {
                 if (InputDati.yesOrNo("\tVuoi ritirare l'offerta: " + offerta.getNomeArticolo() + "? ")) {
                     offerta.ritiraOfferta();
                 }
@@ -169,19 +166,19 @@ public class OfferteService {
      * Metodo che visualizza la lista delle offerte aperte (contenente
      * almeno un'offerta aperta) per una determinata categoria foglia.
      *
-     * @see GestoreOfferte
+     * @see GestoreOfferteSerializableRepository
      * @see GestoreGerarchieSerializableRepository
      */
     public void visualizzaOfferteAperteConSelezioneFoglia() {
         if (this.gerarchiaRepository.haGerarchie()) {
             GerarchiaDiCategorie gerarchia = chiediGerarchia();
             Categoria categoria = chiediCategoriaFogliaByGerarchia(gerarchia);
-            if (this.gestoreOfferte.getOfferteAperteByCategoriaFoglia(categoria).isEmpty()) {
+            if (this.offertaRepository.getOfferteAperteByCategoriaFoglia(categoria).isEmpty()) {
                 System.out.println("Attenzione: nessuna offerta aperta per questa categoria foglia.");
             } else {
                 System.out.println("Elenco offerte data la categoria selezionata: ");
                 //this.gestoreOfferte.getOfferteAperteByCategoriaFoglia(categoria).forEach(System.out::println);
-                this.gestoreOfferte.getOfferteAperteByCategoriaFoglia(categoria).forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
+                this.offertaRepository.getOfferteAperteByCategoriaFoglia(categoria).forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
 
             }
         } else {
@@ -196,7 +193,7 @@ public class OfferteService {
      * lista passata per parametro.
      *
      * @return l'offerta aperta
-     * @see GestoreOfferte
+     * @see GestoreOfferteSerializableRepository
      */
     private OffertaContext chiediOffertaByList(List<OffertaContext> listaOfferte) {
         System.out.println("Seleziona l'offerta aperta di interesse: ");
@@ -214,22 +211,22 @@ public class OfferteService {
      * che sono barattabili, rispettando i vincoli che le due offerte
      * siano della stessa categoria e che siano di due utenti diversi.
      *
-     * @see GestoreScambio
+     * @see GestoreScambioSerializableRepository
      */
     public void selezionaUnaOffertaApertaPerBaratto() {
-        if (gestoreScambio.isInfoScambioDaConfigurare()) {
+        if (scambioRepository.isInfoScambioDaConfigurare()) {
             System.out.println("Attenzione: criteri e tempistiche di scambio non ancora impostati.");
             System.out.println("Impossibile procedere con l'operazione di baratto.");
         } else {
             System.out.println("Seleziona una tua offerta aperta che intendi barattare");
-            var listaOfferteAperteUtente = this.gestoreOfferte.getOfferteAperteByUser(utente);
+            var listaOfferteAperteUtente = this.offertaRepository.getOfferteAperteByUser(utente);
             if (listaOfferteAperteUtente.isEmpty()) {
                 System.out.println("Attenzione: non ci sono offerte aperte da selezionare.");
                 System.out.println("Impossibile procedere con l'operazione di baratto.");
             } else {
                 OffertaContext offertaContextDaBarattareA = chiediOffertaByList(listaOfferteAperteUtente);
                 System.out.println("Seleziona ora una offerta aperta di medesima categoria e di diverso utente che intendi barattare");
-                var listaOffAperteNonUtenteStessaCat = this.gestoreOfferte.getOfferteAperteByCategoriaFogliaAndExcludeUser(offertaContextDaBarattareA.getCategoriaDiAppartenenza(), utente);
+                var listaOffAperteNonUtenteStessaCat = this.offertaRepository.getOfferteAperteByCategoriaFogliaAndExcludeUser(offertaContextDaBarattareA.getCategoriaDiAppartenenza(), utente);
                 if (listaOffAperteNonUtenteStessaCat.isEmpty()) {
                     System.out.println("Attenzione: non ci sono altre offerte da selezionare disponibili.");
                     System.out.println("Impossibile procedere con l'operazione di baratto.");
@@ -242,15 +239,15 @@ public class OfferteService {
 //                    offertaContextDaBarattareA.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
 //                    offertaDaBarattareB.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
 
-                    offertaContextDaBarattareA.creaLegameEModificaStatiConOffertaEInfoScambio(offertaDaBarattareB , this.gestoreScambio.getInfoDiScambio());
+                    offertaContextDaBarattareA.creaLegameEModificaStatiConOffertaEInfoScambio(offertaDaBarattareB , this.scambioRepository.getInfoDiScambio());
                 }
             }
         }
     }
 
     public void visualizzaProposteDiScambio() {
-        gestoreOfferte.aggiornaStatoDelleOfferte();
-        var offerteSelezionate = this.gestoreOfferte.getOfferteSelezionateByUser(utente);
+        offertaRepository.aggiornaStatoDelleOfferte();
+        var offerteSelezionate = this.offertaRepository.getOfferteSelezionateByUser(utente);
         if (offerteSelezionate.isEmpty()) {
             System.out.println("Non ci sono proposte di scambio.");
         } else {
@@ -297,7 +294,7 @@ public class OfferteService {
      */
     private String chiediOraDiIncontro() {
         System.out.println("Selezionare un orario di incontro");
-        for (LocalTime orario : gestoreScambio.getInfoDiScambio().get().getListaOrari()) {
+        for (LocalTime orario : scambioRepository.getInfoDiScambio().get().getListaOrari()) {
             if (InputDati.yesOrNo("Vuoi selezionare l'orario: " + orario + "?")) {
                 return orario.toString();
             }
@@ -313,7 +310,7 @@ public class OfferteService {
      */
     private String chiediDataDiIncontro() {
         System.out.println("Selezionare un giorno di incontro");
-        for (DayOfWeek giorno : gestoreScambio.getInfoDiScambio().get().giorni()) {
+        for (DayOfWeek giorno : scambioRepository.getInfoDiScambio().get().giorni()) {
             if (InputDati.yesOrNo("Vuoi selezionare il giorno: " + giorno + "?")) {
                 return giorno.name();
             }
@@ -329,7 +326,7 @@ public class OfferteService {
      */
     private String chiediLuogoDiIncontro() {
         System.out.println("Selezionare luogo di incontro");
-        for (String luogo : gestoreScambio.getInfoDiScambio().get().listaLuoghi()) {
+        for (String luogo : scambioRepository.getInfoDiScambio().get().listaLuoghi()) {
             if (InputDati.yesOrNo("Vuoi selezionare luogo: " + luogo + "?")) {
                 return luogo;
             }
@@ -341,10 +338,10 @@ public class OfferteService {
     /**
      * Metodo che visualizza le offerte in scambio di un utente.
      *
-     * @see GestoreOfferte
+     * @see GestoreOfferteSerializableRepository
      */
     public void visualizzaOfferteInScambio() {
-        List<OffertaContext> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
+        List<OffertaContext> offerte = this.offertaRepository.getOfferteInScambioByUser(utente);
         if (offerte.isEmpty()) {
             System.out.println("Non ci sono offerte in scambio.");
         } else {
@@ -404,10 +401,10 @@ public class OfferteService {
      * Metodo che permette all'utente di vedere tutte le ultime
      * risposte che ha ricevuto per le offerte in scambio.
      *
-     * @see GestoreOfferte
+     * @see GestoreOfferteSerializableRepository
      */
     public void visualizzaUltimeRispostePerOfferteInScambio() {
-        List<OffertaContext> offerte = this.gestoreOfferte.getOfferteInScambioByUser(utente);
+        List<OffertaContext> offerte = this.offertaRepository.getOfferteInScambioByUser(utente);
         if (offerte.isEmpty()) {
             System.out.println("Non ci sono offerte in scambio. Quindi neanche risposte.");
         } else {
@@ -427,7 +424,7 @@ public class OfferteService {
      * Metodo che visualizza la lista delle offerte in scambio
      * e chiuse per una determinata categoria foglia.
      *
-     * @see GestoreOfferte
+     * @see GestoreOfferteSerializableRepository
      * @see GestoreGerarchieSerializableRepository
      */
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
@@ -436,8 +433,8 @@ public class OfferteService {
             var gerarchiaSelezionata = chiediGerarchia();
             Categoria categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
 
-            var offerteInScambio = this.gestoreOfferte.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
-            var offerteChiuse = this.gestoreOfferte.getOfferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
+            var offerteInScambio = this.offertaRepository.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
+            var offerteChiuse = this.offertaRepository.getOfferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
 
             System.out.println("Per categoria: " + categoriaFogliaSelezionata.getNome());
             System.out.println("Le offerte in scambio:");
