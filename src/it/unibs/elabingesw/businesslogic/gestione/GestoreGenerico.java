@@ -42,7 +42,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      *
      * @param fileName nome del file da leggere, senza estensione.
      */
-    public GestoreGenerico(String fileName) {
+    GestoreGenerico(String fileName) {
         this.pathRepository = dataDir + fileName + ".dat";
         inizializzaDirDati();
         this.listaElementi = new ArrayList<>();
@@ -67,7 +67,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
     /**
      * Metodo che salva i dati su file.
      */
-    public void salvaDati() {
+    void salvaDati() {
         try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(pathRepository))) {
             output.writeObject(this.listaElementi);
         } catch (IOException e) {
@@ -82,7 +82,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      * si caricano in lista gli elementi letti in esso. Se il file non è
      * presente allora non si opera alcun caricamento.
      */
-    protected void caricaElementi() {
+    private void caricaElementi() {
         if (new File(pathRepository).exists()) {
             try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(pathRepository))) {
                 List<T> listFromFile = (List<T>) input.readObject();
@@ -108,7 +108,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      * FALSE se l'elemento non è presente in lista
      */
 
-    public boolean isElementoInListaByNome(String nome) {
+    boolean isElementoInListaByNome(String nome) {
         return trovaElementoConNome(nome).isPresent();
     }
 
@@ -117,7 +117,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      *
      * @return la lista degli elementi
      */
-    public List<T> getListaElementi() {
+    List<T> getListaElementi() {
         return listaElementi;
     }
 
@@ -135,7 +135,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      * @param nome il nome dell'elemento
      * @return l'optional dell'elemento cercato
      */
-    public Optional<T> trovaElementoConNome(String nome) {
+    Optional<T> trovaElementoConNome(String nome) {
         for (T elemento : listaElementi) {
             if (elemento.isStessoNome(nome)) return Optional.of(elemento);
         }
@@ -154,7 +154,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
      *
      * @param e un oggetto generico di tipo T.
      */
-    public void inserisciElemento(T e) {
+    void inserisciElemento(T e) {
         this.listaElementi.add(e);
     }
 

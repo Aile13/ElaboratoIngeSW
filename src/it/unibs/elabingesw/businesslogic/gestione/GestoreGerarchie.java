@@ -65,6 +65,11 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
         this.inserisciElemento(gerarchiaDiCategorie);
     }
 
+    // TODO: 27/nov/2022 Aggiungere doc. metodo nuovo.
+    public boolean isGerarchiaPresenteByNome(String nomeGerarchia) {
+        return super.isElementoInListaByNome(nomeGerarchia);
+    }
+
     /**
      * Metodo che controlla se la lista delle gerarchie
      * contiene almeno una gerarchia.

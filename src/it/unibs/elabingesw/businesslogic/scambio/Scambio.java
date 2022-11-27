@@ -86,7 +86,7 @@ public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> g
      * @return TRUE se le piazze sono uguali
      * FALSE se le piazze sono diverse
      */
-    // TODO: 25/nov/2022 nota: è inutile far implementare Manageable a Scambio, in quanto poi l'uso in GestoreScambio è degenere e non necessità del chiamare isStessoNome.
+    // TODO: 25/nov/2022 nota: è inutile far implementare Manageable a Scambio, in quanto poi l'uso in GestoreScambio è degenere e non necessità del chiamare isStessoNome. Possiamo pensarlo come l'eccezione alla regola.
     @Override
     public boolean isStessoNome(String piazza) {
         return this.piazza.equals(piazza);

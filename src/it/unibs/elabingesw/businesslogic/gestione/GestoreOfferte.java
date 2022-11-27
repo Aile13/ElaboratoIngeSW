@@ -21,25 +21,30 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
 
     /**
      * Costruttore di classe.
+     * aggiungi cosa come :      * Inoltre aggiorna lo stato delle offerte dall'ultimo loro salvataggio.
+     * e : E inoltre esegue l'aggiornamento dello stato di tutte
+     *      * le offerte in lista.
+     *
      */
+    // TODO: 27/nov/2022 aggiorna doc, dato che metodo ora aggiorna stato offerte.
     public GestoreOfferte() {
         super(FILE_NAME);
+        //aggiornaStatoDelleOfferte();
     }
 
     /**
      * Metodo che carica, dal file, tutti gli elementi in lista.
-     * Inoltre aggiorna lo stato delle offerte dall'ultimo loro salvataggio.
      * <p>
      * Post condizione: quella del metodo super chiamata.
      * E inoltre esegue l'aggiornamento dello stato di tutte
      * le offerte in lista.
      */
-    @Override
+    // TODO: 27/nov/2022 ora coincidente metodo di superclasse, quindi si toglie.
+    /*@Override
     protected void caricaElementi() {
         super.caricaElementi();
-        aggiornaStatoDelleOfferte();
     }
-
+*/
     /**
      * Aggiorna stato delle offerte presenti in lista.
      * <p>
@@ -73,7 +78,7 @@ public class GestoreOfferte extends GestoreGenerico<OffertaContext> {
      * @return TRUE se l'offerta è già presente
      * FALSE se l'offerta non è già presente
      */
-    public boolean isOffertaGiaPresenteByNome(String nomeArticolo) {
+    public boolean isOffertaPresenteByNome(String nomeArticolo) {
         return super.isElementoInListaByNome(nomeArticolo);
     }
 
