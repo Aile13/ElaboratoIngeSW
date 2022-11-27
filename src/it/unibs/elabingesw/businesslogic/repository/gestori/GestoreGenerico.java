@@ -1,4 +1,6 @@
-package it.unibs.elabingesw.businesslogic.gestione;
+package it.unibs.elabingesw.businesslogic.repository.gestori;
+
+import it.unibs.elabingesw.businesslogic.repository.Manageable;
 
 import java.io.File;
 import java.io.FileInputStream;

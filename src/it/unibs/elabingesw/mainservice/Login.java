@@ -1,7 +1,7 @@
 package it.unibs.elabingesw.mainservice;
 
-import it.unibs.elabingesw.businesslogic.gestione.UtenteRepository;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreUtentiSerializableRepository;
+import it.unibs.elabingesw.businesslogic.repository.UtenteRepository;
+import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
 import it.unibs.elabingesw.businesslogic.utente.Configuratore;
 import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.elabingesw.businesslogic.utente.Utente;

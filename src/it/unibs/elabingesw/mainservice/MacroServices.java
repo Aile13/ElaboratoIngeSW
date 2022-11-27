@@ -1,6 +1,10 @@
 package it.unibs.elabingesw.mainservice;
 
-import it.unibs.elabingesw.businesslogic.gestione.*;
+import it.unibs.elabingesw.businesslogic.repository.*;
+import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSerializableRepository;
+import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreOfferteSerializableRepository;
+import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
+import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.elabingesw.subservice.GerarchiaService;
 import it.unibs.elabingesw.subservice.OfferteService;

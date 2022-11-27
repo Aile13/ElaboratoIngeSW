@@ -1,5 +1,6 @@
-package it.unibs.elabingesw.businesslogic.gestione;
+package it.unibs.elabingesw.businesslogic.repository.gestori;
 
+import it.unibs.elabingesw.businesslogic.repository.UtenteRepository;
 import it.unibs.elabingesw.businesslogic.utente.Configuratore;
 import it.unibs.elabingesw.businesslogic.utente.Fruitore;
 import it.unibs.elabingesw.businesslogic.utente.Utente;

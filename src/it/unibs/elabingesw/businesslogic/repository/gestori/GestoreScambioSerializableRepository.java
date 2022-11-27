@@ -1,5 +1,6 @@
-package it.unibs.elabingesw.businesslogic.gestione;
+package it.unibs.elabingesw.businesslogic.repository.gestori;
 
+import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 
 import java.util.Optional;

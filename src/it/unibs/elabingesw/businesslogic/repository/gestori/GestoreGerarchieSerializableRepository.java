@@ -1,6 +1,7 @@
-package it.unibs.elabingesw.businesslogic.gestione;
+package it.unibs.elabingesw.businesslogic.repository.gestori;
 
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
+import it.unibs.elabingesw.businesslogic.repository.GerarchiaRepository;
 
 import java.util.List;
 

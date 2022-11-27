@@ -1,7 +1,7 @@
 package it.unibs.elabingesw.businesslogic.utente;
 
 import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
-import it.unibs.elabingesw.businesslogic.gestione.Manageable;
+import it.unibs.elabingesw.businesslogic.repository.Manageable;
 
 import java.io.Serializable;
 import java.util.Objects;

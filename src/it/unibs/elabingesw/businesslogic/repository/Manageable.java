@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.businesslogic.gestione;
+package it.unibs.elabingesw.businesslogic.repository;
 
 /**
  * Interfaccia Manageable.

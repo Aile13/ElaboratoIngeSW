@@ -2,8 +2,7 @@ package it.unibs.elabingesw.businesslogic.scambio;
 
 import it.unibs.elabingesw.businesslogic.DomainTypeToLimitedRender;
 import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
-import it.unibs.elabingesw.businesslogic.gestione.Manageable;
-import org.apache.commons.lang3.NotImplementedException;
+import it.unibs.elabingesw.businesslogic.repository.Manageable;
 
 import java.io.Serializable;
 import java.time.DayOfWeek;

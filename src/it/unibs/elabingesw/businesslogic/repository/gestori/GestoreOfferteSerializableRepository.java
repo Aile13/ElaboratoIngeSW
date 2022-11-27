@@ -1,7 +1,8 @@
-package it.unibs.elabingesw.businesslogic.gestione;
+package it.unibs.elabingesw.businesslogic.repository.gestori;
 
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
 import it.unibs.elabingesw.businesslogic.offerta.OffertaContext;
+import it.unibs.elabingesw.businesslogic.repository.OffertaRepository;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 
 import java.util.List;
@@ -29,7 +30,7 @@ public final class GestoreOfferteSerializableRepository extends GestoreGenerico<
     // TODO: 27/nov/2022 aggiorna doc, dato che metodo ora aggiorna stato offerte.
     public GestoreOfferteSerializableRepository() {
         super(FILE_NAME);
-        //aggiornaStatoDelleOfferte();
+        aggiornaStatoDelleOfferte();
     }
 
     /**

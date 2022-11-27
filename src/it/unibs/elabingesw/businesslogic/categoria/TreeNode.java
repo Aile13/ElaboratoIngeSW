@@ -2,7 +2,7 @@ package it.unibs.elabingesw.businesslogic.categoria;
 
 import it.unibs.elabingesw.businesslogic.DomainTypeToLimitedRender;
 import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
-import it.unibs.elabingesw.businesslogic.gestione.Manageable;
+import it.unibs.elabingesw.businesslogic.repository.Manageable;
 
 import java.io.Serializable;
 import java.util.*;

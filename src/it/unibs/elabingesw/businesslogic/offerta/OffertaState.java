@@ -23,7 +23,7 @@ public interface OffertaState extends Serializable, DomainTypeToRender {
 
     void creaLegameEModificaStatiConOffertaEInfoScambio(OffertaContext context, OffertaContext offertaContextDaBarattareB, Scambio infoDiScambio);  // fatto
 
-    void aggiornaStatoOfferta(OffertaContext context);  // fatto, poi questo è da togliere.
+    void aggiornaStatoOfferta(OffertaContext context);  // fatto
 
     boolean isOffertaSelezionata(OffertaContext context); /// fatto
 

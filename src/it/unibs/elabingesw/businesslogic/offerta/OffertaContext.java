@@ -2,7 +2,7 @@ package it.unibs.elabingesw.businesslogic.offerta;
 
 import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
-import it.unibs.elabingesw.businesslogic.gestione.Manageable;
+import it.unibs.elabingesw.businesslogic.repository.Manageable;
 import it.unibs.elabingesw.businesslogic.offerta.state.ApertaState;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 import it.unibs.elabingesw.businesslogic.utente.Utente;

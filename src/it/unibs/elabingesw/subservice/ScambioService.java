@@ -1,7 +1,7 @@
 package it.unibs.elabingesw.subservice;
 
-import it.unibs.elabingesw.businesslogic.gestione.ScambioRepository;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreScambioSerializableRepository;
+import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
+import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 import it.unibs.elabingesw.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
