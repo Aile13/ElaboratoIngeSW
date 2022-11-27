@@ -1,6 +1,7 @@
 package it.unibs.elabingesw.mainservice;
 
 import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
+import it.unibs.elabingesw.businesslogic.utente.Configuratore;
 import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.eliapitozzi.mylib.InputDati;
@@ -48,7 +49,7 @@ public class Login {
                 var password = InputDati.leggiStringaNonVuota("Inserisci password: ");
                 if (gestoreUtenti.isUtenteValido(username, password)) {
                     System.out.println("Accesso corretto.");
-                    if (gestoreUtenti.isDefaultConfiguratore(username)) {
+                    if (Configuratore.isDefaultConfiguratoreByUsername(username)) {
                         creaNuovoConfiguratore();
                     } else {
                         this.userType = gestoreUtenti.getUserTypeByNome(username);

@@ -49,9 +49,10 @@ public final class GestoreUtenti extends GestoreGenerico<Utente> {
      * @return TRUE se il configuratore è quello di default
      * FALSE se il configuratore non è quello di default
      */
-    public boolean isDefaultConfiguratore(String username) {
+    // TODO: 27/nov/2022 da rimuovere, metodo fuori contesto. Si usa quello in classe Configuratore. 
+   /* public boolean isDefaultConfiguratore(String username) {
         return Configuratore.isDefaultConfiguratoreByUsername(username);
-    }
+    }*/
 
     /**
      * Metodo che controlla se un utente tra quelli presenti in lista
