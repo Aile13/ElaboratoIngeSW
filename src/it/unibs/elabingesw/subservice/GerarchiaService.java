@@ -3,7 +3,8 @@ package it.unibs.elabingesw.subservice;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
+import it.unibs.elabingesw.businesslogic.gestione.GerarchiaRepository;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchieSerializableRepository;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
 import it.unibs.elabingesw.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
 import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
@@ -19,19 +20,19 @@ import it.unibs.eliapitozzi.mylib.InputDati;
  */
 public class GerarchiaService {
 
-    private final GestoreGerarchie gestoreGerarchie;
+    private final GerarchiaRepository gerarchiaRepository;
     private final GestoreScambio gestoreScambio;
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreGerarchie e un oggetto GestoreScambio.
      *
-     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
+     * @param gerarchiaRepository oggetto di tipo GestoreGerarchie
      * @param gestoreScambio oggetto di tipo GestoreScambio
-     * @see GestoreGerarchie
+     * @see GestoreGerarchieSerializableRepository
      */
-    public GerarchiaService(GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
-        this.gestoreGerarchie = gestoreGerarchie;
+    public GerarchiaService(GerarchiaRepository gerarchiaRepository, GestoreScambio gestoreScambio) {
+        this.gerarchiaRepository = gerarchiaRepository;
         this.gestoreScambio = gestoreScambio;
     }
 
@@ -46,7 +47,7 @@ public class GerarchiaService {
         aggiungiSottoCategorie(gerarchia);
 
         if (chiediConfermaInserimentoGerarchia()) {
-            gestoreGerarchie.inserisciNuovaGerarchia(gerarchia);
+            gerarchiaRepository.inserisciNuovaGerarchia(gerarchia);
         }
     }
 
@@ -85,7 +86,7 @@ public class GerarchiaService {
         var nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Inserisci nome della categoria radice: ");
         // check se nome già usato o meno tra le altre gerarchia
         // TODO: 25/nov/2022 Sostituire  gestoreGerarchie.isElementoInListaByNome con qualcosa di orientato alla classe che richiama il super. fatto.
-        while (gestoreGerarchie.isGerarchiaPresenteByNome(nomeCategoriaRadice)) {
+        while (gerarchiaRepository.isGerarchiaPresenteByNome(nomeCategoriaRadice)) {
             System.out.println("Errore nome categoria radice già usato: riprovare.");
             nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Reinserisci nome della categoria radice: ");
         }
@@ -133,10 +134,10 @@ public class GerarchiaService {
      */
     public void visualizzaGerarchieInFormaEstesa() {
         System.out.println("Elenco delle gerarchie caricate:");
-        if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
+        if (this.gerarchiaRepository.getListaGerarchie().isEmpty()) {
             System.out.println("\tNessuna gerarchia presente.");
         } else {
-            this.gestoreGerarchie.getListaGerarchie().forEach(gerarchiaDiCategorie ->
+            this.gerarchiaRepository.getListaGerarchie().forEach(gerarchiaDiCategorie ->
                     System.out.println(new CompositeDomainTypeRenderer().render(gerarchiaDiCategorie))
             );
 //            this.gestoreGerarchie.getListaGerarchie().forEach(System.out::println);
@@ -149,11 +150,11 @@ public class GerarchiaService {
      */
     public void visualizzaGerarchieInFormaRidotta() {
         System.out.println("Elenco delle gerarchie caricate:");
-        if (this.gestoreGerarchie.getListaGerarchie().isEmpty()) {
+        if (this.gerarchiaRepository.getListaGerarchie().isEmpty()) {
             System.out.println("\tNessuna gerarchia presente.");
         } else {
             //this.gestoreGerarchie.getListaGerarchie().forEach(gerarchiaDiCategorie -> System.out.println(gerarchiaDiCategorie.toStringRidotto()));
-            this.gestoreGerarchie.getListaGerarchie().forEach(gerarchiaDiCategorie -> System.out.println(new CompositeDomainTypeLimitedRenderer().render(gerarchiaDiCategorie)));
+            this.gerarchiaRepository.getListaGerarchie().forEach(gerarchiaDiCategorie -> System.out.println(new CompositeDomainTypeLimitedRenderer().render(gerarchiaDiCategorie)));
         }
     }
 
@@ -161,7 +162,7 @@ public class GerarchiaService {
      * Metodo che carica i dati da un file dell'utente.
      */
     public void caricaDatiDaFileUtente() {
-        var fileUtenteService = new FileUtenteService(this.gestoreGerarchie, this.gestoreScambio);
+        var fileUtenteService = new FileUtenteService(this.gerarchiaRepository, this.gestoreScambio);
 
         fileUtenteService.avviaServizio();
     }

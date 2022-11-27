@@ -3,7 +3,8 @@ package it.unibs.elabingesw.subservice;
 import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
+import it.unibs.elabingesw.businesslogic.gestione.GerarchiaRepository;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchieSerializableRepository;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreOfferte;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
 import it.unibs.elabingesw.businesslogic.offerta.ListaCampiCompilati;
@@ -27,7 +28,7 @@ import java.util.Objects;
  */
 public class OfferteService {
     private final GestoreOfferte gestoreOfferte;
-    private final GestoreGerarchie gestoreGerarchie;
+    private final GerarchiaRepository gerarchiaRepository;
     private final GestoreScambio gestoreScambio;
     private Utente utente;
 
@@ -36,13 +37,13 @@ public class OfferteService {
      * GestoreOfferte e un oggetto GestoreGerarchie.
      *
      * @param gestoreOfferte
-     * @param gestoreGerarchie
+     * @param gerarchiaRepository
      * @see GestoreOfferte
-     * @see GestoreGerarchie
+     * @see GestoreGerarchieSerializableRepository
      */
-    public OfferteService(GestoreOfferte gestoreOfferte, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
+    public OfferteService(GestoreOfferte gestoreOfferte, GerarchiaRepository gerarchiaRepository, GestoreScambio gestoreScambio) {
         this.gestoreOfferte = gestoreOfferte;
-        this.gestoreGerarchie = gestoreGerarchie;
+        this.gerarchiaRepository = gerarchiaRepository;
         this.gestoreScambio = gestoreScambio;
     }
 
@@ -52,7 +53,7 @@ public class OfferteService {
      */
     public void creaNuovaOfferta() {
         System.out.println("Procedura di creazione nuovo articolo avviata");
-        if (this.gestoreGerarchie.haGerarchie()) {
+        if (this.gerarchiaRepository.haGerarchie()) {
 
             var nomeArticolo = chiediNomeArticolo();
             var gerarchiaSelezionata = chiediGerarchia();
@@ -96,7 +97,7 @@ public class OfferteService {
      */
     private GerarchiaDiCategorie chiediGerarchia() {
         System.out.println("Seleziona la gerarchia che contiene la categoria foglia di interesse: ");
-        for (GerarchiaDiCategorie gerarchia : this.gestoreGerarchie.getListaGerarchie()) {
+        for (GerarchiaDiCategorie gerarchia : this.gerarchiaRepository.getListaGerarchie()) {
             if (InputDati.yesOrNo("Vuoi selezionare " + gerarchia.getNome() + "?")) {
                 return gerarchia;
             }
@@ -169,10 +170,10 @@ public class OfferteService {
      * almeno un'offerta aperta) per una determinata categoria foglia.
      *
      * @see GestoreOfferte
-     * @see GestoreGerarchie
+     * @see GestoreGerarchieSerializableRepository
      */
     public void visualizzaOfferteAperteConSelezioneFoglia() {
-        if (this.gestoreGerarchie.haGerarchie()) {
+        if (this.gerarchiaRepository.haGerarchie()) {
             GerarchiaDiCategorie gerarchia = chiediGerarchia();
             Categoria categoria = chiediCategoriaFogliaByGerarchia(gerarchia);
             if (this.gestoreOfferte.getOfferteAperteByCategoriaFoglia(categoria).isEmpty()) {
@@ -427,10 +428,10 @@ public class OfferteService {
      * e chiuse per una determinata categoria foglia.
      *
      * @see GestoreOfferte
-     * @see GestoreGerarchie
+     * @see GestoreGerarchieSerializableRepository
      */
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
-        if (gestoreGerarchie.haGerarchie()) {
+        if (gerarchiaRepository.haGerarchie()) {
             System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere relative offerte in scambio e chiuse");
             var gerarchiaSelezionata = chiediGerarchia();
             Categoria categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);

@@ -1,9 +1,6 @@
 package it.unibs.elabingesw;
 
-import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreOfferte;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
+import it.unibs.elabingesw.businesslogic.gestione.*;
 import it.unibs.elabingesw.mainservice.Benvenuto;
 import it.unibs.elabingesw.mainservice.Login;
 import it.unibs.elabingesw.mainservice.MacroServices;
@@ -23,7 +20,7 @@ public class App {
      */
     public void run() {
         final var gestoreUtenti = new GestoreUtenti();
-        final var gestoreGerarchie = new GestoreGerarchie();
+        final var gestoreGerarchie = new GestoreGerarchieSerializableRepository();
         final var gestoreScambio = new GestoreScambio();
         final var gestoreOfferte = new GestoreOfferte();
 

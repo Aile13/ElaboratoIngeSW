@@ -4,7 +4,8 @@ import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
+import it.unibs.elabingesw.businesslogic.gestione.GerarchiaRepository;
+import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchieSerializableRepository;
 import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
@@ -30,7 +31,7 @@ import java.util.List;
  */
 public class FileUtenteService {
 
-    private final GestoreGerarchie gestoreGerarchie;
+    private final GerarchiaRepository gerarchiaRepository;
     private final GestoreScambio gestoreScambio;
     private File selectedFile;
     private String contenutoFile;
@@ -39,14 +40,14 @@ public class FileUtenteService {
      * Costruttore di classe, accetta come parametri un oggetto
      * GestoreGerarchie e un oggetto GestoreScambio.
      *
-     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
+     * @param gerarchiaRepository oggetto di tipo GestoreGerarchie
      * @param gestoreScambio oggetto di tipo GestoreScambio
-     * @see GestoreGerarchie
+     * @see GestoreGerarchieSerializableRepository
      * @see GestoreScambio
      */
-    public FileUtenteService(GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio) {
+    public FileUtenteService(GerarchiaRepository gerarchiaRepository, GestoreScambio gestoreScambio) {
 
-        this.gestoreGerarchie = gestoreGerarchie;
+        this.gerarchiaRepository = gerarchiaRepository;
         this.gestoreScambio = gestoreScambio;
     }
 
@@ -322,7 +323,7 @@ public class FileUtenteService {
     private void programGerarchie() throws Exception {
         List<GerarchiaDiCategorie> listaGerarchie = new LinkedList<>();
         gerarchiaList(listaGerarchie);
-        listaGerarchie.forEach(gestoreGerarchie::inserisciNuovaGerarchia);
+        listaGerarchie.forEach(gerarchiaRepository::inserisciNuovaGerarchia);
     }
 
     /**
@@ -379,7 +380,7 @@ public class FileUtenteService {
         ifStartsWithAndThenConsumeOrError(",");
 
         // TODO: 25/nov/2022 Sostituire  gestoreGerarchie.isElementoInListaByNome con qualcosa di orientato alla classe che richiama il super., fatto
-        if (listaCampi.stream().anyMatch(Campo::isCampoDiDefault) || gestoreGerarchie.isGerarchiaPresenteByNome(nomeCategoriaRadice))
+        if (listaCampi.stream().anyMatch(Campo::isCampoDiDefault) || gerarchiaRepository.isGerarchiaPresenteByNome(nomeCategoriaRadice))
             errore();
 
         GerarchiaDiCategorie gerarchiaDiCategorie = new GerarchiaDiCategorie(new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi));

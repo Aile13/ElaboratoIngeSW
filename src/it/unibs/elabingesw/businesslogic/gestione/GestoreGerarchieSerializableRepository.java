@@ -14,7 +14,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie> {
+public final class GestoreGerarchieSerializableRepository extends GestoreGenerico<GerarchiaDiCategorie> implements GerarchiaRepository {
 
     private static final String FILE_NAME = "Gerarchie";
 
@@ -23,7 +23,7 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
      * <p>
      * Post condizione: Quella del costruttore della super-classe.
      */
-    public GestoreGerarchie() {
+    public GestoreGerarchieSerializableRepository() {
         super(FILE_NAME);
     }
 
@@ -35,6 +35,7 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
      *
      * @return la lista delle gerarchie
      */
+    @Override
     public List<GerarchiaDiCategorie> getListaGerarchie() {
         return this.getListaElementi();
     }
@@ -45,6 +46,7 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
      * <p>
      * Post condizione: quella del metodo chiamato.
      */
+    @Override
     public void salvaGerarchie() {
         salvaDati();
     }
@@ -61,11 +63,13 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
      *
      * @param gerarchiaDiCategorie la gerarchia da inserire
      */
+    @Override
     public void inserisciNuovaGerarchia(GerarchiaDiCategorie gerarchiaDiCategorie) {
         this.inserisciElemento(gerarchiaDiCategorie);
     }
 
     // TODO: 27/nov/2022 Aggiungere doc. metodo nuovo.
+    @Override
     public boolean isGerarchiaPresenteByNome(String nomeGerarchia) {
         return super.isElementoInListaByNome(nomeGerarchia);
     }
@@ -77,6 +81,7 @@ public final class GestoreGerarchie extends GestoreGenerico<GerarchiaDiCategorie
      * @return TRUE se la lista delle gerarchie non è vuota
      * FALSE se la lista delle gerarchie è vuota
      */
+    @Override
     public boolean haGerarchie() {
         return !super.getListaElementi().isEmpty();
     }

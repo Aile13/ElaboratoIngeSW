@@ -1,9 +1,6 @@
 package it.unibs.elabingesw.mainservice;
 
-import it.unibs.elabingesw.businesslogic.gestione.GestoreGerarchie;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreOfferte;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreScambio;
-import it.unibs.elabingesw.businesslogic.gestione.GestoreUtenti;
+import it.unibs.elabingesw.businesslogic.gestione.*;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.elabingesw.subservice.GerarchiaService;
 import it.unibs.elabingesw.subservice.OfferteService;
@@ -17,7 +14,7 @@ import it.unibs.elabingesw.subservice.ScambioService;
  */
 public class MacroServices {
     private final GestoreUtenti gestoreUtenti;
-    private final GestoreGerarchie gestoreGerarchie;
+    private final GerarchiaRepository gerarchiaRepository;
     private final GestoreScambio gestoreScambio;
     private final GestoreOfferte gestoreOfferte;
 
@@ -30,34 +27,34 @@ public class MacroServices {
      * tipo GestoreUtenti e un oggetto di tipo GestoreGerarchie.
      *
      * @param gestoreUtenti    oggetto di tipo GestoreUtenti
-     * @param gestoreGerarchie oggetto di tipo GestoreGerarchie
+     * @param gerarchiaRepository oggetto di tipo GestoreGerarchie
      * @param gestoreScambio   oggetto di tipo GestoreScambio
      * @param gestoreOfferte   oggetto di tipo GestoreOfferte
      * @see GestoreUtenti
-     * @see GestoreGerarchie
+     * @see GestoreGerarchieSerializableRepository
      * @see GestoreScambio
      * @see GestoreOfferte
      */
-    public MacroServices(GestoreUtenti gestoreUtenti, GestoreGerarchie gestoreGerarchie, GestoreScambio gestoreScambio, GestoreOfferte gestoreOfferte) {
+    public MacroServices(GestoreUtenti gestoreUtenti, GerarchiaRepository gerarchiaRepository, GestoreScambio gestoreScambio, GestoreOfferte gestoreOfferte) {
         this.gestoreUtenti = gestoreUtenti;
-        this.gestoreGerarchie = gestoreGerarchie;
+        this.gerarchiaRepository = gerarchiaRepository;
         this.gestoreScambio = gestoreScambio;
         this.gestoreOfferte = gestoreOfferte;
 
-        this.gerarchiaService = new GerarchiaService(this.gestoreGerarchie, this.gestoreScambio);
+        this.gerarchiaService = new GerarchiaService(this.gerarchiaRepository, this.gestoreScambio);
         this.scambioService = new ScambioService(this.gestoreScambio);
-        this.offerteService = new OfferteService(this.gestoreOfferte, this.gestoreGerarchie, this.gestoreScambio);
+        this.offerteService = new OfferteService(this.gestoreOfferte, this.gerarchiaRepository, this.gestoreScambio);
     }
 
     /**
      * Metodo che salva utenti e gerarchie su file.
      *
      * @see GestoreUtenti
-     * @see GestoreGerarchie
+     * @see GestoreGerarchieSerializableRepository
      */
     private void eseguiSalvataggio() {
         gestoreUtenti.salvaUtenti();
-        gestoreGerarchie.salvaGerarchie();
+        gerarchiaRepository.salvaGerarchie();
         gestoreScambio.salvaInfoScambio();
         gestoreOfferte.salvaOfferte();
     }
