@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.mainservice;
+package it.unibs.elabingesw.view;
 
 /**
  * Classe Benvenuto con al suo interno un metodo statico saluta()
@@ -6,7 +6,7 @@ package it.unibs.elabingesw.mainservice;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class Benvenuto {
+public class BenvenutoView {
 
     /**
      * Metodo statico che verrà utilizzato per salutare

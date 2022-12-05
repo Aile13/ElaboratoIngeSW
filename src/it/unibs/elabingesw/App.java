@@ -4,8 +4,8 @@ import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSeri
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreOfferteSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
-import it.unibs.elabingesw.mainservice.Benvenuto;
-import it.unibs.elabingesw.mainservice.Login;
+import it.unibs.elabingesw.view.BenvenutoView;
+import it.unibs.elabingesw.controller.LoginController;
 import it.unibs.elabingesw.mainservice.MacroServices;
 import it.unibs.elabingesw.mainservice.MainMenu;
 
@@ -28,11 +28,11 @@ public class App {
         final var gestoreScambio = new GestoreScambioSerializableRepository();
         final var gestoreOfferte = new GestoreOfferteSerializableRepository();
 
-        final var login = new Login(gestoreUtenti);
+        final var login = new LoginController(gestoreUtenti);
         final var macroServices = new MacroServices(gestoreUtenti, gestoreGerarchie, gestoreScambio, gestoreOfferte);
         final var menu = new MainMenu(macroServices);
 
-        Benvenuto.saluta();
+        BenvenutoView.saluta();
         login.eseguiLogin();
         macroServices.setUser(login.getUserLogged());
         menu.eseguiMenuByUserType(login.getUserType());

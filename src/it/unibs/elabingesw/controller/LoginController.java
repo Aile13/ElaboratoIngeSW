@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.mainservice;
+package it.unibs.elabingesw.controller;
 
 import it.unibs.elabingesw.businesslogic.repository.UtenteRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
@@ -14,7 +14,7 @@ import it.unibs.eliapitozzi.mylib.InputDati;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class Login {
+public class LoginController {
     private final UtenteRepository utenteRepository;
     private UserType userType;
     private Utente utente;
@@ -26,7 +26,7 @@ public class Login {
      * @param utenteRepository oggetto di tipo GestoreUtenti
      * @see GestoreUtentiSerializableRepository
      */
-    public Login(UtenteRepository utenteRepository) {
+    public LoginController(UtenteRepository utenteRepository) {
         this.utenteRepository = utenteRepository;
     }
 
