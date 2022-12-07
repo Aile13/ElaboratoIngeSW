@@ -33,10 +33,10 @@ public record IntervalloOrario(LocalTime orarioIniziale,
      * @param orarioIniziale orario iniziale dell'intervallo orario
      * @param orarioFinale   orario finale dell'intervallo orario
      */
-    // todo da mettere a livello di costruttore di record, poi va già bene.
     public IntervalloOrario {
         assert !Objects.isNull(orarioIniziale);
         assert !Objects.isNull(orarioFinale);
+        assert orarioIniziale.isBefore(orarioFinale);
     }
 
     /**
@@ -65,16 +65,33 @@ public record IntervalloOrario(LocalTime orarioIniziale,
      */
     public boolean intersecaAltroIntervalloOrario(IntervalloOrario altroIntervalloOrario) {
         // inizio del secondo compreso nell'intervallo del primo
-        if (!altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale) && !altroIntervalloOrario.orarioIniziale.isAfter(this.orarioFinale)) {
+        if (this.isStartingTogetherOrAfterWith(altroIntervalloOrario) && this.isStartingBeforeOrTogetherWith(altroIntervalloOrario)) {
             return true;
         }
         // fine del secondo compreso nell'intervallo del primo
-        else if (!altroIntervalloOrario.orarioFinale.isBefore(this.orarioIniziale) && !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale)) {
+        else if (this.isEndingTogetherOrAfterWith(altroIntervalloOrario) && this.isEndingBeforeOrTogetherWith(altroIntervalloOrario)) {
             return true;
         }
         // Il secondo contiene il primo. Se no non c'è intersezione
         else
+            //altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale)
             return altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale) && altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
+    }
+
+    private boolean isStartingTogetherOrAfterWith(IntervalloOrario altroIntervalloOrario) {
+        return !altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale);
+    }
+
+    private boolean isStartingBeforeOrTogetherWith(IntervalloOrario altroIntervalloOrario) {
+        return !altroIntervalloOrario.orarioIniziale.isAfter(this.orarioFinale);
+    }
+
+    private boolean isEndingTogetherOrAfterWith(IntervalloOrario altroIntervalloOrario) {
+        return !altroIntervalloOrario.orarioFinale.isBefore(this.orarioIniziale);
+    }
+
+    private boolean isEndingBeforeOrTogetherWith(IntervalloOrario altroIntervalloOrario) {
+        return !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
     }
 
     /**
