@@ -64,16 +64,21 @@ public record IntervalloOrario(LocalTime orarioIniziale,
      * FALSE se i due intervalli non si intersecano
      */
     public boolean intersecaAltroIntervalloOrario(IntervalloOrario altroIntervalloOrario) {
-        // inizio del secondo compreso nell'intervallo del primo
-        if (this.isStartingBeforeOrTogetherWithTheBeginningOf(altroIntervalloOrario) && this.isEndingTogetherOrAfterWithTheBeginningOf(altroIntervalloOrario)) {
+
+        return this.isIntersectedByTheBeginningOf(altroIntervalloOrario) ||
+                this.isIntersectedByTheEndOf(altroIntervalloOrario) ||
+                this.isStrictlyContainedIn(altroIntervalloOrario);
+        //todo: togli il commento, inizio del secondo compreso nell'intervallo del primo
+        /*if (this.isIntersectedByTheBeginningOf(altroIntervalloOrario)) {
             return true;
         }
         // fine del secondo compreso nell'intervallo del primo
-        else if (this.isStartingBeforeOrTogetherWithTheEndOf(altroIntervalloOrario) && this.isEndingTogetherOrAfterTheEndOf(altroIntervalloOrario)) {
+        else if (isIntersectedByTheEndOf(altroIntervalloOrario)) {
             return true;
-        }
-        // Il secondo contiene il primo. Se no non c'è intersezione
-        return isStartingAfterTheBeginningOf(altroIntervalloOrario) && this.isEndingBeforeTheEndOf(altroIntervalloOrario);
+        } else {
+            // Il secondo contiene il primo. Se no non c'è intersezione
+            return this.isStrictlyContainedIn(altroIntervalloOrario);
+        }*/
     }
 
     private boolean isStartingBeforeOrTogetherWithTheBeginningOf(IntervalloOrario altroIntervalloOrario) {
@@ -98,6 +103,18 @@ public record IntervalloOrario(LocalTime orarioIniziale,
 
     private boolean isEndingBeforeTheEndOf(IntervalloOrario altroIntervalloOrario) {
         return altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
+    }
+
+    private boolean isIntersectedByTheBeginningOf(IntervalloOrario altroIntervalloOrario) {
+        return this.isStartingBeforeOrTogetherWithTheBeginningOf(altroIntervalloOrario) && this.isEndingTogetherOrAfterWithTheBeginningOf(altroIntervalloOrario);
+    }
+
+    private boolean isIntersectedByTheEndOf(IntervalloOrario altroIntervalloOrario) {
+        return this.isStartingBeforeOrTogetherWithTheEndOf(altroIntervalloOrario) && this.isEndingTogetherOrAfterTheEndOf(altroIntervalloOrario);
+    }
+
+    private boolean isStrictlyContainedIn(IntervalloOrario altroIntervalloOrario) {
+        return isStartingAfterTheBeginningOf(altroIntervalloOrario) && this.isEndingBeforeTheEndOf(altroIntervalloOrario);
     }
 
     /**
