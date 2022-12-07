@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Classe IntervalloOrario per definire un intervallo orario
@@ -34,6 +35,8 @@ public record IntervalloOrario(LocalTime orarioIniziale,
      */
     // todo da mettere a livello di costruttore di record, poi va già bene.
     public IntervalloOrario {
+        assert !Objects.isNull(orarioIniziale);
+        assert !Objects.isNull(orarioFinale);
     }
 
     /**
