@@ -38,6 +38,7 @@ class AppTest {
         // rimozione preventiva di cartella Dati e suo contenuto
         // per partire da una esecuzione pulita per i test
         FileUtils.deleteQuietly(dataDir);
+
         System.setOut(printStream);
     }
 
@@ -46,6 +47,7 @@ class AppTest {
         // rimozione di cartella Dati e suo contenuto
         // per partire da una esecuzione pulita fuori dai test
         FileUtils.deleteQuietly(dataDir);
+
         System.setOut(originalOutput);
         System.setIn(originalInput);
     }
