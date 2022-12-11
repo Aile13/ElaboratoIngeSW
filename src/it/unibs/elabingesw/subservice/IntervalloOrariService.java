@@ -5,6 +5,7 @@ import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -24,7 +25,7 @@ class IntervalloOrariService {
      * @return la lista degli intervalli orari
      */
     public static List<IntervalloOrario> chiediIntervalliOrari() {
-        List<IntervalloOrario> listaIntervalliOrari = new ArrayList<>();
+        List<IntervalloOrario> listaIntervalliOrari = new LinkedList<>();
 
         System.out.println("Inserisci un intervallo orario");
         listaIntervalliOrari.add(chiediIntervalloOrario());

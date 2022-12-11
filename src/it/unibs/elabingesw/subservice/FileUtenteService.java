@@ -82,7 +82,7 @@ public class FileUtenteService {
                         System.out.println("Esco dalla procedura.");
                     }
                 } else if (scelta == 2) {
-                    leggiECaricaGerachie();
+                    leggiECaricaGerarchie();
                 }
             } else {
                 System.out.println("Nessun file selezionato, esco dalla procedura.");
@@ -127,7 +127,7 @@ public class FileUtenteService {
      * Metodo che legge e carica le gerarchie dal file
      * dell'utente.
      */
-    private void leggiECaricaGerachie() {
+    private void leggiECaricaGerarchie() {
         try {
             contenutoFile = Files.readString(selectedFile.toPath());
             rimuoviSpaziQuandoNonStringa();
