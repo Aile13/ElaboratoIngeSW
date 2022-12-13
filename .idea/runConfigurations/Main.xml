@@ -4,7 +4,7 @@
     <module name="ElaboratoIngeSW" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="it.unibs.elabingesw.Test" />
+        <option name="PATTERN" value="it.unibs.elabingesw.AbstractTest" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

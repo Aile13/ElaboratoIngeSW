@@ -60,7 +60,9 @@ public class FileUtenteService {
      * gliere quale file caricare.
      */
     private void scegliAzioneESelezionaFileDaCaricare() {
-        var menu = new MyMenu("Menu selezione caricamento dati da file utente", new String[]{"Carica da file i valori dei parametri di configurazione", "Carica da file le gerarchie di categorie"}, true);
+        var menu = new MyMenu("Menu selezione caricamento dati da file utente", new String[]{
+                "Carica da file i valori dei parametri di configurazione",
+                "Carica da file le gerarchie di categorie"}, true);
 
         int scelta = menu.scegli();
 

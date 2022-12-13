@@ -1,18 +1,14 @@
 package it.unibs.elabingesw;
 
 
+import org.apache.commons.io.FileUtils;
 import org.approvaltests.Approvals;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import org.apache.commons.io.FileUtils;
-
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.InputStream;
-import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -24,32 +20,27 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-class AppTest {
-
+class AppTest extends AbstractTest {
     private final File dataDir = new File("./Dati/");
-    private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    private final PrintStream printStream = new PrintStream(outputStream);
-    private final PrintStream originalOutput = System.out;
-    private final InputStream originalInput = System.in;
 
-
+    @Override
     @BeforeEach
     void setUp() {
+        super.setUp();
+
         // rimozione preventiva di cartella Dati e suo contenuto
         // per partire da una esecuzione pulita per i test
         FileUtils.deleteQuietly(dataDir);
-
-        System.setOut(printStream);
     }
 
+    @Override
     @AfterEach
     void tearDown() {
+        super.tearDown();
+
         // rimozione di cartella Dati e suo contenuto
         // per partire da una esecuzione pulita fuori dai test
         FileUtils.deleteQuietly(dataDir);
-
-        System.setOut(originalOutput);
-        System.setIn(originalInput);
     }
 
     @Test

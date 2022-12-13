@@ -161,5 +161,10 @@ class IntervalloOrarioTest {
 
         assertTrue(uno.intersecaAltroIntervalloOrario(due));
     }
-    
+
+    @Test
+    void getListaOrariValidi() {
+        IntervalloOrario uno = new IntervalloOrario(LocalTime.of(12, 30), LocalTime.of(15, 00));
+        uno.getListaOrariValidi();
+    }
 }
