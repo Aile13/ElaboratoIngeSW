@@ -20,6 +20,9 @@ import java.util.Objects;
  */
 public record IntervalloOrario(LocalTime orarioIniziale,
                                LocalTime orarioFinale) implements Serializable, DomainTypeToRender {
+
+    private static final int MINUTES_TO_ADD = 30;
+
     /**
      * Costruttore di classe, accetta come parametri un orario
      * iniziale e un orario finale che costituiscono un intervallo orario.
@@ -135,7 +138,7 @@ public record IntervalloOrario(LocalTime orarioIniziale,
         LocalTime nuovoOrario = this.orarioIniziale;
         while (!nuovoOrario.isAfter(this.orarioFinale)) {
             listaOrariValidi.add(nuovoOrario);
-            nuovoOrario = nuovoOrario.plusMinutes(30);
+            nuovoOrario = nuovoOrario.plusMinutes(MINUTES_TO_ADD);
         }
         return listaOrariValidi;
     }

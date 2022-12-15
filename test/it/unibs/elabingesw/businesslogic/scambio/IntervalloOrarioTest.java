@@ -162,9 +162,19 @@ class IntervalloOrarioTest {
         assertTrue(uno.intersecaAltroIntervalloOrario(due));
     }
 
+    /**
+     * Metodo per il testing di code coverage della funzionalità del programma
+     * per cui dato un intervallo orario correttamente inizializzato
+     * si possono individuare gli orari, per possibili appuntamenti,
+     * coerenti con la logica del programma e con gli estremi dello
+     * stesso intervallo orario.
+     * <p>
+     * Una semplice invocazione del metodo su un intervallo orario correttamente inizializzato
+     * è sufficiente per coprire il codice del metodo in ogni sua parte.
+     */
     @Test
     void getListaOrariValidi() {
-        IntervalloOrario uno = new IntervalloOrario(LocalTime.of(12, 30), LocalTime.of(15, 00));
-        uno.getListaOrariValidi();
+        IntervalloOrario intervalloOrario = new IntervalloOrario(LocalTime.of(12, 30), LocalTime.of(15, 00));
+        intervalloOrario.getListaOrariValidi();
     }
 }
