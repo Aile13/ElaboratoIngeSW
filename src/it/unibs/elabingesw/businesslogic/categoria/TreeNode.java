@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-// todo aggiornare uml e compagnia, T ora extends anche Serializable
-// TODO: 25/nov/2022 fare estendere Manageable a TreeNode, per migliore chiarezza.
+// todo Laaraj aggiornare uml e compagnia, T ora extends anche Serializable
+// TODO: 25/nov/2022 fare estendere Manageable a TreeNode, per migliore chiarezza., chiedere confronto a Laaraj.
 public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRender & DomainTypeToLimitedRender>
         implements Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final T dato;
@@ -205,7 +205,6 @@ public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRe
      *
      * @return stringa dell'albero convertito
      */
-    // todo non in chain il suo rendering, dovrebbe essere sistemato, ora è lui il composite
     public String getAlberoString() {
         var builder = new StringBuilder("\t");
         builder.append(dato).append("\n");

@@ -14,7 +14,7 @@ public interface GerarchiaRepository {
 
     void inserisciNuovaGerarchia(GerarchiaDiCategorie gerarchiaDiCategorie);
 
-    // TODO: 27/nov/2022 Aggiungere doc. metodo nuovo.
+    // TODO: Laaraj 27/nov/2022 Aggiungere doc. metodo nuovo.
     boolean isGerarchiaPresenteByNome(String nomeGerarchia);
 
     boolean haGerarchie();

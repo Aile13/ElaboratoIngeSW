@@ -69,7 +69,7 @@ public final class GestoreGerarchieSerializableRepository extends GestoreGeneric
         this.inserisciElemento(gerarchiaDiCategorie);
     }
 
-    // TODO: 27/nov/2022 Aggiungere doc. metodo nuovo.
+    // TODO:  Laaraj 27/nov/2022 Aggiungere doc. metodo nuovo.
     @Override
     public boolean isGerarchiaPresenteByNome(String nomeGerarchia) {
         return super.isElementoInListaByNome(nomeGerarchia);

@@ -49,7 +49,7 @@ public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> g
      * @param intervalliOrari intervalli orari della giornata in cui avvengono gli scambi
      * @param scadenza        numero di giorni massimi entro cui si deve rispondere nelle operazioni di baratto
      */
-    // todo spostare doc a livello di costruttore di record.
+    // todo Laaraj spostare doc a livello di costruttore di record.
 
     /**
      * Metodo implementato dall'interfaccia Manageable

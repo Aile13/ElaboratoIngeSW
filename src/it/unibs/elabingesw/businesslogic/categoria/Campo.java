@@ -30,19 +30,7 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     public static List<Campo> getCampiDiDefaultPerCategoriaRadice() {
         return List.of(new Campo("Stato di conservazione", true), new Campo("Descrizione libera", false));
     }
-
-    /**
-     * Metodo per la formattazione che converte un oggetto nella re-
-     * lativa rappresentazione di stringa.
-     *
-     * @return stringa dell'oggetto convertito
-     */
-    //todo, per tempo, si usa quello integrato di Record, poi si aggiorna di conseguenza l'output delll'app per approval.
-    @Override
-    public String toString() {
-        return "Campo{" + "nome='" + nome + '\'' + ", obbligatorio=" + obbligatorio + '}';
-    }
-
+    
     /**
      * Metodo implementato dall'interfaccia Manageable
      * che verifica se due campi hanno lo stesso no-

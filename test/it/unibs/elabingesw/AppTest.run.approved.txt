@@ -622,7 +622,7 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> Offerte di pippo:
-Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=ApertaState{}}
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Mai usato, Campo[nome=Descrizione libera, obbligatorio=false]=null, Campo[nome=Colore, obbligatorio=false]=null, Campo[nome=Sesso, obbligatorio=true]=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=ApertaState{}}
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
@@ -646,7 +646,7 @@ Vuoi selezionare Orologio? (S/N): Seleziona la categoria foglia di interesse:
 Vuoi selezionare Orologio da parete? (S/N): Vuoi selezionare Orologio da polso? (S/N): Errore: nessuna categoria selezionata, riprovare.
 Seleziona la categoria foglia di interesse: 
 Vuoi selezionare Orologio da parete? (S/N): Vuoi selezionare Orologio da polso? (S/N): Elenco offerte data la categoria selezionata: 
-Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=ApertaState{}}
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Mai usato, Campo[nome=Descrizione libera, obbligatorio=false]=null, Campo[nome=Colore, obbligatorio=false]=null, Campo[nome=Sesso, obbligatorio=true]=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=ApertaState{}}
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
@@ -684,7 +684,7 @@ Menu per Fruitore
 Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
 Vuoi selezionare Orologio? (S/N): Seleziona la categoria foglia di interesse: 
 Vuoi selezionare Orologio da parete? (S/N): Vuoi selezionare Orologio da polso? (S/N): Elenco offerte data la categoria selezionata: 
-Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=ApertaState{}}
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Mai usato, Campo[nome=Descrizione libera, obbligatorio=false]=null, Campo[nome=Colore, obbligatorio=false]=null, Campo[nome=Sesso, obbligatorio=true]=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=ApertaState{}}
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
@@ -829,8 +829,8 @@ Menu per Configuratore
 Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
 Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
 Vuoi selezionare Bici? (S/N): Elenco offerte data la categoria selezionata: 
-Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ApertaState{}}
-Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ApertaState{}}
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usato ben conservato, Campo[nome=Descrizione libera, obbligatorio=false]=Usata solo su asfalto, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ApertaState{}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usata, con qualche graffio, Campo[nome=Descrizione libera, obbligatorio=false]=Modello xb5, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ApertaState{}}
 ---------------------------------
 Menu per Configuratore
 ---------------------------------
@@ -886,8 +886,8 @@ Menu per Fruitore
 Digita il numero dell'opzione desiderata -> Seleziona la gerarchia che contiene la categoria foglia di interesse: 
 Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
 Vuoi selezionare Bici? (S/N): Elenco offerte data la categoria selezionata: 
-Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ApertaState{}}
-Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ApertaState{}}
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usato ben conservato, Campo[nome=Descrizione libera, obbligatorio=false]=Usata solo su asfalto, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ApertaState{}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usata, con qualche graffio, Campo[nome=Descrizione libera, obbligatorio=false]=Modello xb5, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ApertaState{}}
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
@@ -1082,8 +1082,8 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> Offerte di pippo:
-Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=RitirataState{}}
-Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=AccoppiataState{}}
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Mai usato, Campo[nome=Descrizione libera, obbligatorio=false]=null, Campo[nome=Colore, obbligatorio=false]=null, Campo[nome=Sesso, obbligatorio=true]=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=RitirataState{}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usata, con qualche graffio, Campo[nome=Descrizione libera, obbligatorio=false]=Modello xb5, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=AccoppiataState{}}
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
@@ -1290,8 +1290,8 @@ Seleziona la gerarchia che contiene la categoria foglia di interesse:
 Vuoi selezionare Orologio? (S/N): Vuoi selezionare Bici? (S/N): Seleziona la categoria foglia di interesse: 
 Vuoi selezionare Bici? (S/N): Per categoria: Bici
 Le offerte in scambio:
-Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
-Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usato ben conservato, Campo[nome=Descrizione libera, obbligatorio=false]=Usata solo su asfalto, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usata, con qualche graffio, Campo[nome=Descrizione libera, obbligatorio=false]=Modello xb5, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
 Le offerte chiuse:
 	Non ci sono offerte chiuse per la categoria selezionata.
 ---------------------------------
@@ -1326,7 +1326,7 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> Proposta di scambio per Bici da donna con Bici Mountainbike:
-	Ultima risposta di utente controparte: ListaCampiCompilati{campiCompilati={Campo{nome='Luogo di incontro', obbligatorio=true}=Piazza Loggia, Campo{nome='Data di appuntamento', obbligatorio=true}=SATURDAY, Campo{nome='Ora di appuntamento', obbligatorio=true}=10:00}}
+	Ultima risposta di utente controparte: ListaCampiCompilati{campiCompilati={Campo[nome=Luogo di incontro, obbligatorio=true]=Piazza Loggia, Campo[nome=Data di appuntamento, obbligatorio=true]=SATURDAY, Campo[nome=Ora di appuntamento, obbligatorio=true]=10:00}}
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
@@ -1344,9 +1344,9 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> Proposta di scambio per Bici da donna con Bici Mountainbike:
-	Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
-	Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
-	Estremi di appuntamento proposto dalla controparte: ListaCampiCompilati{campiCompilati={Campo{nome='Luogo di incontro', obbligatorio=true}=Piazza Loggia, Campo{nome='Data di appuntamento', obbligatorio=true}=SATURDAY, Campo{nome='Ora di appuntamento', obbligatorio=true}=10:00}}
+	Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usato ben conservato, Campo[nome=Descrizione libera, obbligatorio=false]=Usata solo su asfalto, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
+	Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usata, con qualche graffio, Campo[nome=Descrizione libera, obbligatorio=false]=Modello xb5, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
+	Estremi di appuntamento proposto dalla controparte: ListaCampiCompilati{campiCompilati={Campo[nome=Luogo di incontro, obbligatorio=true]=Piazza Loggia, Campo[nome=Data di appuntamento, obbligatorio=true]=SATURDAY, Campo[nome=Ora di appuntamento, obbligatorio=true]=10:00}}
 Vuoi accettare l'appuntamento? (S/N): Proponi altri estremi di appuntamento alla controparte:
 Selezionare luogo di incontro
 Vuoi selezionare luogo: Piazza Vittoria? (S/N): Selezionare un giorno di incontro
@@ -1387,7 +1387,7 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> Proposta di scambio per Bici Mountainbike con Bici da donna:
-	Ultima risposta di utente controparte: ListaCampiCompilati{campiCompilati={Campo{nome='Luogo di incontro', obbligatorio=true}=Piazza Vittoria, Campo{nome='Data di appuntamento', obbligatorio=true}=SUNDAY, Campo{nome='Ora di appuntamento', obbligatorio=true}=12:00}}
+	Ultima risposta di utente controparte: ListaCampiCompilati{campiCompilati={Campo[nome=Luogo di incontro, obbligatorio=true]=Piazza Vittoria, Campo[nome=Data di appuntamento, obbligatorio=true]=SUNDAY, Campo[nome=Ora di appuntamento, obbligatorio=true]=12:00}}
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
@@ -1405,9 +1405,9 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> Proposta di scambio per Bici Mountainbike con Bici da donna:
-	Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
-	Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
-	Estremi di appuntamento proposto dalla controparte: ListaCampiCompilati{campiCompilati={Campo{nome='Luogo di incontro', obbligatorio=true}=Piazza Vittoria, Campo{nome='Data di appuntamento', obbligatorio=true}=SUNDAY, Campo{nome='Ora di appuntamento', obbligatorio=true}=12:00}}
+	Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usata, con qualche graffio, Campo[nome=Descrizione libera, obbligatorio=false]=Modello xb5, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
+	Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usato ben conservato, Campo[nome=Descrizione libera, obbligatorio=false]=Usata solo su asfalto, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=InScambioState{}}
+	Estremi di appuntamento proposto dalla controparte: ListaCampiCompilati{campiCompilati={Campo[nome=Luogo di incontro, obbligatorio=true]=Piazza Vittoria, Campo[nome=Data di appuntamento, obbligatorio=true]=SUNDAY, Campo[nome=Ora di appuntamento, obbligatorio=true]=12:00}}
 Vuoi accettare l'appuntamento? (S/N): Proposta di appuntamento accettata.
 Adesso entrambe le offerte diventano chiuse.
 ---------------------------------
@@ -1427,7 +1427,7 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> Offerte di pluto:
-Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ChiusaState{}}
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usato ben conservato, Campo[nome=Descrizione libera, obbligatorio=false]=Usata solo su asfalto, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ChiusaState{}}
 ---------------------------------
 Menu per Fruitore
 ---------------------------------
@@ -1487,8 +1487,8 @@ Vuoi selezionare Bici? (S/N): Per categoria: Bici
 Le offerte in scambio:
 	Non ci sono offerte in scambio per la categoria selezionata.
 Le offerte chiuse:
-Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usato ben conservato, Campo{nome='Descrizione libera', obbligatorio=false}=Usata solo su asfalto, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ChiusaState{}}
-Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ChiusaState{}}
+Offerta{nomeArticolo='Bici da donna', autore=Utente{username='pluto'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usato ben conservato, Campo[nome=Descrizione libera, obbligatorio=false]=Usata solo su asfalto, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ChiusaState{}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usata, con qualche graffio, Campo[nome=Descrizione libera, obbligatorio=false]=Modello xb5, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ChiusaState{}}
 ---------------------------------
 Menu per Configuratore
 ---------------------------------
@@ -1538,8 +1538,8 @@ Menu per Fruitore
 0	Esci
 
 Digita il numero dell'opzione desiderata -> Offerte di pippo:
-Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Mai usato, Campo{nome='Descrizione libera', obbligatorio=false}=null, Campo{nome='Colore', obbligatorio=false}=null, Campo{nome='Sesso', obbligatorio=true}=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=RitirataState{}}
-Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo{nome='Stato di conservazione', obbligatorio=true}=Usata, con qualche graffio, Campo{nome='Descrizione libera', obbligatorio=false}=Modello xb5, Campo{nome='Dimensione ruote', obbligatorio=true}=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ChiusaState{}}
+Offerta{nomeArticolo='Rolex', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Mai usato, Campo[nome=Descrizione libera, obbligatorio=false]=null, Campo[nome=Colore, obbligatorio=false]=null, Campo[nome=Sesso, obbligatorio=true]=Maschile}}, categoriaDiAppartenenza=nome='Orologio da polso', descrizione='orologio che si indossa al polso', statoOfferta=RitirataState{}}
+Offerta{nomeArticolo='Bici Mountainbike', autore=Utente{username='pippo'}, listaCampiCompilati=ListaCampiCompilati{campiCompilati={Campo[nome=Stato di conservazione, obbligatorio=true]=Usata, con qualche graffio, Campo[nome=Descrizione libera, obbligatorio=false]=Modello xb5, Campo[nome=Dimensione ruote, obbligatorio=true]=26 pollici}}, categoriaDiAppartenenza=CategoriaRadice{ nome='Bici', descrizione='Mezzo di trasporto' }, statoOfferta=ChiusaState{}}
 ---------------------------------
 Menu per Fruitore
 ---------------------------------

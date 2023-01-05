@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * @author Elia
  */
-//todo fare javadoc a livello di interface e di singoli metodi, puoi riusare eventualmente quelli che c'erano in StatoOfferta o simili.
+//todo Laaraj fare javadoc a livello di interface e di singoli metodi, puoi riusare eventualmente quelli che c'erano in StatoOfferta o simili.
 public interface OffertaState extends Serializable, DomainTypeToRender {
     OffertaContext getOffertaAssociata(OffertaContext context); // fatto
 

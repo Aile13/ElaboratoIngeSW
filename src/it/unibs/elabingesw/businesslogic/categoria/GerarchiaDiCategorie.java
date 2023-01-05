@@ -168,17 +168,6 @@ public class GerarchiaDiCategorie implements Manageable, Serializable, DomainTyp
     }
 
     /**
-     * Metodo toString ridotto in cui mostro a video
-     * solo il nome e la descrizione delle categorie
-     * nella gerarchia.
-     *
-     * @return stringa dell'oggetto convertito
-     */
-    public String toStringRidotto() {
-        return "Gerarchia " + this.gerarchia.getDato().getNome() + " {\n" + '\t' + this.gerarchia.getDato().toStringRidotto() + '\n' + "}";
-    }
-
-    /**
      * Metodo che ritorna la lista delle categorie padre
      * passata come parametro una determinata categoria.
      * <p>

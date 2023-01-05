@@ -26,7 +26,7 @@ public final class GestoreOfferteSerializableRepository extends GestoreGenerico<
      * e : E inoltre esegue l'aggiornamento dello stato di tutte
      * * le offerte in lista.
      */
-    // TODO: 27/nov/2022 aggiorna doc, dato che metodo ora aggiorna stato offerte.
+    // TODO:  Laaraj 27/nov/2022 aggiorna doc, dato che metodo ora aggiorna stato offerte.
     public GestoreOfferteSerializableRepository() {
         super(FILE_NAME);
         aggiornaStatoDelleOfferte();

@@ -211,7 +211,7 @@ public final class OffertaContext implements Manageable, Serializable, DomainTyp
      * @param offertaContextDaBarattareB oggetto di tipo Offerta
      * @param infoDiScambio
      */
-    // todo descrizione param mancante in doc. Bisogna aggiungerla.
+    // todo  Laaraj descrizione param mancante in doc. Bisogna aggiungerla.
     public void creaLegameEModificaStatiConOffertaEInfoScambio(OffertaContext offertaContextDaBarattareB, Optional<Scambio> infoDiScambio) {
         this.offertaState.creaLegameEModificaStatiConOffertaEInfoScambio(this, offertaContextDaBarattareB, infoDiScambio.orElse(null));
     }
