@@ -25,7 +25,6 @@ import java.util.Optional;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-// TODO: 25/nov/2022 rendere i metodi della classe accessibili solo alle sottoclassi, private simile. dovrebbe essere fatto.
 abstract class GestoreGenerico<T extends Manageable & Serializable> {
     private final String pathRepository;
     private final String dataDir = "./Dati/";

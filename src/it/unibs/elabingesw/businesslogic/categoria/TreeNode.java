@@ -196,7 +196,6 @@ public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRe
      * @return stringa dell'oggetto convertito
      */
     @Override
-    // todo non in chain il suo rendering, dovrebbe essere sistemato, ora è lui il composite limited
     public String toString() {
         return dato.toString();
     }

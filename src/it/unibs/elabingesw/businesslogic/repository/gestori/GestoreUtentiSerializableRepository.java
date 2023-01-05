@@ -41,21 +41,6 @@ public final class GestoreUtentiSerializableRepository extends GestoreGenerico<U
     }
 
     /**
-     * Metodo che controlla se un configuratore è di default
-     * o meno.
-     * <p>
-     * Precondizione: Quella del metodo chiamato.
-     *
-     * @param username lo username di un configuratore
-     * @return TRUE se il configuratore è quello di default
-     * FALSE se il configuratore non è quello di default
-     */
-    // TODO: 27/nov/2022 da rimuovere, metodo fuori contesto. Si usa quello in classe Configuratore.
-   /* public boolean isDefaultConfiguratore(String username) {
-        return Configuratore.isDefaultConfiguratoreByUsername(username);
-    }*/
-
-    /**
      * Metodo che controlla se un utente tra quelli presenti in lista
      * è valido (conosce la sua password) o meno.
      * <p>
@@ -135,26 +120,6 @@ public final class GestoreUtentiSerializableRepository extends GestoreGenerico<U
     public void inserisciNuovoFruitore(String username, String password) {
         inserisciElemento(new Fruitore(username, password));
     }
-
-    /**
-     * Metodo che restituisce il tipo di utente una volta
-     * passato come parametro il suo username.
-     * <p>
-     * Precondizione: si assume che il parametro
-     * non sia nullo e non coincida con una stringa vuota.
-     * Inoltre si assume che il parametro faccia riferimento
-     * a un username di un utente presente nella lista.
-     *
-     * @param username lo username dell'utente
-     * @return il tipo di utente
-     */
-    // TODO: 27/nov/2022 Rimosso metodo fuori contesto, fatto.
-    /*@Override
-    public UserType getUserTypeByNome(String username) {
-        if (trovaElementoConNome(username).isPresent()) {
-            return trovaElementoConNome(username).get().getUserType();
-        } else return null;
-    }*/
 
     /**
      * Metodo che restituisce l'oggetto Utente una volta

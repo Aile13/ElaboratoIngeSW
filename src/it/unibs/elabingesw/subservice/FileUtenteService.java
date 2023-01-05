@@ -382,7 +382,6 @@ public class FileUtenteService {
         List<Campo> listaCampi = campoListOp();
         ifStartsWithAndThenConsumeOrError(",");
 
-        // TODO: 25/nov/2022 Sostituire  gestoreGerarchie.isElementoInListaByNome con qualcosa di orientato alla classe che richiama il super., fatto
         if (listaCampi.stream().anyMatch(Campo::isCampoDiDefault) || gerarchiaRepository.isGerarchiaPresenteByNome(nomeCategoriaRadice))
             errore();
 

@@ -22,7 +22,6 @@ public class App {
      * Metodo run che crea i vari oggetti ed esegue il menu.
      */
     public void run() {
-        // TODO: 27/nov/2022 aggiornare nomi di var dei gestori. Se si vuole.
         final var gestoreUtenti = new GestoreUtentiSerializableRepository();
         final var gestoreGerarchie = new GestoreGerarchieSerializableRepository();
         final var gestoreScambio = new GestoreScambioSerializableRepository();

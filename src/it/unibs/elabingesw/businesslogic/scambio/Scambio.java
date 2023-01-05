@@ -52,30 +52,6 @@ public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> g
     // todo spostare doc a livello di costruttore di record.
 
     /**
-     * Metodo getter.
-     *
-     * @return i luoghi in cui avvengono gli scambi
-     */
-    // TODO: 21/nov/2022 da rimuovere, è già incluso in record.
-
-    @Override
-    public List<String> listaLuoghi() {
-        return listaLuoghi;
-    }
-
-    /**
-     * Metodo getter.
-     *
-     * @return i giorni della settimana in cui avvengono gli scambi
-     */
-    // TODO: 21/nov/2022 da rimuovere, è già incluso in record.
-
-    @Override
-    public List<DayOfWeek> giorni() {
-        return giorni;
-    }
-
-    /**
      * Metodo implementato dall'interfaccia Manageable
      * che verifica se due piazze sono uguali.
      * <p>
@@ -85,21 +61,9 @@ public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> g
      * @return TRUE se le piazze sono uguali
      * FALSE se le piazze sono diverse
      */
-    // TODO: 25/nov/2022 nota: è inutile far implementare Manageable a Scambio, in quanto poi l'uso in GestoreScambio è degenere e non necessità del chiamare isStessoNome. Possiamo pensarlo come l'eccezione alla regola.
     @Override
     public boolean isStessoNome(String piazza) {
         return this.piazza.equals(piazza);
-    }
-
-    /**
-     * Metodo getter.
-     *
-     * @return la scadenza in giorni di un'offerta
-     */
-    // TODO: 21/nov/2022 da rimuovere, è già incluso in record.
-    @Override
-    public int scadenza() {
-        return scadenza;
     }
 
     /**
@@ -111,17 +75,6 @@ public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> g
     @Override
     public String toString() {
         return "Scambio{" + "\n" + "\tpiazza='" + piazza + "',\n" + "\tlistaLuoghi=" + listaLuoghi + ",\n" + "\tgiorni=" + giorni + "\n" + "\tintervalliOrari=" + intervalliOrari + ",\n" + "\tScadenza=" + scadenza + "\n" + '}';
-    }
-
-    /**
-     * Metodo toString ridotto in cui mostro a video
-     * tutti gli attributi della classe Scambio tranne
-     * la scadenza.
-     *
-     * @return stringa dell'oggetto convertito
-     */
-    public String toStringFormaRidotta() {
-        return "Scambio{" + "\n" + "\tpiazza='" + piazza + "',\n" + "\tlistaLuoghi=" + listaLuoghi + ",\n" + "\tgiorni=" + giorni + ",\n" + "\tintervalliOrari=" + intervalliOrari + "\n" + '}';
     }
 
     /**

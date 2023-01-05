@@ -24,8 +24,7 @@ public final class GestoreOfferteSerializableRepository extends GestoreGenerico<
      * Costruttore di classe.
      * aggiungi cosa come :      * Inoltre aggiorna lo stato delle offerte dall'ultimo loro salvataggio.
      * e : E inoltre esegue l'aggiornamento dello stato di tutte
-     *      * le offerte in lista.
-     *
+     * * le offerte in lista.
      */
     // TODO: 27/nov/2022 aggiorna doc, dato che metodo ora aggiorna stato offerte.
     public GestoreOfferteSerializableRepository() {
@@ -33,19 +32,6 @@ public final class GestoreOfferteSerializableRepository extends GestoreGenerico<
         aggiornaStatoDelleOfferte();
     }
 
-    /**
-     * Metodo che carica, dal file, tutti gli elementi in lista.
-     * <p>
-     * Post condizione: quella del metodo super chiamata.
-     * E inoltre esegue l'aggiornamento dello stato di tutte
-     * le offerte in lista.
-     */
-    // TODO: 27/nov/2022 ora coincidente metodo di superclasse, quindi si toglie.
-    /*@Override
-    protected void caricaElementi() {
-        super.caricaElementi();
-    }
-*/
     /**
      * Aggiorna stato delle offerte presenti in lista.
      * <p>

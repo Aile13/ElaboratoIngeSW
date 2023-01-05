@@ -16,7 +16,6 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-// TODO: 21/nov/2022 provare a rendere abstract la classe. Dovrebbe essere fatto.
 public abstract class Categoria implements Manageable, Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final String nome;
     private final String descrizione;

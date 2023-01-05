@@ -71,17 +71,6 @@ public record IntervalloOrario(LocalTime orarioIniziale,
         return this.isIntersectedByTheBeginningOf(altroIntervalloOrario) ||
                 this.isIntersectedByTheEndOf(altroIntervalloOrario) ||
                 this.isStrictlyContainedIn(altroIntervalloOrario);
-        //todo: togli il commento, inizio del secondo compreso nell'intervallo del primo
-        /*if (this.isIntersectedByTheBeginningOf(altroIntervalloOrario)) {
-            return true;
-        }
-        // fine del secondo compreso nell'intervallo del primo
-        else if (isIntersectedByTheEndOf(altroIntervalloOrario)) {
-            return true;
-        } else {
-            // Il secondo contiene il primo. Se no non c'è intersezione
-            return this.isStrictlyContainedIn(altroIntervalloOrario);
-        }*/
     }
 
     private boolean isStartingBeforeOrTogetherWithTheBeginningOf(IntervalloOrario altroIntervalloOrario) {

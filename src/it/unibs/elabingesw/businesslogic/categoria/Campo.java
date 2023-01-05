@@ -44,59 +44,6 @@ public record Campo(String nome, boolean obbligatorio) implements Manageable, Se
     }
 
     /**
-     * Metodo per controllare se un campo è obbligatorio o meno.
-     *
-     * @return TRUE se il campo è obbligatorio
-     * FALSE se il campo è facoltativo
-     */
-    //todo da rimuovere, si usa quello integrato di Record
-    /*public boolean obbligatorio() {
-        return this.obbligatorio;
-    }*/
-
-    /**
-     * Metodo getter.
-     *
-     * @return il nome del campo
-     */
-    //todo da rimuovere, si usa quello integrato di Record
-    /*public String nome() {
-        return this.nome;
-    }*/
-
-    /**
-     * Metodo che permette di confrontare due oggetti.
-     *
-     * @param o un oggetto generico
-     * @return TRUE se i due oggetti sono uguali
-     * FALSE se i due oggetti sono diversi
-     */
-    //todo da rimuovere, si usa quello integrato di Record
-    /*@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Campo campo = (Campo) o;
-
-        if (obbligatorio() != campo.obbligatorio()) return false;
-        return nome() != null ? nome().equals(campo.nome()) : campo.nome() == null;
-    }*/
-
-    /**
-     * Metodo che fornisce il codice hash dell'oggetto.
-     *
-     * @return l'hashcode dell'oggetto campo
-     */
-    //todo da rimuovere, si usa quello integrato di Record
-    /*@Override
-    public int hashCode() {
-        int result = nome() != null ? nome().hashCode() : 0;
-        result = 31 * result + (obbligatorio() ? 1 : 0);
-        return result;
-    }*/
-
-    /**
      * Metodo implementato dall'interfaccia Manageable
      * che verifica se due campi hanno lo stesso no-
      * me o meno.

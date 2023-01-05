@@ -85,7 +85,6 @@ public class GerarchiaService {
     private CategoriaRadice chiediECreaCategoriaRadice() {
         var nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Inserisci nome della categoria radice: ");
         // check se nome già usato o meno tra le altre gerarchia
-        // TODO: 25/nov/2022 Sostituire  gestoreGerarchie.isElementoInListaByNome con qualcosa di orientato alla classe che richiama il super. fatto.
         while (gerarchiaRepository.isGerarchiaPresenteByNome(nomeCategoriaRadice)) {
             System.out.println("Errore nome categoria radice già usato: riprovare.");
             nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Reinserisci nome della categoria radice: ");
