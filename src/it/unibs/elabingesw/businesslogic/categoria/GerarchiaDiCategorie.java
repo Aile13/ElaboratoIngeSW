@@ -110,7 +110,7 @@ public class GerarchiaDiCategorie implements Manageable, Serializable, DomainTyp
      */
     @Override
     public boolean isStessoNome(String nome) {
-        return getNome().equals(nome);
+        return gerarchia.isStessoNome(nome);
     }
 
     /**

@@ -18,10 +18,10 @@ import java.util.stream.Collectors;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-// todo Laaraj aggiornare uml e compagnia, T ora extends anche Serializable
+// todo Laaraj aggiornare uml e compagnia, T ora extends anche Serializable e tutto il resto che prima non faceva, confronta.
 // TODO: 25/nov/2022 fare estendere Manageable a TreeNode, per migliore chiarezza., chiedere confronto a Laaraj.
 public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRender & DomainTypeToLimitedRender>
-        implements Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
+        implements Manageable, Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final T dato;
     private final TreeNode<T> parent;
     private final List<TreeNode<T>> listaFigli;
@@ -292,5 +292,24 @@ public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRe
      */
     private boolean isRoot() {
         return this.parent == null;
+    }
+
+    /**
+     * Firma di un metodo che controlla se
+     * il nome passato come parametro
+     * coincide con il nome associato all'oggetto
+     * su cui si richiama il metodo stesso.
+     * <p>
+     * Precondizione: l'oggetto di tipo Manageable
+     * deve avere un nome associato per poter operare
+     * un confronto con il parametro del metodo.
+     * Inoltre si assume che il parametro non sia nullo
+     * o coincidente con la stringa vuota.
+     *
+     * @param nome il nome da usare nel confronto
+     */
+    @Override
+    public boolean isStessoNome(String nome) {
+        return dato.isStessoNome(nome);
     }
 }
