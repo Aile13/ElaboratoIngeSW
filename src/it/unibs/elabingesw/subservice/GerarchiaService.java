@@ -6,8 +6,8 @@ import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.repository.GerarchiaRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
-import it.unibs.elabingesw.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
-import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
+import it.unibs.elabingesw.view.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
+import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**

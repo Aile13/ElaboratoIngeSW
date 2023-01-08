@@ -10,7 +10,7 @@ import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSeri
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreOfferteSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
-import it.unibs.elabingesw.domaintyperenderer.CompositeDomainTypeRenderer;
+import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.time.DayOfWeek;
@@ -180,7 +180,6 @@ public class OfferteService {
                 System.out.println("Attenzione: nessuna offerta aperta per questa categoria foglia.");
             } else {
                 System.out.println("Elenco offerte data la categoria selezionata: ");
-                //this.gestoreOfferte.getOfferteAperteByCategoriaFoglia(categoria).forEach(System.out::println);
                 this.offertaRepository.getOfferteAperteByCategoriaFoglia(categoria).forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
 
             }

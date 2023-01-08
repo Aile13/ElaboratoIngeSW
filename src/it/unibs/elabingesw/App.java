@@ -4,10 +4,11 @@ import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSeri
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreOfferteSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
-import it.unibs.elabingesw.view.BenvenutoView;
 import it.unibs.elabingesw.controller.LoginController;
-import it.unibs.elabingesw.mainservice.MacroServices;
-import it.unibs.elabingesw.mainservice.MainMenu;
+import it.unibs.elabingesw.mainservice.MacroServicesController;
+import it.unibs.elabingesw.mainservice.MainMenuView;
+import it.unibs.elabingesw.view.BenvenutoView;
+import it.unibs.elabingesw.view.LoginView;
 
 /**
  * Classe App in cui creo gli oggetti delle varie classi
@@ -27,13 +28,15 @@ public class App {
         final var gestoreScambio = new GestoreScambioSerializableRepository();
         final var gestoreOfferte = new GestoreOfferteSerializableRepository();
 
-        final var login = new LoginController(gestoreUtenti);
-        final var macroServices = new MacroServices(gestoreUtenti, gestoreGerarchie, gestoreScambio, gestoreOfferte);
-        final var menu = new MainMenu(macroServices);
+        final var loginView = new LoginView();
+        final var mainMenuView = new MainMenuView();
+
+        final var loginController = new LoginController(loginView, gestoreUtenti);
+        final var macroServicesController = new MacroServicesController(mainMenuView, gestoreUtenti, gestoreGerarchie, gestoreScambio, gestoreOfferte);
 
         BenvenutoView.saluta();
-        login.eseguiLogin();
-        macroServices.setUser(login.getUserLogged());
-        menu.eseguiMenuByUserType(login.getUserType());
+        loginController.eseguiLogin();
+        macroServicesController.setUser(loginController.getUserLogged());
+        macroServicesController.eseguiMainMenu();
     }
 }

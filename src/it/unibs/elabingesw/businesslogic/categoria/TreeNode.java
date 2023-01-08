@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
  * @author Ali Laaraj
  */
 // todo Laaraj aggiornare uml e compagnia, T ora extends anche Serializable e tutto il resto che prima non faceva, confronta.
-// TODO: 25/nov/2022 fare estendere Manageable a TreeNode, per migliore chiarezza., chiedere confronto a Laaraj.
 public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRender & DomainTypeToLimitedRender>
         implements Manageable, Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
     private final T dato;

@@ -5,6 +5,7 @@ import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSeriali
 import it.unibs.elabingesw.businesslogic.utente.Configuratore;
 import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
+import it.unibs.elabingesw.view.LoginView;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
@@ -15,6 +16,7 @@ import it.unibs.eliapitozzi.mylib.InputDati;
  * @author Ali Laaraj
  */
 public class LoginController {
+    private final LoginView loginView;
     private final UtenteRepository utenteRepository;
     private UserType userType;
     private Utente utente;
@@ -23,10 +25,12 @@ public class LoginController {
      * Costruttore di classe, accetta come parametro un oggetto
      * GestoreUtenti.
      *
+     * @param loginView
      * @param utenteRepository oggetto di tipo GestoreUtenti
      * @see GestoreUtentiSerializableRepository
      */
-    public LoginController(UtenteRepository utenteRepository) {
+    public LoginController(LoginView loginView, UtenteRepository utenteRepository) {
+        this.loginView = loginView;
         this.utenteRepository = utenteRepository;
     }
 
@@ -44,12 +48,12 @@ public class LoginController {
         boolean ricontrolla;
         do {
             ricontrolla = true;
-            var username = InputDati.leggiStringaNonVuota("Inserisci username: ");
+            var username = loginView.getUsernameString();
 
             if (utenteRepository.isUtenteRegistrato(username)) {
-                var password = InputDati.leggiStringaNonVuota("Inserisci password: ");
+                var password = loginView.getPasswordString();
                 if (utenteRepository.isUtenteValido(username, password)) {
-                    System.out.println("Accesso corretto.");
+                    loginView.visualizzaMessaggio("Accesso corretto.");
                     if (Configuratore.isDefaultConfiguratoreByUsername(username)) {
                         creaNuovoConfiguratore();
                     } else {
@@ -57,9 +61,9 @@ public class LoginController {
                         this.userType = this.utente.getUserType();
                         ricontrolla = false;
                     }
-                } else System.out.println("Errore: password inserita non valida. Riprovare.");
+                } else loginView.visualizzaMessaggio("Errore: password inserita non valida. Riprovare.");
             } else {
-                System.out.println("Errore: utente inserito non presente.");
+                loginView.visualizzaMessaggio("Errore: utente inserito non presente.");
                 if (chiediSeCreareNuovoFruitore()) creaNuovoFruitore(username);
             }
         } while (ricontrolla);
@@ -72,10 +76,10 @@ public class LoginController {
      * @param username lo username del fruitore
      */
     private void creaNuovoFruitore(String username) {
-        System.out.println("Procedura di creazione nuovo fruitore avviata.");
-        var password = InputDati.leggiStringaNonVuota("Imposta password per " + username + ": ");
+        loginView.visualizzaMessaggio("Procedura di creazione nuovo fruitore avviata.");
+        var password = loginView.setPasswordByUsername(username);
         utenteRepository.inserisciNuovoFruitore(username, password);
-        System.out.println("Nuovo fruitore aggiunto, ora accedi.");
+        loginView.visualizzaMessaggio("Nuovo fruitore aggiunto, ora accedi.");
     }
 
     /**
@@ -86,7 +90,7 @@ public class LoginController {
      * FALSE se non ci si registra come nuovo fruitore
      */
     private boolean chiediSeCreareNuovoFruitore() {
-        return InputDati.yesOrNo("Si desidera registrarsi come nuovo fruitore? ");
+        return loginView.chiediConfermaRegistrazioneFruitore();
     }
 
     /**
@@ -96,31 +100,22 @@ public class LoginController {
      */
     private void creaNuovoConfiguratore() {
 
-        System.out.println("Procedura di creazione nuovo configuratore avviata.");
+        loginView.visualizzaMessaggio("Procedura di creazione nuovo configuratore avviata.");
 
         boolean ricontrolla;
         do {
             ricontrolla = false;
-            String username = InputDati.leggiStringaNonVuota("Inserisci nuovo username: ");
+            String username = loginView.getNewUsernameString();
 
             if (utenteRepository.isUtenteRegistrato(username)) {
-                System.out.println("Errore: username non utilizzabile.");
+                loginView.visualizzaMessaggio("Errore: username non utilizzabile.");
                 ricontrolla = true;
             } else {
-                String password = InputDati.leggiStringaNonVuota("Inserisci password: ");
+                String password = loginView.getPasswordString();
                 utenteRepository.inserisciNuovoConfiguratore(username, password);
-                System.out.println("Nuovo configuratore aggiunto, ora accedi.");
+                loginView.visualizzaMessaggio("Nuovo configuratore aggiunto, ora accedi.");
             }
         } while (ricontrolla);
-    }
-
-    /**
-     * Metodo getter.
-     *
-     * @return il tipo di utente
-     */
-    public UserType getUserType() {
-        return userType;
     }
 
     /**
