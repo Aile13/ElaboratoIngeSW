@@ -282,7 +282,7 @@ public class MacroServicesController implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         switch (((MainMenuView) o).getSelectedOption()) {
-            case "eseguiProceduraDiUscita" -> this.eseguiProceduraDiUscita();
+            case "eseguiProceduraDiUscita" -> this.eseguiProceduraDiUscita(); //todo fatto
             case "creaNuovaGerarchia" -> this.creaNuovaGerarchia();
             case "visualizzaGerarchieFormaEstesa" -> this.visualizzaGerarchieFormaEstesa();
             case "impostaInfoDiScambio" -> this.impostaInfoDiScambio();
