@@ -6,7 +6,7 @@ import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerial
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
 import it.unibs.elabingesw.controller.LoginController;
 import it.unibs.elabingesw.mainservice.MacroServicesController;
-import it.unibs.elabingesw.mainservice.MainMenuView;
+import it.unibs.elabingesw.view.MainMenuView;
 import it.unibs.elabingesw.view.BenvenutoView;
 import it.unibs.elabingesw.view.LoginView;
 

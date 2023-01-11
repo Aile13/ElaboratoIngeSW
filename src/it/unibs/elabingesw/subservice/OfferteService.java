@@ -10,6 +10,7 @@ import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSeri
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreOfferteSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
+import it.unibs.elabingesw.view.OfferteServiceView;
 import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
@@ -30,6 +31,8 @@ public class OfferteService {
     private final OffertaRepository offertaRepository;
     private final GerarchiaRepository gerarchiaRepository;
     private final ScambioRepository scambioRepository;
+
+    private final OfferteServiceView view = new OfferteServiceView();
     private Utente utente;
 
     /**
@@ -52,9 +55,8 @@ public class OfferteService {
      * sua creazione, questa viene aggiunta all'applicativo.
      */
     public void creaNuovaOfferta() {
-        System.out.println("Procedura di creazione nuovo articolo avviata");
+        view.visualizzaMessaggio("Procedura di creazione nuovo articolo avviata");
         if (this.gerarchiaRepository.haGerarchie()) {
-
             var nomeArticolo = chiediNomeArticolo();
             var gerarchiaSelezionata = chiediGerarchia();
             Categoria categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
@@ -62,10 +64,10 @@ public class OfferteService {
             ListaCampiCompilatiService.compila(listaCampiCompilati);
 
             this.offertaRepository.inserisciNuovaOfferta(new OffertaContext(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata));
-            System.out.println("Offerta inserita.");
+            view.visualizzaMessaggio("Offerta inserita.");
         } else {
-            System.out.println("Attenzione: non sono presenti gerarchie per inserire nessun articolo.");
-            System.out.println("Impossibile inserire una nuova offerta.");
+            view.visualizzaMessaggio("Attenzione: non sono presenti gerarchie per inserire nessun articolo.");
+            view.visualizzaMessaggio("Impossibile inserire una nuova offerta.");
         }
     }
 
@@ -78,13 +80,13 @@ public class OfferteService {
      * @see GerarchiaDiCategorie
      */
     private Categoria chiediCategoriaFogliaByGerarchia(GerarchiaDiCategorie gerarchiaSelezionata) {
-        System.out.println("Seleziona la categoria foglia di interesse: ");
+        view.visualizzaMessaggio("Seleziona la categoria foglia di interesse: ");
         for (Categoria categoria : gerarchiaSelezionata.getListaDiCategoriaFoglia()) {
-            if (InputDati.yesOrNo("Vuoi selezionare " + categoria.getNome() + "?")) {
+            if (view.chiediSeSelezionareCategoriaFogliaByNome(categoria.getNome())) {
                 return categoria;
             }
         }
-        System.out.println("Errore: nessuna categoria selezionata, riprovare.");
+        view.visualizzaMessaggio("Errore: nessuna categoria selezionata, riprovare.");
         return chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
     }
 
@@ -96,13 +98,13 @@ public class OfferteService {
      * @see GerarchiaDiCategorie
      */
     private GerarchiaDiCategorie chiediGerarchia() {
-        System.out.println("Seleziona la gerarchia che contiene la categoria foglia di interesse: ");
+        view.visualizzaMessaggio("Seleziona la gerarchia che contiene la categoria foglia di interesse: ");
         for (GerarchiaDiCategorie gerarchia : this.gerarchiaRepository.getListaGerarchie()) {
-            if (InputDati.yesOrNo("Vuoi selezionare " + gerarchia.getNome() + "?")) {
+            if (view.chiediSeSelezionareGerarchiaByNome(gerarchia.getNome())) {
                 return gerarchia;
             }
         }
-        System.out.println("Errore: nessuna gerarchia selezionata, riprovare.");
+        view.visualizzaMessaggio("Errore: nessuna gerarchia selezionata, riprovare.");
         return chiediGerarchia();
     }
 
@@ -114,10 +116,10 @@ public class OfferteService {
      * @see GestoreOfferteSerializableRepository
      */
     private String chiediNomeArticolo() {
-        var nomeArticolo = InputDati.leggiStringaNonVuota("Inserisci il titolo dell'articolo: ");
+        var nomeArticolo = view.chiediTitoloDiArticolo();
         while (this.offertaRepository.isOffertaPresenteByNome(nomeArticolo)) {
-            System.out.println("Errore: nome articolo già usato, riprovare.");
-            nomeArticolo = InputDati.leggiStringaNonVuota("Reinserisci il titolo dell'articolo: ");
+            view.visualizzaMessaggio("Errore: nome articolo già usato, riprovare.");
+            nomeArticolo = view.chiediNewTitoloDiArticolo();
         }
         return nomeArticolo;
     }
@@ -129,11 +131,12 @@ public class OfferteService {
      */
     public void visualizzaOfferteUtente() {
         if (this.offertaRepository.getOfferteByUser(utente).isEmpty()) {
-            System.out.println("\tAttenzione non ci sono offerte di " + utente.getUsername() + " da visualizzare.");
+            view.visualizzaMessaggio("\tAttenzione non ci sono offerte di " + utente.getUsername() + " da visualizzare.");
         } else {
-            System.out.println("Offerte di " + utente.getUsername() + ":");
-            //this.gestoreOfferte.getOfferteByUser(utente).forEach(System.out::println);
-            this.offertaRepository.getOfferteByUser(utente).forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
+            view.visualizzaMessaggio("Offerte di " + utente.getUsername() + ":");
+            this.offertaRepository.getOfferteByUser(utente).forEach(offertaContext ->
+                    view.visualizzaMessaggio(new CompositeDomainTypeRenderer().render(offertaContext))
+            );
         }
     }
 
@@ -154,11 +157,11 @@ public class OfferteService {
      */
     public void ritiraOfferte() {
         if (this.offertaRepository.getOfferteAperteByUser(this.utente).isEmpty()) {
-            System.out.println("\tAttenzione: non ci sono offerte aperte da ritirare.");
+            view.visualizzaMessaggio("\tAttenzione: non ci sono offerte aperte da ritirare.");
         } else {
-            System.out.println("Seleziona quali offerte aperte vuoi ritirare: ");
+            view.visualizzaMessaggio("Seleziona quali offerte aperte vuoi ritirare: ");
             this.offertaRepository.getOfferteAperteByUser(this.utente).forEach(offerta -> {
-                if (InputDati.yesOrNo("\tVuoi ritirare l'offerta: " + offerta.getNomeArticolo() + "? ")) {
+                if (view.chiediSeRitirareOffertaByNomeArticolo(offerta.getNomeArticolo())) {
                     offerta.ritiraOfferta();
                 }
             });
@@ -177,15 +180,17 @@ public class OfferteService {
             GerarchiaDiCategorie gerarchia = chiediGerarchia();
             Categoria categoria = chiediCategoriaFogliaByGerarchia(gerarchia);
             if (this.offertaRepository.getOfferteAperteByCategoriaFoglia(categoria).isEmpty()) {
-                System.out.println("Attenzione: nessuna offerta aperta per questa categoria foglia.");
+                view.visualizzaMessaggio("Attenzione: nessuna offerta aperta per questa categoria foglia.");
             } else {
-                System.out.println("Elenco offerte data la categoria selezionata: ");
-                this.offertaRepository.getOfferteAperteByCategoriaFoglia(categoria).forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
+                view.visualizzaMessaggio("Elenco offerte data la categoria selezionata: ");
+                this.offertaRepository.getOfferteAperteByCategoriaFoglia(categoria).forEach(offertaContext ->
+                        view.visualizzaMessaggio(new CompositeDomainTypeRenderer().render(offertaContext))
+                );
 
             }
         } else {
-            System.out.println("Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.");
-            System.out.println("Impossibile procedere per visualizzare offerte aperte.");
+            view.visualizzaMessaggio("Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.");
+            view.visualizzaMessaggio("Impossibile procedere per visualizzare offerte aperte.");
         }
     }
 
@@ -198,13 +203,13 @@ public class OfferteService {
      * @see GestoreOfferteSerializableRepository
      */
     private OffertaContext chiediOffertaByList(List<OffertaContext> listaOfferte) {
-        System.out.println("Seleziona l'offerta aperta di interesse: ");
+        view.visualizzaMessaggio("Seleziona l'offerta aperta di interesse: ");
         for (OffertaContext offertaContext : listaOfferte) {
-            if (InputDati.yesOrNo("Vuoi selezionare " + offertaContext.getNomeArticolo() + "?")) {
+            if (view.chiediSeSelezionareOffertaByNomeArticolo(offertaContext.getNomeArticolo())) {
                 return offertaContext;
             }
         }
-        System.out.println("Errore: nessuna offerta selezionata, riprovare.");
+        view.visualizzaMessaggio("Errore: nessuna offerta selezionata, riprovare.");
         return chiediOffertaByList(listaOfferte);
     }
 
@@ -217,31 +222,28 @@ public class OfferteService {
      */
     public void selezionaUnaOffertaApertaPerBaratto() {
         if (scambioRepository.isInfoScambioDaConfigurare()) {
-            System.out.println("Attenzione: criteri e tempistiche di scambio non ancora impostati.");
-            System.out.println("Impossibile procedere con l'operazione di baratto.");
+            view.visualizzaMessaggio("Attenzione: criteri e tempistiche di scambio non ancora impostati.");
+            view.visualizzaMessaggio("Impossibile procedere con l'operazione di baratto.");
         } else {
-            System.out.println("Seleziona una tua offerta aperta che intendi barattare");
+            view.visualizzaMessaggio("Seleziona una tua offerta aperta che intendi barattare");
             var listaOfferteAperteUtente = this.offertaRepository.getOfferteAperteByUser(utente);
             if (listaOfferteAperteUtente.isEmpty()) {
-                System.out.println("Attenzione: non ci sono offerte aperte da selezionare.");
-                System.out.println("Impossibile procedere con l'operazione di baratto.");
+                view.visualizzaMessaggio("Attenzione: non ci sono offerte aperte da selezionare.");
+                view.visualizzaMessaggio("Impossibile procedere con l'operazione di baratto.");
             } else {
                 OffertaContext offertaContextDaBarattareA = chiediOffertaByList(listaOfferteAperteUtente);
-                System.out.println("Seleziona ora una offerta aperta di medesima categoria e di diverso utente che intendi barattare");
+                view.visualizzaMessaggio("Seleziona ora una offerta aperta di medesima categoria e di diverso utente che intendi barattare");
                 var listaOffAperteNonUtenteStessaCat = this.offertaRepository.getOfferteAperteByCategoriaFogliaAndExcludeUser(offertaContextDaBarattareA.getCategoriaDiAppartenenza(), utente);
                 if (listaOffAperteNonUtenteStessaCat.isEmpty()) {
-                    System.out.println("Attenzione: non ci sono altre offerte da selezionare disponibili.");
-                    System.out.println("Impossibile procedere con l'operazione di baratto.");
+                    view.visualizzaMessaggio("Attenzione: non ci sono altre offerte da selezionare disponibili.");
+                    view.visualizzaMessaggio("Impossibile procedere con l'operazione di baratto.");
                 } else {
                     var offertaDaBarattareB = chiediOffertaByList(listaOffAperteNonUtenteStessaCat);
-                    System.out.println("Creazione legame tra le offerte selezionate.");
-                    System.out.println("Ora attendi eventuale risposta della controparte.");
-                    System.out.println("Guarda in offerte in scambio per visualizzare eventuale risposta.");
+                    view.visualizzaMessaggio("Creazione legame tra le offerte selezionate.");
+                    view.visualizzaMessaggio("Ora attendi eventuale risposta della controparte.");
+                    view.visualizzaMessaggio("Guarda in offerte in scambio per visualizzare eventuale risposta.");
 
-//                    offertaContextDaBarattareA.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
-//                    offertaDaBarattareB.setInfoScambio(this.gestoreScambio.getInfoDiScambio());
-
-                    offertaContextDaBarattareA.creaLegameEModificaStatiConOffertaEInfoScambio(offertaDaBarattareB , this.scambioRepository.getInfoDiScambio());
+                    offertaContextDaBarattareA.creaLegameEModificaStatiConOffertaEInfoScambio(offertaDaBarattareB, this.scambioRepository.getInfoDiScambio());
                 }
             }
         }
@@ -251,12 +253,12 @@ public class OfferteService {
         offertaRepository.aggiornaStatoDelleOfferte();
         var offerteSelezionate = this.offertaRepository.getOfferteSelezionateByUser(utente);
         if (offerteSelezionate.isEmpty()) {
-            System.out.println("Non ci sono proposte di scambio.");
+            view.visualizzaMessaggio("Non ci sono proposte di scambio.");
         } else {
             for (OffertaContext offertaContextSel : offerteSelezionate) {
-                if (InputDati.yesOrNo("Vuoi accettare la proposta di scambio per " + offertaContextSel.getOffertaAssociata().getNomeArticolo() + ", con " + offertaContextSel.getNomeArticolo() + "?")) {
+                if (view.chiediSeAccettarePropostaDiScambioByNomiArticoli(offertaContextSel.getOffertaAssociata().getNomeArticolo(), offertaContextSel.getNomeArticolo())) {
                     accettaPropostaDiScambio(offertaContextSel);
-                    System.out.println("Proposta di appuntamento inviata alla controparte.");
+                    view.visualizzaMessaggio("Proposta di appuntamento inviata alla controparte.");
                 }
             }
         }
@@ -271,7 +273,7 @@ public class OfferteService {
      * @param offertaContextSel l'offerta selezionata
      */
     private void accettaPropostaDiScambio(OffertaContext offertaContextSel) {
-        System.out.println("Proposta di scambio accettata, ora compila gli estremi per proporre l'appuntamento.");
+        view.visualizzaMessaggio("Proposta di scambio accettata, ora compila gli estremi per proporre l'appuntamento.");
         offertaContextSel.accettaPropostaDiScambioAssociata(chiediListaCampiAppuntamento());
     }
 
@@ -295,13 +297,13 @@ public class OfferteService {
      * @return l'orario d'incontro sottoforma di stringa
      */
     private String chiediOraDiIncontro() {
-        System.out.println("Selezionare un orario di incontro");
+        view.visualizzaMessaggio("Selezionare un orario di incontro");
         for (LocalTime orario : scambioRepository.getInfoDiScambio().get().getListaOrari()) {
-            if (InputDati.yesOrNo("Vuoi selezionare l'orario: " + orario + "?")) {
+            if (view.chiediSeSelezionareOrario(orario)) {
                 return orario.toString();
             }
         }
-        System.out.println("Attenzione: selezionare un orario.");
+        view.visualizzaMessaggio("Attenzione: selezionare un orario.");
         return chiediOraDiIncontro();
     }
 
@@ -311,13 +313,13 @@ public class OfferteService {
      * @return il giorno dell'incontro
      */
     private String chiediDataDiIncontro() {
-        System.out.println("Selezionare un giorno di incontro");
+        view.visualizzaMessaggio("Selezionare un giorno di incontro");
         for (DayOfWeek giorno : scambioRepository.getInfoDiScambio().get().giorni()) {
-            if (InputDati.yesOrNo("Vuoi selezionare il giorno: " + giorno + "?")) {
+            if (view.chiediSeSelezionareGiorno(giorno)) {
                 return giorno.name();
             }
         }
-        System.out.println("Attenzione: selezionare un giorno.");
+        view.visualizzaMessaggio("Attenzione: selezionare un giorno.");
         return chiediDataDiIncontro();
     }
 
@@ -327,13 +329,13 @@ public class OfferteService {
      * @return il luogo dell'incontro
      */
     private String chiediLuogoDiIncontro() {
-        System.out.println("Selezionare luogo di incontro");
+        view.visualizzaMessaggio("Selezionare luogo di incontro");
         for (String luogo : scambioRepository.getInfoDiScambio().get().listaLuoghi()) {
-            if (InputDati.yesOrNo("Vuoi selezionare luogo: " + luogo + "?")) {
+            if (view.chiediSeSelezionareLuogo(luogo)) {
                 return luogo;
             }
         }
-        System.out.println("Attenzione: selezionare un luogo.");
+        view.visualizzaMessaggio("Attenzione: selezionare un luogo.");
         return chiediLuogoDiIncontro();
     }
 
@@ -345,29 +347,26 @@ public class OfferteService {
     public void visualizzaOfferteInScambio() {
         List<OffertaContext> offerte = this.offertaRepository.getOfferteInScambioByUser(utente);
         if (offerte.isEmpty()) {
-            System.out.println("Non ci sono offerte in scambio.");
+            view.visualizzaMessaggio("Non ci sono offerte in scambio.");
         } else {
             for (OffertaContext offertaContextInScambio : offerte) {
-                System.out.println("Proposta di scambio per " + offertaContextInScambio.getOffertaAssociata().getNomeArticolo() + " con " + offertaContextInScambio.getNomeArticolo() + ":");
-                //System.out.println("\t" + offertaContextInScambio.getOffertaAssociata());
-                System.out.println("\t" + new CompositeDomainTypeRenderer().render(offertaContextInScambio.getOffertaAssociata()));
-                //System.out.println("\t" + offertaContextInScambio);
-                System.out.println("\t" + new CompositeDomainTypeRenderer().render(offertaContextInScambio));
+                view.visualizzaMessaggio("Proposta di scambio per " + offertaContextInScambio.getOffertaAssociata().getNomeArticolo() + " con " + offertaContextInScambio.getNomeArticolo() + ":");
+                view.visualizzaMessaggio("\t" + new CompositeDomainTypeRenderer().render(offertaContextInScambio.getOffertaAssociata()));
+                view.visualizzaMessaggio("\t" + new CompositeDomainTypeRenderer().render(offertaContextInScambio));
 
                 if (!Objects.isNull(offertaContextInScambio.getListaCampiAppuntamento())) {
-                    //System.out.println("\tEstremi di appuntamento proposto dalla controparte: " + offertaContextInScambio.getListaCampiAppuntamento());
-                    System.out.println("\tEstremi di appuntamento proposto dalla controparte: " + new CompositeDomainTypeRenderer().render(offertaContextInScambio.getListaCampiAppuntamento()));
-                    if (InputDati.yesOrNo("Vuoi accettare l'appuntamento?")) {
+                    view.visualizzaMessaggio("\tEstremi di appuntamento proposto dalla controparte: " + new CompositeDomainTypeRenderer().render(offertaContextInScambio.getListaCampiAppuntamento()));
+                    if (view.chiediSeAccettareAppuntamento()) {
                         accettaAppuntamento(offertaContextInScambio);
-                        System.out.println("Proposta di appuntamento accettata.");
-                        System.out.println("Adesso entrambe le offerte diventano chiuse.");
+                        view.visualizzaMessaggio("Proposta di appuntamento accettata.");
+                        view.visualizzaMessaggio("Adesso entrambe le offerte diventano chiuse.");
                     } else {
-                        System.out.println("Proponi altri estremi di appuntamento alla controparte:");
+                        view.visualizzaMessaggio("Proponi altri estremi di appuntamento alla controparte:");
                         proponiAltroAppuntamento(offertaContextInScambio);
-                        System.out.println("Nuova proposta di appuntamento inviata alla controparte.");
+                        view.visualizzaMessaggio("Nuova proposta di appuntamento inviata alla controparte.");
                     }
                 } else {
-                    System.out.println("\tIn attesa di risposta dalla controparte per la tua proposta di appuntamento.");
+                    view.visualizzaMessaggio("\tIn attesa di risposta dalla controparte per la tua proposta di appuntamento.");
                 }
             }
         }
@@ -382,8 +381,8 @@ public class OfferteService {
     private void proponiAltroAppuntamento(OffertaContext offertaContextInScambio) {
         var nuoviEstremiAppuntamento = chiediListaCampiAppuntamento();
         while (nuoviEstremiAppuntamento.equals(offertaContextInScambio.getListaCampiAppuntamento())) {
-            System.out.println("Attenzione estremi appuntamento coincidenti con l'appuntamento già proposto.");
-            System.out.println("Reinserire altri estremi nel nuovo appuntamento.");
+            view.visualizzaMessaggio("Attenzione estremi appuntamento coincidenti con l'appuntamento già proposto.");
+            view.visualizzaMessaggio("Reinserire altri estremi nel nuovo appuntamento.");
             nuoviEstremiAppuntamento = chiediListaCampiAppuntamento();
         }
         offertaContextInScambio.proponiAltroAppuntamento(nuoviEstremiAppuntamento);
@@ -408,15 +407,14 @@ public class OfferteService {
     public void visualizzaUltimeRispostePerOfferteInScambio() {
         List<OffertaContext> offerte = this.offertaRepository.getOfferteInScambioByUser(utente);
         if (offerte.isEmpty()) {
-            System.out.println("Non ci sono offerte in scambio. Quindi neanche risposte.");
+            view.visualizzaMessaggio("Non ci sono offerte in scambio. Quindi neanche risposte.");
         } else {
             for (OffertaContext offertaContextInScambio : offerte) {
-                System.out.println("Proposta di scambio per " + offertaContextInScambio.getOffertaAssociata().getNomeArticolo() + " con " + offertaContextInScambio.getNomeArticolo() + ":");
+                view.visualizzaMessaggio("Proposta di scambio per " + offertaContextInScambio.getOffertaAssociata().getNomeArticolo() + " con " + offertaContextInScambio.getNomeArticolo() + ":");
                 if (!Objects.isNull(offertaContextInScambio.getListaCampiAppuntamento())) {
-                    //System.out.println("\tUltima risposta di utente controparte: " + offertaContextInScambio.getListaCampiAppuntamento());
-                    System.out.println("\tUltima risposta di utente controparte: " + new CompositeDomainTypeRenderer().render(offertaContextInScambio.getListaCampiAppuntamento()));
+                    view.visualizzaMessaggio("\tUltima risposta di utente controparte: " + new CompositeDomainTypeRenderer().render(offertaContextInScambio.getListaCampiAppuntamento()));
                 } else {
-                    System.out.println("\tL'utente controparte non ha ancora risposto.");
+                    view.visualizzaMessaggio("\tL'utente controparte non ha ancora risposto.");
                 }
             }
         }
@@ -431,31 +429,29 @@ public class OfferteService {
      */
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
         if (gerarchiaRepository.haGerarchie()) {
-            System.out.println("Seleziona gerarchia e categoria foglia di interesse per vedere relative offerte in scambio e chiuse");
+            view.visualizzaMessaggio("Seleziona gerarchia e categoria foglia di interesse per vedere relative offerte in scambio e chiuse");
             var gerarchiaSelezionata = chiediGerarchia();
             Categoria categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
 
             var offerteInScambio = this.offertaRepository.getOfferteInScambioByCategoriaFoglia(categoriaFogliaSelezionata);
             var offerteChiuse = this.offertaRepository.getOfferteChiuseByCategoriaFoglia(categoriaFogliaSelezionata);
 
-            System.out.println("Per categoria: " + categoriaFogliaSelezionata.getNome());
-            System.out.println("Le offerte in scambio:");
+            view.visualizzaMessaggio("Per categoria: " + categoriaFogliaSelezionata.getNome());
+            view.visualizzaMessaggio("Le offerte in scambio:");
             if (offerteInScambio.isEmpty()) {
-                System.out.println("\tNon ci sono offerte in scambio per la categoria selezionata.");
+                view.visualizzaMessaggio("\tNon ci sono offerte in scambio per la categoria selezionata.");
             } else {
-                //offerteInScambio.forEach(System.out::println);
-                offerteInScambio.forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
+                offerteInScambio.forEach(offertaContext -> view.visualizzaMessaggio(new CompositeDomainTypeRenderer().render(offertaContext)));
             }
-            System.out.println("Le offerte chiuse:");
+            view.visualizzaMessaggio("Le offerte chiuse:");
             if (offerteChiuse.isEmpty()) {
-                System.out.println("\tNon ci sono offerte chiuse per la categoria selezionata.");
+                view.visualizzaMessaggio("\tNon ci sono offerte chiuse per la categoria selezionata.");
             } else {
-                //offerteChiuse.forEach(System.out::println);
-                offerteChiuse.forEach(offertaContext -> System.out.println(new CompositeDomainTypeRenderer().render(offertaContext)));
+                offerteChiuse.forEach(offertaContext -> view.visualizzaMessaggio(new CompositeDomainTypeRenderer().render(offertaContext)));
             }
         } else {
-            System.out.println("Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.");
-            System.out.println("Impossibile procedere per visualizzare offerte in scambio e chiuse.");
+            view.visualizzaMessaggio("Attenzione: non sono presenti gerarchie da selezionare per visualizzare offerte.");
+            view.visualizzaMessaggio("Impossibile procedere per visualizzare offerte in scambio e chiuse.");
         }
     }
 }

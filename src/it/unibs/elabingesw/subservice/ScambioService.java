@@ -4,6 +4,7 @@ import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
+import it.unibs.elabingesw.view.ScambioServiceView;
 import it.unibs.elabingesw.view.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
 import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.eliapitozzi.mylib.InputDati;
@@ -21,6 +22,7 @@ import java.util.List;
  */
 public class ScambioService {
     private final ScambioRepository scambioRepository;
+    private final ScambioServiceView view = new ScambioServiceView();
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
@@ -39,7 +41,7 @@ public class ScambioService {
      */
     public void impostaInfoScambio() {
         if (this.scambioRepository.isInfoScambioDaConfigurare()) {
-            System.out.println("Procedura settaggio info di scambio avviata");
+            view.visualizzaMessaggio("Procedura settaggio info di scambio avviata");
             var piazza = chiediNomePiazza();
             var listaLuoghi = chiediLuoghiDiScambio();
             var listaGiorni = chiediGiorniDiScambio();
@@ -49,9 +51,9 @@ public class ScambioService {
             Scambio scambio = new Scambio(piazza, listaLuoghi, listaGiorni, intervalliOrari, scadenza);
 
             scambioRepository.impostaInfoDiScambio(scambio);
-            System.out.println("Info di scambio impostate correttamente.");
+            view.visualizzaMessaggio("Info di scambio impostate correttamente.");
         } else {
-            System.out.println("\tAttenzione: info di scambio già impostate.");
+            view.visualizzaMessaggio("\tAttenzione: info di scambio già impostate.");
         }
     }
 
@@ -63,8 +65,8 @@ public class ScambioService {
      * @return la scadenza in giorni
      */
     private int chiediScadenza() {
-        System.out.println("Settaggio parametro scadenza");
-        return InputDati.leggiInteroPositivo("Inserisci il massimo numero di giorni consentito per accettazione proposta di scambio: ");
+        view.visualizzaMessaggio("Settaggio parametro scadenza");
+        return view.chiediGiorniScadenza();
     }
 
     /**
@@ -74,7 +76,7 @@ public class ScambioService {
      * @return la lista degli intervalli orari
      */
     private List<IntervalloOrario> chiediIntervalliOrari() {
-        System.out.println("Settaggio parametro intervalli orari");
+        view.visualizzaMessaggio("Settaggio parametro intervalli orari");
         return IntervalloOrariService.chiediIntervalliOrari();
     }
 
@@ -85,7 +87,7 @@ public class ScambioService {
      * @return la lista dei giorni
      */
     private List<DayOfWeek> chiediGiorniDiScambio() {
-        System.out.println("Settaggio parametro giorni di scambio");
+        view.visualizzaMessaggio("Settaggio parametro giorni di scambio");
         return GiorniDiSettimanaService.chiediGiorniDiSettimana();
     }
 
@@ -96,15 +98,15 @@ public class ScambioService {
      * @return la lista dei luoghi
      */
     private List<String> chiediLuoghiDiScambio() {
-        System.out.println("Settaggio parametro luoghi di scambio");
+        view.visualizzaMessaggio("Settaggio parametro luoghi di scambio");
         List<String> listaLuoghi = new ArrayList<>();
-        String nuovoLuogo = InputDati.leggiStringaNonVuota("Inserisci un luogo dove fare gli scambi: ");
+        String nuovoLuogo = view.chiediLuogoDiScambioString();
         listaLuoghi.add(nuovoLuogo);
-        while (InputDati.yesOrNo("Vuoi inserire un altro luogo?")) {
-            nuovoLuogo = InputDati.leggiStringaNonVuota("Inserisci un altro luogo dove fare gli scambi: ");
+        while (view.chiediConfermaInserimentoNuovoLuogoDiScambio()) {
+            nuovoLuogo = view.chiediNewLuogoDiScambioString();
             while (listaLuoghi.contains(nuovoLuogo)) {
-                System.out.println("Errore: luogo inserito già presente, inserirne un altro.");
-                nuovoLuogo = InputDati.leggiStringaNonVuota("Inserisci un altro luogo dove fare gli scambi: ");
+                view.visualizzaMessaggio("Errore: luogo inserito già presente, inserirne un altro.");
+                nuovoLuogo = view.chiediNewLuogoDiScambioString();
             }
             listaLuoghi.add(nuovoLuogo);
         }
@@ -117,8 +119,8 @@ public class ScambioService {
      * @return il nome della piazza
      */
     private String chiediNomePiazza() {
-        System.out.println("Settaggio parametro piazza");
-        return InputDati.leggiStringaNonVuota("Inserisci nome della città: ");
+        view.visualizzaMessaggio("Settaggio parametro piazza");
+        return view.chiediNomeCittaString();
     }
 
     /**
@@ -126,12 +128,11 @@ public class ScambioService {
      * scambio.
      */
     public void visualizzaInfoDiScambioFormaEstesa() {
-        System.out.println("Info parametri di scambio:");
+        view.visualizzaMessaggio("Info parametri di scambio:");
         if (this.scambioRepository.isInfoScambioDaConfigurare()) {
-            System.out.println("\tInfo ancora da configurare");
+            view.visualizzaMessaggio("\tInfo ancora da configurare");
         } else {
-            //System.out.println(this.gestoreScambio.getInfoDiScambio().get());
-            System.out.println(new CompositeDomainTypeRenderer().render(this.scambioRepository.getInfoDiScambio().get()));
+            view.visualizzaMessaggio(new CompositeDomainTypeRenderer().render(this.scambioRepository.getInfoDiScambio().get()));
         }
 
     }
@@ -141,12 +142,11 @@ public class ScambioService {
      * scambio in forma ridotta.
      */
     public void visualizzaInfoDiScambioFormaRidotta() {
-        System.out.println("Info parametri di scambio:");
+        view.visualizzaMessaggio("Info parametri di scambio:");
         if (this.scambioRepository.isInfoScambioDaConfigurare()) {
-            System.out.println("\tInfo ancora da configurare");
+            view.visualizzaMessaggio("\tInfo ancora da configurare");
         } else {
-            //System.out.println(this.gestoreScambio.getInfoDiScambio().get().toStringFormaRidotta());
-            System.out.println(new CompositeDomainTypeLimitedRenderer().render(this.scambioRepository.getInfoDiScambio().get()));
+            view.visualizzaMessaggio(new CompositeDomainTypeLimitedRenderer().render(this.scambioRepository.getInfoDiScambio().get()));
         }
 
     }

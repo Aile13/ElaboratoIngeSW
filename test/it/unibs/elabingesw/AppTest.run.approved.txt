@@ -947,19 +947,19 @@ Vuoi avere MONDAY tra i giorni di scambio? (S/N): Vuoi avere TUESDAY tra i giorn
 Vuoi avere MONDAY tra i giorni di scambio? (S/N): Vuoi avere TUESDAY tra i giorni di scambio? (S/N): Vuoi avere WEDNESDAY tra i giorni di scambio? (S/N): Vuoi avere THURSDAY tra i giorni di scambio? (S/N): Vuoi avere FRIDAY tra i giorni di scambio? (S/N): Vuoi avere SATURDAY tra i giorni di scambio? (S/N): Vuoi avere SUNDAY tra i giorni di scambio? (S/N): Settaggio parametro intervalli orari
 Inserisci un intervallo orario
 Inserimento orario iniziale
-Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Inserimento orario finale
-Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Errore: orario finale precede o è uguale a orario iniziale. Riprovare.
+Inserisci solo l'ora (24h): Inserisci solo i minuti (0 o 30): Inserimento orario finale
+Inserisci solo l'ora (24h): Inserisci solo i minuti (0 o 30): Errore: orario finale precede o è uguale a orario iniziale. Riprovare.
 Reinserimento di orario finale
-Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Errore: orario finale precede o è uguale a orario iniziale. Riprovare.
+Inserisci solo l'ora (24h): Inserisci solo i minuti (0 o 30): Errore: orario finale precede o è uguale a orario iniziale. Riprovare.
 Reinserimento di orario finale
-Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Attenzione minuto inserito non valido: riprovare.
+Inserisci solo l'ora (24h): Inserisci solo i minuti (0 o 30): Attenzione minuto inserito non valido: riprovare.
 Inserisci solo i minuti (0 o 30): Vuoi aggiungere un altro intervallo orario? (S/N): Inserisci altro intervallo orario
 Inserimento orario iniziale
-Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Inserimento orario finale
-Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Errore: ultimo intervallo inserito interseca altri intervalli già inseriti. Riprovare
+Inserisci solo l'ora (24h): Inserisci solo i minuti (0 o 30): Inserimento orario finale
+Inserisci solo l'ora (24h): Inserisci solo i minuti (0 o 30): Errore: ultimo intervallo inserito interseca altri intervalli già inseriti. Riprovare
 Inserimento orario iniziale
-Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Inserimento orario finale
-Inserisci solo l'ora (24h): Inserisci solo i minuti(0 o 30): Vuoi aggiungere un altro intervallo orario? (S/N): Settaggio parametro scadenza
+Inserisci solo l'ora (24h): Inserisci solo i minuti (0 o 30): Inserimento orario finale
+Inserisci solo l'ora (24h): Inserisci solo i minuti (0 o 30): Vuoi aggiungere un altro intervallo orario? (S/N): Settaggio parametro scadenza
 Inserisci il massimo numero di giorni consentito per accettazione proposta di scambio: Attenzione: e' richiesto un valore maggiore o uguale a 1
 Inserisci il massimo numero di giorni consentito per accettazione proposta di scambio: Info di scambio impostate correttamente.
 ---------------------------------

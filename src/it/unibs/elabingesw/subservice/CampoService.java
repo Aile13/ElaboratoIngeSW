@@ -2,6 +2,7 @@ package it.unibs.elabingesw.subservice;
 
 import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
+import it.unibs.elabingesw.view.CampoServiceView;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ import java.util.List;
  */
 class CampoService {
 
+    private static final CampoServiceView view = new CampoServiceView();
+
     /**
      * Metodo statico che ritorna la lista dei campi che
      * l'utente inserisce nell'applicativo.
@@ -25,19 +28,19 @@ class CampoService {
      */
     public static List<Campo> chiediListaDiCampiPerCategoriaRadice() {
         List<Campo> campi = new ArrayList<>();
-        if (InputDati.yesOrNo("Inserire un campo?")) {
+        if (view.chiediConfermaInserimentoCampo()) {
             var campo = chiediNuovoCampo();
 
             while (campo.isCampoDiDefault()) {
-                System.out.println("Attenzione: campo già usato, reinserirne un altro.");
+                view.visualizzaMessaggio("Attenzione: campo già usato, reinserirne un altro.");
                 campo = chiediNuovoCampo();
             }
             campi.add(campo);
 
-            while (InputDati.yesOrNo("Inserire un nuovo campo?")) {
+            while (view.chiediConfermaInserimentoNuovoCampo()) {
                 campo = chiediNuovoCampo();
                 while (campo.isCampoInListaByNome(campi) || campo.isCampoDiDefault()) {
-                    System.out.println("Attenzione: campo già usato, reinserirne un altro.");
+                    view.visualizzaMessaggio("Attenzione: campo già usato, reinserirne un altro.");
                     campo = chiediNuovoCampo();
                 }
                 campi.add(campo);
@@ -57,18 +60,18 @@ class CampoService {
      */
     public static List<Campo> chiediListaDiCampiPerCategoriaFiglio(GerarchiaDiCategorie gerarchia) {
         List<Campo> campi = new ArrayList<>();
-        if (InputDati.yesOrNo("Inserire un campo?")) {
+        if (view.chiediConfermaInserimentoCampo()) {
             var campo = chiediNuovoCampo();
             while (gerarchia.isCampoGiaPreso(campo)) {
-                System.out.println("Attenzione: campo già usato, reinserirne un altro.");
+                view.visualizzaErroreCampoNonDisponibile();
                 campo = chiediNuovoCampo();
             }
             campi.add(campo);
 
-            while (InputDati.yesOrNo("Inserire un nuovo campo?")) {
+            while (view.chiediConfermaInserimentoNuovoCampo()) {
                 campo = chiediNuovoCampo();
                 while (gerarchia.isCampoGiaPreso(campo) || campo.isCampoInListaByNome(campi)) {
-                    System.out.println("Attenzione: campo già usato, reinserirne un altro.");
+                    view.visualizzaErroreCampoNonDisponibile();
                     campo = chiediNuovoCampo();
                 }
                 campi.add(campo);
@@ -78,7 +81,7 @@ class CampoService {
     }
 
     /**
-     * Metodo statico che chiede all'utente di inserire
+     * Metodo statico che chiede all'utente d'inserire
      * un nuovo campo. Ritorna il nuovo campo.
      * <p>
      * Devono essere inseriti il nome del nuovo campo e
@@ -88,8 +91,8 @@ class CampoService {
      * @see Campo
      */
     private static Campo chiediNuovoCampo() {
-        String nome = InputDati.leggiStringaNonVuota("Inserisci il nome del campo: ");
-        boolean obbligatorio = InputDati.yesOrNo("È obbligatorio?");
+        String nome = view.getNomeCampoString();
+        boolean obbligatorio = view.chiediSeObbligatorio();
 
         return new Campo(nome, obbligatorio);
     }

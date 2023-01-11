@@ -1,6 +1,8 @@
 package it.unibs.elabingesw.subservice;
 
+import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.offerta.ListaCampiCompilati;
+import it.unibs.elabingesw.view.ListaCampiCompilatiServiceView;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
@@ -13,6 +15,8 @@ import it.unibs.eliapitozzi.mylib.InputDati;
  */
 public class ListaCampiCompilatiService {
 
+    private final static ListaCampiCompilatiServiceView view = new ListaCampiCompilatiServiceView();
+
     /**
      * Metodo che effettua la compilazione dei campi
      * di un oggetto distinguendoli tra obbligatori
@@ -24,10 +28,10 @@ public class ListaCampiCompilatiService {
         listaCampiCompilati.getCampiCompilati().forEach((campo, s) -> {
             String compilazione = null;
             if (campo.obbligatorio()) {
-                compilazione = InputDati.leggiStringaNonVuota("Compila campo obbligatorio " + campo.nome() + ": ");
+                compilazione = view.chiediCompilazioneCampoObbligatorioByNome(campo.nome());
             } else {
-                if (InputDati.yesOrNo("Compilare campo non obbligatorio " + campo.nome() + " ? ")) {
-                    compilazione = InputDati.leggiStringaNonVuota("Compila campo " + campo.nome() + ": ");
+                if (view.chiediSeCompilareCampoNonObbligatorioByNome(campo.nome())) {
+                    compilazione = view.chiedicompilazioneCampoNonObbligatorioByNome(campo.nome());
                 }
             }
             listaCampiCompilati.inserisci(campo, compilazione);

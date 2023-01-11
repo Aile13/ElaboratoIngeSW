@@ -13,6 +13,7 @@ import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.elabingesw.subservice.GerarchiaService;
 import it.unibs.elabingesw.subservice.OfferteService;
 import it.unibs.elabingesw.subservice.ScambioService;
+import it.unibs.elabingesw.view.MainMenuView;
 
 import java.util.Observable;
 import java.util.Observer;

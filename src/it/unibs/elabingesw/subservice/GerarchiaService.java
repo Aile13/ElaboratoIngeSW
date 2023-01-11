@@ -6,6 +6,7 @@ import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.repository.GerarchiaRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
+import it.unibs.elabingesw.view.GerarchiaServiceView;
 import it.unibs.elabingesw.view.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
 import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.eliapitozzi.mylib.InputDati;
@@ -22,6 +23,7 @@ public class GerarchiaService {
 
     private final GerarchiaRepository gerarchiaRepository;
     private final ScambioRepository scambioRepository;
+    private final GerarchiaServiceView view = new GerarchiaServiceView();
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
@@ -61,13 +63,13 @@ public class GerarchiaService {
      * @see GerarchiaDiCategorie
      */
     private void aggiungiSottoCategorie(GerarchiaDiCategorie gerarchia) {
-        if (InputDati.yesOrNo("Vuoi aggiungere una sotto-categoria per " + gerarchia.getNome() + "?")) {
+        if (view.chiediConfermaInserimentoSottoCategoriaConNome(gerarchia.getNome())) {
             var categoriaFiglio = chiediECreaCategoriaFiglioIn(gerarchia);
             var gerarchiaFiglio = gerarchia.inserisciSottoCategoria(categoriaFiglio);
 
             aggiungiSottoCategorie(gerarchiaFiglio);
 
-            while (InputDati.yesOrNo("Vuoi aggiungere un'altra sotto-categoria per " + gerarchia.getNome() + "?")) {
+            while (view.chiediConfermaInserimentoAltraSottoCategoriaConNome(gerarchia.getNome())) {
                 var altraCategoriaFiglio = chiediECreaCategoriaFiglioIn(gerarchia);
                 var altraGerarchiaFiglio = gerarchia.inserisciSottoCategoria(altraCategoriaFiglio);
                 aggiungiSottoCategorie(altraGerarchiaFiglio);
@@ -83,18 +85,21 @@ public class GerarchiaService {
      * @see CampoService
      */
     private CategoriaRadice chiediECreaCategoriaRadice() {
-        var nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Inserisci nome della categoria radice: ");
+        var nomeCategoriaRadice = view.getNomeCategoriaRadiceString();
         // check se nome già usato o meno tra le altre gerarchia
         while (gerarchiaRepository.isGerarchiaPresenteByNome(nomeCategoriaRadice)) {
-            System.out.println("Errore nome categoria radice già usato: riprovare.");
-            nomeCategoriaRadice = InputDati.leggiStringaNonVuota("Reinserisci nome della categoria radice: ");
+            view.visualizzaMessaggio("Errore nome categoria radice già usato: riprovare.");
+            nomeCategoriaRadice = view.getNewNomeCategoriaRadiceString();
         }
-        var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria radice: ");
+        var descrizione = view.getDescrizioneCategoriaRadiceString();
 
         var listaCampi = CampoService.chiediListaDiCampiPerCategoriaRadice();
 
         return new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi);
     }
+
+
+
 
     /**
      * Metodo che chiede all'utente di inserire una categoria figlio
@@ -105,12 +110,12 @@ public class GerarchiaService {
      * @see CampoService
      */
     private CategoriaFiglio chiediECreaCategoriaFiglioIn(GerarchiaDiCategorie gerarchia) {
-        var nomeCatFigl = InputDati.leggiStringaNonVuota("Inserisci nome della categoria figlio: ");
+        var nomeCatFigl = view.getNomeCategoriaFiglioString();
         while (gerarchia.isNomeCategoriaUsato(nomeCatFigl)) {
-            System.out.println("Errore nome categoria figlio già usato: riprovare.");
-            nomeCatFigl = InputDati.leggiStringaNonVuota("Reinserisci nome della categoria radice: ");
+            view.visualizzaMessaggio("Errore nome categoria figlio già usato: riprovare.");
+            nomeCatFigl = view.getNewNomeCategoriaFiglioString();
         }
-        var descrizione = InputDati.leggiStringaNonVuota("Inserisci descrizione per la categoria figlio: ");
+        var descrizione = view.getDescrizioneCategoriaFiglioString();
         var listaCampi = CampoService.chiediListaDiCampiPerCategoriaFiglio(gerarchia);
 
         return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
@@ -124,7 +129,7 @@ public class GerarchiaService {
      * FALSE se non si conferma l'inserimento
      */
     private boolean chiediConfermaInserimentoGerarchia() {
-        return InputDati.yesOrNo("Vuoi inserire la nuova gerarchia?");
+        return view.chiediConfermaInserimentoNuovaGerarchia();
     }
 
     /**
@@ -132,14 +137,13 @@ public class GerarchiaService {
      * nell'applicativo.
      */
     public void visualizzaGerarchieInFormaEstesa() {
-        System.out.println("Elenco delle gerarchie caricate:");
+        view.visualizzaMessaggio("Elenco delle gerarchie caricate:");
         if (this.gerarchiaRepository.getListaGerarchie().isEmpty()) {
-            System.out.println("\tNessuna gerarchia presente.");
+           view.visualizzaMessaggio("\tNessuna gerarchia presente.");
         } else {
             this.gerarchiaRepository.getListaGerarchie().forEach(gerarchiaDiCategorie ->
-                    System.out.println(new CompositeDomainTypeRenderer().render(gerarchiaDiCategorie))
+                    view.visualizzaMessaggio(new CompositeDomainTypeRenderer().render(gerarchiaDiCategorie))
             );
-//            this.gestoreGerarchie.getListaGerarchie().forEach(System.out::println);
         }
     }
 
@@ -148,12 +152,13 @@ public class GerarchiaService {
      * nell'applicativo in forma ridotta.
      */
     public void visualizzaGerarchieInFormaRidotta() {
-        System.out.println("Elenco delle gerarchie caricate:");
+        view.visualizzaMessaggio("Elenco delle gerarchie caricate:");
         if (this.gerarchiaRepository.getListaGerarchie().isEmpty()) {
-            System.out.println("\tNessuna gerarchia presente.");
+            view.visualizzaMessaggio("\tNessuna gerarchia presente.");
         } else {
-            //this.gestoreGerarchie.getListaGerarchie().forEach(gerarchiaDiCategorie -> System.out.println(gerarchiaDiCategorie.toStringRidotto()));
-            this.gerarchiaRepository.getListaGerarchie().forEach(gerarchiaDiCategorie -> System.out.println(new CompositeDomainTypeLimitedRenderer().render(gerarchiaDiCategorie)));
+            this.gerarchiaRepository.getListaGerarchie().forEach(gerarchiaDiCategorie ->
+                    view.visualizzaMessaggio(new CompositeDomainTypeLimitedRenderer().render(gerarchiaDiCategorie))
+            );
         }
     }
 

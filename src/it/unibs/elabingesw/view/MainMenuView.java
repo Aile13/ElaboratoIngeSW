@@ -1,6 +1,5 @@
-package it.unibs.elabingesw.mainservice;
+package it.unibs.elabingesw.view;
 
-import it.unibs.elabingesw.view.View;
 import it.unibs.eliapitozzi.mylib.MyFunctionalMenu;
 import it.unibs.eliapitozzi.mylib.VoceEComando;
 
@@ -14,6 +13,7 @@ import it.unibs.eliapitozzi.mylib.VoceEComando;
  */
 public class MainMenuView extends View {
     private String selectedOption;
+
     public void eseguiMenuConfiguratore() {
         new MyFunctionalMenu(
                 "Menu per Configuratore",

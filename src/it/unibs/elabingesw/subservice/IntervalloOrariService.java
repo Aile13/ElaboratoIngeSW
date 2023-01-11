@@ -1,6 +1,7 @@
 package it.unibs.elabingesw.subservice;
 
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
+import it.unibs.elabingesw.view.IntervalloOrariServiceView;
 import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.time.LocalTime;
@@ -17,6 +18,8 @@ import java.util.List;
  */
 class IntervalloOrariService {
 
+    private final static IntervalloOrariServiceView view = new IntervalloOrariServiceView();
+
     /**
      * Metodo che chiede all'utente gli intervalli orari in cui
      * è possibile effettuare gli scambi: questi intervalli orari
@@ -27,16 +30,16 @@ class IntervalloOrariService {
     public static List<IntervalloOrario> chiediIntervalliOrari() {
         List<IntervalloOrario> listaIntervalliOrari = new LinkedList<>();
 
-        System.out.println("Inserisci un intervallo orario");
+        view.visualizzaMessaggio("Inserisci un intervallo orario");
         listaIntervalliOrari.add(chiediIntervalloOrario());
 
         while (chiediSeAggiungereAltroIntervalloOrario()) {
-            System.out.println("Inserisci altro intervallo orario");
+            view.visualizzaMessaggio("Inserisci altro intervallo orario");
             var nuovoIntervalloOrario = chiediIntervalloOrario();
             boolean incompatibile = listaIntervalliOrari.stream().anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
 
             while (incompatibile) {
-                System.out.println("Errore: ultimo intervallo inserito interseca altri intervalli già inseriti. Riprovare");
+                view.visualizzaMessaggio("Errore: ultimo intervallo inserito interseca altri intervalli già inseriti. Riprovare");
                 nuovoIntervalloOrario = chiediIntervalloOrario();
                 incompatibile = listaIntervalliOrari.stream().anyMatch(nuovoIntervalloOrario::intersecaAltroIntervalloOrario);
             }
@@ -55,7 +58,7 @@ class IntervalloOrariService {
      * FALSE se non si vuole aggiungere un intervallo orario
      */
     private static boolean chiediSeAggiungereAltroIntervalloOrario() {
-        return InputDati.yesOrNo("Vuoi aggiungere un altro intervallo orario?");
+        return view.chiediSeAggiungereAltroIntervalloOrario();
     }
 
     /**
@@ -65,15 +68,15 @@ class IntervalloOrariService {
      * @return l'intervallo orario
      */
     private static IntervalloOrario chiediIntervalloOrario() {
-        System.out.println("Inserimento orario iniziale");
+        view.visualizzaMessaggio("Inserimento orario iniziale");
         LocalTime iniziale = chiediOrario();
 
-        System.out.println("Inserimento orario finale");
+        view.visualizzaMessaggio("Inserimento orario finale");
         LocalTime finale = chiediOrario();
 
         while (!finale.isAfter(iniziale)) {
-            System.out.println("Errore: orario finale precede o è uguale a orario iniziale. Riprovare.");
-            System.out.println("Reinserimento di orario finale");
+            view.visualizzaMessaggio("Errore: orario finale precede o è uguale a orario iniziale. Riprovare.");
+            view.visualizzaMessaggio("Reinserimento di orario finale");
             finale = chiediOrario();
         }
 
@@ -99,7 +102,7 @@ class IntervalloOrariService {
      * @return le ore
      */
     private static int chiediOre() {
-        return InputDati.leggiIntero("Inserisci solo l'ora (24h): ", 0, 23);
+        return view.chiediOreDiOrario();
     }
 
     /**
@@ -109,10 +112,10 @@ class IntervalloOrariService {
      * @return i minuti
      */
     private static int chiediMinuti() {
-        int minuti = InputDati.leggiIntero("Inserisci solo i minuti(0 o 30): ");
+        int minuti = view.chiediMinutiDiOrario();
         while (minuti != 0 && minuti != 30) {
-            System.out.println("Attenzione minuto inserito non valido: riprovare.");
-            minuti = InputDati.leggiIntero("Inserisci solo i minuti (0 o 30): ");
+            view.visualizzaMessaggio("Attenzione minuto inserito non valido: riprovare.");
+            minuti = view.chiediMinutiDiOrario();
         }
         return minuti;
     }
