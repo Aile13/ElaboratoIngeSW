@@ -1,9 +1,8 @@
-package it.unibs.elabingesw.subservice;
+package it.unibs.elabingesw.controller.subservice;
 
 import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.view.CampoServiceView;
-import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-class CampoService {
+class CampoServiceController {
 
     private static final CampoServiceView view = new CampoServiceView();
 

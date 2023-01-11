@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.subservice;
+package it.unibs.elabingesw.controller.subservice;
 
 import it.unibs.eliapitozzi.mylib.InputDati;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class GiorniDiSettimanaService {
+public class GiorniDiSettimanaServiceController {
 
     /**
      * Metodo che chiede all'utente di inserire la lista

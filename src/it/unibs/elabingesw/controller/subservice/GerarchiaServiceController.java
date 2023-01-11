@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.subservice;
+package it.unibs.elabingesw.controller.subservice;
 
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
@@ -9,7 +9,6 @@ import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
 import it.unibs.elabingesw.view.GerarchiaServiceView;
 import it.unibs.elabingesw.view.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
 import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
-import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
  * Classe GerarchiaService che gestisce le varie operazioni
@@ -19,7 +18,7 @@ import it.unibs.eliapitozzi.mylib.InputDati;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class GerarchiaService {
+public class GerarchiaServiceController {
 
     private final GerarchiaRepository gerarchiaRepository;
     private final ScambioRepository scambioRepository;
@@ -33,7 +32,7 @@ public class GerarchiaService {
      * @param scambioRepository oggetto di tipo GestoreScambio
      * @see GestoreGerarchieSerializableRepository
      */
-    public GerarchiaService(GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
+    public GerarchiaServiceController(GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
         this.gerarchiaRepository = gerarchiaRepository;
         this.scambioRepository = scambioRepository;
     }
@@ -82,7 +81,7 @@ public class GerarchiaService {
      * con i suoi vari campi.
      *
      * @return una categoria radice
-     * @see CampoService
+     * @see CampoServiceController
      */
     private CategoriaRadice chiediECreaCategoriaRadice() {
         var nomeCategoriaRadice = view.getNomeCategoriaRadiceString();
@@ -93,7 +92,7 @@ public class GerarchiaService {
         }
         var descrizione = view.getDescrizioneCategoriaRadiceString();
 
-        var listaCampi = CampoService.chiediListaDiCampiPerCategoriaRadice();
+        var listaCampi = CampoServiceController.chiediListaDiCampiPerCategoriaRadice();
 
         return new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi);
     }
@@ -107,7 +106,7 @@ public class GerarchiaService {
      *
      * @param gerarchia un oggetto di tipo Gerarchia
      * @return una categoria figlio
-     * @see CampoService
+     * @see CampoServiceController
      */
     private CategoriaFiglio chiediECreaCategoriaFiglioIn(GerarchiaDiCategorie gerarchia) {
         var nomeCatFigl = view.getNomeCategoriaFiglioString();
@@ -116,7 +115,7 @@ public class GerarchiaService {
             nomeCatFigl = view.getNewNomeCategoriaFiglioString();
         }
         var descrizione = view.getDescrizioneCategoriaFiglioString();
-        var listaCampi = CampoService.chiediListaDiCampiPerCategoriaFiglio(gerarchia);
+        var listaCampi = CampoServiceController.chiediListaDiCampiPerCategoriaFiglio(gerarchia);
 
         return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
     }
@@ -166,7 +165,7 @@ public class GerarchiaService {
      * Metodo che carica i dati da un file dell'utente.
      */
     public void caricaDatiDaFileUtente() {
-        var fileUtenteService = new FileUtenteService(this.gerarchiaRepository, this.scambioRepository);
+        var fileUtenteService = new FileUtenteServiceController(this.gerarchiaRepository, this.scambioRepository);
 
         fileUtenteService.avviaServizio();
     }

@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.controller;
+package it.unibs.elabingesw.controller.mainservice;
 
 import it.unibs.elabingesw.businesslogic.repository.UtenteRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;

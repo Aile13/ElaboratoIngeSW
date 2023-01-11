@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.subservice;
+package it.unibs.elabingesw.controller.subservice;
 
 import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.categoria.Categoria;
@@ -12,7 +12,6 @@ import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerial
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.elabingesw.view.OfferteServiceView;
 import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
-import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -27,7 +26,7 @@ import java.util.Objects;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class OfferteService {
+public class OfferteServiceController {
     private final OffertaRepository offertaRepository;
     private final GerarchiaRepository gerarchiaRepository;
     private final ScambioRepository scambioRepository;
@@ -44,7 +43,7 @@ public class OfferteService {
      * @see GestoreOfferteSerializableRepository
      * @see GestoreGerarchieSerializableRepository
      */
-    public OfferteService(OffertaRepository offertaRepository, GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
+    public OfferteServiceController(OffertaRepository offertaRepository, GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
         this.offertaRepository = offertaRepository;
         this.gerarchiaRepository = gerarchiaRepository;
         this.scambioRepository = scambioRepository;
@@ -61,7 +60,7 @@ public class OfferteService {
             var gerarchiaSelezionata = chiediGerarchia();
             Categoria categoriaFogliaSelezionata = chiediCategoriaFogliaByGerarchia(gerarchiaSelezionata);
             var listaCampiCompilati = new ListaCampiCompilati(gerarchiaSelezionata, categoriaFogliaSelezionata);
-            ListaCampiCompilatiService.compila(listaCampiCompilati);
+            ListaCampiCompilatiServiceController.compila(listaCampiCompilati);
 
             this.offertaRepository.inserisciNuovaOfferta(new OffertaContext(nomeArticolo, utente, listaCampiCompilati, categoriaFogliaSelezionata));
             view.visualizzaMessaggio("Offerta inserita.");

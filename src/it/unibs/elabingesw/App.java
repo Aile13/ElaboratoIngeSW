@@ -4,8 +4,8 @@ import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSeri
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreOfferteSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
-import it.unibs.elabingesw.controller.LoginController;
-import it.unibs.elabingesw.mainservice.MacroServicesController;
+import it.unibs.elabingesw.controller.mainservice.LoginController;
+import it.unibs.elabingesw.controller.mainservice.MacroServicesController;
 import it.unibs.elabingesw.view.MainMenuView;
 import it.unibs.elabingesw.view.BenvenutoView;
 import it.unibs.elabingesw.view.LoginView;

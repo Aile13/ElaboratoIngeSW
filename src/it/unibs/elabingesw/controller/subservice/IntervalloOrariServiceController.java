@@ -1,11 +1,9 @@
-package it.unibs.elabingesw.subservice;
+package it.unibs.elabingesw.controller.subservice;
 
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
 import it.unibs.elabingesw.view.IntervalloOrariServiceView;
-import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,7 +14,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-class IntervalloOrariService {
+class IntervalloOrariServiceController {
 
     private final static IntervalloOrariServiceView view = new IntervalloOrariServiceView();
 

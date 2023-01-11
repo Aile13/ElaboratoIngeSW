@@ -1,9 +1,7 @@
-package it.unibs.elabingesw.subservice;
+package it.unibs.elabingesw.controller.subservice;
 
-import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.offerta.ListaCampiCompilati;
 import it.unibs.elabingesw.view.ListaCampiCompilatiServiceView;
-import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
  * Classe ListaCampiCompilatiService per la gestione
@@ -13,7 +11,7 @@ import it.unibs.eliapitozzi.mylib.InputDati;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class ListaCampiCompilatiService {
+public class ListaCampiCompilatiServiceController {
 
     private final static ListaCampiCompilatiServiceView view = new ListaCampiCompilatiServiceView();
 

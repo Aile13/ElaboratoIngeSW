@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.mainservice;
+package it.unibs.elabingesw.controller.mainservice;
 
 import it.unibs.elabingesw.businesslogic.repository.GerarchiaRepository;
 import it.unibs.elabingesw.businesslogic.repository.OffertaRepository;
@@ -10,9 +10,9 @@ import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerial
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
 import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
-import it.unibs.elabingesw.subservice.GerarchiaService;
-import it.unibs.elabingesw.subservice.OfferteService;
-import it.unibs.elabingesw.subservice.ScambioService;
+import it.unibs.elabingesw.controller.subservice.GerarchiaServiceController;
+import it.unibs.elabingesw.controller.subservice.OfferteServiceController;
+import it.unibs.elabingesw.controller.subservice.ScambioServiceController;
 import it.unibs.elabingesw.view.MainMenuView;
 
 import java.util.Observable;
@@ -31,9 +31,9 @@ public class MacroServicesController implements Observer {
     private final ScambioRepository scambioRepository;
     private final OffertaRepository offertaRepository;
 
-    private final GerarchiaService gerarchiaService;
-    private final ScambioService scambioService;
-    private final OfferteService offerteService;
+    private final GerarchiaServiceController gerarchiaService;
+    private final ScambioServiceController scambioService;
+    private final OfferteServiceController offerteService;
     private Utente userLogged;
 
     /**
@@ -57,9 +57,9 @@ public class MacroServicesController implements Observer {
         this.scambioRepository = scambioRepository;
         this.offertaRepository = offertaRepository;
 
-        this.gerarchiaService = new GerarchiaService(this.gerarchiaRepository, this.scambioRepository);
-        this.scambioService = new ScambioService(this.scambioRepository);
-        this.offerteService = new OfferteService(this.offertaRepository, this.gerarchiaRepository, this.scambioRepository);
+        this.gerarchiaService = new GerarchiaServiceController(this.gerarchiaRepository, this.scambioRepository);
+        this.scambioService = new ScambioServiceController(this.scambioRepository);
+        this.offerteService = new OfferteServiceController(this.offertaRepository, this.gerarchiaRepository, this.scambioRepository);
 
         mainMenuView.addObserver(this);
     }
@@ -81,7 +81,7 @@ public class MacroServicesController implements Observer {
      * Metodo che rimanda alla classe GerarchiaService per
      * creare una nuova gerarchia.
      *
-     * @see GerarchiaService
+     * @see GerarchiaServiceController
      */
     public void creaNuovaGerarchia() {
         this.gerarchiaService.creaNuovaGerarchia();
@@ -98,7 +98,7 @@ public class MacroServicesController implements Observer {
      * Metodo che rimanda alla classe GerarchiaService per
      * visualizzare le tutte gerarchie caricate.
      *
-     * @see GerarchiaService
+     * @see GerarchiaServiceController
      */
     public void visualizzaGerarchieFormaEstesa() {
         this.gerarchiaService.visualizzaGerarchieInFormaEstesa();
@@ -109,7 +109,7 @@ public class MacroServicesController implements Observer {
      * visualizzare tutte le gerarchie caricate in forma
      * ridotta.
      *
-     * @see GerarchiaService
+     * @see GerarchiaServiceController
      */
     public void visualizzaGerarchieFormaRidotta() {
         this.gerarchiaService.visualizzaGerarchieInFormaRidotta();
@@ -119,7 +119,7 @@ public class MacroServicesController implements Observer {
      * Metodo che rimanda alla classe ScambioService per
      * visualizzare tutte le informazioni degli scambi.
      *
-     * @see ScambioService
+     * @see ScambioServiceController
      */
     public void visualizzaInfoDiScambioFormaEstesa() {
         this.scambioService.visualizzaInfoDiScambioFormaEstesa();
@@ -130,7 +130,7 @@ public class MacroServicesController implements Observer {
      * visualizzare tutte le informazioni degli scambi in
      * forma ridotta.
      *
-     * @see ScambioService
+     * @see ScambioServiceController
      */
     public void visualizzaInfoDiScambioFormaRidotta() {
         this.scambioService.visualizzaInfoDiScambioFormaRidotta();
@@ -140,7 +140,7 @@ public class MacroServicesController implements Observer {
      * Metodo che rimanda alla classe ScambioService per
      * impostare le informazioni sugli scambi.
      *
-     * @see ScambioService
+     * @see ScambioServiceController
      */
     public void impostaInfoDiScambio() {
         this.scambioService.impostaInfoScambio();
@@ -151,7 +151,7 @@ public class MacroServicesController implements Observer {
      * settare l'utente loggato.
      *
      * @param userLogged l'utente loggato.
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void setUser(Utente userLogged) {
         this.offerteService.setUser(userLogged);
@@ -162,7 +162,7 @@ public class MacroServicesController implements Observer {
      * Metodo che rimanda alla classe OfferteService per
      * visualizzare le offerte di un utente.
      *
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void visualizzaOfferteUtente() {
         this.offerteService.visualizzaOfferteUtente();
@@ -172,7 +172,7 @@ public class MacroServicesController implements Observer {
      * Metodo che rimanda alla classe OfferteService per
      * creare una nuova offerta.
      *
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void creaNuovaOfferta() {
         this.offerteService.creaNuovaOfferta();
@@ -181,7 +181,7 @@ public class MacroServicesController implements Observer {
     /**
      * Metodo che rimanda alla classe OfferteService per ritirare le offerte di un utente.
      *
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void ritiraOfferte() {
         this.offerteService.ritiraOfferte();
@@ -192,7 +192,7 @@ public class MacroServicesController implements Observer {
      * visualizzare le offerte aperte con la selezione
      * della categoria foglia.
      *
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void visualizzaOfferteAperteConSelezioneFoglia() {
         this.offerteService.visualizzaOfferteAperteConSelezioneFoglia();
@@ -203,7 +203,7 @@ public class MacroServicesController implements Observer {
      * mette di selezionare un'offerta aperta per poterla
      * barattare.
      *
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void selezionaUnaOffertaApertaPerBaratto() {
         this.offerteService.selezionaUnaOffertaApertaPerBaratto();
@@ -214,7 +214,7 @@ public class MacroServicesController implements Observer {
      * visualizzare le proposte di scambio che un utente
      * ha ricevuto.
      *
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void visualizzaProposteDiScambio() {
         this.offerteService.visualizzaProposteDiScambio();
@@ -224,7 +224,7 @@ public class MacroServicesController implements Observer {
      * Metodo che rimanda alla classe OfferteService per
      * visualizzare le offerte in scambio di un utente.
      *
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void visualizzaOfferteInScambio() {
         this.offerteService.visualizzaOfferteInScambio();
@@ -235,7 +235,7 @@ public class MacroServicesController implements Observer {
      * visualizzare le ultime risposte ricevute per le
      * offerte in scambio.
      *
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void visualizzaUltimeRispostePerOfferteInScambio() {
         this.offerteService.visualizzaUltimeRispostePerOfferteInScambio();
@@ -246,7 +246,7 @@ public class MacroServicesController implements Observer {
      * visualizzare le offerte in scambio e chiuse con la
      * selezione della categoria foglia.
      *
-     * @see OfferteService
+     * @see OfferteServiceController
      */
     public void visualizzaOfferteInScambioEChiuseConSelezioneFoglia() {
         this.offerteService.visualizzaOfferteInScambioEChiuseConSelezioneFoglia();
@@ -257,7 +257,7 @@ public class MacroServicesController implements Observer {
      * permette all'utente di caricare gerarchie delle categorie e
      * valori dei parametri di configurazione da un file.
      *
-     * @see GerarchiaService
+     * @see GerarchiaServiceController
      */
     public void caricaDatiDaFileUtente() {
         this.gerarchiaService.caricaDatiDaFileUtente();

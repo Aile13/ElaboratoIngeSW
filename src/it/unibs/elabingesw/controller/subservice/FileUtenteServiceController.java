@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.subservice;
+package it.unibs.elabingesw.controller.subservice;
 
 import it.unibs.elabingesw.businesslogic.categoria.Campo;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
@@ -33,7 +33,7 @@ import java.util.List;
 
 
 // TODO: 11/gen/2023 qui mvc è ancora da applicare.
-public class FileUtenteService {
+public class FileUtenteServiceController {
 
     private final GerarchiaRepository gerarchiaRepository;
     private final ScambioRepository scambioRepository;
@@ -49,7 +49,7 @@ public class FileUtenteService {
      * @see GestoreGerarchieSerializableRepository
      * @see GestoreScambioSerializableRepository
      */
-    public FileUtenteService(GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
+    public FileUtenteServiceController(GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
 
         this.gerarchiaRepository = gerarchiaRepository;
         this.scambioRepository = scambioRepository;

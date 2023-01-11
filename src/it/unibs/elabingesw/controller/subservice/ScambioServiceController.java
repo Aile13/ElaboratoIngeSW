@@ -1,4 +1,4 @@
-package it.unibs.elabingesw.subservice;
+package it.unibs.elabingesw.controller.subservice;
 
 import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
@@ -7,7 +7,6 @@ import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 import it.unibs.elabingesw.view.ScambioServiceView;
 import it.unibs.elabingesw.view.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
 import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
-import it.unibs.eliapitozzi.mylib.InputDati;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ import java.util.List;
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-public class ScambioService {
+public class ScambioServiceController {
     private final ScambioRepository scambioRepository;
     private final ScambioServiceView view = new ScambioServiceView();
 
@@ -31,7 +30,7 @@ public class ScambioService {
      * @param scambioRepository
      * @see GestoreScambioSerializableRepository
      */
-    public ScambioService(ScambioRepository scambioRepository) {
+    public ScambioServiceController(ScambioRepository scambioRepository) {
         this.scambioRepository = scambioRepository;
     }
 
@@ -77,7 +76,7 @@ public class ScambioService {
      */
     private List<IntervalloOrario> chiediIntervalliOrari() {
         view.visualizzaMessaggio("Settaggio parametro intervalli orari");
-        return IntervalloOrariService.chiediIntervalliOrari();
+        return IntervalloOrariServiceController.chiediIntervalliOrari();
     }
 
     /**
@@ -88,7 +87,7 @@ public class ScambioService {
      */
     private List<DayOfWeek> chiediGiorniDiScambio() {
         view.visualizzaMessaggio("Settaggio parametro giorni di scambio");
-        return GiorniDiSettimanaService.chiediGiorniDiSettimana();
+        return GiorniDiSettimanaServiceController.chiediGiorniDiSettimana();
     }
 
     /**
