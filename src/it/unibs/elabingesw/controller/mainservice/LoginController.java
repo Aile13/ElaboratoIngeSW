@@ -18,7 +18,6 @@ import it.unibs.eliapitozzi.mylib.InputDati;
 public class LoginController {
     private final LoginView loginView;
     private final UtenteRepository utenteRepository;
-    private UserType userType;
     private Utente utente;
 
     /**
@@ -58,7 +57,6 @@ public class LoginController {
                         creaNuovoConfiguratore();
                     } else {
                         this.utente = utenteRepository.getUserByNome(username);
-                        this.userType = this.utente.getUserType();
                         ricontrolla = false;
                     }
                 } else loginView.visualizzaMessaggio("Errore: password inserita non valida. Riprovare.");
