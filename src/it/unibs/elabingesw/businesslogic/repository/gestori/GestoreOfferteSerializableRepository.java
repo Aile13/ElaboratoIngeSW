@@ -22,7 +22,8 @@ public final class GestoreOfferteSerializableRepository extends GestoreGenerico<
 
     /**
      * Costruttore di classe.
-     * aggiungi cosa come :      * Inoltre aggiorna lo stato delle offerte dall'ultimo loro salvataggio.
+     * aggiungi cosa come :
+     * * Inoltre aggiorna lo stato delle offerte dall'ultimo loro salvataggio.
      * e : E inoltre esegue l'aggiornamento dello stato di tutte
      * * le offerte in lista.
      */
@@ -73,7 +74,7 @@ public final class GestoreOfferteSerializableRepository extends GestoreGenerico<
     }
 
     /**
-     * Metodo che permette di inserire una nuova offerta.
+     * Metodo che permette d'inserire una nuova offerta.
      * <p>
      * Precondizione: Assumo che il parametro non sia nullo, e
      * che sia correttamente inizializzato. Ovvero che

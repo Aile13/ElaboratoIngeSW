@@ -14,7 +14,7 @@ public class ListaCampiCompilatiServiceView extends View {
         return InputDati.yesOrNo("Compilare campo non obbligatorio " + nomeCampo + " ? ");
     }
 
-    public String chiedicompilazioneCampoNonObbligatorioByNome(String nomeCampo) {
+    public String chiediCompilazioneCampoNonObbligatorioByNome(String nomeCampo) {
         return InputDati.leggiStringaNonVuota("Compila campo " + nomeCampo + ": ");
     }
 }

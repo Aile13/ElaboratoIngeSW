@@ -145,7 +145,7 @@ abstract class GestoreGenerico<T extends Manageable & Serializable> {
     }
 
     /**
-     * Metodo che permette di inserire un elemento.
+     * Metodo che permette d'inserire un elemento.
      * <p>
      * Precondizione: assumo il parametro non nullo e
      * correttamente inizializzato. Ovvero che sia

@@ -11,31 +11,31 @@ import java.util.Optional;
  */
 //todo Laaraj fare javadoc a livello di interface e di singoli metodi, puoi riusare eventualmente quelli che c'erano in StatoOfferta o simili.
 public interface OffertaState extends Serializable, DomainTypeToRender {
-    OffertaContext getOffertaAssociata(OffertaContext context); // fatto
+    OffertaContext getOffertaAssociata(OffertaContext context);
 
-    ListaCampiCompilati getListaCampiAppuntamento(OffertaContext context); // fatto
+    ListaCampiCompilati getListaCampiAppuntamento(OffertaContext context);
 
-    void setListaCampiAppuntamento(ListaCampiCompilati listaCampiAppuntamento); // fatto
+    void setListaCampiAppuntamento(ListaCampiCompilati listaCampiAppuntamento);
 
-    boolean isOffertaAperta(OffertaContext context); /// fatto
+    boolean isOffertaAperta(OffertaContext context);
 
-    void ritiraOfferta(OffertaContext context); // fatto.
+    void ritiraOfferta(OffertaContext context);
 
-    void creaLegameEModificaStatiConOffertaEInfoScambio(OffertaContext context, OffertaContext offertaContextDaBarattareB, Scambio infoDiScambio);  // fatto
+    void creaLegameEModificaStatiConOffertaEInfoScambio(OffertaContext context, OffertaContext offertaContextDaBarattareB, Scambio infoDiScambio);
 
-    void aggiornaStatoOfferta(OffertaContext context);  // fatto
+    void aggiornaStatoOfferta(OffertaContext context);
 
-    boolean isOffertaSelezionata(OffertaContext context); /// fatto
+    boolean isOffertaSelezionata(OffertaContext context);
 
-    void accettaPropostaDiScambioAssociata(OffertaContext context, ListaCampiCompilati listaCampiAppuntamento);  // fatto
+    void accettaPropostaDiScambioAssociata(OffertaContext context, ListaCampiCompilati listaCampiAppuntamento);
 
-    boolean isOffertaInScambio(OffertaContext context); // fatto
+    boolean isOffertaInScambio(OffertaContext context);
 
-    void accettaAppuntamento(OffertaContext context); // fatto
+    void accettaAppuntamento(OffertaContext context);
 
-    void proponiAltroAppuntamento(OffertaContext context, ListaCampiCompilati listaCampiAppuntamento); // fatto
+    void proponiAltroAppuntamento(OffertaContext context, ListaCampiCompilati listaCampiAppuntamento);
 
-    boolean isOffertaChiusa(OffertaContext context);  // fatto
+    boolean isOffertaChiusa(OffertaContext context);
 
-    void impostaData(); // fatto
+    void impostaData();
 }

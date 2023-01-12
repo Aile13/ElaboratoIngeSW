@@ -60,7 +60,7 @@ class IntervalloOrariServiceController {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire un singolo
+     * Metodo che chiede all'utente d'inserire un singolo
      * intervallo orario.
      *
      * @return l'intervallo orario
@@ -82,7 +82,7 @@ class IntervalloOrariServiceController {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire un singolo
+     * Metodo che chiede all'utente d'inserire un singolo
      * orario.
      *
      * @return l'orario
@@ -94,7 +94,7 @@ class IntervalloOrariServiceController {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire le ore
+     * Metodo che chiede all'utente d'inserire le ore
      * di un determinato orario
      *
      * @return le ore
@@ -104,7 +104,7 @@ class IntervalloOrariServiceController {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire i minuti
+     * Metodo che chiede all'utente d'inserire i minuti
      * di un determinato orario
      *
      * @return i minuti

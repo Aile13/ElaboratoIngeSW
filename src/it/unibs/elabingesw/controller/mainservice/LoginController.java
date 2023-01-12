@@ -37,11 +37,10 @@ public class LoginController {
      * Metodo per l'effettuazione del login: vengono chieste le
      * credenziali e si effettuano vari controlli.
      * <p>
-     * Si controlla se l'utente inserito è già presente all'in-
-     * terno dell'applicativo e, successivamente, se il configu-
-     * ratore è quello di default o meno: se lo è, si viene ri-
-     * mandati alla procedura di creazione di un nuovo configu-
-     * ratore.
+     * Si controlla se l'utente inserito è già presente all'interno
+     * dell'applicativo e, successivamente, se il configuratore
+     * è quello di default o meno: se lo è, si viene rimandati
+     * alla procedura di creazione di un nuovo configuratore.
      */
     public void eseguiLogin() {
         boolean ricontrolla;
@@ -68,8 +67,8 @@ public class LoginController {
     }
 
     /**
-     * Metodo che permette di creare un nuovo fruitore pas-
-     * sando come parametro il suo username.
+     * Metodo che permette di creare un nuovo fruitore
+     * passando come parametro il suo username.
      *
      * @param username lo username del fruitore
      */
@@ -119,7 +118,7 @@ public class LoginController {
     /**
      * Metodo getter.
      *
-     * @return l'utente loggato
+     * @return l'utente che ha eseguito l'accesso.
      */
     public Utente getUserLogged() {
         return this.utente;

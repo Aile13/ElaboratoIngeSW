@@ -123,8 +123,8 @@ public class GerarchiaDiCategorie implements Manageable, Serializable, DomainTyp
     }
 
     /**
-     * Metodo per la formattazione che converte un oggetto nella re-
-     * lativa rappresentazione di stringa.
+     * Metodo per la formattazione che converte un oggetto nella
+     * relativa rappresentazione di stringa.
      *
      * @return stringa dell'oggetto convertito
      */

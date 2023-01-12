@@ -5,8 +5,7 @@ import it.unibs.eliapitozzi.mylib.VoceEComando;
 
 /**
  * Classe MainMenu per la visualizzazione a video di un menu
- * che permette all'utente di visionare quali operazioni svol-
- * gere.
+ * che permette all'utente di visionare quali operazioni svolgere.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj

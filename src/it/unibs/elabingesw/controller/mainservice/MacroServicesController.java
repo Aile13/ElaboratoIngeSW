@@ -148,9 +148,9 @@ public class MacroServicesController implements Observer {
 
     /**
      * Metodo che rimanda alla classe OfferteService per
-     * settare l'utente loggato.
+     * settare l'utente che ha eseguito l'accesso.
      *
-     * @param userLogged l'utente loggato.
+     * @param userLogged l'utente che ha eseguito l'accesso.
      * @see OfferteServiceController
      */
     public void setUser(Utente userLogged) {

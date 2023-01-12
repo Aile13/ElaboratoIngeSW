@@ -471,9 +471,9 @@ public class FileUtenteServiceController implements Observer {
         ifStartsWithAndThenConsumeOrError("(");
         var nomeCampo = matchStringa();
         ifStartsWithAndThenConsumeOrError(":");
-        var isObbl = matchBoolean();
+        var isObbligatorio = matchBoolean();
         ifStartsWithAndThenConsumeOrError(")");
-        return new Campo(nomeCampo, isObbl);
+        return new Campo(nomeCampo, isObbligatorio);
     }
 
     /**

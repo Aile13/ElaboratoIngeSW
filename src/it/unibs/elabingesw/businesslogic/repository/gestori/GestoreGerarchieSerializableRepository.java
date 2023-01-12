@@ -53,7 +53,7 @@ public final class GestoreGerarchieSerializableRepository extends GestoreGeneric
     }
 
     /**
-     * Metodo che permette di inserire una gerarchia.
+     * Metodo che permette d'inserire una gerarchia.
      * <p>
      * Precondizione: Assumo che il parametro non sia nullo, e
      * che sia correttamente inizializzato. Ovvero che

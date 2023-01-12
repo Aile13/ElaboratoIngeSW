@@ -266,8 +266,7 @@ public class OfferteServiceController {
     /**
      * Metodo che permette all'utente di accettare una proposta di
      * scambio per un'offerta selezionata passata per parametro.
-     * L'utente poi dovrà inserire gli estremi per proporre l'ap-
-     * puntamento.
+     * L'utente poi dovrà inserire gli estremi per proporre l'appuntamento.
      *
      * @param offertaContextSel l'offerta selezionata
      */
@@ -293,7 +292,7 @@ public class OfferteServiceController {
     /**
      * Metodo che chiede all'utente l'ora dell'appuntamento.
      *
-     * @return l'orario d'incontro sottoforma di stringa
+     * @return l'orario d'incontro sotto forma di stringa
      */
     private String chiediOraDiIncontro() {
         view.visualizzaMessaggio("Selezionare un orario di incontro");

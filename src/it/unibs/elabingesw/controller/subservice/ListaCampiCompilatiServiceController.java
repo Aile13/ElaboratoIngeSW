@@ -29,7 +29,7 @@ public class ListaCampiCompilatiServiceController {
                 compilazione = view.chiediCompilazioneCampoObbligatorioByNome(campo.nome());
             } else {
                 if (view.chiediSeCompilareCampoNonObbligatorioByNome(campo.nome())) {
-                    compilazione = view.chiedicompilazioneCampoNonObbligatorioByNome(campo.nome());
+                    compilazione = view.chiediCompilazioneCampoNonObbligatorioByNome(campo.nome());
                 }
             }
             listaCampiCompilati.inserisci(campo, compilazione);

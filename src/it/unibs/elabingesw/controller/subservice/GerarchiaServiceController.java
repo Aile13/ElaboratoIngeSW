@@ -54,11 +54,11 @@ public class GerarchiaServiceController {
     }
 
     /**
-     * Metodo che aggiunge eventuali sottocategorie (ricorsivamente)
+     * Metodo che aggiunge eventuali sotto categorie (ricorsivamente)
      * a una specifica gerarchia che viene passata come parametro.
      *
      * @param gerarchia la gerarchia alla quale si vogliono aggiungere
-     *                  sottocategorie
+     *                  sotto categorie
      * @return gerarchia oggetto della classe GerarchiaDiCategorie
      * @see GerarchiaDiCategorie
      */
@@ -102,7 +102,7 @@ public class GerarchiaServiceController {
 
 
     /**
-     * Metodo che chiede all'utente di inserire una categoria figlio
+     * Metodo che chiede all'utente d'inserire una categoria figlio
      * con i suoi vari campi.
      *
      * @param gerarchia un oggetto di tipo Gerarchia
@@ -110,19 +110,19 @@ public class GerarchiaServiceController {
      * @see CampoServiceController
      */
     private CategoriaFiglio chiediECreaCategoriaFiglioIn(GerarchiaDiCategorie gerarchia) {
-        var nomeCatFigl = view.getNomeCategoriaFiglioString();
-        while (gerarchia.isNomeCategoriaUsato(nomeCatFigl)) {
+        var nomeCategoriaFiglio = view.getNomeCategoriaFiglioString();
+        while (gerarchia.isNomeCategoriaUsato(nomeCategoriaFiglio)) {
             view.visualizzaMessaggio("Errore nome categoria figlio già usato: riprovare.");
-            nomeCatFigl = view.getNewNomeCategoriaFiglioString();
+            nomeCategoriaFiglio = view.getNewNomeCategoriaFiglioString();
         }
         var descrizione = view.getDescrizioneCategoriaFiglioString();
         var listaCampi = CampoServiceController.chiediListaDiCampiPerCategoriaFiglio(gerarchia);
 
-        return new CategoriaFiglio(nomeCatFigl, descrizione, listaCampi);
+        return new CategoriaFiglio(nomeCategoriaFiglio, descrizione, listaCampi);
     }
 
     /**
-     * Metodo per chiedere all'utente la conferma di inserimento
+     * Metodo per chiedere all'utente la conferma d'inserimento
      * di una nuova gerarchia.
      *
      * @return TRUE se si conferma l'inserimento

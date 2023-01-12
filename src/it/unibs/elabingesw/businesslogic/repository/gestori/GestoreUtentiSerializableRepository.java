@@ -31,7 +31,7 @@ public final class GestoreUtentiSerializableRepository extends GestoreGenerico<U
     }
 
     /**
-     * Metodo che permette di inserire il configuratore di
+     * Metodo che permette d'inserire il configuratore di
      * default nella lista, se questo non è già presente in essa.
      */
     @Override
@@ -81,7 +81,7 @@ public final class GestoreUtentiSerializableRepository extends GestoreGenerico<U
     }
 
     /**
-     * Metodo che permette di inserire un nuovo configuratore.
+     * Metodo che permette d'inserire un nuovo configuratore.
      * <p>
      * Precondizioni: Quella del metodo chiamato.
      * Post condizione: dati username e password viene creato un
@@ -107,7 +107,7 @@ public final class GestoreUtentiSerializableRepository extends GestoreGenerico<U
     }
 
     /**
-     * Metodo che permette di inserire un nuovo fruitore nella lista.
+     * Metodo che permette d'inserire un nuovo fruitore nella lista.
      * <p>
      * Precondizione: Quella del metodo chiamato.
      * Post condizione: dati username e password viene creato un
