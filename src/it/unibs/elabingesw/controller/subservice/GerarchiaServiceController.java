@@ -6,6 +6,7 @@ import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.repository.GerarchiaRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
+import it.unibs.elabingesw.view.FileUtenteServiceView;
 import it.unibs.elabingesw.view.GerarchiaServiceView;
 import it.unibs.elabingesw.view.domaintypelimitedrenderer.CompositeDomainTypeLimitedRenderer;
 import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
@@ -165,8 +166,9 @@ public class GerarchiaServiceController {
      * Metodo che carica i dati da un file dell'utente.
      */
     public void caricaDatiDaFileUtente() {
-        var fileUtenteService = new FileUtenteServiceController(this.gerarchiaRepository, this.scambioRepository);
+        var fileUtenteServiceView = new FileUtenteServiceView();
+        var fileUtenteServiceController = new FileUtenteServiceController(fileUtenteServiceView, this.gerarchiaRepository, this.scambioRepository);
 
-        fileUtenteService.avviaServizio();
+        fileUtenteServiceController.avviaServizio();
     }
 }

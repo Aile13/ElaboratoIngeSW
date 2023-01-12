@@ -10,9 +10,8 @@ import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.scambio.IntervalloOrario;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
-import it.unibs.eliapitozzi.mylib.MyMenu;
+import it.unibs.elabingesw.view.FileUtenteServiceView;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,6 +20,8 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Classe FileUtenteService che gestisce le varie operazioni
@@ -33,69 +34,38 @@ import java.util.List;
 
 
 // TODO: 11/gen/2023 qui mvc è ancora da applicare.
-public class FileUtenteServiceController {
+public class FileUtenteServiceController implements Observer {
 
     private final GerarchiaRepository gerarchiaRepository;
     private final ScambioRepository scambioRepository;
+    private final FileUtenteServiceView view;
     private File selectedFile;
     private String contenutoFile;
+
+    private enum CommandOption {
+        PARAMETRI_CONFIGURAZIONE,
+        GERARCHIE
+    }
+
+    private CommandOption commandSelected;
 
     /**
      * Costruttore di classe, accetta come parametri un oggetto
      * GestoreGerarchie e un oggetto GestoreScambio.
      *
-     * @param gerarchiaRepository oggetto di tipo GestoreGerarchie
-     * @param scambioRepository oggetto di tipo GestoreScambio
+     * @param fileUtenteServiceView
+     * @param gerarchiaRepository   oggetto di tipo GestoreGerarchie
+     * @param scambioRepository     oggetto di tipo GestoreScambio
      * @see GestoreGerarchieSerializableRepository
      * @see GestoreScambioSerializableRepository
      */
-    public FileUtenteServiceController(GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
+    public FileUtenteServiceController(FileUtenteServiceView fileUtenteServiceView, GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
 
+        this.view = fileUtenteServiceView;
         this.gerarchiaRepository = gerarchiaRepository;
         this.scambioRepository = scambioRepository;
-    }
 
-    /**
-     * Metodo che chiede all'utente quale modalità di caricamento
-     * dei dati vuole scegliere: può caricare da file le gerarchie
-     * di categorie oppure caricare da file i valori dei parametri
-     * di configurazione. Dopo tale scelta, permette anche di sce-
-     * gliere quale file caricare.
-     */
-    private void scegliAzioneESelezionaFileDaCaricare() {
-        var menu = new MyMenu("Menu selezione caricamento dati da file utente", new String[]{
-                "Carica da file i valori dei parametri di configurazione",
-                "Carica da file le gerarchie di categorie"}, true);
-
-        int scelta = menu.scegli();
-
-        if (scelta != 0) {
-            System.out.println("Ora seleziona dalla finestra il file da cui importare i dati.");
-            System.out.println("Apertura finestra di selezione file.");
-
-            JFileChooser jFileChooser = new JFileChooser(".");
-            int returnValue = jFileChooser.showOpenDialog(null);
-
-            if (returnValue == JFileChooser.APPROVE_OPTION) {
-                this.selectedFile = jFileChooser.getSelectedFile();
-                System.out.println("File selezionato: " + selectedFile.getAbsolutePath());
-                if (scelta == 1) {
-                    if (scambioRepository.isInfoScambioDaConfigurare()) {
-                        leggiECaricaParametri();
-                    } else {
-                        System.out.println("Attenzione: info di scambio già configurate.");
-                        System.out.println("Esco dalla procedura.");
-                    }
-                } else if (scelta == 2) {
-                    leggiECaricaGerarchie();
-                }
-            } else {
-                System.out.println("Nessun file selezionato, esco dalla procedura.");
-            }
-
-        } else {
-            System.out.println("Opzione di uscita selezionata, esco da procedura.");
-        }
+        this.view.addObserver(this);
     }
 
     /**
@@ -107,13 +77,13 @@ public class FileUtenteServiceController {
             contenutoFile = Files.readString(selectedFile.toPath());
             rimuoviSpaziQuandoNonStringa();
             programParametri();
-            System.out.println("Nuovi parametri caricati in sistema.");
+            view.visualizzaMessaggio("Nuovi parametri caricati in sistema.");
 
         } catch (IOException e) {
-            System.out.println("Attenzione: errore durante la lettura del file.");
-            System.out.println("Impossibile procedere con il caricamento dei parametri.");
+            view.visualizzaMessaggio("Attenzione: errore durante la lettura del file.");
+            view.visualizzaMessaggio("Impossibile procedere con il caricamento dei parametri.");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            view.visualizzaMessaggio(e.getMessage());
         }
     }
 
@@ -137,13 +107,13 @@ public class FileUtenteServiceController {
             contenutoFile = Files.readString(selectedFile.toPath());
             rimuoviSpaziQuandoNonStringa();
             programGerarchie();
-            System.out.println("Nuove gerarchie caricate in sistema.");
+            view.visualizzaMessaggio("Nuove gerarchie caricate in sistema.");
 
         } catch (IOException e) {
-            System.out.println("Attenzione: errore durante la lettura del file.");
-            System.out.println("Impossibile procedere con il caricamento delle gerarchie.");
+            view.visualizzaMessaggio("Attenzione: errore durante la lettura del file.");
+            view.visualizzaMessaggio("Impossibile procedere con il caricamento delle gerarchie.");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            view.visualizzaMessaggio(e.getMessage());
         }
     }
 
@@ -216,10 +186,10 @@ public class FileUtenteServiceController {
     private List<IntervalloOrario> intervalliOrari() throws Exception {
         List<IntervalloOrario> intervalliOrari = new LinkedList<>();
         ifStartsWithAndThenConsumeOrError("intervalli-orari=[");
-        intervalliOrari.add(interalloOrario());
+        intervalliOrari.add(intervalloOrario());
         while (contenutoFile.startsWith(",")) {
             consume(",");
-            var nuovoIntervalloOrario = interalloOrario();
+            var nuovoIntervalloOrario = intervalloOrario();
             if (intervalliOrari.stream().anyMatch(intervalloOrario -> intervalloOrario.intersecaAltroIntervalloOrario(nuovoIntervalloOrario))) {
                 errore();
             } else {
@@ -237,7 +207,7 @@ public class FileUtenteServiceController {
      * @return un oggetto di tipo IntervalloOrario
      * @throws Exception
      */
-    private IntervalloOrario interalloOrario() throws Exception {
+    private IntervalloOrario intervalloOrario() throws Exception {
         IntervalloOrario intervalloOrario = null;
         var intervalloString = matchStringa();
         var orari = intervalloString.split("-");
@@ -591,13 +561,80 @@ public class FileUtenteServiceController {
      * @throws Exception
      */
     private void errore() throws Exception {
-        throw new Exception("Attenzione: contenuto file non conforme a sintassi. " + "Impossibile procedere al caricamento dei dati.");
+        throw new Exception("Attenzione: contenuto file non conforme a sintassi. Impossibile procedere al caricamento dei dati.");
     }
 
     /**
      * Metodo che dà avvio alla funzionalità
      */
     public void avviaServizio() {
-        scegliAzioneESelezionaFileDaCaricare();
+        this.view.eseguiMenu();
+    }
+
+    /**
+     * This method is called whenever the observed object is changed. An
+     * application calls an {@code Observable} object's
+     * {@code notifyObservers} method to have all the object's
+     * observers notified of the change.
+     *
+     * @param o   the observable object.
+     * @param arg an argument passed to the {@code notifyObservers}
+     *            method.
+     */
+    @Override
+    public void update(Observable o, Object arg) {
+        FileUtenteServiceView viewWithEvents = (FileUtenteServiceView) o;
+        switch (viewWithEvents.getSelectedOption()) {
+            case "eseguiProceduraDiUscita" -> this.eseguiProceduraDiUscita();
+            case "caricaParametriConfigurazione" -> {
+                this.commandSelected = CommandOption.PARAMETRI_CONFIGURAZIONE;
+                eseguiSelezioneFile();
+            }
+            case "caricaGerarchieDiCategorie" -> {
+                this.commandSelected = CommandOption.GERARCHIE;
+                eseguiSelezioneFile();
+            }
+            case "fileSelezionato" -> {
+                selectedFile = viewWithEvents.getSelectedFile();
+                System.out.println("File selezionato: " + selectedFile.getAbsolutePath());
+                if (commandSelected == CommandOption.PARAMETRI_CONFIGURAZIONE) {
+                    this.eseguiProceduraDiCaricamentoParametriDiConfigurazione();
+                } else {
+                    this.eseguiProceduraDiCaricamentoGerarchieDiCategorie();
+                }
+            }
+            case "fileNonSelezionato" -> this.eseguiProceduraFileNonSelezionato();
+        }
+
+
+    }
+
+    private void eseguiSelezioneFile() {
+        view.visualizzaMessaggio("Ora seleziona dalla finestra il file da cui importare i dati.");
+        view.visualizzaMessaggio("Apertura finestra di selezione file.");
+        view.eseguiSelezioneFile();
+    }
+
+    private void eseguiProceduraFileNonSelezionato() {
+        view.visualizzaMessaggio("Nessun file selezionato, esco dalla procedura.");
+    }
+
+    private void eseguiProceduraDiCaricamentoGerarchieDiCategorie() {
+        leggiECaricaGerarchie();
+    }
+
+    private void eseguiProceduraDiCaricamentoParametriDiConfigurazione() {
+        if (scambioRepository.isInfoScambioDaConfigurare()) {
+            leggiECaricaParametri();
+        } else {
+            view.visualizzaMessaggio("Attenzione: info di scambio già configurate.");
+            view.visualizzaMessaggio("Esco dalla procedura.");
+        }
+    }
+
+    private void eseguiProceduraDiUscita() {
+        view.visualizzaMessaggio("Opzione di uscita selezionata, esco da procedura.");
     }
 }
+
+
