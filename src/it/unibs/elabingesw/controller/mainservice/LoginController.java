@@ -3,10 +3,8 @@ package it.unibs.elabingesw.controller.mainservice;
 import it.unibs.elabingesw.businesslogic.repository.UtenteRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
 import it.unibs.elabingesw.businesslogic.utente.Configuratore;
-import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.elabingesw.view.LoginView;
-import it.unibs.eliapitozzi.mylib.InputDati;
 
 /**
  * Classe Login per la gestione degli accessi all'applicativo

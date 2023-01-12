@@ -1,7 +1,5 @@
 package it.unibs.elabingesw.businesslogic.categoria;
 
-import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
-
 import java.util.List;
 
 /**

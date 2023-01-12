@@ -4,7 +4,6 @@ import it.unibs.elabingesw.businesslogic.DomainTypeToRender;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 /**
  * @author Elia
