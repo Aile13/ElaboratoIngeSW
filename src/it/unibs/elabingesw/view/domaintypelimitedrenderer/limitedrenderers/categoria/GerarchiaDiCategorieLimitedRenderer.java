@@ -11,7 +11,7 @@ import it.unibs.elabingesw.view.domaintypelimitedrenderer.SelectableDomainTypeLi
 public class GerarchiaDiCategorieLimitedRenderer implements SelectableDomainTypeLimitedRenderer {
     @Override
     public String render(DomainTypeToLimitedRender domainTypeToLimitedRender) {
-        GerarchiaDiCategorie gerarchiaDiCategorie = (GerarchiaDiCategorie) domainTypeToLimitedRender;;
+        GerarchiaDiCategorie gerarchiaDiCategorie = (GerarchiaDiCategorie) domainTypeToLimitedRender;
         return "Gerarchia " + gerarchiaDiCategorie.getNome() + " {\n" + '\t' + new CompositeDomainTypeLimitedRenderer().render(gerarchiaDiCategorie.getGerarchia().getDato()) + '\n' + "}";
     }
 
