@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Optional;
 
 /**
- * Classe Offerta che rappresenta un'offerta generica.
+ * Classe OffertaContext che rappresenta un'offerta generica.
  * <p>
  * Invariante di classe: assumo gli attributi immutabili,
  * dopo la creazione dell'oggetto.
@@ -56,14 +56,29 @@ public final class OffertaContext implements Manageable, Serializable, DomainTyp
         this.offertaState = new ApertaState();
     }
 
+    /**
+     * Metodo setter.
+     *
+     * @param offertaState lo stato dell'offerta
+     */
     public void setOffertaState(OffertaState offertaState) {
         this.offertaState = offertaState;
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return l'autore
+     */
     public Utente getAutore() {
         return autore;
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return la lista dei campi
+     */
     public ListaCampiCompilati getListaCampiCompilati() {
         return listaCampiCompilati;
     }
@@ -86,6 +101,11 @@ public final class OffertaContext implements Manageable, Serializable, DomainTyp
         return nomeArticolo;
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return lo stato dell'offerta
+     */
     public OffertaState getOffertaState() {
         return offertaState;
     }
@@ -98,7 +118,7 @@ public final class OffertaContext implements Manageable, Serializable, DomainTyp
      * offerta selezionata. E quindi si vuole conoscere
      * l'offerte accoppiata a essa.
      *
-     * @return l'offerta accoppiata
+     * @return l'offerta associata
      */
     public OffertaContext getOffertaAssociata() {
         return offertaState.getOffertaAssociata(this);
@@ -209,9 +229,8 @@ public final class OffertaContext implements Manageable, Serializable, DomainTyp
      * offerta accoppiata. Mentre l'offerta parametro va nello stato di offerta selezionata.
      *
      * @param offertaContextDaBarattareB oggetto di tipo Offerta
-     * @param infoDiScambio
+     * @param infoDiScambio oggetto di tipo Scambio
      */
-    // todo  Laaraj descrizione param mancante in doc. Bisogna aggiungerla.
     public void creaLegameEModificaStatiConOffertaEInfoScambio(OffertaContext offertaContextDaBarattareB, Optional<Scambio> infoDiScambio) {
         this.offertaState.creaLegameEModificaStatiConOffertaEInfoScambio(this, offertaContextDaBarattareB, infoDiScambio.orElse(null));
     }
