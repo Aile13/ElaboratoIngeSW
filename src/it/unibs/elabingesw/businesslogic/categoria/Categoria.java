@@ -145,6 +145,11 @@ public abstract class Categoria implements Manageable, Serializable, DomainTypeT
         return campo.isCampoInListaByNome(campiNativi);
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return la descrizione della categoria
+     */
     public String getDescrizione() {
         return descrizione;
     }
