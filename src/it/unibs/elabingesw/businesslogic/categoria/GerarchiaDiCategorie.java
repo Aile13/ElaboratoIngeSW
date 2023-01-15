@@ -8,8 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Classe GerarchiaDiCategorie che implementa l'interfaccia Manageable
- * e che gestisce una gerarchia di categorie.
+ * Classe GerarchiaDiCategorie che gestisce una gerarchia di categorie.
  * <p>
  * Invariante di classe: assumo l'attributo immutabile,
  * dopo la creazione dell'oggetto.
@@ -83,6 +82,11 @@ public class GerarchiaDiCategorie implements Manageable, Serializable, DomainTyp
         return gerarchia.equals(that.gerarchia);
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return la gerarchia
+     */
     public TreeNode<Categoria> getGerarchia() {
         return gerarchia;
     }
