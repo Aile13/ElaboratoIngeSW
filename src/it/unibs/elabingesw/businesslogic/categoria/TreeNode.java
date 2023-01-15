@@ -68,6 +68,11 @@ public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRe
         return dato;
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return la lista dei figli di un nodo
+     */
     public List<TreeNode<T>> getListaFigli() {
         return listaFigli;
     }
@@ -75,7 +80,7 @@ public final class TreeNode<T extends Manageable & Serializable & DomainTypeToRe
     /**
      * Metodo getter.
      *
-     * @return nodo padre del nodo corrente.
+     * @return nodo padre del nodo corrente
      */
     private TreeNode<T> getParent() {
         return parent;
