@@ -67,8 +67,7 @@ public class AccoppiataState implements OffertaState {
      * Metodo che controlla se un'offerta è aperta o meno.
      *
      * @param context oggetto di tipo OffertaContext
-     * @return TRUE se l'offerta è aperta
-     * FALSE se l'offerta non è aperta
+     * @return FALSE l'offerta non è aperta
      */
     @Override
     public boolean isOffertaAperta(OffertaContext context) {
@@ -115,7 +114,7 @@ public class AccoppiataState implements OffertaState {
      * Metodo che controlla se un'offerta è selezionata o meno.
      *
      * @param context oggetto di tipo OffertaContext
-     * @return FALSE 
+     * @return FALSE l'offerta non è selezionata
      */
     @Override
     public boolean isOffertaSelezionata(OffertaContext context) {
@@ -139,7 +138,7 @@ public class AccoppiataState implements OffertaState {
      * Metodo che controlla se un'offerta è in scambio o meno.
      *
      * @param context oggetto di tipo OffertaContext
-     * @return FALSE
+     * @return FALSE l'offerta non è in scambio
      */
     @Override
     public boolean isOffertaInScambio(OffertaContext context) {
@@ -175,7 +174,7 @@ public class AccoppiataState implements OffertaState {
      * Metodo che controlla se un'offerta è chiusa o meno.
      *
      * @param context oggetto di tipo OffertaContext
-     * @return FALSE
+     * @return FALSE l'offerta non è chiusa
      */
     @Override
     public boolean isOffertaChiusa(OffertaContext context) {
