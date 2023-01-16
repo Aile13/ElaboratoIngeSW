@@ -6,7 +6,7 @@ import it.unibs.elabingesw.businesslogic.offerta.OffertaState;
 import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 
 /**
- * Classe ApertaStatem per gestire un'offerta aperta.
+ * Classe ApertaState per gestire un'offerta aperta.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
