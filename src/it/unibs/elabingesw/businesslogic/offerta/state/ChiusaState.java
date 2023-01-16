@@ -149,6 +149,7 @@ public class ChiusaState implements OffertaState {
      * di un'altra parte.
      * 
      * @param context oggetto di tipo OffertaContext
+     * @param listaCampiAppuntamento la lista dei campi dell'appuntamento
      */
     @Override
     public void proponiAltroAppuntamento(OffertaContext context, ListaCampiCompilati listaCampiAppuntamento) {
