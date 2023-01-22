@@ -8,7 +8,7 @@ import it.unibs.elabingesw.businesslogic.utente.Utente;
 import java.util.List;
 
 /**
- * Classe GestoreOfferte, sotto-classe della classe GestoreGenerico.
+ * Classe GestoreOfferteSerializableRepository, sotto-classe della classe GestoreGenerico.
  * <p>
  * Invariante di classe: lo stesso della super-classe.
  * Inoltre il tipo generico T è settato immutabilmente con
