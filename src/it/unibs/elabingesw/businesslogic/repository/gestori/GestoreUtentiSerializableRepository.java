@@ -6,7 +6,7 @@ import it.unibs.elabingesw.businesslogic.utente.Fruitore;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
 
 /**
- * Classe GestoreUtenti, sotto-classe della classe GestoreGenerico.
+ * Classe GestoreUtentiSerializableRepository, sotto-classe della classe GestoreGenerico.
  * <p>
  * Invariante di classe: lo stesso della super-classe.
  * Inoltre il tipo generico T è settato immutabilmente con
