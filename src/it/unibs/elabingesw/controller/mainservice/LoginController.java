@@ -7,7 +7,7 @@ import it.unibs.elabingesw.businesslogic.utente.Utente;
 import it.unibs.elabingesw.view.LoginView;
 
 /**
- * Classe Login per la gestione degli accessi all'applicativo
+ * Classe LoginController per la gestione degli accessi all'applicativo
  * da parte di configuratori e utenti.
  *
  * @author Elia Pitozzi
@@ -20,11 +20,10 @@ public class LoginController {
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
-     * GestoreUtenti.
+     * LoginView e un oggetto UtenteRepository.
      *
-     * @param loginView
-     * @param utenteRepository oggetto di tipo GestoreUtenti
-     * @see GestoreUtentiSerializableRepository
+     * @param loginView oggetto di tipo LoginView
+     * @param utenteRepository oggetto di tipo UtenteRepository
      */
     public LoginController(LoginView loginView, UtenteRepository utenteRepository) {
         this.loginView = loginView;
