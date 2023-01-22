@@ -26,12 +26,6 @@ public record IntervalloOrario(LocalTime orarioIniziale,
     /**
      * Costruttore di classe, accetta come parametri un orario
      * iniziale e un orario finale che costituiscono un intervallo orario.
-     * <p>
-     * Precondizione: assumo parametri costruttore non nulli
-     * e correttamente inizializzati.
-     * Assumo inoltre che l'orario iniziale passato come
-     * parametro non succeda o coincida con l'orario finale
-     * passato come parametro.
      *
      * @param orarioIniziale orario iniziale dell'intervallo orario
      * @param orarioFinale   orario finale dell'intervallo orario
@@ -56,69 +50,139 @@ public record IntervalloOrario(LocalTime orarioIniziale,
     /**
      * Metodo che permette di controllare se due intervalli orari
      * si intersecano tra di loro o meno.
-     * <p>
-     * Precondizione: assumo parametro non nullo e correttamente inizializzato.
-     * Post condizione: verifica se un intervallo orario finisce prima che
-     * l'altro inizi, o se inizia dopo che finisca l'altro, o ancora,
-     * se uno sia contenuto nell'altro. Quindi dà l'esito circa la intersezione.
      *
      * @param altroIntervalloOrario un intervallo orario da confrontare
      * @return TRUE se i due intervalli si intersecano
      * FALSE se i due intervalli non si intersecano
      */
     public boolean intersecaAltroIntervalloOrario(IntervalloOrario altroIntervalloOrario) {
-
         return this.isIntersectedByTheBeginningOf(altroIntervalloOrario) ||
                 this.isIntersectedByTheEndOf(altroIntervalloOrario) ||
                 this.isStrictlyContainedIn(altroIntervalloOrario);
     }
 
+    /**
+     * Metodo che controlla se un intervallo orario passato per parametro
+     * inizia prima o nello stesso momento dell'inizio di un altro intervallo 
+     * orario.
+     *
+     * @param altroIntervalloOrario un intervallo orario da confrontare
+     * @return TRUE se l'intervallo in input inizia prima o insieme a un altro
+     *         FALSE altrimenti
+     */
     private boolean isStartingBeforeOrTogetherWithTheBeginningOf(IntervalloOrario altroIntervalloOrario) {
         return !altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale);
     }
 
+    /**
+     * Metodo che controlla se un intervallo orario passato per parametro
+     * finisce nello stesso momento di un altro intervallo orario o finisce
+     * dopo con l'inizio di un altro intervallo orario.
+     *
+     * @param altroIntervalloOrario un intervallo orario da confrontare
+     * @return TRUE se l'intervallo in input finisce insieme a un altro
+     *         intervallo o finisce dopo con l'inizio dell'altro intervallo
+     *         FALSE altrimenti
+     */
     private boolean isEndingTogetherOrAfterWithTheBeginningOf(IntervalloOrario altroIntervalloOrario) {
         return !altroIntervalloOrario.orarioIniziale.isAfter(this.orarioFinale);
     }
 
+    /**
+     * Metodo che controlla se un intervallo orario passato per parametro
+     * inizia prima di un altro intervallo orario o iniza nello stesso mo-
+     * mento della fine dell'altro intervallo.
+     *
+     * @param altroIntervalloOrario un intervallo orario da confrontare
+     * @return TRUE se l'intervallo in input inizia prima di un altro inter-
+     *         vallo o insieme alla fine dell'altro intervallo.
+     *         FALSE altrimenti
+     */
     private boolean isStartingBeforeOrTogetherWithTheEndOf(IntervalloOrario altroIntervalloOrario) {
         return !altroIntervalloOrario.orarioFinale.isBefore(this.orarioIniziale);
     }
 
+    /**
+     * Metodo che controlla se un intervallo orario passato per parametro
+     * finisce nello stesso momento di un altro intervallo orario o finisce
+     * dopo con l'inizio di un altro intervallo orario.
+     *
+     * @param altroIntervalloOrario un intervallo orario da confrontare
+     * @return TRUE se l'intervallo in input finisce insieme a un altro
+     *         intervallo o finisce dopo con l'inizio dell'altro intervallo
+     *         FALSE altrimenti
+     */
     private boolean isEndingTogetherOrAfterTheEndOf(IntervalloOrario altroIntervalloOrario) {
         return !altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
     }
 
+    /**
+     * Metodo che controlla se un intervallo orario passato per parametro
+     * inizia dopo l'inizio di un altro intervallo.
+     *
+     * @param altroIntervalloOrario un intervallo orario da confrontare
+     * @return TRUE se l'intervallo in input inizia dopo l'inizio di un
+     *         altro intervallo
+     *         FALSE altrimenti
+     */
     private boolean isStartingAfterTheBeginningOf(IntervalloOrario altroIntervalloOrario) {
         return altroIntervalloOrario.orarioIniziale.isBefore(this.orarioIniziale);
     }
 
+    /**
+     * Metodo che controlla se un intervallo orario passato per parametro
+     * finisce prima delll'inizio di un altro intervallo.
+     *
+     * @param altroIntervalloOrario un intervallo orario da confrontare
+     * @return TRUE se l'intervallo in input finisce prima dell'inizio
+     *         di un altro intervallo
+     *         FALSE altrimenti
+     */
     private boolean isEndingBeforeTheEndOf(IntervalloOrario altroIntervalloOrario) {
         return altroIntervalloOrario.orarioFinale.isAfter(this.orarioFinale);
     }
 
+    /**
+     * Metodo che controlla se un intervallo orario passato per parametro
+     * si interseca con l'inizio di un altro intervallo.
+     *
+     * @param altroIntervalloOrario un intervallo orario da confrontare
+     * @return TRUE se l'intervallo in input si interseca con l'inizio
+     *         di un altro intervallo
+     *         FALSE altrimenti
+     */
     private boolean isIntersectedByTheBeginningOf(IntervalloOrario altroIntervalloOrario) {
         return this.isStartingBeforeOrTogetherWithTheBeginningOf(altroIntervalloOrario) && this.isEndingTogetherOrAfterWithTheBeginningOf(altroIntervalloOrario);
     }
 
+    /**
+     * Metodo che controlla se un intervallo orario passato per parametro
+     * si interseca con la fine di un altro intervallo.
+     *
+     * @param altroIntervalloOrario un intervallo orario da confrontare
+     * @return TRUE se l'intervallo in input si interseca con la fine
+     *         di un altro intervallo
+     *         FALSE altrimenti
+     */
     private boolean isIntersectedByTheEndOf(IntervalloOrario altroIntervalloOrario) {
         return this.isStartingBeforeOrTogetherWithTheEndOf(altroIntervalloOrario) && this.isEndingTogetherOrAfterTheEndOf(altroIntervalloOrario);
     }
 
+    /**
+     * Metodo che controlla se un intervallo orario passato per parametro
+     * è totalmente contenuto all'interno di un altro intervallo.
+     *
+     * @param altroIntervalloOrario un intervallo orario da confrontare
+     * @return TRUE se l'intervallo in input è totalmente contenuto all'
+     *         interno di un altro intervallo
+     *         FALSE altrimenti
+     */
     private boolean isStrictlyContainedIn(IntervalloOrario altroIntervalloOrario) {
         return isStartingAfterTheBeginningOf(altroIntervalloOrario) && this.isEndingBeforeTheEndOf(altroIntervalloOrario);
     }
 
     /**
      * Metodo getter
-     * <p>
-     * Post condizione: ritorna la lista di orari validi in cui
-     * è possibile fissare un appuntamento all'interno di
-     * questo specifico intervallo orario.
-     * Dato gli estremi dell'intervallo, un orario valido
-     * in tal intervallo consiste o in uno dei suoi estremi o
-     * in ciascun orario che coincida con la mezza o l'ora in punto
-     * di ogni ora inclusa negli estremi dell'intervallo.
      *
      * @return la lista degli orari validi
      */
