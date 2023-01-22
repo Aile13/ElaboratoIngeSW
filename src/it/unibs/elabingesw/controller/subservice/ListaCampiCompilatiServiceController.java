@@ -4,9 +4,9 @@ import it.unibs.elabingesw.businesslogic.offerta.ListaCampiCompilati;
 import it.unibs.elabingesw.view.ListaCampiCompilatiServiceView;
 
 /**
- * Classe ListaCampiCompilatiService per la gestione
- * della compilazione dei vari campi che vengono ri-
- * chiesti durante l'esecuzione dell'applicativo.
+ * Classe ListaCampiCompilatiServiceController per la
+ * gestione della compilazione dei vari campi che ven-
+ * gono richiesti durante l'esecuzione dell'applicativo.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
