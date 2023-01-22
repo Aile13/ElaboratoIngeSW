@@ -12,7 +12,7 @@ import it.unibs.elabingesw.view.domaintypelimitedrenderer.CompositeDomainTypeLim
 import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
 
 /**
- * Classe GerarchiaService che gestisce le varie operazioni
+ * Classe GerarchiaServiceController che gestisce le varie operazioni
  * che si effettuano su una gerarchia e sulle eventuali
  * categorie radice e categorie figlie.
  *
@@ -27,11 +27,10 @@ public class GerarchiaServiceController {
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
-     * GestoreGerarchie e un oggetto GestoreScambio.
+     * GerarchiaRepository e un oggetto ScambioRepository.
      *
-     * @param gerarchiaRepository oggetto di tipo GestoreGerarchie
-     * @param scambioRepository oggetto di tipo GestoreScambio
-     * @see GestoreGerarchieSerializableRepository
+     * @param gerarchiaRepository oggetto di tipo GerarchiaRepository
+     * @param scambioRepository oggetto di tipo ScambioRepository
      */
     public GerarchiaServiceController(GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
         this.gerarchiaRepository = gerarchiaRepository;
@@ -59,7 +58,7 @@ public class GerarchiaServiceController {
      *
      * @param gerarchia la gerarchia alla quale si vogliono aggiungere
      *                  sotto categorie
-     * @return gerarchia oggetto della classe GerarchiaDiCategorie
+     * @return gerarchia oggetto di tipo GerarchiaDiCategorie
      * @see GerarchiaDiCategorie
      */
     private void aggiungiSottoCategorie(GerarchiaDiCategorie gerarchia) {
@@ -78,7 +77,7 @@ public class GerarchiaServiceController {
     }
 
     /**
-     * Metodo che chiede all'utente d'inserire una categoria radice
+     * Metodo che chiede all'utente di inserire una categoria radice
      * con i suoi vari campi.
      *
      * @return una categoria radice
@@ -86,7 +85,6 @@ public class GerarchiaServiceController {
      */
     private CategoriaRadice chiediECreaCategoriaRadice() {
         var nomeCategoriaRadice = view.getNomeCategoriaRadiceString();
-        // check se nome già usato o meno tra le altre gerarchia
         while (gerarchiaRepository.isGerarchiaPresenteByNome(nomeCategoriaRadice)) {
             view.visualizzaMessaggio("Errore nome categoria radice già usato: riprovare.");
             nomeCategoriaRadice = view.getNewNomeCategoriaRadiceString();
@@ -97,9 +95,6 @@ public class GerarchiaServiceController {
 
         return new CategoriaRadice(nomeCategoriaRadice, descrizione, listaCampi);
     }
-
-
-
 
     /**
      * Metodo che chiede all'utente d'inserire una categoria figlio
@@ -164,6 +159,8 @@ public class GerarchiaServiceController {
 
     /**
      * Metodo che carica i dati da un file dell'utente.
+     *
+     * @see CampoServiceController
      */
     public void caricaDatiDaFileUtente() {
         var fileUtenteServiceView = new FileUtenteServiceView();
