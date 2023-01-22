@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe ScambioService che gestisce le varie operazioni
+ * Classe ScambioServiceController che gestisce le varie operazioni
  * che si effettuano su uno scambio di un articolo.
  *
  * @author Elia Pitozzi
@@ -25,9 +25,9 @@ public class ScambioServiceController {
 
     /**
      * Costruttore di classe, accetta come parametro un oggetto
-     * GestoreScambio.
+     * ScambioRepository.
      *
-     * @param scambioRepository
+     * @param scambioRepository oggetto di tipo ScambioRepository
      * @see GestoreScambioSerializableRepository
      */
     public ScambioServiceController(ScambioRepository scambioRepository) {
