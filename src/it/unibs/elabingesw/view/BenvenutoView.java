@@ -1,7 +1,7 @@
 package it.unibs.elabingesw.view;
 
 /**
- * Classe Benvenuto con al suo interno un metodo statico saluta()
+ * Classe BenvenutoView con al suo interno un metodo statico saluta()
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
