@@ -6,7 +6,7 @@ import it.unibs.elabingesw.businesslogic.repository.GerarchiaRepository;
 import java.util.List;
 
 /**
- * Classe GestoreGerarchie, sotto-classe della classe GestoreGenerico.
+ * Classe GestoreGerarchieSerializableRepository, sotto-classe della classe GestoreGenerico.
  * <p>
  * Invariante di classe: lo stesso della super-classe.
  * Inoltre il tipo generico T è settato immutabilmente con
