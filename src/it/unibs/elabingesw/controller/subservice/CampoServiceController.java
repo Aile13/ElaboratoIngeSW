@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe CampoService contenente tre metodi statici appositi
+ * Classe CampoServiceController contenente tre metodi statici appositi
  * per gestire le richieste dell'utente di aggiungere nuovi
  * campi alle categorie.
  *
