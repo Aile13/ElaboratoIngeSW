@@ -7,12 +7,18 @@ import javax.swing.JFileChooser;
 import java.io.File;
 
 /**
- * @author Elia
+ * Classe FileUtenteServiceView, sottoclasse di View.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class FileUtenteServiceView extends View {
     private String selectedOption;
     private File selectedFile;
 
+    /**
+     * Metodo che esegue il menu.
+     */
     public void eseguiMenu() {
         new MyFunctionalMenu(
                 "Menu selezione caricamento dati da file utente",
@@ -24,6 +30,10 @@ public class FileUtenteServiceView extends View {
         ).eseguiMenu();
     }
 
+    /**
+     * Metodo che si occupa della procedura relativa alla
+     * selezione del file.
+     */
     public void eseguiSelezioneFile() {
         JFileChooser jFileChooser = new JFileChooser(".");
         jFileChooser.showOpenDialog(null);
@@ -35,20 +45,40 @@ public class FileUtenteServiceView extends View {
         } else setSelectedOption("fileNonSelezionato");
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return l'opzione scelta
+     */
     public String getSelectedOption() {
         return selectedOption;
     }
 
+    /**
+     * Metodo setter.
+     *
+     * @param selectedOption l'opzione scelta
+     */
     public void setSelectedOption(String selectedOption) {
         this.selectedOption = selectedOption;
         setChanged();
         notifyObservers();
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return il file selezionato
+     */
     public File getSelectedFile() {
         return selectedFile;
     }
 
+    /**
+     * Metodo setter.
+     *
+     * @param selectedFile il file selezionato
+     */
     public void setSelectedFile(File selectedFile) {
         this.selectedFile = selectedFile;
     }
