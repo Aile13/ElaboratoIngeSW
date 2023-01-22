@@ -4,7 +4,7 @@ import it.unibs.eliapitozzi.mylib.MyFunctionalMenu;
 import it.unibs.eliapitozzi.mylib.VoceEComando;
 
 /**
- * Classe MainMenu per la visualizzazione a video di un menu
+ * Classe MainMenuView per la visualizzazione a video di un menu
  * che permette all'utente di visionare quali operazioni svolgere.
  *
  * @author Elia Pitozzi
@@ -13,6 +13,9 @@ import it.unibs.eliapitozzi.mylib.VoceEComando;
 public class MainMenuView extends View {
     private String selectedOption;
 
+    /**
+     * Metodo che esegue il menu per il configuratore.
+     */
     public void eseguiMenuConfiguratore() {
         new MyFunctionalMenu(
                 "Menu per Configuratore",
@@ -27,6 +30,9 @@ public class MainMenuView extends View {
                 .eseguiMenu();
     }
 
+    /**
+     * Metodo che esegue il menu per il fruitore.
+     */
     public void eseguiMenuFruitore() {
         new MyFunctionalMenu(
                 "Menu per Fruitore",
@@ -44,10 +50,20 @@ public class MainMenuView extends View {
                 .eseguiMenu();
     }
 
+    /**
+     * Metodo getter.
+     *
+     * @return l'opzione selezionata
+     */
     public String getSelectedOption() {
         return selectedOption;
     }
 
+    /**
+     * Metodo setter.
+     *
+     * @param selectedOption l'opzione selezionata
+     */
     public void setSelectedOption(String selectedOption) {
         this.selectedOption = selectedOption;
         setChanged();
