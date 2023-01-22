@@ -7,7 +7,11 @@ import it.unibs.elabingesw.businesslogic.utente.Utente;
 import java.util.List;
 
 /**
- * @author Elia
+ * Interfaccia OffertaRepository con metodi appositi
+ * per gestire operazioni su collezioni di offerte.
+ * 
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public interface OffertaRepository {
     
