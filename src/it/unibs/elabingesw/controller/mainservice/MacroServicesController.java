@@ -19,7 +19,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Classe MacroServices di gestione generale.
+ * Classe MacroServicesController di gestione generale.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
@@ -37,18 +37,13 @@ public class MacroServicesController implements Observer {
     private Utente userLogged;
 
     /**
-     * Costruttore di classe, accetta come parametri un oggetto di
-     * tipo GestoreUtenti e un oggetto di tipo GestoreGerarchie.
+     * Costruttore di classe.
      *
-     * @param mainMenuView
-     * @param utenteRepository    oggetto di tipo GestoreUtenti
-     * @param gerarchiaRepository oggetto di tipo GestoreGerarchie
-     * @param scambioRepository   oggetto di tipo GestoreScambio
-     * @param offertaRepository   oggetto di tipo GestoreOfferte
-     * @see GestoreUtentiSerializableRepository
-     * @see GestoreGerarchieSerializableRepository
-     * @see GestoreScambioSerializableRepository
-     * @see GestoreOfferteSerializableRepository
+     * @param mainMenuView        oggetto di tipo MainMenuView
+     * @param utenteRepository    oggetto di tipo UtenteRepository
+     * @param gerarchiaRepository oggetto di tipo GerarchiaRepository
+     * @param scambioRepository   oggetto di tipo ScambioRepository
+     * @param offertaRepository   oggetto di tipo OffertaRepository
      */
     public MacroServicesController(MainMenuView mainMenuView, UtenteRepository utenteRepository, GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository, OffertaRepository offertaRepository) {
         this.mainMenuView = mainMenuView;
@@ -78,8 +73,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe GerarchiaService per
-     * creare una nuova gerarchia.
+     * Metodo che rimanda alla classe GerarchiaServiceController
+     * per creare una nuova gerarchia.
      *
      * @see GerarchiaServiceController
      */
@@ -95,8 +90,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe GerarchiaService per
-     * visualizzare le tutte gerarchie caricate.
+     * Metodo che rimanda alla classe GerarchiaServiceController
+     * per visualizzare tutte le gerarchie caricate.
      *
      * @see GerarchiaServiceController
      */
@@ -105,8 +100,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe GerarchiaService per
-     * visualizzare tutte le gerarchie caricate in forma
+     * Metodo che rimanda alla classe GerarchiaServiceController
+     * per visualizzare tutte le gerarchie caricate in forma
      * ridotta.
      *
      * @see GerarchiaServiceController
@@ -116,8 +111,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe ScambioService per
-     * visualizzare tutte le informazioni degli scambi.
+     * Metodo che rimanda alla classe ScambioServiceController
+     * per visualizzare tutte le informazioni degli scambi.
      *
      * @see ScambioServiceController
      */
@@ -126,8 +121,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe ScambioService per
-     * visualizzare tutte le informazioni degli scambi in
+     * Metodo che rimanda alla classe ScambioServiceController 
+     * per visualizzare tutte le informazioni degli scambi in
      * forma ridotta.
      *
      * @see ScambioServiceController
@@ -137,8 +132,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe ScambioService per
-     * impostare le informazioni sugli scambi.
+     * Metodo che rimanda alla classe ScambioServiceController
+     * per impostare le informazioni sugli scambi.
      *
      * @see ScambioServiceController
      */
@@ -147,8 +142,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per
-     * settare l'utente che ha eseguito l'accesso.
+     * Metodo che rimanda alla classe OfferteServiceController
+     * per settare l'utente che ha eseguito l'accesso.
      *
      * @param userLogged l'utente che ha eseguito l'accesso.
      * @see OfferteServiceController
@@ -159,8 +154,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le offerte di un utente.
+     * Metodo che rimanda alla classe OfferteServiceController
+     * per visualizzare le offerte di un utente.
      *
      * @see OfferteServiceController
      */
@@ -169,8 +164,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per
-     * creare una nuova offerta.
+     * Metodo che rimanda alla classe OfferteServiceController
+     * per creare una nuova offerta.
      *
      * @see OfferteServiceController
      */
@@ -179,7 +174,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per ritirare le offerte di un utente.
+     * Metodo che rimanda alla classe OfferteServiceController 
+     * per ritirare le offerte di un utente.
      *
      * @see OfferteServiceController
      */
@@ -188,8 +184,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le offerte aperte con la selezione
+     * Metodo che rimanda alla classe OfferteServiceController
+     * per visualizzare le offerte aperte con la selezione
      * della categoria foglia.
      *
      * @see OfferteServiceController
@@ -199,8 +195,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService e per-
-     * mette di selezionare un'offerta aperta per poterla
+     * Metodo che rimanda alla classe OfferteServiceController 
+     * e permette di selezionare un'offerta aperta per poterla
      * barattare.
      *
      * @see OfferteServiceController
@@ -210,8 +206,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le proposte di scambio che un utente
+     * Metodo che rimanda alla classe OfferteServiceController
+     * per visualizzare le proposte di scambio che un utente
      * ha ricevuto.
      *
      * @see OfferteServiceController
@@ -221,8 +217,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le offerte in scambio di un utente.
+     * Metodo che rimanda alla classe OfferteServiceController
+     * per visualizzare le offerte in scambio di un utente.
      *
      * @see OfferteServiceController
      */
@@ -231,8 +227,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le ultime risposte ricevute per le
+     * Metodo che rimanda alla classe OfferteServiceController
+     * per visualizzare le ultime risposte ricevute per le
      * offerte in scambio.
      *
      * @see OfferteServiceController
@@ -242,8 +238,8 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * Metodo che rimanda alla classe OfferteService per
-     * visualizzare le offerte in scambio e chiuse con la
+     * Metodo che rimanda alla classe OfferteServiceController
+     * per visualizzare le offerte in scambio e chiuse con la
      * selezione della categoria foglia.
      *
      * @see OfferteServiceController
@@ -263,7 +259,12 @@ public class MacroServicesController implements Observer {
         this.gerarchiaService.caricaDatiDaFileUtente();
     }
 
-
+    /**
+     * Metodo che mostra a video il menu che è differente in base
+     * al tipo di utente che ne richiede l'utilizzo.
+     *
+     * @see MainMenuView
+     */
     public void eseguiMainMenu() {
         if (userLogged.getUserType() == UserType.CONFIGURATORE)
             mainMenuView.eseguiMenuConfiguratore();
@@ -271,14 +272,13 @@ public class MacroServicesController implements Observer {
     }
 
     /**
-     * This method is called whenever the observed object is changed. An
-     * application calls an {@code Observable} object's
-     * {@code notifyObservers} method to have all the object's
-     * observers notified of the change.
+     * Metodo che viene chiamato ogni volta che l'oggetto osserva-
+     * to viene modificato. Un'applicazione chiama il metodo di un 
+     * oggetto in modo che tutti gli osservatori vengano notificati
+     * del cambiamento.
      *
-     * @param o   the observable object.
-     * @param arg an argument passed to the {@code notifyObservers}
-     *            method.
+     * @param o oggetto di tipo Observable.
+     * @param arg argomento che verrà passato al metodo notifyObservers()
      */
     @Override
     public void update(Observable o, Object arg) {
