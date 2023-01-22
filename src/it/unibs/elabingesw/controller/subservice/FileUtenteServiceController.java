@@ -24,16 +24,13 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Classe FileUtenteService che gestisce le varie operazioni
- * che si effettuano in modo che l'utente possa caricare nell'
- * applicativo dei dati da file.
+ * Classe FileUtenteServiceController che gestisce le varie o-
+ * perazioni che si effettuano in modo che l'utente possa ca-
+ * ricare nell'applicativo dei dati da file.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
  */
-
-
-// TODO: 11/gen/2023 qui mvc è ancora da applicare.
 public class FileUtenteServiceController implements Observer {
 
     private final GerarchiaRepository gerarchiaRepository;
@@ -41,7 +38,12 @@ public class FileUtenteServiceController implements Observer {
     private final FileUtenteServiceView view;
     private File selectedFile;
     private String contenutoFile;
-
+    
+    /**
+     * Enumeration CommandOption con i due comandi
+     * che si possono scegliere.
+     *
+     */
     private enum CommandOption {
         PARAMETRI_CONFIGURAZIONE,
         GERARCHIE
@@ -50,14 +52,11 @@ public class FileUtenteServiceController implements Observer {
     private CommandOption commandSelected;
 
     /**
-     * Costruttore di classe, accetta come parametri un oggetto
-     * GestoreGerarchie e un oggetto GestoreScambio.
+     * Costruttore di classe.
      *
-     * @param fileUtenteServiceView
-     * @param gerarchiaRepository   oggetto di tipo GestoreGerarchie
-     * @param scambioRepository     oggetto di tipo GestoreScambio
-     * @see GestoreGerarchieSerializableRepository
-     * @see GestoreScambioSerializableRepository
+     * @param fileUtenteServiceView oggetto di tipo FileUtenteServiceView
+     * @param gerarchiaRepository   oggetto di tipo GerarchiaRepository
+     * @param scambioRepository     oggetto di tipo ScambioRepository
      */
     public FileUtenteServiceController(FileUtenteServiceView fileUtenteServiceView, GerarchiaRepository gerarchiaRepository, ScambioRepository scambioRepository) {
 
@@ -541,7 +540,7 @@ public class FileUtenteServiceController implements Observer {
 
     /**
      * Metodo che rimuove tanti caratteri iniziali dal file
-     * quanti sono quelli che costituisco la stringa parametro.
+     * quanti sono quelli che costituiscono la stringa parametro.
      * <p>
      * Precondizione: assumo che il file inizi esattamente
      * come indicato nella stringa parametro.
@@ -609,20 +608,37 @@ public class FileUtenteServiceController implements Observer {
 
     }
 
+    /**
+     * Metodo che esegue la seleziona il file da cui importare
+     * i dati.
+     */
     private void eseguiSelezioneFile() {
         view.visualizzaMessaggio("Ora seleziona dalla finestra il file da cui importare i dati.");
         view.visualizzaMessaggio("Apertura finestra di selezione file.");
         view.eseguiSelezioneFile();
     }
 
+    /**
+     * Metodo che comunica all'utente che non è stato selezionato
+     * nessun file.
+     */
     private void eseguiProceduraFileNonSelezionato() {
         view.visualizzaMessaggio("Nessun file selezionato, esco dalla procedura.");
     }
 
+    /**
+     * Metodo che procede con il caricamento da file delle
+     * gerarchie di categorie.
+     */
     private void eseguiProceduraDiCaricamentoGerarchieDiCategorie() {
         leggiECaricaGerarchie();
     }
 
+    /**
+     * Metodo che procede con il caricamento da file dei parametri
+     * di configurazione degli scambi: se questi sono già stati con-
+     * figurati in precedenza avvisa l'utente ed esce dalla procedura.
+     */
     private void eseguiProceduraDiCaricamentoParametriDiConfigurazione() {
         if (scambioRepository.isInfoScambioDaConfigurare()) {
             leggiECaricaParametri();
@@ -631,7 +647,10 @@ public class FileUtenteServiceController implements Observer {
             view.visualizzaMessaggio("Esco dalla procedura.");
         }
     }
-
+    
+    /**
+     * Metodo che esce dalla funzionalità.
+     */
     private void eseguiProceduraDiUscita() {
         view.visualizzaMessaggio("Opzione di uscita selezionata, esco da procedura.");
     }
