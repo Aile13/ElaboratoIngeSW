@@ -1,7 +1,11 @@
 package it.unibs.elabingesw.businesslogic;
 
 /**
- * @author Elia
+ * Interfaccia DomainTypeToLimitedRender per la gestione
+ * del rendering.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public interface DomainTypeToLimitedRender {
 }
