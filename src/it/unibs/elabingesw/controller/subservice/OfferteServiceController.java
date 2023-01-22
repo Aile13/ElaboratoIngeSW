@@ -19,9 +19,9 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Classe OfferteService che gestisce le varie operazioni
- * che si effettuano su un'offerta di un fruitore su un
- * determinato articolo.
+ * Classe OfferteServiceController che gestisce le varie
+ * operazioni che si effettuano su un'offerta di un
+ * fruitore su un determinato articolo.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj
@@ -35,11 +35,11 @@ public class OfferteServiceController {
     private Utente utente;
 
     /**
-     * Costruttore di classe, accetta come parametro un oggetto
-     * GestoreOfferte e un oggetto GestoreGerarchie.
+     * Costruttore di classe.
      *
-     * @param offertaRepository
-     * @param gerarchiaRepository
+     * @param offertaRepository oggetto di tipo OffertaRepository
+     * @param gerarchiaRepository oggetto di tipo GerarchiaRepository
+     * @param scambioRepository oggetto di tipo ScambioRepository
      * @see GestoreOfferteSerializableRepository
      * @see GestoreGerarchieSerializableRepository
      */
@@ -248,6 +248,10 @@ public class OfferteServiceController {
         }
     }
 
+    /**
+     * Metodo che permette di visualizzare le proposte di scambio
+     * disponibili.
+     */
     public void visualizzaProposteDiScambio() {
         offertaRepository.aggiornaStatoDelleOfferte();
         var offerteSelezionate = this.offertaRepository.getOfferteSelezionateByUser(utente);
