@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Classe IntervalloOrariService che gestisce le varie operazioni
+ * Classe IntervalloOrariServiceController che gestisce le varie operazioni
  * che si effettuano su uno o più intervalli orari.
  *
  * @author Elia Pitozzi
