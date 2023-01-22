@@ -6,7 +6,7 @@ import it.unibs.elabingesw.businesslogic.scambio.Scambio;
 import java.util.Optional;
 
 /**
- * Classe GestoreScambio, sotto-classe della classe GestoreGenerico.
+ * Classe GestoreScambioSerializableRepository, sotto-classe della classe GestoreGenerico.
  * <p>
  * Invariante di classe: lo stesso della super-classe.
  * Inoltre il tipo generico T è settato immutabilmente con
