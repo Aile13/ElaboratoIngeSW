@@ -14,21 +14,15 @@ import java.util.List;
  * Record Scambio che definisce le info di scambio per
  * organizzare un incontro per effettuare un baratto.
  *
- * @author Elia Pitozzi
- * @author Ali Laaraj
- */
-
-/**
- * Costruttore di classe, accetta come parametri la piazza, la lista
- * dei luoghi, la lista dei giorni, la lista degli intervalli orari
- * e la scadenza di uno scambio.
- *
  * @param piazza          città in cui si organizzano gli scambi
  * @param listaLuoghi     luoghi della città in cui avvengono gli scambi
  * @param giorni          giorni della settimana in cui avvengono gli scambi
  * @param intervalliOrari intervalli orari della giornata in cui avvengono gli scambi
  * @param scadenza        numero di giorni massimi entro cui si deve rispondere nelle operazioni di baratto
-  */
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
+ */
 public record Scambio(String piazza, List<String> listaLuoghi, List<DayOfWeek> giorni,
                       List<IntervalloOrario> intervalliOrari,
                       int scadenza) implements Manageable, Serializable, DomainTypeToRender, DomainTypeToLimitedRender {
