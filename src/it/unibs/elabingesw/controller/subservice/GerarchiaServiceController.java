@@ -4,7 +4,6 @@ import it.unibs.elabingesw.businesslogic.categoria.CategoriaFiglio;
 import it.unibs.elabingesw.businesslogic.categoria.CategoriaRadice;
 import it.unibs.elabingesw.businesslogic.categoria.GerarchiaDiCategorie;
 import it.unibs.elabingesw.businesslogic.repository.GerarchiaRepository;
-import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
 import it.unibs.elabingesw.view.FileUtenteServiceView;
 import it.unibs.elabingesw.view.GerarchiaServiceView;
