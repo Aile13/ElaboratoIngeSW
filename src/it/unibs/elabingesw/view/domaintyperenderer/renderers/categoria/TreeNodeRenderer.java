@@ -9,9 +9,20 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
- * @author Elia
+ * Classe TreeNodeRenderer che implementa SelectableDomainTypeRenderer.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class TreeNodeRenderer implements SelectableDomainTypeRenderer {
+    
+    /**
+     * Metodo che restituisce il rendering dell'oggetto in input
+     * a cui verrà applicato un cast.
+     *
+     * @param domainTypeToRender l'oggetto di tipo DomainTypeToRender
+     * @return il rendering dell'albero di nodi
+     */
     @Override
     public String render(DomainTypeToRender domainTypeToRender) {
         TreeNode<?> treeNode = (TreeNode<?>) domainTypeToRender;
@@ -24,8 +35,6 @@ public class TreeNodeRenderer implements SelectableDomainTypeRenderer {
     /**
      * Metodo che indenta di un tab una stringa passata come
      * parametro.
-     * <p>
-     * Precondizione: assumo parametro non nullo.
      *
      * @return la stringa indentata
      */
@@ -33,6 +42,15 @@ public class TreeNodeRenderer implements SelectableDomainTypeRenderer {
         return "\t" + singleLine;
     }
 
+    /**
+     * Metodo che controlla se il renderer può gestire
+     * il rendering dell'oggetto che viene passato per
+     * parametro.
+     *
+     * @param domainTypeToRender l'oggetto di tipo DomainTypeToRender
+     * @return TRUE se si può gestire il rendering dell'albero di nodi
+     * FALSE se non si può gestire il rendering dell'albero di nodi
+     */
     @Override
     public boolean canHandle(DomainTypeToRender domainTypeToRender) {
         return domainTypeToRender instanceof TreeNode<?>;
