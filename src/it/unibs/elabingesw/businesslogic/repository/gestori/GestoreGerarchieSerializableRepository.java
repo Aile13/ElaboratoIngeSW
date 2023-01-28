@@ -69,13 +69,7 @@ public final class GestoreGerarchieSerializableRepository extends GestoreGeneric
         this.inserisciElemento(gerarchiaDiCategorie);
     }
 
-    /**
-     * Metodo che controlla se la gerarchia dal nome passato
-     * per parametro è presente o meno in lista.
-     *
-     * @return TRUE se la gerarchia è presente in lista
-     * FALSE se la gerarchia non è presente in lista
-     */
+    // TODO:  Laaraj 27/nov/2022 Aggiungere doc. metodo nuovo.
     @Override
     public boolean isGerarchiaPresenteByNome(String nomeGerarchia) {
         return super.isElementoInListaByNome(nomeGerarchia);

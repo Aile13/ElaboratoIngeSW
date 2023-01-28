@@ -7,7 +7,10 @@ import it.unibs.elabingesw.view.domaintyperenderer.CompositeDomainTypeRenderer;
 import it.unibs.elabingesw.view.domaintyperenderer.SelectableDomainTypeRenderer;
 
 /**
- * @author Elia
+ *
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class OffertaContextRenderer implements SelectableDomainTypeRenderer {
     @Override

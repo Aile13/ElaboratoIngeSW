@@ -21,13 +21,9 @@ public final class GestoreOfferteSerializableRepository extends GestoreGenerico<
     private static final String FILE_NAME = "Offerte";
 
     /**
-     * Costruttore di classe.
-     * aggiungi cosa come :
-     * * Inoltre aggiorna lo stato delle offerte dall'ultimo loro salvataggio.
-     * e : E inoltre esegue l'aggiornamento dello stato di tutte
-     * * le offerte in lista.
+     * Costruttore di classe. Aggiorna lo stato delle offerte dall'ultimo loro salvataggio.
+     * e inoltre esegue l'aggiornamento dello stato di tutte le offerte in lista.
      */
-    // TODO:  Laaraj 27/nov/2022 aggiorna doc, dato che metodo ora aggiorna stato offerte.
     public GestoreOfferteSerializableRepository() {
         super(FILE_NAME);
         aggiornaStatoDelleOfferte();

@@ -19,6 +19,7 @@ import java.util.Set;
  * @author Ali Laaraj
  */
 public class CompositeDomainTypeRenderer implements SelectableDomainTypeRenderer {
+
     private final Set<SelectableDomainTypeRenderer> renderers =
             Set.of(
                     new CampoRenderer(),
