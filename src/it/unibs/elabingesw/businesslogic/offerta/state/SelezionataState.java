@@ -125,7 +125,7 @@ public class SelezionataState implements OffertaState {
      * di scambio associata a un'offerta passata per
      * parametro.
      *
-     * @param context oggetto di tipo OffertaContext
+     * @param offertaSelezionata oggetto di tipo OffertaContext
      * @param listaCampiAppuntamento la lista dei campi dell'appuntamento
      */
     @Override
