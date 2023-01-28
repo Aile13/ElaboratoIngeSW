@@ -11,8 +11,12 @@ import it.unibs.elabingesw.view.domaintyperenderer.renderers.utente.UtenteRender
 
 import java.util.Set;
 
-/**
- * @author Elia
+/*
+ * Classe CompositeDomainTypeRenderer che implementa SelectableDomainTypeRenderer
+ * e che permette l'uso aggregato di tutti i renderer.
+ *
+ * @author Elia Pitozzi
+ * @author Ali Laaraj
  */
 public class CompositeDomainTypeRenderer implements SelectableDomainTypeRenderer {
     private final Set<SelectableDomainTypeRenderer> renderers =
@@ -36,6 +40,15 @@ public class CompositeDomainTypeRenderer implements SelectableDomainTypeRenderer
                     new UtenteRenderer()
             );
 
+    /**
+     * Metodo che restituisce il rendering dell'oggetto che
+     * viene passato per parametro dopo aver controllato se 
+     * quest'ultimo è supportato e se quindi è uno dei pos-
+     * sibili renderer.
+     *
+     * @param domainTypeToRender l'oggetto di tipo DomainTypeToRender
+     * @return il rendering
+     */
     @Override
     public String render(DomainTypeToRender domainTypeToRender) {
         for (SelectableDomainTypeRenderer renderer : renderers) {
@@ -46,6 +59,15 @@ public class CompositeDomainTypeRenderer implements SelectableDomainTypeRenderer
         return "non supportato";
     }
 
+    /**
+     * Metodo che controlla se uno tra i renderer dispo-
+     * nibili può gestire il rendering dell'oggetto che
+     * viene passato per parametro.
+     *
+     * @param domainTypeToRender l'oggetto di tipo DomainTypeToRender
+     * @return TRUE se si può gestire il rendering
+     * FALSE se non si può gestire il rendering
+     */
     @Override
     public boolean canHandle(DomainTypeToRender domainTypeToRender) {
         for (SelectableDomainTypeRenderer renderer : renderers) {
