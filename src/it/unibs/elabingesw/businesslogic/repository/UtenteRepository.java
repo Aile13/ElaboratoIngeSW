@@ -12,7 +12,7 @@ import it.unibs.elabingesw.businesslogic.utente.Utente;
 public interface UtenteRepository {
     
     /**
-     * Metodo che permette di inserire il configuratore di
+     * Metodo che permette d'inserire il configuratore di
      * default nella lista, se questo non è già presente in essa.
      */
     void inserisciDefaultConfiguratore();
@@ -39,7 +39,7 @@ public interface UtenteRepository {
     boolean isUtenteRegistrato(String username);
 
     /**
-     * Metodo che permette di inserire un nuovo configuratore.
+     * Metodo che permette d'inserire un nuovo configuratore.
      *
      * @param username lo username del nuovo configuratore
      * @param password la password del nuovo configuratore
@@ -52,7 +52,7 @@ public interface UtenteRepository {
     void salvaUtenti();
 
     /**
-     * Metodo che permette di inserire un nuovo fruitore nella lista.
+     * Metodo che permette d'inserire un nuovo fruitore nella lista.
      *
      * @param username lo username del nuovo fruitore
      * @param password la password del nuovo fruitore

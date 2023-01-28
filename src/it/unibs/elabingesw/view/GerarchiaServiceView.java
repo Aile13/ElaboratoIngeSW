@@ -59,8 +59,8 @@ public class GerarchiaServiceView extends View {
      * per parametro.
      *
      * @param nomeGerarchia il nome della gerarchia
-     * @return TRUE se si vuole aggiungere un'altra sottocategoria
-     * FALSE se non si vuole inserire un'altra sottocategoria
+     * @return TRUE se si vuole aggiungere un'altra sotto-categoria
+     * FALSE se non si vuole inserire un'altra sotto-categoria
      */
     public boolean chiediConfermaInserimentoAltraSottoCategoriaConNome(String nomeGerarchia) {
         return InputDati.yesOrNo("Vuoi aggiungere un'altra sotto-categoria per " + nomeGerarchia + "?");
