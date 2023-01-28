@@ -58,7 +58,6 @@ public class GerarchiaServiceController {
      *
      * @param gerarchia la gerarchia alla quale si vogliono aggiungere
      *                  sotto categorie
-     * @return gerarchia oggetto di tipo GerarchiaDiCategorie
      * @see GerarchiaDiCategorie
      */
     private void aggiungiSottoCategorie(GerarchiaDiCategorie gerarchia) {
