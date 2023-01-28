@@ -5,8 +5,6 @@ import it.unibs.elabingesw.businesslogic.repository.OffertaRepository;
 import it.unibs.elabingesw.businesslogic.repository.ScambioRepository;
 import it.unibs.elabingesw.businesslogic.repository.UtenteRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreGerarchieSerializableRepository;
-import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreOfferteSerializableRepository;
-import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreScambioSerializableRepository;
 import it.unibs.elabingesw.businesslogic.repository.gestori.GestoreUtentiSerializableRepository;
 import it.unibs.elabingesw.businesslogic.utente.UserType;
 import it.unibs.elabingesw.businesslogic.utente.Utente;
