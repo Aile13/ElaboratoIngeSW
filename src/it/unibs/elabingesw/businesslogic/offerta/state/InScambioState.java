@@ -106,7 +106,7 @@ public class InScambioState implements OffertaState {
      * 
      * @param context primo oggetto di tipo OffertaContext
      * @param offertaContextDaBarattareB secondo oggetto di tipo OffertaContext
-     * @param infoDiScambio oggeto di tipo Scambio
+     * @param infoDiScambio oggetto di tipo Scambio
      */
     @Override
     public void creaLegameEModificaStatiConOffertaEInfoScambio(OffertaContext context, OffertaContext offertaContextDaBarattareB, Scambio infoDiScambio) {
@@ -186,7 +186,7 @@ public class InScambioState implements OffertaState {
 
     /**
      * Metodo che permette a una parte di proporre
-     * un altor appuntamento per poter scambiare due
+     * un altro appuntamento per poter scambiare due
      * offerte.
      * 
      * @param context oggetto di tipo OffertaContext

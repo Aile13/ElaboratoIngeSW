@@ -5,8 +5,8 @@ import it.unibs.elabingesw.view.ListaCampiCompilatiServiceView;
 
 /**
  * Classe ListaCampiCompilatiServiceController per la
- * gestione della compilazione dei vari campi che ven-
- * gono richiesti durante l'esecuzione dell'applicativo.
+ * gestione della compilazione dei vari campi che
+ * vengono richiesti durante l'esecuzione dell'applicativo.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj

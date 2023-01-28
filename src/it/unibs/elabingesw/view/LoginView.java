@@ -15,35 +15,35 @@ public class LoginView extends View {
      * passato per parametro
      *
      * @param username lo username
-     * @return il messaggio di impostazione password
+     * @return il messaggio d'impostazione password
      */
     public String setPasswordByUsername(String username) {
         return InputDati.leggiStringaNonVuota("Imposta password per " + username + ": ");
     }
 
     /**
-     * Metodo che chiede all'utente di inserire la 
+     * Metodo che chiede all'utente d'inserire la
      * password.
      *
-     * @return il messaggio di inserimento password
+     * @return il messaggio d'inserimento password
      */
     public String getPasswordString() {
         return InputDati.leggiStringaNonVuota("Inserisci password: ");
     }
 
     /**
-     * Metodo che chiede all'utente di inserire lo 
+     * Metodo che chiede all'utente d'inserire lo
      * username.
      *
-     * @return il messaggio di inserimento username
+     * @return il messaggio d'inserimento username
      */
     public String getUsernameString() {
         return InputDati.leggiStringaNonVuota("Inserisci username: ");
     }
 
     /**
-     * Metodo che chiede all'utente se confermare la sua re-
-     * gistrazione come nuovo fruitore.
+     * Metodo che chiede all'utente se confermare la sua
+     * registrazione come nuovo fruitore.
      *
      * @return TRUE se ci si registra da nuovi fruitori
      * FALSE se non ci si registra da nuovi fruitori
@@ -53,10 +53,10 @@ public class LoginView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire il 
+     * Metodo che chiede all'utente d'inserire il
      * nuovo username.
      *
-     * @return il messaggio di inserimento username
+     * @return il messaggio d'inserimento username
      */
     public String getNewUsernameString() {
         return InputDati.leggiStringaNonVuota("Inserisci nuovo username: ");

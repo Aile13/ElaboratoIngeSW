@@ -11,9 +11,9 @@ import it.unibs.eliapitozzi.mylib.InputDati;
 public class ScambioServiceView extends View {
 
     /**
-     * Metodo che chiede all'utente di inserire il massimo
-     * numero di giorni consentito per accettare una propo-
-     * sta di scambio.
+     * Metodo che chiede all'utente d'inserire il massimo
+     * numero di giorni consentito per accettare
+     * una proposta di scambio.
      *
      * @return i giorni di scadenza
      */
@@ -22,7 +22,7 @@ public class ScambioServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire il luogo
+     * Metodo che chiede all'utente d'inserire il luogo
      * dove fare gli scambi.
      *
      * @return il luogo in cui fare lo scambio
@@ -32,8 +32,8 @@ public class ScambioServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di confermare l'inse-
-     * rimento del nuovo luogo dove fare gli scambi.
+     * Metodo che chiede all'utente di confermare
+     * l'inserimento del nuovo luogo dove fare gli scambi.
      *
      * @return TRUE se si vuole inserire un altro luogo
      * FALSE se non si vuole inserire un altro luogo

@@ -14,8 +14,8 @@ import java.time.LocalTime;
 public class OfferteServiceView extends View {
 
     /**
-     * Metodo che chiede all'utente se vuole selezionare una cate-
-     * goria foglia o meno passata per parametro.
+     * Metodo che chiede all'utente se vuole selezionare una
+     * categoria foglia o meno passata per parametro.
      *
      * @param nomeCategoriaFoglia il nome della categoria foglia
      * @return TRUE se si vuole selezionare la categoria foglia
@@ -26,8 +26,8 @@ public class OfferteServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente se vuole selezionare una gerar-
-     * chia o meno passata per parametro.
+     * Metodo che chiede all'utente se vuole selezionare
+     * una gerarchia o meno passata per parametro.
      *
      * @param nomeGerarchia il nome della gerarchia
      * @return TRUE se si vuole selezionare la gerarchia
@@ -58,9 +58,9 @@ public class OfferteServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente se vuole ritirare un'of-
-     * ferta in base al nome dell'articolo che viene passato
-     * per parametro.
+     * Metodo che chiede all'utente se vuole ritirare
+     * un'offerta in base al nome dell'articolo che
+     * viene passato per parametro.
      *
      * @param nomeArticolo il nome dell'articolo
      * @return TRUE se si vuole ritirare l'offerta
@@ -71,9 +71,9 @@ public class OfferteServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente se vuole selezionare un'of-
-     * ferta in base al nome dell'articolo che viene passato
-     * per parametro.
+     * Metodo che chiede all'utente se vuole selezionare
+     * un'offerta in base al nome dell'articolo che
+     * viene passato per parametro.
      *
      * @param nomeArticolo il nome dell'articolo
      * @return TRUE se si vuole selezionare l'offerta

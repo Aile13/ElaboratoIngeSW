@@ -11,7 +11,7 @@ import it.unibs.eliapitozzi.mylib.InputDati;
 public class GerarchiaServiceView extends View {
     
     /**
-     * Metodo che chiede all'utente di inserire la descrizione 
+     * Metodo che chiede all'utente d'inserire la descrizione
      * per la categoria radice.
      *
      * @return la descrizione della categoria radice
@@ -21,7 +21,7 @@ public class GerarchiaServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire il nuovo nome 
+     * Metodo che chiede all'utente d'inserire il nuovo nome
      * della categoria radice.
      *
      * @return il nuovo nome della categoria radice
@@ -31,7 +31,7 @@ public class GerarchiaServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire il nome 
+     * Metodo che chiede all'utente d'inserire il nome
      * della categoria radice.
      *
      * @return il nome della categoria radice
@@ -46,8 +46,8 @@ public class GerarchiaServiceView extends View {
      * parametro.
      *
      * @param nomeGerarchia il nome della gerarchia
-     * @return TRUE se si vuole aggiungere una sottocategoria
-     * FALSE se non si vuole inserire una nuova sottocategoria
+     * @return TRUE se si vuole aggiungere una sotto-categoria
+     * FALSE se non si vuole inserire una nuova sotto-categoria
      */
     public boolean chiediConfermaInserimentoSottoCategoriaConNome(String nomeGerarchia) {
         return InputDati.yesOrNo("Vuoi aggiungere una sotto-categoria per " + nomeGerarchia + "?");
@@ -55,7 +55,7 @@ public class GerarchiaServiceView extends View {
 
     /**
      * Metodo che chiede all'utente se vuole aggiungere un'ulteriore 
-     * sottocategoria o meno per una determinata gerarchia passata 
+     * sotto-categoria o meno per una determinata gerarchia passata
      * per parametro.
      *
      * @param nomeGerarchia il nome della gerarchia
@@ -67,7 +67,7 @@ public class GerarchiaServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire il nome 
+     * Metodo che chiede all'utente d'inserire il nome
      * della categoria figlio.
      *
      * @return il nome della categoria figlio
@@ -77,7 +77,7 @@ public class GerarchiaServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire il nuovo
+     * Metodo che chiede all'utente d'inserire il nuovo
      * nome della categoria figlio.
      *
      * @return il nuove nome della categoria figlio
@@ -87,7 +87,7 @@ public class GerarchiaServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire la descrizione 
+     * Metodo che chiede all'utente d'inserire la descrizione
      * della categoria figlio.
      *
      * @return la descrizione della categoria figlio

@@ -24,9 +24,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Classe FileUtenteServiceController che gestisce le varie o-
- * perazioni che si effettuano in modo che l'utente possa ca-
- * ricare nell'applicativo dei dati da file.
+ * Classe FileUtenteServiceController che gestisce le varie
+ * operazioni che si effettuano in modo che l'utente possa
+ * caricare nell'applicativo dei dati da file.
  *
  * @author Elia Pitozzi
  * @author Ali Laaraj

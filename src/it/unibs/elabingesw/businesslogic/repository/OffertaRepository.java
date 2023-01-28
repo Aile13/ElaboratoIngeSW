@@ -37,7 +37,7 @@ public interface OffertaRepository {
     boolean isOffertaPresenteByNome(String nomeArticolo);
 
     /**
-     * Metodo che permette di inserire una nuova offerta.
+     * Metodo che permette d'inserire una nuova offerta.
      *
      * @param offertaContext oggetto di tipo OffertaContext
      */

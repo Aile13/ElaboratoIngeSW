@@ -22,7 +22,7 @@ public class IntervalloOrariServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire l'ora
+     * Metodo che chiede all'utente d'inserire l'ora
      *
      * @return l'ora
      */
@@ -31,7 +31,7 @@ public class IntervalloOrariServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire i minuti
+     * Metodo che chiede all'utente d'inserire i minuti
      *
      * @return i minuti
      */

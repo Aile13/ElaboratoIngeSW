@@ -77,7 +77,7 @@ public class GerarchiaServiceController {
     }
 
     /**
-     * Metodo che chiede all'utente di inserire una categoria radice
+     * Metodo che chiede all'utente d'inserire una categoria radice
      * con i suoi vari campi.
      *
      * @return una categoria radice

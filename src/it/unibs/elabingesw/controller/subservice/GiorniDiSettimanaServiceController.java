@@ -16,7 +16,7 @@ import java.util.List;
 public class GiorniDiSettimanaServiceController {
 
     /**
-     * Metodo che chiede all'utente di inserire la lista
+     * Metodo che chiede all'utente d'inserire la lista
      * dei giorni in cui è possibile effettuare scambi.
      *
      * @return la lista dei giorni

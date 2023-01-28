@@ -34,8 +34,8 @@ public class ListaCampiCompilatiServiceView extends View {
     }
 
     /**
-     * Metodo che chiede all'utente di compilare il campo non 
-     * non obbligatorio il cui nome è passato per parametro.
+     * Metodo che chiede all'utente di compilare il campo non
+     * obbligatorio il cui nome è passato per parametro.
      *
      * @param nomeCampo il nome del campo
      * @return la compilazione del campo

@@ -61,7 +61,7 @@ public interface OffertaState extends Serializable, DomainTypeToRender {
      * 
      * @param context primo oggetto di tipo OffertaContext
      * @param offertaContextDaBarattareB secondo oggetto di tipo OffertaContext
-     * @param infoDiScambio oggeto di tipo Scambio
+     * @param infoDiScambio oggetto di tipo Scambio
      */
     void creaLegameEModificaStatiConOffertaEInfoScambio(OffertaContext context, OffertaContext offertaContextDaBarattareB, Scambio infoDiScambio);
 

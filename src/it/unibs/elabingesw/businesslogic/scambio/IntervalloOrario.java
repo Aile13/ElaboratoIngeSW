@@ -90,7 +90,7 @@ public record IntervalloOrario(LocalTime orarioIniziale,
 
     /**
      * Metodo che controlla se un intervallo orario passato per parametro
-     * inizia prima di un altro intervallo orario o iniza nello stesso mo-
+     * inizia prima di un altro intervallo orario o inizia nello stesso mo-
      * mento della fine dell'altro intervallo.
      *
      * @param altroIntervalloOrario un intervallo orario da confrontare
@@ -131,7 +131,7 @@ public record IntervalloOrario(LocalTime orarioIniziale,
 
     /**
      * Metodo che controlla se un intervallo orario passato per parametro
-     * finisce prima delll'inizio di un altro intervallo.
+     * finisce prima dell'inizio di un altro intervallo.
      *
      * @param altroIntervalloOrario un intervallo orario da confrontare
      * @return TRUE se l'intervallo in input finisce prima dell'inizio
