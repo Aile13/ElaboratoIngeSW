@@ -6,7 +6,7 @@ import it.unibs.elabingesw.view.domaintypelimitedrenderer.limitedrenderers.scamb
 
 import java.util.Set;
 
-/*
+/**
  * Classe CompositeDomainTypeLimitedRenderer che implementa SelectableDomainTypeLimitedRenderer
  * e che permette l'uso aggregato di tutti i renderer limitati.
  *

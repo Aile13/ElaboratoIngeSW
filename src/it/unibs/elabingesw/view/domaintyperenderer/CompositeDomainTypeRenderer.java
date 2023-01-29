@@ -11,7 +11,7 @@ import it.unibs.elabingesw.view.domaintyperenderer.renderers.utente.UtenteRender
 
 import java.util.Set;
 
-/*
+/**
  * Classe CompositeDomainTypeRenderer che implementa SelectableDomainTypeRenderer
  * e che permette l'uso aggregato di tutti i renderer.
  *
