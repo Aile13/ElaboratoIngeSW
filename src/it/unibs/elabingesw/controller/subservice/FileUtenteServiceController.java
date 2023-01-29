@@ -92,8 +92,6 @@ public class FileUtenteServiceController implements Observer {
      *                   indicare che qualcosa nel parsing del
      *                   file non è andato a buon fine
      */
-    // TODO: 29/gen/2023 Ciao Laaraj, questo è un todo, non ti spaventare sono tuoi amici. aggiungi la descrizione al tag Exception per questo metodo e a tutti quelli di questa classe che sono evidenziati di giallo, con problems in javadoc riuscirai a vedere anche tu. Di solo che il metodo può generare l'eccezione per indicare che qualcosa nel parsing del file non è andato a buon fine. non si specifica la natura dell'errore. può essere sintattica o anche che di omonimia tra le gerarchie che si intendeva caricare.
-    
     private void programParametri() throws Exception {
         Scambio scambio = parametri();
         this.scambioRepository.impostaInfoDiScambio(scambio);
