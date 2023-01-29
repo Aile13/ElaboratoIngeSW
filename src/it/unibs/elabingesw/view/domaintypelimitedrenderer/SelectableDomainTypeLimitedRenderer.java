@@ -12,7 +12,7 @@ import it.unibs.elabingesw.businesslogic.DomainTypeToLimitedRender;
 public interface SelectableDomainTypeLimitedRenderer {
     
     /**
-     * Metodo che restituisce il rendering dell'oggetto che
+     * Metodo che restituisce il rendering limitato dell'oggetto che
      * viene passato per parametro.
      *
      * @param domainTypeToLimitedRender l'oggetto di tipo DomainTypeToLimitedRender
@@ -22,7 +22,7 @@ public interface SelectableDomainTypeLimitedRenderer {
 
     /**
      * Metodo che controlla se il renderer può gestire
-     * il rendering dell'oggetto che viene passato per
+     * il rendering limitato dell'oggetto che viene passato per
      * parametro.
      *
      * @param domainTypeToLimitedRender l'oggetto di tipo DomainTypeToLimitedRender
