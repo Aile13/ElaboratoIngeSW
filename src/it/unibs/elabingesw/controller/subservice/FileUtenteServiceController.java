@@ -88,7 +88,9 @@ public class FileUtenteServiceController implements Observer {
      * Metodo che programma i parametri degli scambi
      * che sono stati impostati.
      *
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     // TODO: 29/gen/2023 Ciao Laaraj, questo è un todo, non ti spaventare sono tuoi amici. aggiungi la descrizione al tag Exception per questo metodo e a tutti quelli di questa classe che sono evidenziati di giallo, con problems in javadoc riuscirai a vedere anche tu. Di solo che il metodo può generare l'eccezione per indicare che qualcosa nel parsing del file non è andato a buon fine. non si specifica la natura dell'errore. può essere sintattica o anche che di omonimia tra le gerarchie che si intendeva caricare.
     
@@ -143,7 +145,9 @@ public class FileUtenteServiceController implements Observer {
      * che l'applicativo legge da file.
      *
      * @return un oggetto di tipo Scambio
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private Scambio parametri() throws Exception {
         ifStartsWithAndThenConsumeOrError("scambio{");
@@ -164,7 +168,9 @@ public class FileUtenteServiceController implements Observer {
      * Metodo che controlla la scadenza acquisita.
      *
      * @return la scadenza
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private int scadenza() throws Exception {
         ifStartsWithAndThenConsumeOrError("scadenza=");
@@ -180,7 +186,9 @@ public class FileUtenteServiceController implements Observer {
      * orari acquisiti.
      *
      * @return la lista degli intervalli orari
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private List<IntervalloOrario> intervalliOrari() throws Exception {
         List<IntervalloOrario> intervalliOrari = new LinkedList<>();
@@ -204,7 +212,9 @@ public class FileUtenteServiceController implements Observer {
      * orario acquisito.
      *
      * @return un oggetto di tipo IntervalloOrario
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private IntervalloOrario intervalloOrario() throws Exception {
         IntervalloOrario intervalloOrario = null;
@@ -235,7 +245,9 @@ public class FileUtenteServiceController implements Observer {
      * acquisiti.
      *
      * @return la lista dei giorni
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private List<DayOfWeek> giorni() throws Exception {
         List<DayOfWeek> giorni = new LinkedList<>();
@@ -259,7 +271,9 @@ public class FileUtenteServiceController implements Observer {
      * acquisiti.
      *
      * @return la lista dei luoghi
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private List<String> luoghi() throws Exception {
         List<String> luoghi = new LinkedList<>();
@@ -282,7 +296,9 @@ public class FileUtenteServiceController implements Observer {
      * Metodo che controlla la piazza acquisita.
      *
      * @return la piazza
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private String piazza() throws Exception {
         ifStartsWithAndThenConsumeOrError("piazza=");
@@ -293,7 +309,9 @@ public class FileUtenteServiceController implements Observer {
      * Metodo che programma le gerarchie che sono
      * state acquisite.
      *
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private void programGerarchie() throws Exception {
         List<GerarchiaDiCategorie> listaGerarchie = new LinkedList<>();
@@ -306,7 +324,9 @@ public class FileUtenteServiceController implements Observer {
      * vengono acquisite dal file dell'utente.
      *
      * @param gerarchie una lista di gerarchie di categorie
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private void gerarchiaList(List<GerarchiaDiCategorie> gerarchie) throws Exception {
         if (!contenutoFile.isEmpty()) {
@@ -330,7 +350,9 @@ public class FileUtenteServiceController implements Observer {
      * che l'applicativo legge da file.
      *
      * @return un oggetto di tipo GerarchiaDiCategorie
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private GerarchiaDiCategorie gerarchia() throws Exception {
         ifStartsWithAndThenConsumeOrError("gerarchia{");
@@ -343,7 +365,9 @@ public class FileUtenteServiceController implements Observer {
      * Metodo che imposta una categoria radice.
      *
      * @return un oggetto di tipo GerarchiaDiCategorie
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private GerarchiaDiCategorie categoriaRadice() throws Exception {
         ifStartsWithAndThenConsumeOrError("categoriaRadice(");
@@ -370,7 +394,9 @@ public class FileUtenteServiceController implements Observer {
      * nella lista e nel caso le legge e le immette nella gerarchia.
      *
      * @param gerarchia un oggetto di tipo GerarchiaDiCategorie
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private void categoriaFiglioListOp(GerarchiaDiCategorie gerarchia) throws Exception {
         ifStartsWithAndThenConsumeOrError("[");
@@ -383,7 +409,9 @@ public class FileUtenteServiceController implements Observer {
      * le aggiunge alla gerarchia passata come parametro.
      *
      * @param gerarchia un oggetto di tipo GerarchiaDiCategorie
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private void categoriaFiglioList(GerarchiaDiCategorie gerarchia) throws Exception {
         if (!contenutoFile.isEmpty()) {
@@ -401,7 +429,9 @@ public class FileUtenteServiceController implements Observer {
      * una categoria figlio nella gerarchia passata come parametro.
      *
      * @param gerarchia la gerarchia a cui si aggiunge la categoria letta.
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private void categoriaFiglio(GerarchiaDiCategorie gerarchia) throws Exception {
         ifStartsWithAndThenConsumeOrError("categoriaFiglio(");
@@ -426,7 +456,9 @@ public class FileUtenteServiceController implements Observer {
      * nella lista e nel caso le legge e le colleziona e le ritorna.
      *
      * @return la lista dei campi
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private List<Campo> campoListOp() throws Exception {
         List<Campo> listaCampi = new LinkedList<>();
@@ -443,7 +475,9 @@ public class FileUtenteServiceController implements Observer {
      * vengono acquisiti dalla lettura nell'elenco dei campi nel file.
      *
      * @param listaCampi la lista dei campi
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private void campoList(List<Campo> listaCampi) throws Exception {
         Campo campo = campo();
@@ -464,7 +498,9 @@ public class FileUtenteServiceController implements Observer {
      * Metodo che legge un campo.
      *
      * @return un oggetto di tipo Campo
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private Campo campo() throws Exception {
         ifStartsWithAndThenConsumeOrError("(");
@@ -482,7 +518,9 @@ public class FileUtenteServiceController implements Observer {
      *
      * @return TRUE se legge "t"
      * FALSE se legge "f"
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private boolean matchBoolean() throws Exception {
         if (contenutoFile.startsWith("t")) {
@@ -501,7 +539,9 @@ public class FileUtenteServiceController implements Observer {
      * il corrispondente valore.
      *
      * @return una stringa, quella letta
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private String matchStringa() throws Exception {
         ifStartsWithAndThenConsumeOrError("\"");
@@ -530,7 +570,9 @@ public class FileUtenteServiceController implements Observer {
      * rispetta la sintassi per l'import dei dati.
      *
      * @param string una stringa
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private void ifStartsWithAndThenConsumeOrError(String string) throws Exception {
         if (contenutoFile.startsWith(string)) {
@@ -557,7 +599,9 @@ public class FileUtenteServiceController implements Observer {
      * non è corretta e per questo viene richiamato per sollevare
      * tale eccezione.
      *
-     * @throws Exception
+     * @throws Exception il metodo può generare l'eccezione per
+     *                   indicare che qualcosa nel parsing del
+     *                   file non è andato a buon fine
      */
     private void errore() throws Exception {
         throw new Exception("Attenzione: contenuto file non conforme a sintassi. Impossibile procedere al caricamento dei dati.");
