@@ -46,8 +46,8 @@ public class CompositeDomainTypeLimitedRenderer implements SelectableDomainTypeL
 
     /**
      * Metodo che controlla se uno tra i renderer limitati
-     * disponibili può gestire il rendering limitato dell'og-
-     * getto che viene passato per parametro.
+     * disponibili può gestire il rendering limitato
+     * dell'oggetto che viene passato per parametro.
      *
      * @param domainTypeToLimitedRender l'oggetto di tipo DomainTypeToLimitedRender
      * @return TRUE se si può gestire il rendering limitato

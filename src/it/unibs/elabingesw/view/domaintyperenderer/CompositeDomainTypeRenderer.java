@@ -61,9 +61,9 @@ public class CompositeDomainTypeRenderer implements SelectableDomainTypeRenderer
     }
 
     /**
-     * Metodo che controlla se uno tra i renderer dispo-
-     * nibili può gestire il rendering dell'oggetto che
-     * viene passato per parametro.
+     * Metodo che controlla se uno tra i renderer
+     * disponibili può gestire il rendering
+     * dell'oggetto che viene passato per parametro.
      *
      * @param domainTypeToRender l'oggetto di tipo DomainTypeToRender
      * @return TRUE se si può gestire il rendering
